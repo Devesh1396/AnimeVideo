@@ -1,0 +1,764 @@
+<title>CET Reel Illustrated</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Kalam:wght@400;700&family=Hind:wght@400;500;600;700&family=Cinzel:wght@700&display=swap">
+<style>
+/* Layout: production storyboard. Each scene is a row: 9:16 key frames left, shot sheet right.
+   Illustrated version: flat vector characters and sets drawn in SVG, same type system and act colours as the footage version. */
+:root{
+  --bg:#f4f3f8; --paper-ui:#ffffff; --ink-ui:#17152b; --muted:#5d5a75; --line:#dedbea; --chip:#ecebf4; --accent:#3a1fd0;
+  --paper:#f7f5ef; --ball:#2a3a94; --ink:#16142b; --pen:#ef4136; --lime:#c8f23a; --violet:#3a1fd0; --violet-hi:#5b3cf5; --wa:#25d366;
+  --f-type:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --f-hand:"Kalam","Comic Sans MS",cursive;
+  --f-body:"Hind","Segoe UI",system-ui,sans-serif;
+  --f-brand:"Cinzel","Trajan Pro",Georgia,serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0d18;--paper-ui:#17152a;--ink-ui:#ebe9f7;--muted:#a19dbb;--line:#2a2742;--chip:#211e38;--accent:#a99bff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d18;--paper-ui:#17152a;--ink-ui:#ebe9f7;--muted:#a19dbb;--line:#2a2742;--chip:#211e38;--accent:#a99bff;color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink-ui);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:clamp(32px,5vw,52px);letter-spacing:-.02em;line-height:1}
+h2{font-family:var(--f-type);font-weight:800;font-stretch:85%;font-size:24px;letter-spacing:-.01em}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:72ch;margin:6px 0 0}
+.specs{display:flex;flex-wrap:wrap;gap:8px}
+.specs span{background:var(--chip);border-radius:6px;padding:4px 10px;font-size:13px;font-weight:500}
+.specs b{font-weight:700}
+.vtag{display:inline-block;background:var(--lime);color:#16142b;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 10px}
+
+/* visual language + cast */
+.vl{background:var(--paper-ui);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:18px}
+.vl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.cast{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}
+.cast figure{margin:0;display:grid;gap:6px;justify-items:center;text-align:center}
+.cast svg{width:100%;max-width:150px;aspect-ratio:1/1.15;background:#ebe6f7;border-radius:12px}
+.cast figcaption{font-size:12px;color:var(--muted);line-height:1.3}
+.cast figcaption b{display:block;color:var(--ink-ui);font-size:13px}
+ul.tight{margin:0;padding-left:18px;display:grid;gap:4px}
+
+/* timeline */
+.timeline{background:var(--paper-ui);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.tl-bar{display:flex;height:38px;border-radius:6px;overflow:hidden;font-size:12px;font-weight:700}
+.tl-bar a{display:flex;align-items:center;justify-content:center;text-decoration:none;min-width:0;white-space:nowrap;overflow:hidden;border-right:2px solid var(--paper-ui)}
+.tl-bar a:last-child{border-right:0}
+.tl-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.tl-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px}
+.toggle{display:inline-flex;align-items:center;gap:8px;background:var(--paper-ui);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink-ui);font:inherit}
+.toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toggle[aria-pressed="true"]{background:var(--accent);color:var(--paper-ui);border-color:var(--accent)}
+
+/* scene rows */
+.scene{background:var(--paper-ui);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;scroll-margin-top:16px}
+.scene-head{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
+.sid{font-family:var(--f-type);font-weight:800;font-size:24px;line-height:1;color:var(--paper-ui);background:var(--accent);border-radius:8px;padding:6px 10px}
+.stime{font-variant-numeric:tabular-nums;font-weight:700;font-size:15px}
+.ssrc{font-size:13px;color:var(--muted)}
+.frames{display:flex;gap:14px;align-items:flex-start}
+.kf{display:grid;gap:6px;justify-items:start;margin:0}
+.kf figcaption{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;max-width:220px}
+.sheet{display:grid;gap:14px;min-width:0;align-content:start}
+.row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:start}
+.row > .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.vo-hi{font-family:var(--f-body);font-weight:600;font-size:19px;line-height:1.5}
+.vo-rom{color:var(--muted);font-style:italic;font-size:14px}
+.vo-en{font-size:13px;color:var(--muted)}
+.ost{display:flex;flex-wrap:wrap;gap:6px}
+.ost code{font-family:var(--f-body);font-weight:600;background:var(--chip);border-radius:5px;padding:2px 8px;font-size:14px}
+.note{font-size:13px;background:var(--chip);border-radius:8px;padding:8px 12px}
+
+/* ================= 9:16 FRAME ================= */
+.frame{width:220px;max-width:100%;aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;container-type:inline-size;box-shadow:0 1px 0 var(--line),0 8px 24px rgba(20,16,60,.16);font-family:var(--f-type);color:var(--ink);background:#222}
+.frame *{box-sizing:border-box}
+.ill{position:absolute;inset:0;width:100%;height:100%;display:block}
+.f-pen{background:radial-gradient(110cqw 90cqw at 20% 10%,#ff5a4c,var(--pen) 55%,#d22f25)}
+.f-ink{background:radial-gradient(110cqw 90cqw at 50% 25%,#26234d,var(--ink) 70%)}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.18;mix-blend-mode:overlay;background-image:radial-gradient(rgba(255,255,255,.6) .3cqw,transparent .35cqw);background-size:3cqw 3cqw}
+.stack{position:absolute;left:9%;right:12%;top:14%;bottom:22%;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+.stack.end{justify-content:flex-end}
+.d{font-family:var(--f-type);font-weight:800;font-stretch:75%;line-height:.86;letter-spacing:-.025em;white-space:nowrap}
+.m{font-family:var(--f-type);font-weight:600;font-stretch:90%;line-height:1.05;letter-spacing:-.01em}
+.hand{font-family:var(--f-hand);font-weight:700;line-height:1}
+.c-ink{color:var(--ink)}.c-pen{color:var(--pen)}.c-lime{color:var(--lime)}.c-white{color:#fff}.c-ball{color:var(--ball)}
+.hl{background:linear-gradient(98deg,transparent 0 1%,rgba(200,242,58,.95) 1% 99%,transparent 99%) 0 78%/100% 46% no-repeat;padding:0 .8cqw}
+.rel{position:relative;display:inline-block}
+.mark{position:absolute;pointer-events:none;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.check{display:grid;grid-template-columns:auto 1fr;gap:2.8cqw;align-items:center}
+.box{position:relative;width:9cqw;height:9cqw}
+.box svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.stampline{display:inline-block;border:.8cqw solid var(--pen);color:var(--pen);border-radius:1.6cqw;padding:1cqw 2.6cqw;font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:6.6cqw;letter-spacing:.02em;text-transform:uppercase;transform:rotate(-4deg);align-self:flex-start}
+.gwr{display:flex;align-items:center;gap:3cqw;margin-top:3cqw}
+.gwr img{width:19cqw;height:19cqw;border-radius:50%;background:#fff;padding:.6cqw;flex:none}
+/* exam paper (S1) */
+.exam{position:absolute;left:9%;right:9%;top:10.5%;background:#fdfdfb;border-radius:1cqw;padding:3.4cqw 4.5cqw 2.6cqw;box-shadow:0 2.5cqw 6cqw rgba(0,0,0,.55);transform:rotate(-2.5deg);color:var(--ink)}
+.ex-h{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:.4cqw solid var(--ink);padding-bottom:2cqw;margin-bottom:2cqw;gap:2cqw}
+.ex-t{font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:5.2cqw;letter-spacing:.02em}
+.ex-n{font-family:var(--f-body);font-size:3.4cqw;margin-top:.8cqw;white-space:nowrap}
+.ex-n .hand{font-size:4.6cqw}
+.ex-s{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:8cqw;line-height:1;margin:1cqw 2cqw 0 0;white-space:nowrap}
+.ex-q{display:grid;grid-template-columns:5.5cqw 1fr auto;align-items:center;gap:1cqw;min-height:7.4cqw;border-bottom:.25cqw solid #e3e7ef}
+.ex-q .qn{font-family:var(--f-body);font-weight:600;font-size:3.8cqw;color:#666}
+.ex-q .qa{font-family:var(--f-hand);font-weight:700;color:var(--ball);font-size:6.4cqw;white-space:nowrap}
+.ex-q .qa s{text-decoration-color:var(--pen);text-decoration-thickness:.6cqw}
+.ex-q .qa em{font-style:normal;color:var(--pen);font-size:.8em;vertical-align:.3em}
+.ex-q .x{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:8cqw;line-height:1}
+.ex-q .ok{position:static;width:7cqw;height:7cqw;color:var(--pen)}
+/* phone (S6) */
+.phone{position:absolute;left:15%;right:19%;top:25%;bottom:22%;border:1.1cqw solid rgba(255,255,255,.9);border-radius:6cqw;background:#0b141a;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
+.ph-top{display:flex;align-items:center;gap:2cqw;padding:2.4cqw 3cqw;background:#1f2c34;color:#e9edef;font-family:var(--f-body);font-weight:700;font-size:3.8cqw;line-height:1.1}
+.ph-top small{display:block;font-weight:500;font-size:2.8cqw;color:#8696a0}
+.ph-top .av{width:8cqw;height:8cqw;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--violet)}
+.ph-body{padding:3cqw;display:grid;align-content:end;gap:2cqw}
+.bub{max-width:90%;border-radius:2.4cqw;padding:2cqw 2.6cqw;font-family:var(--f-body);font-size:4cqw;line-height:1.15}
+.bub small{display:block;text-align:right;font-size:2.7cqw;opacity:.7}
+.bub.out{justify-self:end;background:#005c4b;color:#e9edef;font-weight:700;border-top-right-radius:0}
+.bub.in{justify-self:start;background:#1f2c34;color:#e9edef;border-top-left-radius:0}
+.ph-in{display:flex;gap:2cqw;padding:2cqw;align-items:center}
+.ph-in span{flex:1;background:#2a3942;border-radius:999px;padding:1.8cqw 3cqw;color:#8696a0;font-family:var(--f-body);font-size:3.4cqw}
+.ph-in i{width:8.5cqw;height:8.5cqw;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#0b141a;font-style:normal;font-size:4cqw}
+.gfg{display:flex;align-items:center;gap:2cqw}
+.gfg svg{width:8cqw;height:8cqw;flex:none}
+.gfg b{font-family:var(--f-brand);font-weight:700;font-size:4.6cqw;color:#fff;letter-spacing:.01em}
+.gfg span{display:block;font-family:var(--f-body);font-size:3cqw;color:rgba(255,255,255,.65);margin-top:.4cqw}
+/* safe zones */
+.safe{position:absolute;inset:0;pointer-events:none;display:none;z-index:5}
+.show-safe .safe{display:block}
+.safe::before{content:"";position:absolute;left:0;right:0;top:0;height:13%;background:repeating-linear-gradient(45deg,rgba(255,0,110,.3) 0 6px,rgba(255,0,110,.12) 6px 12px);border-bottom:1px dashed #ff006e}
+.safe::after{content:"";position:absolute;left:0;right:0;bottom:0;height:21%;background:repeating-linear-gradient(45deg,rgba(255,0,110,.3) 0 6px,rgba(255,0,110,.12) 6px 12px);border-top:1px dashed #ff006e}
+.safe i{position:absolute;right:0;top:13%;bottom:21%;width:12%;background:rgba(255,0,110,.14);border-left:1px dashed #ff006e}
+
+/* extras */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--paper-ui);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.card h3{font-size:16px;font-weight:700}
+.card p{margin:0}
+pre.copy{white-space:pre-wrap;font-family:var(--f-body);font-size:14px;background:var(--chip);border-radius:8px;padding:12px;margin:0;overflow-x:auto}
+.tblwrap{overflow-x:auto}
+table.vo,table.shots{width:100%;border-collapse:collapse;font-size:14px}
+table.vo td,table.vo th,table.shots td,table.shots th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+table.vo th,table.shots th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+table.vo td.hi{font-weight:600;font-size:16px}
+table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+table.shots td:first-child{font-weight:700;white-space:nowrap}
+.status{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px}
+.status.open{background:#ffe9a8;color:#5a4200}
+.status.done{background:#c9f0d3;color:#0f5a27}
+.copybtn{justify-self:start;font:inherit;font-size:13px;font-weight:600;background:var(--accent);color:var(--paper-ui);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.copybtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.svgdefs{position:absolute;width:0;height:0;overflow:hidden}
+
+/* character palettes (CSS variables flow into the SVG <use> copies) */
+.pal-n{--skin:#c98a64;--skin-d:#a96c4b;--hair:#1d1a2c;--shirt:#ffffff;--shirt-d:#d9dcec;--tie:#3a1fd0;--kurta:#5b3cf5;--dupatta:#c8f23a;--feat:#1d1a2c;--cheek:#ef4136}
+.pal-r{--skin:#ffb3aa;--skin-d:#f08d82;--hair:#6e0f0a;--shirt:#ffe4e0;--shirt-d:#f5b6ae;--tie:#6e0f0a;--kurta:#a8170f;--dupatta:#ffd2cc;--feat:#5a0c08;--cheek:#a8170f}
+.pal-v{--skin:#c4b7ff;--skin-d:#a797ff;--hair:#170a5c;--shirt:#efeaff;--shirt-d:#c9bfff;--tie:#c8f23a;--kurta:#5b3cf5;--dupatta:#c8f23a;--feat:#170a5c;--cheek:#5b3cf5}
+
+@media (max-width:860px){
+  .scene{grid-template-columns:minmax(0,1fr)}
+  .frames{overflow-x:auto;padding-bottom:6px}
+  .frame{width:190px}
+  .row{grid-template-columns:minmax(0,1fr);gap:2px}
+  .vl-grid,.grid2{grid-template-columns:minmax(0,1fr)}
+  .cast{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<svg class="svgdefs" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- marks -->
+    <symbol id="sc-circle" viewBox="0 0 200 100"><path d="M150 14C92-2 20 14 11 47c-7 32 60 48 112 42 52-6 74-30 66-53-6-17-36-27-78-24" stroke-width="5"/></symbol>
+    <symbol id="sc-under" viewBox="0 0 200 20"><path d="M4 12C40 3 72 18 110 9s62-3 86 3" stroke-width="5"/></symbol>
+    <symbol id="sc-strike" viewBox="0 0 200 30"><path d="M4 18 30 9l22 11 28-12 24 13 28-13 26 12 38-10" stroke-width="5"/></symbol>
+    <symbol id="sc-tick" viewBox="0 0 40 40"><path d="M5 22 15 33 36 5" stroke-width="5"/></symbol>
+    <symbol id="sc-box" viewBox="0 0 40 40"><path d="M5 6c10-2 22-1 30 0 1 9 0 21-1 29-10 1-21 0-29-1-1-10 0-20 0-28z" stroke-width="3.2"/></symbol>
+    <symbol id="sc-spark" viewBox="0 0 40 40"><path d="M20 3v10M20 27v10M3 20h10M27 20h10M8 8l6 6M26 26l6 6M32 8l-6 6M14 26l-6 6" stroke-width="3.4"/></symbol>
+    <symbol id="wa" viewBox="0 0 48 48"><path d="M24 3a21 21 0 0 0-18.2 31.5L3 45l10.8-2.8A21 21 0 1 0 24 3z" fill="#25d366"/><path transform="translate(12 12)" fill="#fff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+    <symbol id="gfg-mark" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a11 11 0 0 1 16 0"/><path d="M16.5 11.5a19 19 0 0 1 27 0"/><path d="M11 6a27 27 0 0 1 38 0"/><path d="M7 32q11-4 22 2v20q-11-6-22-2z"/><path d="M53 32q-11-4-22 2v20q11-6 22-2z"/></g><circle cx="30" cy="23" r="2.6" fill="currentColor"/></symbol>
+
+    <!-- ===== cast: Aarav (front) ===== -->
+    <g id="k-body">
+      <rect x="-8" y="24" width="16" height="20" fill="var(--skin-d)"/>
+      <path d="M-46 125C-48 72-36 46 0 40 36 46 48 72 46 125z" fill="var(--shirt)"/>
+      <path d="M-13 41 0 55 13 41" fill="none" stroke="var(--shirt-d)" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M-4 53h8l5 30-9 9-9-9z" fill="var(--tie)"/>
+    </g>
+    <g id="k-head">
+      <circle cx="-32" cy="4" r="7" fill="var(--skin-d)"/><circle cx="32" cy="4" r="7" fill="var(--skin-d)"/>
+      <circle r="32" fill="var(--skin)"/>
+      <path d="M-34 4C-38-30-18-45 2-45 24-45 38-31 35-2 31-12 25-18 16-20 9-13-5-14-12-21-18-12-26-6-34 4z" fill="var(--hair)"/>
+      <circle cx="-19" cy="14" r="5" fill="var(--cheek)" opacity=".18"/><circle cx="19" cy="14" r="5" fill="var(--cheek)" opacity=".18"/>
+    </g>
+    <g id="aarav-happy">
+      <use href="#k-body"/><use href="#k-head"/>
+      <circle cx="-11" cy="5" r="3.6" fill="var(--feat)"/><circle cx="11" cy="5" r="3.6" fill="var(--feat)"/>
+      <path d="M-17-6h11M6-6h11M-8 16q8 7 16 0" fill="none" stroke="var(--feat)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <g id="aarav-write">
+      <use href="#k-body"/>
+      <path d="M-38 62Q-48 96-24 110M38 62Q48 96 24 110" fill="none" stroke="var(--shirt)" stroke-width="18" stroke-linecap="round"/>
+      <use href="#k-head"/>
+      <path d="M-15 7q4 3 8 0M7 7q4 3 8 0M-17-5l11 1M6-4l11-1M-4 18h8" fill="none" stroke="var(--feat)" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="-22" cy="112" r="10" fill="var(--skin)"/><circle cx="24" cy="112" r="10" fill="var(--skin)"/>
+      <path d="M26 110l16-22" stroke="#f5c518" stroke-width="5" stroke-linecap="round"/><path d="M42 88l3-5" stroke="var(--feat)" stroke-width="3" stroke-linecap="round"/>
+    </g>
+    <g id="aarav-stressed">
+      <use href="#k-body"/>
+      <path d="M-38 62-54 16M38 62 54 16" stroke="var(--shirt)" stroke-width="18" stroke-linecap="round"/>
+      <use href="#k-head"/>
+      <path d="M-54 16-34-6M54 16 34-6" stroke="var(--skin)" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="-32" cy="-9" r="11" fill="var(--skin)"/><circle cx="32" cy="-9" r="11" fill="var(--skin)"/>
+      <path d="M-16 3l6 3-6 3M16 3l-6 3 6 3M-18-9l10 4M18-9l-10 4M-9 19q3-3 6 0t6 0 6 0" fill="none" stroke="var(--feat)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M24-30q6 9 0 12-6-3 0-12z" fill="#8fd3ff"/>
+    </g>
+    <g id="aarav-think">
+      <use href="#k-body"/>
+      <path d="M38 62 30 30" stroke="var(--shirt)" stroke-width="18" stroke-linecap="round"/>
+      <use href="#k-head"/>
+      <path d="M30 30 12 26" stroke="var(--skin)" stroke-width="13" stroke-linecap="round"/>
+      <circle cx="9" cy="28" r="10" fill="var(--skin)"/>
+      <circle cx="-9" cy="2" r="3.6" fill="var(--feat)"/><circle cx="13" cy="2" r="3.6" fill="var(--feat)"/>
+      <path d="M-17-9q6-4 11 0M6-10q6-4 11 0M-7 16q6 5 12 0" fill="none" stroke="var(--feat)" stroke-width="2.6" stroke-linecap="round"/>
+    </g>
+    <!-- classmates from behind -->
+    <g id="kid-back">
+      <rect x="-8" y="20" width="16" height="22" fill="var(--skin-d)"/>
+      <path d="M-44 125C-46 74-34 44 0 40 34 44 46 74 44 125z" fill="var(--shirt)"/>
+      <circle cx="-29" cy="6" r="6" fill="var(--skin-d)"/><circle cx="29" cy="6" r="6" fill="var(--skin-d)"/>
+      <circle r="30" fill="var(--hair)"/>
+    </g>
+    <g id="kid-back-girl">
+      <use href="#kid-back"/>
+      <path d="M-6 26q-4 30 6 40 10-10 6-40z" fill="var(--hair)"/>
+      <path d="M-11 20 0 26-11 32zM11 20 0 26 11 32z" fill="#ef4136"/>
+    </g>
+    <g id="kid-back-raise">
+      <path d="M34 60 46 2" stroke="var(--shirt)" stroke-width="17" stroke-linecap="round"/>
+      <use href="#kid-back"/>
+      <path d="M46 2 50-46" stroke="var(--skin)" stroke-width="12" stroke-linecap="round"/>
+      <circle cx="50" cy="-52" r="10" fill="var(--skin)"/>
+    </g>
+    <!-- ===== cast: Mom ===== -->
+    <g id="mom-worried">
+      <path d="M-38 0C-42-44 42-44 38 0L42 50Q0 60-42 50z" fill="var(--hair)"/>
+      <circle cx="0" cy="-38" r="14" fill="var(--hair)"/>
+      <rect x="-9" y="26" width="18" height="26" fill="var(--skin-d)"/>
+      <path d="M-58 170C-62 96-46 58 0 50 46 58 62 96 58 170z" fill="var(--kurta)"/>
+      <path d="M-14 51q14 18 28 0z" fill="var(--skin-d)"/>
+      <path d="M-52 72Q0 104 54 62L58 84Q0 128-56 96z" fill="var(--dupatta)"/>
+      <path d="M-46 80Q-58 124-52 168" fill="none" stroke="var(--kurta)" stroke-width="20" stroke-linecap="round"/>
+      <path d="M46 78Q40 122 20 124" fill="none" stroke="var(--kurta)" stroke-width="20" stroke-linecap="round"/>
+      <circle cx="-31" cy="6" r="6" fill="var(--skin-d)"/><circle cx="31" cy="6" r="6" fill="var(--skin-d)"/>
+      <circle r="31" fill="var(--skin)"/>
+      <path d="M-33 2C-36-30-16-40 0-40 16-40 36-30 33 2 28-16 14-27 1-28-12-27-28-16-33 2z" fill="var(--hair)"/>
+      <circle cx="-32" cy="16" r="3.6" fill="#f2b632"/><circle cx="32" cy="16" r="3.6" fill="#f2b632"/>
+      <circle cx="0" cy="-12" r="2.8" fill="#ef4136"/>
+      <circle cx="-11" cy="4" r="3.4" fill="var(--feat)"/><circle cx="11" cy="4" r="3.4" fill="var(--feat)"/>
+      <path d="M-17-5-7-9M17-5 7-9M-7 19q7-5 14 0" fill="none" stroke="var(--feat)" stroke-width="2.6" stroke-linecap="round"/>
+      <path d="M20 124Q10 82 6 42" fill="none" stroke="var(--skin)" stroke-width="13" stroke-linecap="round"/>
+      <path d="M5 98l18-4M4 90l18-4" stroke="#f2b632" stroke-width="3.5" stroke-linecap="round"/>
+      <circle cx="6" cy="38" r="10" fill="var(--skin)"/>
+    </g>
+    <g id="mom-happy">
+      <path d="M-38 0C-42-44 42-44 38 0L42 50Q0 60-42 50z" fill="var(--hair)"/>
+      <circle cx="0" cy="-38" r="14" fill="var(--hair)"/>
+      <rect x="-9" y="26" width="18" height="26" fill="var(--skin-d)"/>
+      <path d="M-58 170C-62 96-46 58 0 50 46 58 62 96 58 170z" fill="var(--kurta)"/>
+      <path d="M-14 51q14 18 28 0z" fill="var(--skin-d)"/>
+      <path d="M-52 72Q0 104 54 62L58 84Q0 128-56 96z" fill="var(--dupatta)"/>
+      <path d="M-46 80Q-58 124-52 168M46 80Q58 124 52 168" fill="none" stroke="var(--kurta)" stroke-width="20" stroke-linecap="round"/>
+      <circle cx="-31" cy="6" r="6" fill="var(--skin-d)"/><circle cx="31" cy="6" r="6" fill="var(--skin-d)"/>
+      <circle r="31" fill="var(--skin)"/>
+      <path d="M-33 2C-36-30-16-40 0-40 16-40 36-30 33 2 28-16 14-27 1-28-12-27-28-16-33 2z" fill="var(--hair)"/>
+      <circle cx="-32" cy="16" r="3.6" fill="#f2b632"/><circle cx="32" cy="16" r="3.6" fill="#f2b632"/>
+      <circle cx="0" cy="-12" r="2.8" fill="#ef4136"/>
+      <path d="M-15 5q4-4 8 0M7 5q4-4 8 0M-9 15q9 9 18 0" fill="none" stroke="var(--feat)" stroke-width="2.6" stroke-linecap="round"/>
+      <circle cx="-19" cy="14" r="5" fill="var(--cheek)" opacity=".18"/><circle cx="19" cy="14" r="5" fill="var(--cheek)" opacity=".18"/>
+    </g>
+  </defs>
+</svg>
+
+<div class="wrap" id="board">
+
+<header style="display:grid;gap:12px">
+  <div class="eyebrow">Giane Future Gurukull · Instagram Reel / YouTube Short · <span class="vtag">Illustrated version</span></div>
+  <h1>Free Calculation Efficiency Test: 30-second reel, illustrated</h1>
+  <p class="lede">An alternative to the footage version: no stock video. Every scene is a flat illustration drawn in code, with a small cast (Aarav and his mother) animated part by part. Same script, timings, type and act colours as the footage storyboard, so the two can be compared side by side. Give feedback by scene ID, e.g. "S2: make Aarav younger".</p>
+  <div class="specs">
+    <span><b>1080×1920</b> · 9:16</span><span><b>30 s</b> · 30 fps</span><span>VO: <b>Hindi</b>, warm female</span><span>Text: <b>English / Hinglish</b></span><span>All art: <b>SVG, built in code</b></span><span>Animated in <b>Remotion</b></span>
+  </div>
+</header>
+
+<section class="vl" aria-labelledby="vl-h">
+  <div class="eyebrow" id="vl-h">Cast &amp; style · flat, rounded, warm</div>
+  <div class="vl-grid">
+    <div class="cast">
+      <figure><svg viewBox="-70 -70 140 160" class="pal-n" role="img" aria-label="Aarav, happy"><use href="#aarav-happy"/></svg><figcaption><b>Aarav, 9</b>Class 4, happy</figcaption></figure>
+      <figure><svg viewBox="-70 -70 140 160" class="pal-n" role="img" aria-label="Aarav, stressed"><use href="#aarav-stressed"/></svg><figcaption><b>Aarav</b>stressed (S2)</figcaption></figure>
+      <figure><svg viewBox="-70 -70 140 160" class="pal-n" role="img" aria-label="Aarav, thinking"><use href="#aarav-think"/></svg><figcaption><b>Aarav</b>thinking (S4)</figcaption></figure>
+      <figure><svg viewBox="-80 -70 160 184" class="pal-n" role="img" aria-label="Mom, worried"><use href="#mom-worried"/></svg><figcaption><b>Mom</b>worried (S3)</figcaption></figure>
+    </div>
+    <div style="display:grid;gap:10px;align-content:start">
+      <ul class="tight">
+        <li><b>One consistent cast</b> across the reel. The parent watching follows one child's story from mistake to solution.</li>
+        <li><b>Recoloured per act:</b> the same characters appear in natural colours (S1–S2), red (S3) and violet (S4), so each act still reads as one colour.</li>
+        <li><b>Indian details:</b> school uniform and tie, mother's bindi, bun, earrings and bangles, blue-ballpoint answers, chalkboard.</li>
+        <li><b>Animated part by part:</b> blinks, a raised hand, a ticking clock, a stress scribble, a lightbulb turning on. Everything is code, so each pose and colour can be changed quickly.</li>
+        <li>Type, act colours, red-pen marks and the exam paper are shared with the footage version.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="timeline" aria-label="Timeline">
+  <div class="tl-bar">
+    <a href="#s1" style="flex:3;background:#22324a;color:#fff">S1 Hook</a>
+    <a href="#s2" style="flex:5;background:#2b2752;color:#fff">S2 Signs</a>
+    <a href="#s3" style="flex:3;background:#ef4136;color:#fff">S3 Twist</a>
+    <a href="#s4" style="flex:7;background:#3a1fd0;color:#fff">S4 Free test</a>
+    <a href="#s5" style="flex:6;background:#c8f23a;color:#16142b">S5 Bonus</a>
+    <a href="#s6" style="flex:6;background:#16142b;color:#c8f23a">S6 WhatsApp</a>
+  </div>
+  <div class="tl-scale"><span>0s</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30s</span></div>
+</section>
+
+<div class="controls">
+  <button class="toggle" id="safeBtn" aria-pressed="false" type="button">Show Instagram safe zones</button>
+  <span style="color:var(--muted)">Striped areas are covered by Instagram's username, caption and buttons. Key text stays out of them.</span>
+</div>
+
+<!-- ================= S1 ================= -->
+<section class="scene" id="s1">
+  <div class="scene-head"><span class="sid">S1</span><span class="stime">0:00 – 0:03 · 3 s</span><h2>The hook: classroom, then the exam paper</h2><span class="ssrc">Content: pg 1 headline</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill pal-n" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Classroom: chalkboard reads Concepts? Clear, children seen from behind, one raising a hand">
+          <rect width="360" height="640" fill="#ebe6f7"/>
+          <rect x="0" y="60" width="360" height="8" fill="#ddd5f0"/>
+          <rect x="22" y="78" width="316" height="240" rx="12" fill="#8a5a3c"/>
+          <rect x="31" y="87" width="298" height="222" rx="6" fill="#22324a"/>
+          <path d="M60 280q60-10 120 4M210 120q40-6 90 2" stroke="#fff" stroke-opacity=".06" stroke-width="18" stroke-linecap="round"/>
+          <text x="52" y="150" font-family="Kalam" font-weight="700" font-size="40" fill="#fff" fill-opacity=".92">Concepts?</text>
+          <text x="48" y="266" font-family="Kalam" font-weight="700" font-size="90" fill="#c8f23a">Clear.</text>
+          <path d="M286 226l12 14 26-38" fill="none" stroke="#c8f23a" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="44" y="309" width="272" height="9" rx="2" fill="#6e4630"/><rect x="250" y="303" width="22" height="6" rx="2" fill="#fff"/>
+          <rect y="430" width="360" height="210" fill="#d6cdee"/>
+          <g style="--hair:#2b2238"><use href="#kid-back" transform="translate(60 392) scale(.6)"/></g>
+          <use href="#kid-back-girl" transform="translate(140 392) scale(.6)"/>
+          <g style="--hair:#3a2a24"><use href="#kid-back" transform="translate(222 392) scale(.6)"/></g>
+          <use href="#kid-back-girl" transform="translate(306 392) scale(.6)"/>
+          <use href="#kid-back-girl" transform="translate(30 478) scale(.85)"/>
+          <use href="#kid-back-raise" transform="translate(140 478) scale(.85)"/>
+          <g style="--hair:#2b2238"><use href="#kid-back" transform="translate(250 478) scale(.85)"/></g>
+          <use href="#kid-back" transform="translate(350 478) scale(.85)"/>
+          <g style="--hair:#3a2a24"><use href="#kid-back" transform="translate(84 590) scale(1.15)"/></g>
+          <use href="#kid-back-girl" transform="translate(280 590) scale(1.15)"/>
+        </svg>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:00 · chalk writes itself, a hand goes up</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <rect width="360" height="640" fill="#7a4e2e"/>
+          <path d="M0 120h360M0 260h360M0 400h360M0 540h360" stroke="#6a4226" stroke-width="3"/>
+          <path d="M40 60q80 10 160-4M120 200q90 8 200-6M30 330q100 12 180 0M150 470q80 8 190-4" stroke="#8a5a36" stroke-width="2" fill="none"/>
+          <g transform="translate(262 556) rotate(-32)"><rect x="-80" y="-7" width="140" height="14" fill="#f5c518"/><rect x="-80" y="-7" width="140" height="4" fill="#ffe066"/><path d="M60-7 84 0 60 7z" fill="#e9c9a0"/><path d="M76-2.5 84 0 76 2.5z" fill="#16142b"/><rect x="-98" y="-7" width="18" height="14" rx="3" fill="#f19aa6"/><rect x="-84" y="-7" width="6" height="14" fill="#c0c4cc"/></g>
+          <g transform="translate(70 600) rotate(12)"><rect x="-26" y="-12" width="52" height="24" rx="4" fill="#fff"/><rect x="-26" y="-12" width="22" height="24" rx="4" fill="#3a8be0"/></g>
+          <defs><linearGradient id="deskfade" x1="0" y1="0" x2="0" y2="1"><stop offset=".45" stop-color="#000" stop-opacity="0"/><stop offset=".85" stop-color="#000" stop-opacity=".45"/></linearGradient></defs>
+          <rect width="360" height="640" fill="url(#deskfade)"/>
+        </svg>
+        <div class="exam">
+          <div class="ex-h"><div><div class="ex-t">MATHS · UNIT TEST</div><div class="ex-n">Name: <span class="hand c-ball">Aarav</span> &nbsp; Class: <span class="hand c-ball">4-B</span></div></div><div class="ex-s rel">12<span style="font-size:.6em">/20</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-30%;top:-25%;width:160%;height:150%"><use href="#sc-circle"/></svg></div></div>
+          <div class="ex-q"><span class="qn">1.</span><span class="qa">48 + 37 = 85</span><svg class="mark ok" viewBox="0 0 40 40"><use href="#sc-tick"/></svg></div>
+          <div class="ex-q"><span class="qn">2.</span><span class="qa">7 × 8 = <s>54</s> <em>56</em></span><span class="x">✗</span></div>
+          <div class="ex-q"><span class="qn">3.</span><span class="qa">125 − 68 = <s>67</s> <em>57</em></span><span class="x">✗</span></div>
+          <div class="ex-q"><span class="qn">4.</span><span class="qa">36 ÷ 4 = <s>8</s> <em>9</em></span><span class="x">✗</span></div>
+          <div class="hand c-pen" style="font-size:6.4cqw;transform:rotate(-4deg);margin-top:1.6cqw">Careless mistakes!</div>
+        </div>
+        <div style="position:absolute;left:9%;right:12%;top:58%;display:grid;gap:.6cqw">
+          <div class="m c-white" style="font-size:7.5cqw">Still making</div>
+          <div class="d c-pen" style="font-size:21cqw">silly</div>
+          <div class="d c-white" style="font-size:15cqw">mistakes?</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:01.5 · paper lands on Aarav's desk</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">कॉन्सेप्ट्स क्लियर हैं… फिर भी सिली मिस्टेक्स?</div><div class="vo-rom">Concepts clear hain… phir bhi silly mistakes?</div><div class="vo-en">"The concepts are clear… and still silly mistakes?"</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Concepts? Clear. ✓ (chalk)</code><code>Exam paper: 12/20, three red crosses</code><code>Still making silly mistakes?</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Opens on the classroom. "Concepts?" then "Clear." write themselves in chalk on the board as the VO says them; a lime tick follows. Aarav's hand shoots up; the other heads bob slightly.</li><li>1.4s, on "phir bhi": a quick zoom down to Aarav's desk (top view); the exam paper slides in and the red pen marks it ✓ ✗ ✗ ✗, circles 12/20, writes "Careless mistakes!"</li><li>2.2s: "Still making silly mistakes?" stacks in under the paper; "silly" lands last, in red.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Chalk squeak, classroom murmur, paper swish, three red-pen scratches, then the music starts.</div></div>
+  </div>
+</section>
+
+<!-- ================= S2 ================= -->
+<section class="scene" id="s2">
+  <div class="scene-head"><span class="sid">S2</span><span class="stime">0:03 – 0:08 · 5 s</span><h2>The parent's checklist, at home</h2><span class="ssrc">Content: pg 1, the four signs</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill pal-n" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Aarav rushing his homework at home in the evening, a clock spinning, a football thought bubble">
+          <rect width="360" height="640" fill="#2b2752"/>
+          <g fill="#fff" opacity=".05"><circle cx="40" cy="40" r="3"/><circle cx="120" cy="80" r="3"/><circle cx="220" cy="40" r="3"/><circle cx="310" cy="90" r="3"/><circle cx="70" cy="160" r="3"/><circle cx="270" cy="170" r="3"/></g>
+          <path d="M40 640 70 360h44l30 280z" fill="#fff7c2" opacity=".08"/>
+          <g transform="translate(286 360)"><circle r="28" fill="#f7f5ef" stroke="#16142b" stroke-width="4"/><path d="M0 0V-18M0 0l13 8" stroke="#16142b" stroke-width="4" stroke-linecap="round"/><path d="M-38-10a40 40 0 0 1 20-28M38 10a40 40 0 0 1-20 28" fill="none" stroke="#c8f23a" stroke-width="4" stroke-linecap="round"/></g>
+          <g transform="translate(92 372)"><circle cx="34" cy="44" r="5" fill="#fff" opacity=".7"/><circle cx="24" cy="30" r="8" fill="#fff" opacity=".8"/><circle r="24" fill="#fff"/><circle r="13" fill="#fff" stroke="#16142b" stroke-width="3"/><path d="M0-5 5-1 3 5h-6l-2-6z" fill="#16142b"/></g>
+          <use href="#aarav-write" transform="translate(180 440)"/>
+          <rect x="0" y="546" width="360" height="94" fill="#8a5a3c"/><rect x="0" y="546" width="360" height="10" fill="#a8703f"/>
+          <path d="M120 556h90l-6 30h-90z" fill="#fff"/>
+          <path d="M222 520l14-6M226 534l16-4M220 506l12-8" stroke="#c8f23a" stroke-width="3.5" stroke-linecap="round"/>
+          <g transform="translate(64 504)"><path d="M0 42h36" stroke="#16142b" stroke-width="6" stroke-linecap="round"/><path d="M18 42 6 6" stroke="#16142b" stroke-width="4"/><path d="M-10 10 22-2 30 18z" fill="#c8f23a"/></g>
+        </svg>
+        <div class="stack" style="bottom:52%;gap:3cqw">
+          <div class="hand c-white" style="font-size:8.5cqw">Does your child…</div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:10cqw">rush through sums?</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:10cqw">lose focus?</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:10cqw">forget formulas?</span></div>
+          <div class="check" style="opacity:.5"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg></span><span class="d c-white" style="font-size:10cqw">slip while solving?</span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:05 · each sign acted out</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill pal-n" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Close-up of Aarav with his head in his hands, a stress scribble above him">
+          <rect width="360" height="640" fill="#2b2752"/>
+          <path d="M128 92c10-30 66-36 76-8 8 24-48 30-42 6 6-20 62-24 70 6 6 22-38 34-54 16-14-18 18-38 42-26" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".9"/>
+          <use href="#aarav-stressed" transform="translate(180 205) scale(1.4)"/>
+          <rect x="0" y="350" width="360" height="290" fill="#3b2f5c"/><rect x="0" y="350" width="360" height="10" fill="#4b3d72"/>
+          <g transform="translate(58 604)"><circle r="20" fill="#f7f5ef"/><path d="M-12-6 4 2-6 10M6-12l2 14 8-6" fill="none" stroke="#c9c4d8" stroke-width="2.5"/></g>
+          <g transform="translate(304 610)"><circle r="16" fill="#f7f5ef"/><path d="M-8-6 6 0-4 8" fill="none" stroke="#c9c4d8" stroke-width="2.5"/></g>
+        </svg>
+        <div class="stack end" style="gap:1.4cqw">
+          <div class="m c-white" style="font-size:8cqw">These are just</div>
+          <div class="d c-white" style="font-size:24cqw">the <span class="hl c-ink">signs.</span></div>
+          <div class="hand c-lime" style="font-size:7.6cqw;margin-top:1.6cqw">not the real reason ↓</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:07 · the frustration</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">जल्दबाज़ी… ध्यान भटकना… फ़ॉर्मूले भूल जाना… ये तो सिर्फ़ साइन्स हैं।</div><div class="vo-rom">Jaldbaazi… dhyaan bhatakna… formule bhool jaana… ye toh sirf signs hain.</div><div class="vo-en">"Rushing… losing focus… forgetting formulas… these are only the signs."</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Does your child…</code><code>rush through sums?</code><code>lose focus?</code><code>forget formulas?</code><code>slip while solving?</code><code>These are just the signs.</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Evening, Aarav at his desk. Each sign is acted out as its tick lands: <b>rush</b> — the clock spins and his pencil gets speed lines; <b>focus</b> — a football thought bubble pops up and his eyes drift; <b>formulas</b> — a "?" floats over his head; <b>slip</b> — a red ✗ appears on his page.</li><li>6.6s: push in to a close-up; his hands go to his head and a stress scribble draws itself above him; "the signs." gets a highlighter swipe.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Ticking clock speeding up, a pen tick per box, a soft sigh at the close-up.</div></div>
+  </div>
+</section>
+
+<!-- ================= S3 ================= -->
+<section class="scene" id="s3">
+  <div class="scene-head"><span class="sid">S3</span><span class="stime">0:08 – 0:11 · 3 s</span><h2>The twist</h2><span class="ssrc">Content: pg 1, "Parents, don't assume!"</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame f-pen">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g transform="translate(270 590) rotate(-6)"><rect x="-56" y="-14" width="112" height="16" fill="#ffe4e0"/><rect x="-52" y="-30" width="112" height="16" fill="#fff"/><rect x="-58" y="-46" width="112" height="16" fill="#ffe4e0"/><rect x="-54" y="-62" width="112" height="16" fill="#fff"/><rect x="-60" y="-78" width="112" height="16" fill="#ffe4e0"/></g>
+        </svg>
+        <div class="stack" style="gap:.6cqw">
+          <div class="d c-white" style="font-size:15cqw">more practice</div>
+          <div class="d c-white" style="font-size:15cqw;opacity:.72">more practice</div>
+          <div class="d c-white" style="font-size:15cqw;opacity:.46">more practice</div>
+          <div class="d c-white" style="font-size:15cqw;opacity:.24">more practice</div>
+          <div class="d c-ink" style="font-size:19cqw;margin-top:3cqw">≠ fewer</div>
+          <div class="d c-ink" style="font-size:19cqw">mistakes</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:08 · worksheets pile up</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill pal-r" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Aarav's mother standing beside him, hand on chin, worried, in red tones">
+          <rect width="360" height="640" fill="#ef4136"/>
+          <rect x="200" y="96" width="110" height="80" rx="6" fill="#f25a4f"/><path d="M255 96v80M200 136h110" stroke="#ef4136" stroke-width="6"/>
+          <use href="#aarav-write" transform="translate(262 236) scale(.85)"/>
+          <rect x="176" y="326" width="184" height="314" fill="#b51f16"/><rect x="176" y="326" width="184" height="10" fill="#c92a20"/>
+          <use href="#mom-worried" transform="translate(110 178) scale(1.15)"/>
+          <defs><linearGradient id="redfade" x1="0" y1="0" x2="0" y2="1"><stop offset=".42" stop-color="#7a0f0a" stop-opacity="0"/><stop offset=".62" stop-color="#7a0f0a" stop-opacity=".7"/></linearGradient></defs>
+          <rect width="360" height="640" fill="url(#redfade)"/>
+        </svg>
+        <div class="stack end">
+          <div class="hand c-white" style="font-size:10cqw;transform:rotate(-4deg);transform-origin:left">Parents,</div>
+          <div class="d c-white" style="font-size:28cqw">don't</div>
+          <div><span class="d c-white rel" style="font-size:22cqw">assume.<svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-3.5cqw;width:100%;height:5cqw"><use href="#sc-under"/></svg></span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:10 · Mom watches, worried</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">सिर्फ़ प्रैक्टिस बढ़ाने से ये गलतियाँ नहीं रुकेंगी।</div><div class="vo-rom">Sirf practice badhaane se ye galtiyaan nahi rukengi.</div><div class="vo-en">"Just increasing practice won't stop these mistakes."</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>more practice ≠ fewer mistakes</code><code>Parents, don't assume.</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut to red. "more practice" stacks four times while a pile of worksheets grows beside it and wobbles; "≠ fewer mistakes" slams in.</li><li>9.8s: the pile topples off-screen to reveal Mom beside Aarav, in red tones, hand moving to her chin; "Parents, don't assume." punches in.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Paper flicks, a soft topple, a bass "thud" on "don't". The music drops out for one beat.</div></div>
+  </div>
+</section>
+
+<!-- ================= S4 ================= -->
+<section class="scene" id="s4">
+  <div class="scene-head"><span class="sid">S4</span><span class="stime">0:11 – 0:18 · 7 s</span><h2>The FREE test</h2><span class="ssrc">Content: pg 2</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A magnifying glass inspecting a test sheet">
+          <defs><radialGradient id="vio" cx=".8" cy="0" r="1.2"><stop offset="0" stop-color="#5b3cf5"/><stop offset=".55" stop-color="#3a1fd0"/><stop offset="1" stop-color="#2812a6"/></radialGradient></defs>
+          <rect width="360" height="640" fill="url(#vio)"/>
+          <g transform="translate(160 176) rotate(-8)"><rect x="-86" y="-60" width="172" height="120" rx="8" fill="#efeaff"/><rect x="-66" y="-36" width="70" height="8" rx="4" fill="#a797ff"/><rect x="-66" y="-14" width="110" height="8" rx="4" fill="#c9bfff"/><rect x="-66" y="8" width="96" height="8" rx="4" fill="#c9bfff"/><rect x="-66" y="30" width="120" height="8" rx="4" fill="#c9bfff"/><path d="M44-40l6 6 12-14" fill="none" stroke="#ef4136" stroke-width="4" stroke-linecap="round"/></g>
+          <circle cx="222" cy="178" r="54" fill="#c8f23a" fill-opacity=".16" stroke="#c8f23a" stroke-width="10"/>
+          <path d="M262 218 300 256" stroke="#c8f23a" stroke-width="18" stroke-linecap="round"/>
+          <text x="204" y="200" font-family="Kalam" font-weight="700" font-size="60" fill="#fff">?</text>
+        </svg>
+        <div class="stack end">
+          <div class="hand c-white" style="font-size:9cqw">That's why…</div>
+          <div><span class="d c-lime rel" style="font-size:40cqw;letter-spacing:-.04em">FREE<svg class="mark c-white" viewBox="0 0 40 40" style="right:-9cqw;top:-2cqw;width:9cqw;height:9cqw"><use href="#sc-spark"/></svg></span></div>
+          <div class="d c-white" style="font-size:12.5cqw;margin-top:1.5cqw">Calculation</div>
+          <div class="d c-white" style="font-size:12.5cqw">Efficiency Test</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:11.5 · the test that looks closer</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A brain inside a laurel wreath, for a memory record">
+          <rect width="360" height="640" fill="url(#vio)"/>
+          <g transform="translate(180 168)">
+            <g fill="#c8f23a"><ellipse cx="-62" cy="30" rx="9" ry="16" transform="rotate(-30 -62 30)"/><ellipse cx="-72" cy="4" rx="9" ry="16" transform="rotate(-10 -72 4)"/><ellipse cx="-70" cy="-24" rx="9" ry="16" transform="rotate(12 -70 -24)"/><ellipse cx="-56" cy="-48" rx="9" ry="16" transform="rotate(36 -56 -48)"/><ellipse cx="62" cy="30" rx="9" ry="16" transform="rotate(30 62 30)"/><ellipse cx="72" cy="4" rx="9" ry="16" transform="rotate(10 72 4)"/><ellipse cx="70" cy="-24" rx="9" ry="16" transform="rotate(-12 70 -24)"/><ellipse cx="56" cy="-48" rx="9" ry="16" transform="rotate(-36 56 -48)"/></g>
+            <path d="M-4-44c-14-12-40-6-42 12-16 4-18 26-6 34-4 18 14 30 28 22 8 10 20 8 20-2zM4-44c14-12 40-6 42 12 16 4 18 26 6 34 4 18-14 30-28 22-8 10-20 8-20-2z" fill="#efeaff"/>
+            <path d="M-24-26q10 6 4 18M-34 4q12-2 16 10M24-26q-10 6-4 18M34 4q-12-2-16 10M0-44v66" fill="none" stroke="#a797ff" stroke-width="4" stroke-linecap="round"/>
+            <path d="M6-30-8 0h12L-4 28" fill="none" stroke="#3a1fd0" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+        <div class="stack end">
+          <div class="hand c-lime" style="font-size:9cqw">designed by</div>
+          <div class="d c-white" style="font-size:24cqw">Deveshh</div>
+          <div class="d c-white" style="font-size:24cqw">Sir</div>
+          <div class="gwr"><img src="assets/gwr-logo.png" alt="Guinness World Records logo"><div><div class="m c-white" style="font-size:6.2cqw;font-weight:700">Guinness World<br>Record Holder</div><div class="hand c-lime" style="font-size:6cqw;margin-top:.8cqw">in Memory</div></div></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:13.5 · the memory record</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill pal-v" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Aarav thinking, a lightbulb lighting up above him">
+          <rect width="360" height="640" fill="url(#vio)"/>
+          <g transform="translate(262 112)"><path d="M-24 0a24 24 0 1 1 48 0c0 10-8 16-10 26h-28c-2-10-10-16-10-26z" fill="#c8f23a"/><rect x="-12" y="30" width="24" height="10" rx="3" fill="#efeaff"/><path d="M-40-30-30-22M40-30 30-22M0-46v-12M-46 0h-12M46 0h12" stroke="#c8f23a" stroke-width="5" stroke-linecap="round"/></g>
+          <use href="#aarav-think" transform="translate(170 168) scale(1.05)"/>
+          <defs><linearGradient id="viofade" x1="0" y1="0" x2="0" y2="1"><stop offset=".38" stop-color="#2812a6" stop-opacity="0"/><stop offset=".5" stop-color="#2812a6" stop-opacity="1"/></linearGradient></defs>
+          <rect width="360" height="640" fill="url(#viofade)"/>
+        </svg>
+        <div class="stack end" style="gap:1cqw">
+          <div class="hand c-white" style="font-size:8.5cqw">Find out</div>
+          <div class="d c-lime" style="font-size:22cqw">WHY</div>
+          <div class="m c-white" style="font-size:5.8cqw">mistakes keep happening</div>
+          <div class="d c-white" style="font-size:22cqw;margin-top:2cqw">WHAT</div>
+          <div class="m c-lime" style="font-size:5.8cqw">to fix first</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:16 · the lightbulb moment</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">इसीलिए — फ़्री कैलकुलेशन एफ़िशिएंसी टेस्ट! गिनीज़ वर्ल्ड रिकॉर्ड होल्डर देवेश सर द्वारा डिज़ाइन किया गया। जानिए, गलतियाँ क्यों होती हैं… और पहले क्या सुधारना है।</div><div class="vo-rom">Isiliye — FREE Calculation Efficiency Test! Guinness World Record holder Deveshh Sir dwara design kiya gaya. Jaaniye, galtiyaan kyun hoti hain… aur pehle kya sudhaarna hai.</div><div class="vo-en">"That's why: a FREE Calculation Efficiency Test, designed by Guinness World Record holder Deveshh Sir. Find out why the mistakes happen and what to fix first."</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>FREE</code><code>Calculation Efficiency Test</code><code>designed by Deveshh Sir</code><code>Guinness World Record Holder in Memory</code><code>WHY mistakes keep happening</code><code>WHAT to fix first</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>11.0s: red wipes to violet. A magnifying glass glides over a test sheet; "FREE" scales up with an overshoot on the word "free".</li><li>13.2s: a laurel wreath grows leaf by leaf around a brain, and a lightning bolt flashes; "Deveshh Sir" slides up; the Guinness emblem rolls in.</li><li>15.4s: Aarav, now in violet, taps his chin; the lightbulb flickers on as "WHY" and "WHAT" land, and he smiles.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>The music lifts; a bright "ding" on FREE; a soft "click" as the bulb lights.</div></div>
+    <div class="row"><div class="k">Guinness</div><div class="note"><span class="status done">Added</span> Emblem from your supplied file. GWR requires a licence and its approval of each ad that uses the logo.</div></div>
+  </div>
+</section>
+
+<!-- ================= S5 ================= -->
+<section class="scene" id="s5">
+  <div class="scene-head"><span class="sid">S5</span><span class="stime">0:18 – 0:24 · 6 s</span><h2>The bonus</h2><span class="ssrc">Content: pg 3 (+ "limited period", pg 4)</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A gift box bursting open">
+          <defs><radialGradient id="limeg" cx=".2" cy="0" r="1.2"><stop offset="0" stop-color="#dcff63"/><stop offset=".55" stop-color="#c8f23a"/><stop offset="1" stop-color="#b2dc22"/></radialGradient></defs>
+          <rect width="360" height="640" fill="url(#limeg)"/>
+          <g transform="translate(180 150) scale(.92)">
+            <path d="M0-70V-96M-50-56-66-74M50-56 66-74M-74-24h-24M74-24h24" stroke="#16142b" stroke-width="5" stroke-linecap="round"/>
+            <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
+            <g transform="translate(-20 -40) rotate(-22)"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
+            <g fill="#3a1fd0"><rect x="-90" y="-60" width="8" height="14" rx="2" transform="rotate(20 -86 -53)"/><rect x="80" y="-70" width="8" height="14" rx="2" transform="rotate(-25 84 -63)"/></g>
+            <g fill="#ef4136"><circle cx="70" cy="-30" r="5"/><circle cx="-80" cy="-10" r="4"/></g>
+          </g>
+        </svg>
+        <div class="stack end" style="gap:1cqw">
+          <div class="hand c-pen" style="font-size:7.4cqw;white-space:nowrap">+ a bonus for your child</div>
+          <div class="d c-ink" style="font-size:13cqw;margin-top:1cqw">CTM™ Masterclass</div>
+          <div style="display:flex;align-items:flex-end;gap:2cqw;margin-top:1cqw"><span class="hand c-ink" style="font-size:8cqw;padding-bottom:3cqw">worth</span><span class="d c-ink" style="font-size:26cqw">₹500</span></div>
+          <span class="stampline" style="margin-top:2cqw">Free with the test</span>
+          <div class="m c-ink" style="font-size:6cqw;margin-top:1.5cqw">for a limited period only</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:19 · the gift bursts open</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" role="img" aria-label="An abacus and a scroll, both crossed out in red">
+          <g transform="translate(110 170)">
+            <rect x="-56" y="-44" width="112" height="88" rx="6" fill="none" stroke="#c88a5a" stroke-width="8"/>
+            <path d="M-50-22h100M-50 0h100M-50 22h100" stroke="#8a7f9e" stroke-width="3"/>
+            <g fill="#c8f23a"><circle cx="-36" cy="-22" r="7"/><circle cx="-22" cy="-22" r="7"/><circle cx="20" cy="-22" r="7"/></g>
+            <g fill="#5b3cf5"><circle cx="-30" cy="0" r="7"/><circle cx="14" cy="0" r="7"/><circle cx="28" cy="0" r="7"/></g>
+            <g fill="#fff"><circle cx="-38" cy="22" r="7"/><circle cx="-24" cy="22" r="7"/><circle cx="-10" cy="22" r="7"/><circle cx="34" cy="22" r="7"/></g>
+            <path d="M-64-52 64 52M64-52-64 52" stroke="#ef4136" stroke-width="9" stroke-linecap="round"/>
+          </g>
+          <g transform="translate(256 170)">
+            <rect x="-40" y="-40" width="80" height="80" fill="#f3e6c4"/>
+            <rect x="-48" y="-48" width="96" height="14" rx="7" fill="#e0cc98"/><rect x="-48" y="34" width="96" height="14" rx="7" fill="#e0cc98"/>
+            <path d="M-26-18h52M-26-4h40M-26 10h48M-26 24h30" stroke="#b39a62" stroke-width="4" stroke-linecap="round"/>
+            <path d="M-56-56 56 56M56-56-56 56" stroke="#ef4136" stroke-width="9" stroke-linecap="round"/>
+          </g>
+        </svg>
+        <div class="stack end" style="gap:1.2cqw">
+          <div><span class="d c-white" style="font-size:13cqw">No abacus.</span></div>
+          <div><span class="d c-white" style="font-size:13cqw">No Vedic sutras.</span></div>
+          <div class="d c-lime" style="font-size:15.5cqw;margin-top:4cqw">A different</div>
+          <div class="d c-lime" style="font-size:15.5cqw">way to think.</div>
+          <div class="hand c-white" style="font-size:6.4cqw;margin-top:3cqw;white-space:nowrap">See → Process → Answer</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:22 · crossed out</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">साथ में बोनस — ₹500 की CTM मास्टरक्लास! सिर्फ़ लिमिटेड पीरियड के लिए। न अबेकस, न वैदिक सूत्र।</div><div class="vo-rom">Saath mein bonus — ₹500 ki CTM Masterclass! Sirf limited period ke liye. Na abacus, na Vedic sutra.</div><div class="vo-en">"Plus a bonus: a ₹500 CTM Masterclass! Only for a limited period. No abacus, no Vedic sutras."</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>+ a bonus for your child</code><code>CTM™ Masterclass worth ₹500</code><code>Free with the test</code><code>for a limited period only</code><code>No abacus. No Vedic sutras.</code><code>A different way to think.</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>18.0s: a highlighter swipe turns the screen lime. The gift box shakes twice, the lid flies off, rays and confetti burst out; "₹500" counts up from ₹0; the stamp thumps down.</li><li>21.3s: cut to ink. An abacus and a scroll drop in and get crossed out in red pen as they're named; "A different way to think." rises in lime.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Box rattle, a pop, a counter tick-up, a stamp thump; two pen scratches on the crosses.</div></div>
+  </div>
+</section>
+
+<!-- ================= S6 ================= -->
+<section class="scene" id="s6">
+  <div class="scene-head"><span class="sid">S6</span><span class="stime">0:24 – 0:30 · 6 s</span><h2>One action: WhatsApp</h2><span class="ssrc">Content: pg 4, "How to register"</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div class="hand c-lime" style="position:absolute;left:9%;top:14%;font-size:8.5cqw">Just send this ↓</div>
+        <div class="phone">
+          <div class="ph-top"><span class="av"><svg viewBox="0 0 60 60" style="width:80%;height:80%" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg></span><div>Giane Future Gurukull<small>online</small></div></div>
+          <div class="ph-body">
+            <div class="bub out">CALCULATION EFFICIENCY TEST<small>10:24 ✓✓</small></div>
+            <div class="bub in">Thank you! Here are the available test dates…<small style="text-align:left">10:24</small></div>
+          </div>
+          <div class="ph-in"><span>Message</span><i>➤</i></div>
+        </div>
+        <svg class="ill pal-n" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true" style="z-index:2;pointer-events:none">
+          <path d="M150 640 166 500h86l-6 140z" fill="var(--skin)"/>
+          <path d="M162 548h90M160 566h92M158 584h94" stroke="#f2b632" stroke-width="7" stroke-linecap="round"/>
+          <path d="M160 557h92" stroke="#ef4136" stroke-width="5" stroke-linecap="round"/>
+          <g fill="var(--skin)"><rect x="40" y="420" width="24" height="18" rx="9"/><rect x="38" y="444" width="26" height="18" rx="9"/><rect x="40" y="468" width="24" height="18" rx="9"/></g>
+          <rect x="286" y="404" width="22" height="46" rx="11" fill="var(--skin)" transform="rotate(-14 297 427)"/>
+        </svg>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:25 · Mom sends the message</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g fill="#c8f23a"><rect x="300" y="110" width="8" height="16" rx="2" transform="rotate(25 304 118)"/><rect x="40" y="96" width="8" height="16" rx="2" transform="rotate(-20 44 104)"/></g>
+          <g fill="#5b3cf5"><circle cx="320" cy="200" r="5"/><circle cx="26" cy="250" r="4"/></g>
+          <g fill="#ef4136"><rect x="290" y="330" width="7" height="14" rx="2" transform="rotate(40 293 337)"/></g>
+        </svg>
+        <div class="stack" style="gap:1cqw">
+          <div style="display:flex;align-items:center;gap:2.4cqw"><svg viewBox="0 0 48 48" style="width:10cqw;height:10cqw" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:11cqw">WhatsApp</span></div>
+          <div class="d c-lime" style="font-size:31cqw;margin-top:2cqw;letter-spacing:-.01em">80623</div>
+          <div class="d c-lime" style="font-size:31cqw;letter-spacing:-.01em">65298</div>
+          <div class="hand c-white" style="font-size:6.5cqw;margin-top:3cqw">send</div>
+          <div><span class="d c-white rel" style="font-size:7.4cqw">CALCULATION EFFICIENCY TEST<svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-2.2cqw;width:100%;height:3cqw"><use href="#sc-under"/></svg></span></div>
+          <div class="m c-white" style="font-size:5.4cqw;margin-top:3.4cqw;opacity:.85">→ get your <b>free</b> test date &amp; time</div>
+          <div class="m c-lime" style="font-size:5cqw">Class 3+ · Ahmedabad · Vadodara</div>
+          <div class="gfg c-white" style="margin-top:4cqw"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><b>Giane Future Gurukull</b><span>www.gianefuturegurukull.com</span></div></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:27–0:30 · end card, held</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">क्लास 3 और उससे ऊपर के बच्चों के लिए। अभी WhatsApp करें!</div><div class="vo-rom">Class 3 aur usse upar ke bachchon ke liye. Abhi WhatsApp karein!</div><div class="vo-en">"For children in Class 3 and above. WhatsApp now!"</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Just send this</code><code>WhatsApp 80623 65298</code><code>send CALCULATION EFFICIENCY TEST</code><code>→ get your free test date &amp; time</code><code>Class 3+ · Ahmedabad · Vadodara</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>24.0s: Mom's hand (with bangles) brings the phone up; her thumb types "CALCULATION EFFICIENCY TEST" and taps send; the reply slides in.</li><li>26.5s: the phone drops away; the number lands digit by digit in lime with a little confetti; <b>27.5–30.0s holds still</b> for screenshots.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Soft keyboard taps, a generic "sent" swoosh, a chime on the last digit, music out.</div></div>
+  </div>
+</section>
+
+<!-- ================= Extras ================= -->
+<section class="grid2">
+  <section class="card" style="grid-column:1/-1">
+    <div class="eyebrow">Illustrated vs footage</div>
+    <h3>How the two versions compare</h3>
+    <div class="tblwrap"><table class="shots">
+      <thead><tr><th>Topic</th><th>Illustrated (this)</th><th>Footage version</th></tr></thead>
+      <tbody>
+        <tr><td>Look</td><td>Warm, friendly, one consistent cast and story; stands out from other coaching ads.</td><td>Real children and parents; feels documentary and local.</td></tr>
+        <tr><td>Trust</td><td>Less "real", but the exam paper and the problem are very recognisable.</td><td>Real faces build trust quickly, if the clips look Indian and local.</td></tr>
+        <tr><td>Getting the visuals</td><td>Nothing to source; everything is drawn in code.</td><td>7 clips to find or film; good Indian stock is limited.</td></tr>
+        <tr><td>Changes later</td><td>Fast: change a pose, colour, age or outfit and re-render.</td><td>Limited by what the clips show.</td></tr>
+        <tr><td>Reuse</td><td>Aarav and Mom can return in future reels as recurring characters.</td><td>Each new reel needs new clips.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="vo-en" style="margin:0">A hybrid also works, for example real classroom footage in S1 and illustration everywhere else.</p>
+  </section>
+
+  <div class="card">
+    <div class="eyebrow">Full Hindi voiceover · same as the footage version</div>
+    <h3>Script</h3>
+    <div class="tblwrap"><table class="vo">
+      <thead><tr><th>Time</th><th>Line</th></tr></thead>
+      <tbody>
+        <tr><td class="t">0:00</td><td class="hi">कॉन्सेप्ट्स क्लियर हैं… फिर भी सिली मिस्टेक्स?</td></tr>
+        <tr><td class="t">0:03</td><td class="hi">जल्दबाज़ी… ध्यान भटकना… फ़ॉर्मूले भूल जाना… ये तो सिर्फ़ साइन्स हैं।</td></tr>
+        <tr><td class="t">0:08</td><td class="hi">सिर्फ़ प्रैक्टिस बढ़ाने से ये गलतियाँ नहीं रुकेंगी।</td></tr>
+        <tr><td class="t">0:11</td><td class="hi">इसीलिए — फ़्री कैलकुलेशन एफ़िशिएंसी टेस्ट! गिनीज़ वर्ल्ड रिकॉर्ड होल्डर देवेश सर द्वारा डिज़ाइन किया गया। जानिए, गलतियाँ क्यों होती हैं… और पहले क्या सुधारना है।</td></tr>
+        <tr><td class="t">0:18</td><td class="hi">साथ में बोनस — ₹500 की CTM मास्टरक्लास! सिर्फ़ लिमिटेड पीरियड के लिए। न अबेकस, न वैदिक सूत्र।</td></tr>
+        <tr><td class="t">0:24</td><td class="hi">क्लास 3 और उससे ऊपर के बच्चों के लिए। अभी WhatsApp करें!</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Open items</div>
+    <h3>Decisions</h3>
+    <ul class="tight">
+      <li><span class="status open">Open</span> <b>Which version:</b> illustrated, footage, or a hybrid.</li>
+      <li><span class="status open">Open</span> <b>Cast:</b> Aarav's age and look, Mom's outfit. Easy to change.</li>
+      <li><span class="status open">Open</span> <b>Voice</b> and <b>music</b>, as in the footage version.</li>
+      <li><span class="status done">Settled</span> Script, timings, type and act colours are shared with the footage version.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var board=document.getElementById('board'), btn=document.getElementById('safeBtn');
+  btn.addEventListener('click',function(){
+    var on=btn.getAttribute('aria-pressed')!=='true';
+    btn.setAttribute('aria-pressed',String(on));
+    board.classList.toggle('show-safe',on);
+    btn.textContent=on?'Hide Instagram safe zones':'Show Instagram safe zones';
+  });
+})();
+</script>
