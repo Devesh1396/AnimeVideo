@@ -1,0 +1,21 @@
+{
+  "name": "cet-reel-illustrated",
+  "private": true,
+  "version": "0.1.0",
+  "description": "30-second illustrated Instagram reel for the free Calculation Efficiency Test (Giane Future Gurukull), built with Remotion.",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "audio": "python3 scripts/make_audio.py",
+    "render": "remotion render src/index.ts CETReel out/cet-reel-illustrated.mp4 --browser-executable=/opt/pw-browsers/chromium_headless_shell-1243/chrome-headless-shell-linux64/chrome-headless-shell"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.536",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "remotion": "^4.0.536"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "typescript": "^5.6.3"
+  }
+}
