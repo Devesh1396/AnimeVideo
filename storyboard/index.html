@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hind:wght@400;500;600;700&family=Kalam:wght@700&family=Baloo+2:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hind:wght@400;500;600;700&family=Kalam:wght@700&family=Baloo+2:wght@600;700;800&family=Cinzel:wght@700&display=swap">
 <style>
 /* Layout: a production storyboard. Each scene is a row: 9:16 key frames on the left, the shot sheet (VO, text, motion, sound) on the right. */
 :root{
@@ -14,6 +14,7 @@
   --f-body:"Hind","Segoe UI",system-ui,sans-serif;
   --f-round:"Baloo 2","Hind",system-ui,sans-serif;
   --f-hand:"Kalam","Comic Sans MS",cursive;
+  --f-brand:"Cinzel","Trajan Pro",Georgia,serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c1222;--paper:#141c31;--ink:#e6ecf8;--muted:#9aa7c2;--line:#26324d;--chip:#1d2843;--accent:#9fc0ff;color-scheme:dark}}
 :root[data-theme="dark"]{--bg:#0c1222;--paper:#141c31;--ink:#e6ecf8;--muted:#9aa7c2;--line:#26324d;--chip:#1d2843;--accent:#9fc0ff;color-scheme:dark}
@@ -126,7 +127,7 @@ ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .footline em{font-style:normal;color:var(--red)}
 
 /* S5 bonus */
-.giftwrap{position:absolute;left:50%;top:15%;transform:translateX(-50%);width:40cqw;height:40cqw;border-radius:50%;background:radial-gradient(circle,#fff7d6 0 55%,rgba(255,214,10,.0) 70%);display:grid;place-items:center}
+.giftwrap{position:absolute;left:50%;top:14%;transform:translateX(-50%);width:46cqw;height:46cqw;border-radius:50%;background:radial-gradient(circle,#ffe680 0 45%,rgba(255,214,10,0) 70%);display:grid;place-items:center}
 .giftwrap img{width:30cqw;height:auto;border-radius:3cqw}
 .rays{position:absolute;left:50%;top:35%;width:120cqw;height:120cqw;transform:translate(-50%,-50%);background:repeating-conic-gradient(rgba(255,214,10,.35) 0 8deg,transparent 8deg 22deg);border-radius:50%;mask:radial-gradient(circle,#000 20%,transparent 62%);-webkit-mask:radial-gradient(circle,#000 20%,transparent 62%)}
 .bonus{position:absolute;left:6%;right:6%;top:54%;text-align:center;display:grid;gap:2cqw;justify-items:center}
@@ -136,7 +137,7 @@ ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .bonus .k3{background:var(--red);color:#fff;border-radius:999px;padding:1cqw 4cqw;font-weight:800;font-size:4.6cqw}
 .ctmcard{position:absolute;left:12%;right:12%;top:14%;background:#fff;border-radius:4cqw;padding:3cqw;display:grid;gap:2cqw;justify-items:center;box-shadow:0 1.5cqw 0 rgba(0,0,0,.25)}
 .ctmcard img{width:100%;height:auto}
-.noab{position:absolute;left:5%;right:5%;top:41%;text-align:center;font-family:var(--f-display);line-height:1.02}
+.noab{position:absolute;left:5%;right:5%;top:42%;text-align:center;font-family:var(--f-display);line-height:1.02}
 .noab .a{font-size:10.5cqw;color:#fff;display:grid}.noab .a s{text-decoration-thickness:1.2cqw;text-decoration-color:var(--red)}
 .noab .b{display:inline-block;margin-top:2cqw;background:var(--yellow);color:var(--navy);font-size:7.2cqw;padding:1.5cqw 4cqw;border-radius:2cqw;transform:rotate(-1.5deg)}
 .chips{position:absolute;left:5%;right:5%;top:65%;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
@@ -160,17 +161,17 @@ ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .ph-input i{width:9cqw;height:9cqw;border-radius:50%;background:#00a884;display:grid;place-items:center;color:#fff;font-style:normal;font-size:4.5cqw}
 .ctaband{position:absolute;left:5%;right:5%;top:15%;text-align:center;display:grid;gap:2.5cqw;justify-items:center}
 .ctaband .wa{display:flex;align-items:center;gap:2.5cqw;background:#fff;color:var(--navy);border-radius:999px;padding:1.5cqw 4cqw 1.5cqw 1.5cqw;font-family:var(--f-display);font-size:6.5cqw}
-.ctaband .wa img{width:10cqw;height:10cqw;border-radius:50%;object-fit:cover}
+
 .num{background:var(--red);color:#fff;border-radius:3cqw;padding:2cqw 4cqw;font-family:var(--f-display);font-size:13.5cqw;letter-spacing:.02em;line-height:1;box-shadow:0 1.5cqw 0 rgba(0,0,0,.3)}
 .send{color:#fff;font-weight:700;font-size:4.4cqw;line-height:1.25}
 .send b{color:var(--yellow)}
 .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5cqw}
 .meta span{background:rgba(255,255,255,.14);border:.4cqw solid rgba(255,255,255,.35);border-radius:999px;padding:.8cqw 3cqw;font-weight:700;font-size:3.8cqw}
-.fan{position:absolute;left:50%;top:57%;width:60cqw;height:22cqw;transform:translateX(-50%)}
+.fan{position:absolute;left:50%;top:53%;width:60cqw;height:22cqw;transform:translateX(-50%)}
 .fan img{position:absolute;top:0;left:50%;width:15cqw;border-radius:1cqw;box-shadow:0 1cqw 2cqw rgba(0,0,0,.4);transform-origin:50% 120%}
 .fan img:nth-child(1){transform:translateX(-50%) rotate(-24deg)}.fan img:nth-child(2){transform:translateX(-50%) rotate(-8deg)}.fan img:nth-child(3){transform:translateX(-50%) rotate(8deg)}.fan img:nth-child(4){transform:translateX(-50%) rotate(24deg)}
-.logo-end{position:absolute;left:8%;right:8%;top:69%;display:grid;justify-items:center}
-.logo-end img{width:100%;border-radius:2cqw}
+.logo-end{position:absolute;left:4%;right:4%;top:70%;display:grid;justify-items:center}
+
 
 /* caption + misc sections */
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
@@ -191,6 +192,24 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 .copybtn{justify-self:start;font:inherit;font-size:13px;font-weight:600;background:var(--accent);color:var(--paper);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
 .copybtn:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
 
+
+/* ---------- brand pieces built in code (no cropped artwork) ---------- */
+.svgdefs{position:absolute;width:0;height:0;overflow:hidden}
+.ctm-logo{width:100%;height:auto;display:block;filter:drop-shadow(0 1.2cqw 0 rgba(13,36,89,.25))}
+.ctm-tag{display:grid;gap:1.2cqw;justify-items:center}
+.ctm-tag .pill{background:var(--yellow);color:var(--navy);border-radius:999px;padding:.6cqw 3.5cqw;font-family:var(--f-round);font-weight:800;font-size:4.3cqw;line-height:1.2;white-space:nowrap}
+.ctm-tag .spa{font-family:var(--f-round);font-weight:800;font-size:5.4cqw;white-space:nowrap;line-height:1;letter-spacing:.01em}
+.spa .s{color:#1550d6}.spa .p{color:var(--red)}.spa .a{color:var(--green)}
+.gfg{display:flex;align-items:center;gap:2.5cqw;justify-content:center}
+.gfg svg{width:12cqw;height:12cqw;flex:none}
+.gfg-name{font-family:var(--f-brand);font-weight:700;font-size:5.6cqw;line-height:1;color:#7cc4ff;letter-spacing:.01em;white-space:nowrap}
+.gfg-url{font-family:var(--f-body);font-weight:600;font-size:3.6cqw;color:#fff;opacity:.9;margin-top:.8cqw}
+.wa-ic{width:10cqw;height:10cqw;flex:none}
+.giftwrap svg{width:34cqw;height:34cqw;overflow:visible;filter:drop-shadow(0 1.2cqw 1.5cqw rgba(13,36,89,.45))}
+.polaroid{position:absolute;background:#fff;padding:2cqw 2cqw 8cqw;border-radius:1cqw;box-shadow:0 2cqw 5cqw rgba(0,0,0,.45)}
+.polaroid img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.5cqw}
+.polaroid figcaption{position:absolute;left:0;right:0;bottom:1.4cqw;text-align:center;font-family:var(--f-hand);color:#233b8f;font-size:3.8cqw;white-space:nowrap}
+
 @media (max-width:820px){
   .scene{grid-template-columns:minmax(0,1fr)}
   .frames{overflow-x:auto;padding-bottom:6px}
@@ -200,6 +219,41 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 
+<svg class="svgdefs" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8cff"/><stop offset="1" stop-color="#0a3aa8"/></linearGradient>
+    <linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4a3d"/><stop offset="1" stop-color="#b0000b"/></linearGradient>
+    <linearGradient id="gM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#36c766"/><stop offset="1" stop-color="#0a7030"/></linearGradient>
+    <symbol id="ctm" viewBox="0 0 300 118">
+      <text x="10" y="104" font-family="'Baloo 2',sans-serif" font-weight="800" font-size="132" letter-spacing="-6" stroke="#fff" stroke-width="14" stroke-linejoin="round" paint-order="stroke"><tspan fill="url(#gC)">C</tspan><tspan fill="url(#gT)">T</tspan><tspan fill="url(#gM)">M</tspan></text>
+      <text x="270" y="30" font-family="'Baloo 2',sans-serif" font-weight="800" font-size="22" fill="#0d2459">™</text>
+    </symbol>
+    <symbol id="gfg-mark" viewBox="0 0 60 60">
+      <g fill="none" stroke="#2f9bff" stroke-width="3.4" stroke-linecap="round"><path d="M22 17a11 11 0 0 1 16 0"/><path d="M16.5 11.5a19 19 0 0 1 27 0"/><path d="M11 6a27 27 0 0 1 38 0"/></g>
+      <circle cx="30" cy="23" r="2.6" fill="#2f9bff"/>
+      <g fill="none" stroke="#e3161b" stroke-width="3.4" stroke-linejoin="round"><path d="M7 32q11-4 22 2v20q-11-6-22-2z"/><path d="M53 32q-11-4-22 2v20q11-6 22-2z"/></g>
+    </symbol>
+    <symbol id="wa" viewBox="0 0 48 48">
+      <path d="M24 3a21 21 0 0 0-18.2 31.5L3 45l10.8-2.8A21 21 0 1 0 24 3z" fill="#25d366"/>
+      <path transform="translate(12 12)" fill="#fff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+    </symbol>
+    <symbol id="gift" viewBox="0 0 100 100">
+      <rect x="18" y="46" width="64" height="46" rx="3" fill="#fff"/>
+      <rect x="58" y="46" width="24" height="46" fill="#e6ebf3"/>
+      <rect x="45" y="46" width="10" height="46" fill="#e3161b"/>
+      <g class="lid">
+        <rect x="12" y="33" width="76" height="15" rx="3" fill="#f6f8fc"/>
+        <rect x="62" y="33" width="26" height="15" fill="#e1e7f1"/>
+        <rect x="44" y="33" width="12" height="15" fill="#c90f14"/>
+        <path d="M50 33c-6-12-24-16-24-5 0 6 12 6 24 5z" fill="#e3161b"/>
+        <path d="M50 33c6-12 24-16 24-5 0 6-12 6-24 5z" fill="#e3161b"/>
+        <path d="M50 33c-4-7-14-10-16-6" fill="none" stroke="#a80d11" stroke-width="2"/>
+        <path d="M50 33c4-7 14-10 16-6" fill="none" stroke="#a80d11" stroke-width="2"/>
+        <circle cx="50" cy="32" r="5" fill="#c90f14"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
 <div class="wrap" id="board">
 
 <header style="display:grid;gap:12px">
@@ -284,18 +338,17 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
     </figure>
     <figure class="kf" style="margin:0">
       <div class="frame">
-        <img class="bgimg" src="assets/kid-stressed.jpg" alt="" style="filter:brightness(.75)">
-        <div class="shade" style="background:linear-gradient(transparent 35%,rgba(13,36,89,.92) 75%)"></div>
+        <figure class="polaroid" style="left:12%;right:12%;top:14%;transform:rotate(-3deg);margin:0"><img src="assets/kid-stressed.jpg" alt="Child holding head over homework"><figcaption>Why does this keep happening?</figcaption></figure>
         <div class="cap" style="bottom:24%"><span style="font-size:5.6cqw;font-weight:700">These are just the</span><br><mark>VISIBLE SIGNS</mark><br><span style="font-size:5.6cqw;font-weight:700">not the real reasons</span></div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:07 · cards fly off, photo revealed</figcaption>
+      <figcaption>0:07 · cards fly off, photo card drops in</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">जल्दबाज़ी… ध्यान भटकना… फ़ॉर्मूले भूल जाना… ये तो सिर्फ़ साइन्स हैं।</div><div class="vo-rom">Jaldbaazi… dhyaan bhatakna… formule bhool jaana… ye toh sirf signs hain.</div><div class="vo-en">"Rushing… losing focus… forgetting formulas… these are only the signs."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>Rushes through Maths</code><code>Loses focus</code><code>Forgets formulas</code><code>Mistakes while solving</code><code>Just the VISIBLE SIGNS, not the real reasons</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Each card pops in exactly on its spoken word, with a small bounce (0.6s apart). The 4th card lands without VO, on a beat.</li><li>At 6.8s the cards scatter off-screen; the stressed-child photo pushes in slowly.</li></ul></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Each card pops in exactly on its spoken word, with a small bounce (0.6s apart). The 4th card lands without VO, on a beat.</li><li>At 6.8s the cards scatter off-screen; the stressed-child photo drops in as a tilted photo card.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Soft "pop" per card; a whoosh as they scatter.</div></div>
     <div class="row"><div class="k">Why</div><div class="note">Parents mentally tick "yes, that's my child" four times. That's what keeps them watching.</div></div>
   </div>
@@ -307,10 +360,9 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="frames">
     <figure class="kf" style="margin:0">
       <div class="frame">
-        <img class="bgimg" src="assets/mother-son.jpg" alt="" style="object-position:30% 50%">
-        <div class="shade" style="background:linear-gradient(rgba(13,36,89,.5),rgba(13,36,89,.15) 45%,rgba(13,36,89,.85))"></div>
-        <div class="stamp"><div class="l1">PARENTS,</div><div class="l2">DON'T ASSUME!</div></div>
-        <div class="sheets"><span></span><span></span><span></span></div>
+        <div class="sheets" style="left:6%;right:auto;top:15%;bottom:auto;width:44%;height:14%"><span></span><span></span><span></span></div>
+        <figure class="polaroid" style="left:14%;right:14%;top:13%;transform:rotate(3deg);margin:0"><img src="assets/mother-son.jpg" alt="Mother watching her son solve maths" style="object-position:20% 50%"></figure>
+        <div class="stamp" style="top:50%"><div class="l1">PARENTS,</div><div class="l2">DON'T ASSUME!</div></div>
         <div class="cap" style="font-size:5.8cqw">More practice ≠ <mark>fewer mistakes</mark></div>
         <div class="safe"><i></i></div>
       </div>
@@ -320,7 +372,7 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">सिर्फ़ प्रैक्टिस बढ़ाने से ये गलतियाँ नहीं रुकेंगी।</div><div class="vo-rom">Sirf practice badhaane se ye galtiyaan nahi rukengi.</div><div class="vo-en">"Just increasing practice won't stop these mistakes."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>PARENTS, DON'T ASSUME!</code><code>More practice ≠ fewer mistakes</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Mother-and-son photo (pg 1) with slow zoom.</li><li>Worksheets drop in one after another and pile up (more practice…), then the stamp slams on top with a tilt.</li></ul></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Mother-and-son photo (pg 1) as a photo card, slow drift.</li><li>Worksheets drop in one after another and pile up (more practice…), then the stamp slams on top with a tilt.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Paper flips, then a firm "stamp" thud. Music dips for one beat.</div></div>
     <div class="row"><div class="k">Why</div><div class="note">Challenges what most parents do already (more tuition, more worksheets). It's the turn from problem to solution.</div></div>
   </div>
@@ -370,7 +422,7 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
         <img class="bgimg" src="assets/classroom.jpg" alt="" style="filter:brightness(.6)">
         <div class="shade" style="background:linear-gradient(rgba(13,36,89,.35),rgba(13,36,89,.9) 70%)"></div>
         <div class="rays"></div>
-        <div class="giftwrap"><img src="assets/gift.png" alt="Gift box"></div>
+        <div class="giftwrap"><svg viewBox="0 0 100 100" role="img" aria-label="Gift box"><use href="#gift" width="100" height="100"/></svg></div>
         <div class="bonus"><div class="k1">+ BONUS FOR YOUR CHILD</div><div class="k2"><em>₹500</em> CTM™ MASTERCLASS</div><div class="k3">Limited period only</div></div>
         <div class="safe"><i></i></div>
       </div>
@@ -380,7 +432,7 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
       <div class="frame">
         <img class="bgimg" src="assets/classroom.jpg" alt="" style="filter:brightness(.45) blur(1px)">
         <div class="shade" style="background:rgba(13,36,89,.55)"></div>
-        <div class="ctmcard"><img src="assets/ctm-logo.png" alt="CTM logo"><img src="assets/ctm-tagline.png" alt="Calculation Thinking Method: See. Process. Answer." style="width:92%"></div>
+        <div class="ctmcard"><svg class="ctm-logo" viewBox="0 0 300 118" role="img" aria-label="CTM"><use href="#ctm" width="300" height="118"/></svg><div class="ctm-tag"><span class="pill">Calculation Thinking Method</span><span class="spa"><span class="s">See.</span> <span class="p">Process.</span> <span class="a">Answer.</span></span></div></div>
         <div class="noab"><div class="a"><s>NO ABACUS.</s><s>NO VEDIC SUTRAS.</s></div><div class="b">A DIFFERENT WAY TO THINK.</div></div>
         <div class="chips"><span class="c1"><i>⚡</i>Faster calculations</span><span class="c2"><i>★</i>More confidence</span><span class="c3"><i>💡</i>More interest in Maths</span></div>
         <div class="safe"><i></i></div>
@@ -391,7 +443,7 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">साथ में बोनस — ₹500 की CTM मास्टरक्लास! सिर्फ़ लिमिटेड पीरियड के लिए। न अबेकस, न वैदिक सूत्र।</div><div class="vo-rom">Saath mein bonus — ₹500 ki CTM Masterclass! Sirf limited period ke liye. Na abacus, na Vedic sutra.</div><div class="vo-en">"Plus a bonus: a ₹500 CTM Masterclass! Only for a limited period. No abacus, no Vedic sutras."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>+ BONUS FOR YOUR CHILD</code><code>₹500 CTM™ MASTERCLASS</code><code>Limited period only</code><code>NO ABACUS. NO VEDIC SUTRAS.</code><code>A DIFFERENT WAY TO THINK.</code><code>Faster · Confident · Interested</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Gift box (pg 3) shakes twice, the lid pops, light rays spin out, and "₹500 CTM™ Masterclass" rises out of the box.</li><li>21.0s: CTM logo bounces in letter by letter (C, T, M in blue, red, green); "No Abacus" and "No Vedic Sutras" are struck through as they're spoken.</li><li>The three benefit chips tick in on the last beat with no VO.</li></ul></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Gift box (drawn in code, lid is a separate layer) shakes twice, the lid pops, light rays spin out, and "₹500 CTM™ Masterclass" rises out of the box.</li><li>21.0s: CTM logo bounces in letter by letter (C, T, M in blue, red, green); "No Abacus" and "No Vedic Sutras" are struck through as they're spoken.</li><li>The three benefit chips tick in on the last beat with no VO.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Ribbon pull + sparkle on the gift; two quick "strike" swipes.</div></div>
     <div class="row"><div class="k">Why</div><div class="note">"Free test + ₹500 bonus" gives a parent something to lose by waiting. "No Abacus, no Vedic" answers "is this the same as what's next door?"</div></div>
   </div>
@@ -404,7 +456,7 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
     <figure class="kf" style="margin:0">
       <div class="frame" style="background:radial-gradient(circle at 50% 20%,#1b4aa8,var(--navy) 70%)">
         <div class="phone">
-          <div class="ph-top"><div class="av"><img src="assets/giane-logo.png" alt="" style="width:400%;max-width:none;margin-left:-2%"></div><div>Giane Future Gurukull<small>online</small></div></div>
+          <div class="ph-top"><div class="av"><svg viewBox="0 0 60 60" aria-hidden="true" style="width:80%;height:80%"><use href="#gfg-mark" width="60" height="60"/></svg></div><div>Giane Future Gurukull<small>online</small></div></div>
           <div class="ph-body">
             <div class="bubble">CALCULATION EFFICIENCY TEST<small>10:24 <b>✓✓</b></small></div>
             <div class="bubble in">Thank you! 😊 Here are the available test dates…<small style="text-align:left;color:#888">10:24</small></div>
@@ -418,13 +470,13 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
     <figure class="kf" style="margin:0">
       <div class="frame" style="background:radial-gradient(circle at 50% 20%,#1b4aa8,var(--navy) 70%)">
         <div class="ctaband">
-          <div class="wa"><img src="assets/whatsapp.png" alt="">WHATSAPP NOW</div>
+          <div class="wa"><svg class="wa-ic" viewBox="0 0 48 48" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg>WHATSAPP NOW</div>
           <div class="num">80623 65298</div>
           <div class="send">Send <b>"CALCULATION EFFICIENCY TEST"</b><br>to book your child's <b>FREE</b> test</div>
           <div class="meta"><span>Class 3 onwards</span><span>Ahmedabad</span><span>Vadodara</span></div>
         </div>
         <div class="fan"><img src="assets/pg1-thumb.jpg" alt=""><img src="assets/pg2-thumb.jpg" alt=""><img src="assets/pg3-thumb.jpg" alt=""><img src="assets/pg4-thumb.jpg" alt=""></div>
-        <div class="logo-end"><img src="assets/giane-logo.png" alt="Giane Future Gurukull · www.gianefuturegurukull.com"></div>
+        <div class="logo-end"><div class="gfg"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><div class="gfg-name">Giane Future Gurukull</div><div class="gfg-url">www.gianefuturegurukull.com</div></div></div></div>
         <div class="safe"><i></i></div>
       </div>
       <figcaption>0:27–0:30 · end card, held</figcaption>
@@ -484,11 +536,11 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
     <div class="eyebrow">Brochure → reel</div>
     <h3>What's used where</h3>
     <ul class="tight">
-      <li><b>Logos:</b> CTM (S5), Giane Future Gurukull (S6), cropped from pages 3–4. Higher-resolution originals would look sharper.</li>
-      <li><b>Photos:</b> stressed child, pg 2 (S2); mother and son, pg 1 (S3); classroom, pg 3 (S5).</li>
-      <li><b>Gift box, WhatsApp icon:</b> pages 3–4 (S5, S6).</li>
+      <li><b>Built in code, not cropped:</b> CTM logo, "Calculation Thinking Method · See. Process. Answer.", Giane Future Gurukull logo, gift box, WhatsApp icon. Every letter and colour can be changed and animated separately.</li>
+      <li><b>Guinness emblem:</b> your supplied file, used as-is (S4). A trademark has to stay exactly as issued.</li>
+      <li><b>Photos from the brochure:</b> stressed child, pg 2 (S2); mother and son, pg 1 (S3); classroom, pg 3 (S5). Shown as photo cards or blurred backgrounds, because at full screen they'd be enlarged 3–4× and look soft. The designer's original image files would fix this.</li>
       <li><b>All 4 pages:</b> fanned out in the end card (S6).</li>
-      <li><b>Rebuilt as animation:</b> the notebook, the sign cards, the FREE burst, the Why/What next cards and the WhatsApp chat.</li>
+      <li><b>Also built in code:</b> the notebook, the sign cards, the FREE burst, the Why/What next cards and the WhatsApp chat.</li>
       <li><b>Left out of the video:</b> full addresses, call number, Deveshh Sir's full bio, "60 minutes", "See. Process. Answer." as VO.</li>
     </ul>
   </div>
