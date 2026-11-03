@@ -2,304 +2,236 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Hind:wght@400;500;600;700&family=Kalam:wght@700&family=Baloo+2:wght@600;700;800&family=Cinzel:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Kalam:wght@400;700&family=Hind:wght@400;500;600;700&family=Cinzel:wght@700&display=swap">
 <style>
-/* Layout: a production storyboard. Each scene is a row: 9:16 key frames on the left, the shot sheet (VO, text, motion, sound) on the right. */
+/* Layout: production storyboard. Each scene is a row: 9:16 key frames left, shot sheet right.
+   Reel art direction: "Notebook to clarity". Problem acts live on a school notebook with blue ballpoint and red-pen marks;
+   the solution acts flip to full-bleed colour fields with big condensed type. */
 :root{
   /* page chrome */
-  --bg:#f3f6fb; --paper:#ffffff; --ink:#14203a; --muted:#5a6680; --line:#d9e1ee; --chip:#e8eef8; --accent:#0f2a66;
-  /* brand palette, taken from the brochure (fixed: these are the video's own colours) */
-  --navy:#0d2459; --navy-2:#13337a; --yellow:#ffd60a; --red:#e3161b; --sky:#d6ecfb; --green:#178a3c; --cream:#fff6d8; --white:#ffffff;
-  --f-display:"Anton","Impact","Arial Narrow Bold",sans-serif;
-  --f-body:"Hind","Segoe UI",system-ui,sans-serif;
-  --f-round:"Baloo 2","Hind",system-ui,sans-serif;
+  --bg:#f4f3f8; --paper-ui:#ffffff; --ink-ui:#17152b; --muted:#5d5a75; --line:#dedbea; --chip:#ecebf4; --accent:#3a1fd0;
+  /* reel palette (fixed: these are the video's own colours) */
+  --paper:#f7f5ef; --rule:#d5dcea; --ball:#2a3a94; --ink:#16142b; --pen:#ef4136; --lime:#c8f23a; --violet:#3a1fd0; --violet-hi:#5b3cf5; --wa:#25d366; --white:#ffffff;
+  --f-type:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
   --f-hand:"Kalam","Comic Sans MS",cursive;
+  --f-body:"Hind","Segoe UI",system-ui,sans-serif;
   --f-brand:"Cinzel","Trajan Pro",Georgia,serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0c1222;--paper:#141c31;--ink:#e6ecf8;--muted:#9aa7c2;--line:#26324d;--chip:#1d2843;--accent:#9fc0ff;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0c1222;--paper:#141c31;--ink:#e6ecf8;--muted:#9aa7c2;--line:#26324d;--chip:#1d2843;--accent:#9fc0ff;color-scheme:dark}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0d18;--paper-ui:#17152a;--ink-ui:#ebe9f7;--muted:#a19dbb;--line:#2a2742;--chip:#211e38;--accent:#a99bff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d18;--paper-ui:#17152a;--ink-ui:#ebe9f7;--muted:#a19dbb;--line:#2a2742;--chip:#211e38;--accent:#a99bff;color-scheme:dark}
 
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55}
-.wrap{max-width:1180px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
+body{background:var(--bg);color:var(--ink-ui);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px}
 h1,h2,h3{text-wrap:balance;margin:0}
-h1{font-family:var(--f-display);font-weight:400;font-size:clamp(30px,5vw,46px);letter-spacing:.01em;line-height:1.05}
-h2{font-family:var(--f-display);font-weight:400;font-size:24px;letter-spacing:.02em}
+h1{font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:clamp(32px,5vw,52px);letter-spacing:-.02em;line-height:1}
+h2{font-family:var(--f-type);font-weight:800;font-stretch:85%;font-size:24px;letter-spacing:-.01em}
 .eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.lede{color:var(--muted);max-width:68ch;margin:6px 0 0}
-
-/* spec strip */
+.lede{color:var(--muted);max-width:70ch;margin:6px 0 0}
 .specs{display:flex;flex-wrap:wrap;gap:8px}
 .specs span{background:var(--chip);border-radius:6px;padding:4px 10px;font-size:13px;font-weight:500}
 .specs b{font-weight:700}
 
-/* timeline */
-.timeline{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
-.tl-bar{display:flex;height:38px;border-radius:6px;overflow:hidden;font-size:12px;font-weight:700}
-.tl-bar a{display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;min-width:0;white-space:nowrap;overflow:hidden;border-right:2px solid var(--paper)}
-.tl-bar a:last-child{border-right:0}
-.tl-bar a:focus-visible{outline:3px solid var(--yellow);outline-offset:-3px}
-.tl-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
-.tl-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+/* visual language */
+.vl{background:var(--paper-ui);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:18px}
+.vl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.swatches{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.sw{display:grid;gap:6px;font-size:13px}
+.sw i{display:block;height:54px;border-radius:8px;border:1px solid var(--line)}
+.sw b{font-weight:700}.sw span{color:var(--muted);font-size:12px;line-height:1.3}
+.typespec{display:grid;gap:10px}
+.typespec .a{font-family:var(--f-type);font-weight:800;font-stretch:75%;font-size:44px;line-height:.9;letter-spacing:-.02em}
+.typespec .b{font-family:var(--f-hand);font-weight:700;font-size:26px;color:var(--pen)}
+.typespec small{color:var(--muted);font-size:12px;display:block}
+ul.tight{margin:0;padding-left:18px;display:grid;gap:4px}
 
+/* timeline */
+.timeline{background:var(--paper-ui);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.tl-bar{display:flex;height:38px;border-radius:6px;overflow:hidden;font-size:12px;font-weight:700}
+.tl-bar a{display:flex;align-items:center;justify-content:center;text-decoration:none;min-width:0;white-space:nowrap;overflow:hidden;border-right:2px solid var(--paper-ui)}
+.tl-bar a:last-child{border-right:0}
+.tl-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.tl-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
 .controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px}
-.toggle{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink);font:inherit}
+.toggle{display:inline-flex;align-items:center;gap:8px;background:var(--paper-ui);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink-ui);font:inherit}
 .toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.toggle[aria-pressed="true"]{background:var(--accent);color:var(--paper);border-color:var(--accent)}
+.toggle[aria-pressed="true"]{background:var(--accent);color:var(--paper-ui);border-color:var(--accent)}
 
 /* scene rows */
-.scene{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;scroll-margin-top:16px}
+.scene{background:var(--paper-ui);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;scroll-margin-top:16px}
 .scene-head{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
-.sid{font-family:var(--f-display);font-size:30px;line-height:1;color:var(--paper);background:var(--accent);border-radius:8px;padding:6px 10px}
+.sid{font-family:var(--f-type);font-weight:800;font-size:24px;line-height:1;color:var(--paper-ui);background:var(--accent);border-radius:8px;padding:6px 10px}
 .stime{font-variant-numeric:tabular-nums;font-weight:700;font-size:15px}
 .ssrc{font-size:13px;color:var(--muted)}
 .frames{display:flex;gap:14px;align-items:flex-start}
-.kf{display:grid;gap:6px;justify-items:start}
-.kf figcaption{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.kf{display:grid;gap:6px;justify-items:start;margin:0}
+.kf figcaption{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;max-width:220px}
 .sheet{display:grid;gap:14px;min-width:0;align-content:start}
 .row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:12px;align-items:start}
 .row > .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
-.vo-hi{font-family:var(--f-round);font-weight:700;font-size:19px;line-height:1.45}
+.vo-hi{font-family:var(--f-body);font-weight:600;font-size:19px;line-height:1.5}
 .vo-rom{color:var(--muted);font-style:italic;font-size:14px}
 .vo-en{font-size:13px;color:var(--muted)}
 .ost{display:flex;flex-wrap:wrap;gap:6px}
 .ost code{font-family:var(--f-body);font-weight:600;background:var(--chip);border-radius:5px;padding:2px 8px;font-size:14px}
-ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .note{font-size:13px;background:var(--chip);border-radius:8px;padding:8px 12px}
 
-/* ---------- 9:16 FRAME ---------- */
-.frame{width:236px;max-width:100%;aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;container-type:inline-size;background:var(--navy);box-shadow:0 1px 0 var(--line),0 8px 24px rgba(10,20,50,.18);color:var(--white);font-family:var(--f-round)}
+/* ================= 9:16 FRAME ================= */
+.frame{width:220px;max-width:100%;aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;container-type:inline-size;box-shadow:0 1px 0 var(--line),0 8px 24px rgba(20,16,60,.16);font-family:var(--f-type);color:var(--ink)}
 .frame *{box-sizing:border-box}
-.bgimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.shade{position:absolute;inset:0}
-.safe{position:absolute;inset:0;pointer-events:none;display:none}
+/* act backgrounds */
+.f-paper{background-color:var(--paper);background-image:linear-gradient(transparent calc(100% - .35cqw),var(--rule) 0);background-size:100% 8.4cqw}
+.f-paper::before{content:"";position:absolute;top:0;bottom:0;left:10%;width:.45cqw;background:rgba(239,65,54,.55)}
+.f-pen{background:radial-gradient(110cqw 90cqw at 20% 10%,#ff5a4c,var(--pen) 55%,#d22f25)}
+.f-violet{background:radial-gradient(120cqw 100cqw at 85% 0%,var(--violet-hi),var(--violet) 55%,#2812a6)}
+.f-lime{background:radial-gradient(120cqw 100cqw at 15% 0%,#dcff63,var(--lime) 55%,#b2dc22)}
+.f-ink{background:radial-gradient(110cqw 90cqw at 50% 25%,#26234d,var(--ink) 70%)}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.18;mix-blend-mode:overlay;background-image:radial-gradient(rgba(255,255,255,.6) .3cqw,transparent .35cqw);background-size:3cqw 3cqw}
+
+/* type system */
+.stack{position:absolute;left:9%;right:12%;top:14%;bottom:22%;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+.d{font-family:var(--f-type);font-weight:800;font-stretch:75%;line-height:.86;letter-spacing:-.025em;white-space:nowrap}
+.m{font-family:var(--f-type);font-weight:600;font-stretch:90%;line-height:1.05;letter-spacing:-.01em}
+.hand{font-family:var(--f-hand);font-weight:700;line-height:1}
+.c-ink{color:var(--ink)}.c-pen{color:var(--pen)}.c-lime{color:var(--lime)}.c-white{color:#fff}.c-ball{color:var(--ball)}
+.hl{background:linear-gradient(98deg,transparent 0 1%,rgba(200,242,58,.95) 1% 99%,transparent 99%) 0 78%/100% 46% no-repeat;padding:0 .8cqw}
+.rel{position:relative;display:inline-block}
+.mark{position:absolute;pointer-events:none;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.dim{opacity:.18}
+
+/* S1 sums */
+.sums{position:absolute;left:16%;top:22%;display:grid;gap:3.5cqw;font-family:var(--f-hand);font-weight:700;color:var(--ball);font-size:12.5cqw;line-height:1}
+.sums .ln{display:flex;align-items:center;gap:2cqw}
+.tick{width:8cqw;height:8cqw;color:var(--pen)}
+/* S2 checklist */
+.check{display:grid;grid-template-columns:auto 1fr;gap:2.8cqw;align-items:center}
+.box{position:relative;width:9cqw;height:9cqw}
+.box svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round}
+/* photo taped to the notebook */
+.taped{position:absolute;background:#fff;padding:1.6cqw;box-shadow:0 1.4cqw 3cqw rgba(30,25,60,.28)}
+.taped img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover}
+.tape{position:absolute;width:24cqw;height:6.5cqw;background:rgba(255,236,160,.75);box-shadow:0 .3cqw .6cqw rgba(0,0,0,.08)}
+/* stamp (S5) */
+.stampline{display:inline-block;border:.8cqw solid var(--pen);color:var(--pen);border-radius:1.6cqw;padding:1cqw 2.6cqw;font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:6.6cqw;letter-spacing:.02em;text-transform:uppercase;transform:rotate(-4deg);align-self:flex-start}
+/* GWR row */
+.gwr{display:flex;align-items:center;gap:3cqw;margin-top:3cqw}
+.gwr img{width:19cqw;height:19cqw;border-radius:50%;background:#fff;padding:.6cqw;flex:none}
+/* phone (S6) */
+.phone{position:absolute;left:15%;right:19%;top:25%;bottom:22%;border:1.1cqw solid rgba(255,255,255,.9);border-radius:6cqw;background:#0b141a;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
+.ph-top{display:flex;align-items:center;gap:2cqw;padding:2.4cqw 3cqw;background:#1f2c34;color:#e9edef;font-family:var(--f-body);font-weight:700;font-size:3.8cqw;line-height:1.1}
+.ph-top small{display:block;font-weight:500;font-size:2.8cqw;color:#8696a0}
+.ph-top .av{width:8cqw;height:8cqw;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--violet)}
+.ph-body{padding:3cqw;display:grid;align-content:end;gap:2cqw}
+.bub{max-width:90%;border-radius:2.4cqw;padding:2cqw 2.6cqw;font-family:var(--f-body);font-size:4cqw;line-height:1.15}
+.bub small{display:block;text-align:right;font-size:2.7cqw;opacity:.7}
+.bub.out{justify-self:end;background:#005c4b;color:#e9edef;font-weight:700;border-top-right-radius:0}
+.bub.in{justify-self:start;background:#1f2c34;color:#e9edef;border-top-left-radius:0}
+.ph-in{display:flex;gap:2cqw;padding:2cqw;align-items:center}
+.ph-in span{flex:1;background:#2a3942;border-radius:999px;padding:1.8cqw 3cqw;color:#8696a0;font-family:var(--f-body);font-size:3.4cqw}
+.ph-in i{width:8.5cqw;height:8.5cqw;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#0b141a;font-style:normal;font-size:4cqw}
+/* brand line */
+.gfg{display:flex;align-items:center;gap:2cqw}
+.gfg svg{width:8cqw;height:8cqw;flex:none}
+.gfg b{font-family:var(--f-brand);font-weight:700;font-size:4.6cqw;color:#fff;letter-spacing:.01em}
+.gfg span{display:block;font-family:var(--f-body);font-size:3cqw;color:rgba(255,255,255,.65);margin-top:.4cqw}
+
+/* safe zones */
+.safe{position:absolute;inset:0;pointer-events:none;display:none;z-index:5}
 .show-safe .safe{display:block}
-.safe::before{content:"";position:absolute;left:0;right:0;top:0;height:13%;background:repeating-linear-gradient(45deg,rgba(255,0,80,.28) 0 6px,rgba(255,0,80,.12) 6px 12px);border-bottom:1px dashed #ff2a6d}
-.safe::after{content:"";position:absolute;left:0;right:0;bottom:0;height:21%;background:repeating-linear-gradient(45deg,rgba(255,0,80,.28) 0 6px,rgba(255,0,80,.12) 6px 12px);border-top:1px dashed #ff2a6d}
-.safe i{position:absolute;right:0;top:13%;bottom:21%;width:12%;background:rgba(255,0,80,.14);border-left:1px dashed #ff2a6d}
-.cap{position:absolute;left:6%;right:6%;bottom:23%;text-align:center;font-family:var(--f-round);font-weight:800;font-size:6.2cqw;line-height:1.15;color:#fff;text-shadow:0 .4cqw 1.2cqw rgba(0,0,0,.55)}
-.cap mark{background:var(--yellow);color:var(--navy);padding:0 1.4cqw;border-radius:1.2cqw;text-shadow:none}
-.tag{display:inline-block;background:var(--yellow);color:var(--navy);font-family:var(--f-display);font-size:6cqw;padding:1cqw 3cqw;border-radius:2cqw;transform:rotate(-2deg)}
-.block{background:var(--navy);border-radius:3cqw;padding:3cqw 4cqw;font-family:var(--f-display);line-height:.95;text-align:center;box-shadow:0 1.5cqw 0 rgba(0,0,0,.25)}
+.safe::before{content:"";position:absolute;left:0;right:0;top:0;height:13%;background:repeating-linear-gradient(45deg,rgba(255,0,110,.3) 0 6px,rgba(255,0,110,.12) 6px 12px);border-bottom:1px dashed #ff006e}
+.safe::after{content:"";position:absolute;left:0;right:0;bottom:0;height:21%;background:repeating-linear-gradient(45deg,rgba(255,0,110,.3) 0 6px,rgba(255,0,110,.12) 6px 12px);border-top:1px dashed #ff006e}
+.safe i{position:absolute;right:0;top:13%;bottom:21%;width:12%;background:rgba(255,0,110,.14);border-left:1px dashed #ff006e}
 
-/* S1 notebook */
-.notebook{position:absolute;inset:0;background:#fbfdff;background-image:linear-gradient(#cfe0f5 1px,transparent 1px),linear-gradient(90deg,#cfe0f5 1px,transparent 1px);background-size:7cqw 7cqw}
-.notebook::before{content:"";position:absolute;top:0;bottom:0;left:13%;width:.5cqw;background:#f19aa6}
-.sum{position:absolute;left:20%;top:30%;font-family:var(--f-hand);color:#233b8f;font-size:15cqw;line-height:1.3;letter-spacing:.02em}
-.sum .wrong{position:relative;display:inline-block}
-.sum .wrong::after{content:"";position:absolute;inset:-6% -18%;border:1cqw solid var(--red);border-radius:50%;transform:rotate(-8deg)}
-.cross{position:absolute;right:9%;top:16%;font-family:var(--f-hand);color:var(--red);font-size:18cqw;transform:rotate(8deg)}
-.sum small{display:block;font-size:8cqw;color:#5a6fa8}
-
-/* S2 sign cards */
-.signs{position:absolute;left:6%;right:6%;top:16%;display:grid;grid-template-columns:1fr 1fr;gap:3cqw}
-.sc{border-radius:4cqw;padding:4cqw 3cqw;color:var(--navy);display:grid;gap:1.5cqw;justify-items:center;text-align:center;font-weight:800;font-size:5.2cqw;line-height:1.05;box-shadow:0 1cqw 0 rgba(0,0,0,.18)}
-.sc svg{width:14cqw;height:14cqw}
-.sc.y{background:#ffe27a}.sc.b{background:#bfe3fb}.sc.r{background:#ffc9cf}.sc.g{background:#c8f3cf}
-.sc.pop{transform:scale(1.08) rotate(-2deg);outline:1cqw solid #fff}
-.sc.dim{opacity:.45}
-
-/* S3 stamp */
-.stamp{position:absolute;left:5%;right:5%;top:20%;transform:rotate(-6deg);background:var(--navy);border:1.2cqw solid var(--yellow);border-radius:3cqw;padding:3cqw;text-align:center;font-family:var(--f-display);line-height:.95}
-.stamp .l1{color:#fff;font-size:13cqw}.stamp .l2{color:var(--yellow);font-size:13cqw}
-.sheets{position:absolute;right:9%;bottom:33%;width:38%;height:13%}
-.sheets span{position:absolute;inset:0;background:#fff;border-radius:1cqw;box-shadow:0 .8cqw 2cqw rgba(0,0,0,.35);background-image:repeating-linear-gradient(#fff 0 3cqw,#dbe6f5 3cqw 3.3cqw)}
-.sheets span:nth-child(1){transform:rotate(-12deg)}.sheets span:nth-child(2){transform:rotate(-4deg) translate(6%,-8%)}.sheets span:nth-child(3){transform:rotate(6deg) translate(12%,-16%)}
-
-/* S4 test */
-.burst{position:absolute;right:5%;top:14%;width:30cqw;height:30cqw;background:var(--red);clip-path:polygon(50% 0,61% 13%,77% 7%,80% 24%,96% 28%,88% 43%,100% 55%,85% 64%,89% 81%,72% 81%,65% 97%,50% 88%,35% 97%,28% 81%,11% 81%,15% 64%,0 55%,12% 43%,4% 28%,20% 24%,23% 7%,39% 13%);display:grid;place-items:center;transform:rotate(10deg);font-family:var(--f-display);font-size:9.5cqw;color:#fff}
-.title-ban{position:absolute;left:5%;right:5%;top:33%}
-.title-ban .pre{display:inline-block;background:var(--yellow);color:var(--navy);font-family:var(--f-display);font-size:5cqw;padding:.8cqw 3cqw;border-radius:2cqw;margin-left:4%}
-.title-ban .block{margin-top:-1cqw}
-.title-ban .t1{color:#fff;font-size:12cqw}.title-ban .t2{color:var(--yellow);font-size:11cqw}
-.badge{position:absolute;left:7%;right:7%;top:63%;background:var(--sky);color:var(--navy);border-radius:3cqw;padding:3cqw 3.5cqw;display:grid;grid-template-columns:auto 1fr;gap:3cqw;align-items:center}
-.badge .seal{width:17cqw;height:17cqw;border-radius:50%;display:block;background:#fff;box-shadow:0 .6cqw 1.5cqw rgba(0,0,0,.25)}
-.badge b{display:block;font-family:var(--f-display);font-size:7.5cqw;line-height:1;font-weight:400}
-.badge small{display:block;font-size:4cqw;line-height:1.15;font-weight:700}
-.wwn{position:absolute;left:6%;right:6%;top:20%;display:grid;gap:3cqw}
-.wwn .c{border-radius:4cqw;padding:3cqw 4cqw;display:grid;grid-template-columns:auto 1fr;gap:3.5cqw;align-items:center;color:var(--navy)}
-.wwn .c .ic{width:15cqw;height:15cqw;border-radius:50%;display:grid;place-items:center;font-family:var(--f-display);font-size:11cqw;color:#fff}
-.wwn .c b{font-family:var(--f-display);font-weight:400;font-size:10cqw;line-height:1;display:block}
-.wwn .c span{font-weight:700;font-size:4.8cqw;line-height:1.15}
-.wwn .why{background:#ffdfe3}.wwn .why .ic{background:var(--red)}.wwn .why b{color:var(--red)}
-.wwn .next{background:#d4f6dc}.wwn .next .ic{background:var(--green)}.wwn .next b{color:var(--green)}
-.footline{position:absolute;left:6%;right:6%;top:65%;text-align:center;background:var(--yellow);color:var(--navy);border-radius:3cqw;padding:2.5cqw;font-family:var(--f-display);font-size:6.4cqw;line-height:1.05}
-.footline em{font-style:normal;color:var(--red)}
-
-/* S5 bonus */
-.giftwrap{position:absolute;left:50%;top:14%;transform:translateX(-50%);width:46cqw;height:46cqw;border-radius:50%;background:radial-gradient(circle,#ffe680 0 45%,rgba(255,214,10,0) 70%);display:grid;place-items:center}
-.giftwrap img{width:30cqw;height:auto;border-radius:3cqw}
-.rays{position:absolute;left:50%;top:35%;width:120cqw;height:120cqw;transform:translate(-50%,-50%);background:repeating-conic-gradient(rgba(255,214,10,.35) 0 8deg,transparent 8deg 22deg);border-radius:50%;mask:radial-gradient(circle,#000 20%,transparent 62%);-webkit-mask:radial-gradient(circle,#000 20%,transparent 62%)}
-.bonus{position:absolute;left:6%;right:6%;top:54%;text-align:center;display:grid;gap:2cqw;justify-items:center}
-.bonus .k1{font-family:var(--f-display);color:var(--yellow);font-size:9cqw;line-height:1}
-.bonus .k2{background:#fff;color:var(--navy);border-radius:3cqw;padding:2.5cqw 4cqw;font-family:var(--f-display);font-size:8.6cqw;line-height:1}
-.bonus .k2 em{font-style:normal;color:var(--red)}
-.bonus .k3{background:var(--red);color:#fff;border-radius:999px;padding:1cqw 4cqw;font-weight:800;font-size:4.6cqw}
-.ctmcard{position:absolute;left:12%;right:12%;top:14%;background:#fff;border-radius:4cqw;padding:3cqw;display:grid;gap:2cqw;justify-items:center;box-shadow:0 1.5cqw 0 rgba(0,0,0,.25)}
-.ctmcard img{width:100%;height:auto}
-.noab{position:absolute;left:5%;right:5%;top:42%;text-align:center;font-family:var(--f-display);line-height:1.02}
-.noab .a{font-size:10.5cqw;color:#fff;display:grid}.noab .a s{text-decoration-thickness:1.2cqw;text-decoration-color:var(--red)}
-.noab .b{display:inline-block;margin-top:2cqw;background:var(--yellow);color:var(--navy);font-size:7.2cqw;padding:1.5cqw 4cqw;border-radius:2cqw;transform:rotate(-1.5deg)}
-.chips{position:absolute;left:5%;right:5%;top:65%;display:grid;grid-template-columns:repeat(3,1fr);gap:2cqw}
-.chips span{border-radius:3cqw;padding:2.5cqw 1cqw;text-align:center;font-weight:800;font-size:3.9cqw;line-height:1.1;color:var(--yellow);display:grid;gap:1cqw;justify-items:center}
-.chips span i{font-style:normal;font-size:7cqw}
-.chips .c1{background:#103a8f}.chips .c2{background:#4b1d78}.chips .c3{background:#0f4d2a}
-
-/* S6 CTA */
-.phone{position:absolute;left:12%;right:12%;top:14%;bottom:24%;background:#ece5dd;border-radius:6cqw;border:2cqw solid #0b1020;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
-.ph-top{background:#075e54;color:#fff;padding:2.5cqw 3cqw;display:flex;align-items:center;gap:2cqw;font-weight:700;font-size:4cqw;line-height:1.1}
-.ph-top .av{width:8cqw;height:8cqw;border-radius:50%;background:#fff;display:grid;place-items:center;overflow:hidden}
-.ph-top .av img{width:100%}
-.ph-top small{display:block;font-weight:500;font-size:3cqw;opacity:.85}
-.ph-body{padding:3cqw;display:grid;align-content:end;gap:2cqw;background-image:radial-gradient(rgba(0,0,0,.05) 1px,transparent 1px);background-size:4cqw 4cqw}
-.bubble{justify-self:end;max-width:88%;background:#dcf8c6;color:#111;border-radius:2.5cqw 0 2.5cqw 2.5cqw;padding:2cqw 2.5cqw;font-family:var(--f-body);font-weight:700;font-size:4.2cqw;line-height:1.15}
-.bubble small{display:block;text-align:right;font-weight:500;font-size:2.8cqw;color:#5b7a5b}
-.bubble small b{color:#34b7f1}
-.bubble.in{justify-self:start;background:#fff;border-radius:0 2.5cqw 2.5cqw 2.5cqw;font-weight:500}
-.ph-input{display:flex;gap:2cqw;padding:2cqw;align-items:center}
-.ph-input span{flex:1;background:#fff;border-radius:999px;padding:1.8cqw 3cqw;color:#111;font-size:3.6cqw;font-family:var(--f-body)}
-.ph-input i{width:9cqw;height:9cqw;border-radius:50%;background:#00a884;display:grid;place-items:center;color:#fff;font-style:normal;font-size:4.5cqw}
-.ctaband{position:absolute;left:5%;right:5%;top:15%;text-align:center;display:grid;gap:2.5cqw;justify-items:center}
-.ctaband .wa{display:flex;align-items:center;gap:2.5cqw;background:#fff;color:var(--navy);border-radius:999px;padding:1.5cqw 4cqw 1.5cqw 1.5cqw;font-family:var(--f-display);font-size:6.5cqw}
-
-.num{background:var(--red);color:#fff;border-radius:3cqw;padding:2cqw 4cqw;font-family:var(--f-display);font-size:13.5cqw;letter-spacing:.02em;line-height:1;box-shadow:0 1.5cqw 0 rgba(0,0,0,.3)}
-.send{color:#fff;font-weight:700;font-size:4.4cqw;line-height:1.25}
-.send b{color:var(--yellow)}
-.meta{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5cqw}
-.meta span{background:rgba(255,255,255,.14);border:.4cqw solid rgba(255,255,255,.35);border-radius:999px;padding:.8cqw 3cqw;font-weight:700;font-size:3.8cqw}
-.logo-end{position:absolute;left:4%;right:4%;top:68%;display:grid;justify-items:center}
-
-
-/* caption + misc sections */
+/* extras */
 .grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
-@media (max-width:760px){.grid2{grid-template-columns:minmax(0,1fr)}}
-.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.card{background:var(--paper-ui);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
 .card h3{font-size:16px;font-weight:700}
 .card p{margin:0}
 pre.copy{white-space:pre-wrap;font-family:var(--f-body);font-size:14px;background:var(--chip);border-radius:8px;padding:12px;margin:0;overflow-x:auto}
-table.vo{width:100%;border-collapse:collapse;font-size:14px}
 .tblwrap{overflow-x:auto}
+table.vo{width:100%;border-collapse:collapse;font-size:14px}
 table.vo td,table.vo th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
 table.vo th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-table.vo td.hi{font-family:var(--f-round);font-weight:700;font-size:16px}
+table.vo td.hi{font-weight:600;font-size:16px}
 table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
 .status{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px}
 .status.open{background:#ffe9a8;color:#5a4200}
 .status.done{background:#c9f0d3;color:#0f5a27}
-.copybtn{justify-self:start;font:inherit;font-size:13px;font-weight:600;background:var(--accent);color:var(--paper);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
-.copybtn:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
-
-
-/* ---------- brand pieces built in code (no cropped artwork) ---------- */
+.copybtn{justify-self:start;font:inherit;font-size:13px;font-weight:600;background:var(--accent);color:var(--paper-ui);border:0;border-radius:6px;padding:6px 12px;cursor:pointer}
+.copybtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .svgdefs{position:absolute;width:0;height:0;overflow:hidden}
-.ctm-logo{width:100%;height:auto;display:block;filter:drop-shadow(0 1.2cqw 0 rgba(13,36,89,.25))}
-.ctm-tag{display:grid;gap:1.2cqw;justify-items:center}
-.ctm-tag .pill{background:var(--yellow);color:var(--navy);border-radius:999px;padding:.6cqw 3.5cqw;font-family:var(--f-round);font-weight:800;font-size:4.3cqw;line-height:1.2;white-space:nowrap}
-.ctm-tag .spa{font-family:var(--f-round);font-weight:800;font-size:5.4cqw;white-space:nowrap;line-height:1;letter-spacing:.01em}
-.spa .s{color:#1550d6}.spa .p{color:var(--red)}.spa .a{color:var(--green)}
-.gfg{display:flex;align-items:center;gap:2.5cqw;justify-content:center}
-.gfg svg{width:12cqw;height:12cqw;flex:none}
-.gfg-name{font-family:var(--f-brand);font-weight:700;font-size:5.6cqw;line-height:1;color:#7cc4ff;letter-spacing:.01em;white-space:nowrap}
-.gfg-url{font-family:var(--f-body);font-weight:600;font-size:3.6cqw;color:#fff;opacity:.9;margin-top:.8cqw}
-.wa-ic{width:10cqw;height:10cqw;flex:none}
-.giftwrap svg{width:34cqw;height:34cqw;overflow:visible;filter:drop-shadow(0 1.2cqw 1.5cqw rgba(13,36,89,.45))}
-.polaroid{position:absolute;background:#fff;padding:2cqw 2cqw 8cqw;border-radius:1cqw;box-shadow:0 2cqw 5cqw rgba(0,0,0,.45)}
-.polaroid img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.5cqw}
-.polaroid figcaption{position:absolute;left:0;right:0;bottom:1.4cqw;text-align:center;font-family:var(--f-hand);color:#233b8f;font-size:3.8cqw;white-space:nowrap}
 
-
-/* ---------- S4 / S6 designed backgrounds ---------- */
-.bg-test{background:
-  radial-gradient(75cqw 65cqw at 50% 33%,rgba(64,140,255,.45),transparent 70%),
-  linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px) 0 0/7cqw 7cqw,
-  linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px) 0 0/7cqw 7cqw,
-  linear-gradient(165deg,#163f9e 0%,#0c2260 52%,#061331 100%)}
-.bg-cta{background:
-  radial-gradient(80cqw 50cqw at 50% 100%,rgba(37,211,102,.22),transparent 70%),
-  linear-gradient(172deg,#123787 0%,#0b2260 50%,#06132f 100%)}
-.deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.deco .g{position:absolute;font-family:var(--f-display);line-height:1;color:rgba(255,255,255,.13)}
-.deco .g.y{color:rgba(255,214,10,.3)}
-.deco .rings{position:absolute;left:50%;width:150cqw;height:150cqw;transform:translate(-50%,-50%);border-radius:50%;
-  background:repeating-radial-gradient(circle,rgba(37,211,102,.45) 0 .6cqw,transparent .6cqw 10cqw);
-  -webkit-mask:radial-gradient(circle,#000 10%,transparent 62%);mask:radial-gradient(circle,#000 10%,transparent 62%)}
-.deco .bub{position:absolute;width:15cqw;height:9cqw;border-radius:3cqw;background:rgba(255,255,255,.07)}
-.deco .bub::after{content:"";position:absolute;bottom:-2cqw;left:2.5cqw;border:1.6cqw solid transparent;border-top-color:rgba(255,255,255,.07);border-left-color:rgba(255,255,255,.07)}
-.deco .bub.r::after{left:auto;right:2.5cqw;border-left-color:transparent;border-right-color:rgba(255,255,255,.07)}
-.deco .bub.gr{background:rgba(37,211,102,.16)}.deco .bub.gr::after{border-top-color:rgba(37,211,102,.16);border-right-color:rgba(37,211,102,.16)}
-.wave{position:absolute;left:0;right:0;bottom:0;width:100%;height:20%}
-.steps{position:absolute;left:6%;right:6%;top:52%;display:grid;grid-template-columns:1fr auto 1fr;gap:2cqw;align-items:center}
-.steps .st{background:#fff;color:var(--navy);border-radius:3cqw;padding:2.5cqw 2cqw;display:grid;grid-template-columns:auto 1fr;gap:2cqw;align-items:center;font-weight:800;font-size:3.7cqw;line-height:1.1}
-.steps .st b{width:7cqw;height:7cqw;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--f-display);font-weight:400;font-size:4.4cqw}
-.steps .st:first-child b{background:var(--red)}.steps .st:last-child b{background:#1550d6}
-.steps .ar{color:var(--yellow);font-family:var(--f-display);font-size:6cqw}
-
-@media (max-width:820px){
+@media (max-width:860px){
   .scene{grid-template-columns:minmax(0,1fr)}
   .frames{overflow-x:auto;padding-bottom:6px}
-  .frame{width:200px}
+  .frame{width:190px}
   .row{grid-template-columns:minmax(0,1fr);gap:2px}
+  .vl-grid,.grid2{grid-template-columns:minmax(0,1fr)}
 }
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 </style>
 
 <svg class="svgdefs" aria-hidden="true" focusable="false">
   <defs>
-    <linearGradient id="gC" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f8cff"/><stop offset="1" stop-color="#0a3aa8"/></linearGradient>
-    <linearGradient id="gT" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff4a3d"/><stop offset="1" stop-color="#b0000b"/></linearGradient>
-    <linearGradient id="gM" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#36c766"/><stop offset="1" stop-color="#0a7030"/></linearGradient>
-    <symbol id="ctm" viewBox="0 0 300 118">
-      <text x="10" y="104" font-family="'Baloo 2',sans-serif" font-weight="800" font-size="132" letter-spacing="-6" stroke="#fff" stroke-width="14" stroke-linejoin="round" paint-order="stroke"><tspan fill="url(#gC)">C</tspan><tspan fill="url(#gT)">T</tspan><tspan fill="url(#gM)">M</tspan></text>
-      <text x="270" y="30" font-family="'Baloo 2',sans-serif" font-weight="800" font-size="22" fill="#0d2459">™</text>
-    </symbol>
-    <symbol id="gfg-mark" viewBox="0 0 60 60">
-      <g fill="none" stroke="#2f9bff" stroke-width="3.4" stroke-linecap="round"><path d="M22 17a11 11 0 0 1 16 0"/><path d="M16.5 11.5a19 19 0 0 1 27 0"/><path d="M11 6a27 27 0 0 1 38 0"/></g>
-      <circle cx="30" cy="23" r="2.6" fill="#2f9bff"/>
-      <g fill="none" stroke="#e3161b" stroke-width="3.4" stroke-linejoin="round"><path d="M7 32q11-4 22 2v20q-11-6-22-2z"/><path d="M53 32q-11-4-22 2v20q11-6 22-2z"/></g>
-    </symbol>
-    <symbol id="wa" viewBox="0 0 48 48">
-      <path d="M24 3a21 21 0 0 0-18.2 31.5L3 45l10.8-2.8A21 21 0 1 0 24 3z" fill="#25d366"/>
-      <path transform="translate(12 12)" fill="#fff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
-    </symbol>
-    <symbol id="gift" viewBox="0 0 100 100">
-      <rect x="18" y="46" width="64" height="46" rx="3" fill="#fff"/>
-      <rect x="58" y="46" width="24" height="46" fill="#e6ebf3"/>
-      <rect x="45" y="46" width="10" height="46" fill="#e3161b"/>
-      <g class="lid">
-        <rect x="12" y="33" width="76" height="15" rx="3" fill="#f6f8fc"/>
-        <rect x="62" y="33" width="26" height="15" fill="#e1e7f1"/>
-        <rect x="44" y="33" width="12" height="15" fill="#c90f14"/>
-        <path d="M50 33c-6-12-24-16-24-5 0 6 12 6 24 5z" fill="#e3161b"/>
-        <path d="M50 33c6-12 24-16 24-5 0 6-12 6-24 5z" fill="#e3161b"/>
-        <path d="M50 33c-4-7-14-10-16-6" fill="none" stroke="#a80d11" stroke-width="2"/>
-        <path d="M50 33c4-7 14-10 16-6" fill="none" stroke="#a80d11" stroke-width="2"/>
-        <circle cx="50" cy="32" r="5" fill="#c90f14"/>
-      </g>
-    </symbol>
+    <symbol id="sc-circle" viewBox="0 0 200 100"><path d="M150 14C92-2 20 14 11 47c-7 32 60 48 112 42 52-6 74-30 66-53-6-17-36-27-78-24" stroke-width="5"/></symbol>
+    <symbol id="sc-under" viewBox="0 0 200 20"><path d="M4 12C40 3 72 18 110 9s62-3 86 3" stroke-width="5"/></symbol>
+    <symbol id="sc-strike" viewBox="0 0 200 30"><path d="M4 18 30 9l22 11 28-12 24 13 28-13 26 12 38-10" stroke-width="5"/></symbol>
+    <symbol id="sc-tick" viewBox="0 0 40 40"><path d="M5 22 15 33 36 5" stroke-width="5"/></symbol>
+    <symbol id="sc-box" viewBox="0 0 40 40"><path d="M5 6c10-2 22-1 30 0 1 9 0 21-1 29-10 1-21 0-29-1-1-10 0-20 0-28z" stroke-width="3.2"/></symbol>
+    <symbol id="sc-arrow" viewBox="0 0 120 60"><path d="M8 46C30 14 66 8 104 24" stroke-width="4.5"/><path d="M88 12l17 13-19 10" stroke-width="4.5"/></symbol>
+    <symbol id="sc-spark" viewBox="0 0 40 40"><path d="M20 3v10M20 27v10M3 20h10M27 20h10M8 8l6 6M26 26l6 6M32 8l-6 6M14 26l-6 6" stroke-width="3.4"/></symbol>
+    <symbol id="bow" viewBox="0 0 100 70"><path d="M50 32C36 6 6 4 8 22c2 14 26 14 42 10zM50 32c14-26 44-28 42-10-2 14-26 14-42 10z" fill="#ef4136"/><path d="M47 34 34 66l9-4 6 8 3-36zM53 34l13 32-9-4-6 8-3-36z" fill="#d22f25"/><circle cx="50" cy="32" r="7" fill="#d22f25"/></symbol>
+    <symbol id="wa" viewBox="0 0 48 48"><path d="M24 3a21 21 0 0 0-18.2 31.5L3 45l10.8-2.8A21 21 0 1 0 24 3z" fill="#25d366"/><path transform="translate(12 12)" fill="#fff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.020-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+    <symbol id="gfg-mark" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a11 11 0 0 1 16 0"/><path d="M16.5 11.5a19 19 0 0 1 27 0"/><path d="M11 6a27 27 0 0 1 38 0"/><path d="M7 32q11-4 22 2v20q-11-6-22-2z"/><path d="M53 32q-11-4-22 2v20q11-6 22-2z"/></g><circle cx="30" cy="23" r="2.6" fill="currentColor"/></symbol>
   </defs>
 </svg>
+
 <div class="wrap" id="board">
 
 <header style="display:grid;gap:12px">
-  <div class="eyebrow">Giane Future Gurukull · Instagram Reel / YouTube Short · Storyboard v1</div>
+  <div class="eyebrow">Giane Future Gurukull · Instagram Reel / YouTube Short · Storyboard v2</div>
   <h1>Free Calculation Efficiency Test: 30-second reel</h1>
-  <p class="lede">One job: get a parent of a Class 3+ child in Ahmedabad or Vadodara to send a WhatsApp message. The brochure's four pages become six scenes: problem, twist, free test, bonus, one action. Scene IDs (S1–S6) are for feedback, e.g. "S4: make FREE bigger".</p>
+  <p class="lede">One job: get a parent of a Class 3+ child in Ahmedabad or Vadodara to send a WhatsApp message. The brochure supplies the words only. The look is new: type-led, one idea per screen, with each act in its own colour. Give feedback by scene ID, e.g. "S4: FREE even bigger".</p>
   <div class="specs">
     <span><b>1080×1920</b> · 9:16</span><span><b>30 s</b> · 30 fps</span><span>VO: <b>Hindi</b>, warm female, mother-like</span><span>On-screen text: <b>English / Hinglish</b></span><span>Music: <b>soft, light beat</b>, ducked under VO</span><span>Built in <b>Remotion</b></span>
   </div>
 </header>
 
+<section class="vl" aria-labelledby="vl-h">
+  <div class="eyebrow" id="vl-h">Visual language · "Notebook to clarity"</div>
+  <div class="vl-grid">
+    <div style="display:grid;gap:12px">
+      <div class="swatches">
+        <div class="sw"><i style="background:#f7f5ef;background-image:linear-gradient(transparent 85%,#d5dcea 0);background-size:100% 10px"></i><b>Notebook</b><span>S1–S2 · the problem</span></div>
+        <div class="sw"><i style="background:#ef4136"></i><b>Red pen</b><span>S3 · the twist, plus every mistake mark</span></div>
+        <div class="sw"><i style="background:#3a1fd0"></i><b>Electric violet</b><span>S4 · the free test</span></div>
+        <div class="sw"><i style="background:#c8f23a"></i><b>Highlighter</b><span>S5 · the bonus, plus key-word swipes</span></div>
+        <div class="sw"><i style="background:#16142b"></i><b>Ink</b><span>S6 · WhatsApp call to action</span></div>
+        <div class="sw"><i style="background:#2a3a94"></i><b>Ballpoint blue</b><span>The child's handwriting</span></div>
+      </div>
+    </div>
+    <div style="display:grid;gap:14px">
+      <div class="typespec"><div class="a">Big words. Few of them.</div><small>Display: condensed grotesque, extra bold. Key word 2–3× the size of the rest.</small></div>
+      <div class="typespec"><div class="b">red-pen notes, ticks &amp; circles</div><small>Handwriting for the child's sums and the "teacher's" marks.</small></div>
+      <ul class="tight">
+        <li>Hand-drawn marks (circles, ticks, strike-throughs, arrows) <b>draw on in time with the voice</b>.</li>
+        <li>A full-screen colour change marks each new act, so the story is easy to follow with sound off.</li>
+        <li>No boxes or cards; type sits straight on the colour. The only frame is the phone.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <section class="timeline" aria-label="Timeline">
   <div class="tl-bar">
-    <a href="#s1" style="flex:3;background:#c2410c">S1 Hook</a>
-    <a href="#s2" style="flex:5;background:#b45309">S2 Signs</a>
-    <a href="#s3" style="flex:3;background:#9f1239">S3 Twist</a>
-    <a href="#s4" style="flex:7;background:#1d4ed8">S4 Free test</a>
-    <a href="#s5" style="flex:6;background:#6d28d9">S5 Bonus</a>
-    <a href="#s6" style="flex:6;background:#15803d">S6 WhatsApp</a>
+    <a href="#s1" style="flex:3;background:#f7f5ef;color:#16142b">S1 Hook</a>
+    <a href="#s2" style="flex:5;background:#e9e6dc;color:#16142b">S2 Signs</a>
+    <a href="#s3" style="flex:3;background:#ef4136;color:#fff">S3 Twist</a>
+    <a href="#s4" style="flex:7;background:#3a1fd0;color:#fff">S4 Free test</a>
+    <a href="#s5" style="flex:6;background:#c8f23a;color:#16142b">S5 Bonus</a>
+    <a href="#s6" style="flex:6;background:#16142b;color:#c8f23a">S6 WhatsApp</a>
   </div>
   <div class="tl-scale"><span>0s</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30s</span></div>
-  <div class="tl-legend"><span>Problem (pg 1): 0–11s</span><span>Solution (pg 2): 11–18s</span><span>Offer (pg 3): 18–24s</span><span>Action (pg 4): 24–30s</span></div>
 </section>
 
 <div class="controls">
@@ -309,202 +241,253 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 
 <!-- ================= S1 ================= -->
 <section class="scene" id="s1">
-  <div class="scene-head"><span class="sid">S1</span><span class="stime">0:00 – 0:03 · 3 s</span><h2>The hook</h2><span class="ssrc">From brochure pg 1 headline</span></div>
+  <div class="scene-head"><span class="sid">S1</span><span class="stime">0:00 – 0:03 · 3 s</span><h2>The hook</h2><span class="ssrc">Content: pg 1 headline</span></div>
   <div class="frames">
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <div class="notebook"></div>
-        <div class="sum">7 × 8 = <span class="wrong">54</span><small>12 + 9 = 22</small></div>
-        <div class="cross">✗</div>
-        <div class="cap"><mark>Concepts clear…</mark></div>
+    <figure class="kf">
+      <div class="frame f-paper">
+        <div class="sums">
+          <div class="ln">6 × 7 = 42 <svg class="mark tick" viewBox="0 0 40 40" style="position:static"><use href="#sc-tick"/></svg></div>
+          <div class="ln">9 × 4 = 36 <svg class="mark tick" viewBox="0 0 40 40" style="position:static"><use href="#sc-tick"/></svg></div>
+          <div class="ln">7 × 8 = <span class="rel">54<svg class="mark c-pen" viewBox="0 0 200 100" style="left:-22%;top:-26%;width:150%;height:150%"><use href="#sc-circle"/></svg></span></div>
+        </div>
+        <div class="hand c-pen" style="position:absolute;left:52%;top:47%;font-size:10cqw;transform:rotate(-7deg)">again?!</div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:00 · first frame</figcaption>
+      <figcaption>0:00 · two right, one wrong</figcaption>
     </figure>
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <div class="notebook" style="filter:blur(1.5px) brightness(.8)"></div>
-        <div class="sum" style="opacity:.35">7 × 8 = <span class="wrong">54</span></div>
-        <div style="position:absolute;left:6%;right:6%;top:30%;display:grid;gap:2cqw;justify-items:center">
-          <span class="tag">CONCEPTS CLEAR…</span>
-          <div class="block" style="transform:rotate(-2deg)"><div style="font-size:14cqw;color:#fff">STILL MAKING</div><div style="font-size:15.5cqw;color:var(--yellow)">SILLY MISTAKES?!</div></div>
+    <figure class="kf">
+      <div class="frame f-paper">
+        <div class="sums" style="opacity:.07"><div class="ln">6 × 7 = 42</div><div class="ln">9 × 4 = 36</div><div class="ln">7 × 8 = 54</div></div>
+        <div class="stack">
+          <div class="m" style="font-size:8.5cqw">Concepts? <span class="hl">Clear.</span></div>
+          <div class="d" style="font-size:15cqw;margin-top:4cqw">Still making</div>
+          <div><span class="d c-pen rel" style="font-size:31cqw">silly<svg class="mark c-pen" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-3cqw;width:100%;height:5cqw"><use href="#sc-under"/></svg></span></div>
+          <div class="d" style="font-size:21cqw">mistakes?</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:02 · headline slams in</figcaption>
+      <figcaption>0:02 · type slams over the page</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">कॉन्सेप्ट्स क्लियर हैं… फिर भी सिली मिस्टेक्स?</div><div class="vo-rom">Concepts clear hain… phir bhi silly mistakes?</div><div class="vo-en">"The concepts are clear… and still silly mistakes?"</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>Concepts clear…</code><code>STILL MAKING SILLY MISTAKES?!</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Opens mid-action: a pencil writes "7 × 8 = 54" by hand (0.0–1.0s). No logo, no intro.</li><li>Red circle draws around 54, red ✗ snaps on (1.0–1.4s).</li><li>Notebook blurs; navy headline block slams in with a small shake (2.0s).</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Pencil scratch → soft "wrong answer" buzz on the ✗ → music starts under the headline.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">A wrong answer every parent has seen in their child's notebook. It's recognised in under a second, even with sound off.</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Concepts? Clear.</code><code>Still making silly mistakes?</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Opens mid-action on a notebook page. Two sums write themselves and get red ticks (0.0–0.9s).</li><li>"7 × 8 = 54" is written; the red pen circles 54; "again?!" and an arrow scribble in (0.9–1.8s).</li><li>2.0s: the sums fade back; the words drop in one at a time, "silly" last and biggest, with its red underline drawn under it.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Ballpoint scratch, two soft "ticks", a pen squeak on the circle, then the music starts.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">Two right answers, then a wrong one, is exactly what "silly mistake" means to a parent. Understood in a second, with sound off.</div></div>
   </div>
 </section>
 
 <!-- ================= S2 ================= -->
 <section class="scene" id="s2">
-  <div class="scene-head"><span class="sid">S2</span><span class="stime">0:03 – 0:08 · 5 s</span><h2>"Do you see these signs?"</h2><span class="ssrc">From brochure pg 1, four sign cards</span></div>
+  <div class="scene-head"><span class="sid">S2</span><span class="stime">0:03 – 0:08 · 5 s</span><h2>The parent's checklist</h2><span class="ssrc">Content: pg 1, the four signs</span></div>
   <div class="frames">
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <img class="bgimg" src="assets/kid-stressed.jpg" alt="" style="filter:blur(2px) brightness(.55)">
-        <div class="signs">
-          <div class="sc y"><svg viewBox="0 0 24 24" fill="none" stroke="#0d2459" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 13l3-3M10 2h4M12 2v3"/></svg>Rushes<br>through Maths</div>
-          <div class="sc r pop"><svg viewBox="0 0 24 24" fill="none" stroke="#0d2459" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 8l2 2M10 8l-2 2M8 14l2 2M10 14l-2 2" stroke="#e3161b"/><path d="M13 9h3M13 15h3"/></svg>Loses<br>focus</div>
-          <div class="sc g dim"><svg viewBox="0 0 24 24" fill="none" stroke="#0d2459" stroke-width="2"><rect x="4" y="3" width="12" height="16" rx="2"/><circle cx="17" cy="17" r="4.5" fill="#0d2459"/><path d="M15.7 15.8a1.4 1.4 0 1 1 1.9 1.3v.6M17.3 19.3v.1" stroke="#fff"/></svg>Forgets<br>formulas</div>
-          <div class="sc b dim"><svg viewBox="0 0 24 24" fill="none" stroke="#0d2459" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2.5" fill="#e3161b" stroke="none"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>Mistakes<br>while solving</div>
+    <figure class="kf">
+      <div class="frame f-paper">
+        <div class="stack" style="gap:4.2cqw">
+          <div class="hand c-ball" style="font-size:9cqw">Does your child…</div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--pen);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d" style="font-size:10.5cqw">rush through sums?</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--pen);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d" style="font-size:10.5cqw">lose focus?</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--pen);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d" style="font-size:10.5cqw">forget formulas?</span></div>
+          <div class="check" style="opacity:.45"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg></span><span class="d" style="font-size:10.5cqw">slip while solving?</span></div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:05 · cards pop in on each word</figcaption>
+      <figcaption>0:05 · boxes tick on each word</figcaption>
     </figure>
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <figure class="polaroid" style="left:12%;right:12%;top:14%;transform:rotate(-3deg);margin:0"><img src="assets/kid-stressed.jpg" alt="Child holding head over homework"><figcaption>Why does this keep happening?</figcaption></figure>
-        <div class="cap" style="bottom:24%"><span style="font-size:5.6cqw;font-weight:700">These are just the</span><br><mark>VISIBLE SIGNS</mark><br><span style="font-size:5.6cqw;font-weight:700">not the real reasons</span></div>
+    <figure class="kf">
+      <div class="frame f-paper">
+        <div class="taped" style="left:15%;right:24%;top:13%;transform:rotate(-3deg)"><img src="assets/kid-stressed.jpg" alt="Child holding his head over homework"><span class="tape" style="left:50%;top:-3cqw;transform:translateX(-50%) rotate(2deg)"></span></div>
+        <div style="position:absolute;left:9%;right:12%;top:54%;display:grid;gap:1.4cqw">
+          <div class="m" style="font-size:8cqw">These are just</div>
+          <div class="d" style="font-size:24cqw">the <span class="hl">signs.</span></div>
+          <div class="hand c-pen" style="font-size:7.6cqw;margin-top:1.6cqw">not the real reason ↓</div>
+        </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:07 · cards fly off, photo card drops in</figcaption>
+      <figcaption>0:07 · photo taped onto the page</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">जल्दबाज़ी… ध्यान भटकना… फ़ॉर्मूले भूल जाना… ये तो सिर्फ़ साइन्स हैं।</div><div class="vo-rom">Jaldbaazi… dhyaan bhatakna… formule bhool jaana… ye toh sirf signs hain.</div><div class="vo-en">"Rushing… losing focus… forgetting formulas… these are only the signs."</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>Rushes through Maths</code><code>Loses focus</code><code>Forgets formulas</code><code>Mistakes while solving</code><code>Just the VISIBLE SIGNS, not the real reasons</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Each card pops in exactly on its spoken word, with a small bounce (0.6s apart). The 4th card lands without VO, on a beat.</li><li>At 6.8s the cards scatter off-screen; the stressed-child photo drops in as a tilted photo card.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Soft "pop" per card; a whoosh as they scatter.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">Parents mentally tick "yes, that's my child" four times. That's what keeps them watching.</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Does your child…</code><code>rush through sums?</code><code>lose focus?</code><code>forget formulas?</code><code>slip while solving?</code><code>These are just the signs.</code><code>not the real reason</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>A checklist writes itself. Each red tick is drawn exactly on its spoken word, about 0.6s apart; the 4th tick lands on a music beat with no VO.</li><li>6.6s: the page slides up; the photo drops in and gets taped down; "the signs." gets a highlighter swipe from left to right.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>A quick pen "tick" per box; tape rip on the photo.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">A checklist makes the parent tick along in their head. Four yeses and they're hooked.</div></div>
   </div>
 </section>
 
 <!-- ================= S3 ================= -->
 <section class="scene" id="s3">
-  <div class="scene-head"><span class="sid">S3</span><span class="stime">0:08 – 0:11 · 3 s</span><h2>The twist: "Parents, don't assume!"</h2><span class="ssrc">From brochure pg 1, bottom banner</span></div>
+  <div class="scene-head"><span class="sid">S3</span><span class="stime">0:08 – 0:11 · 3 s</span><h2>The twist</h2><span class="ssrc">Content: pg 1, "Parents, don't assume!"</span></div>
   <div class="frames">
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <div class="sheets" style="left:6%;right:auto;top:15%;bottom:auto;width:44%;height:14%"><span></span><span></span><span></span></div>
-        <figure class="polaroid" style="left:14%;right:14%;top:13%;transform:rotate(3deg);margin:0"><img src="assets/mother-son.jpg" alt="Mother watching her son solve maths" style="object-position:20% 50%"></figure>
-        <div class="stamp" style="top:50%"><div class="l1">PARENTS,</div><div class="l2">DON'T ASSUME!</div></div>
-        <div class="cap" style="font-size:5.8cqw">More practice ≠ <mark>fewer mistakes</mark></div>
+    <figure class="kf">
+      <div class="frame f-pen">
+        <div class="grain"></div>
+        <div class="stack" style="gap:.6cqw">
+          <div class="d c-white" style="font-size:15cqw">more practice</div>
+          <div class="d c-white" style="font-size:15cqw;opacity:.72">more practice</div>
+          <div class="d c-white" style="font-size:15cqw;opacity:.46">more practice</div>
+          <div class="d c-white" style="font-size:15cqw;opacity:.24">more practice</div>
+          <div class="d c-ink" style="font-size:19cqw;margin-top:3cqw">≠ fewer</div>
+          <div class="d c-ink" style="font-size:19cqw">mistakes</div>
+        </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:09 · stamp lands, practice sheets pile up</figcaption>
+      <figcaption>0:08 · "more practice" piles up</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-pen">
+        <div class="grain"></div>
+        <div class="stack">
+          <div class="hand c-white" style="font-size:13cqw;transform:rotate(-4deg);transform-origin:left">Parents,</div>
+          <div class="d c-ink" style="font-size:36cqw">don't</div>
+          <div><span class="d c-white rel" style="font-size:27cqw">assume.<svg class="mark c-ink" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-3.5cqw;width:100%;height:5cqw"><use href="#sc-under"/></svg></span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:10 · the turn</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">सिर्फ़ प्रैक्टिस बढ़ाने से ये गलतियाँ नहीं रुकेंगी।</div><div class="vo-rom">Sirf practice badhaane se ye galtiyaan nahi rukengi.</div><div class="vo-en">"Just increasing practice won't stop these mistakes."</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>PARENTS, DON'T ASSUME!</code><code>More practice ≠ fewer mistakes</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Mother-and-son photo (pg 1) as a photo card, slow drift.</li><li>Worksheets drop in one after another and pile up (more practice…), then the stamp slams on top with a tilt.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Paper flips, then a firm "stamp" thud. Music dips for one beat.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">Challenges what most parents do already (more tuition, more worksheets). It's the turn from problem to solution.</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>more practice ≠ fewer mistakes</code><code>Parents, don't assume.</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut: the whole screen turns red-pen red.</li><li>"more practice" stacks four times, each copy fainter, like a pile of worksheets; "≠ fewer mistakes" slams in below in ink.</li><li>9.8s: the stack drops away; "Parents," is handwritten, then "don't" and "assume." punch in, and the underline is drawn.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Four quick paper flicks, then a bass "thud" on "don't". The music drops out for one beat.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">The first colour flip tells the viewer something changed. It challenges what most parents already do: more tuition, more worksheets.</div></div>
   </div>
 </section>
 
 <!-- ================= S4 ================= -->
 <section class="scene" id="s4">
-  <div class="scene-head"><span class="sid">S4</span><span class="stime">0:11 – 0:18 · 7 s</span><h2>The FREE test</h2><span class="ssrc">From brochure pg 2</span></div>
+  <div class="scene-head"><span class="sid">S4</span><span class="stime">0:11 – 0:18 · 7 s</span><h2>The FREE test</h2><span class="ssrc">Content: pg 2</span></div>
   <div class="frames">
-    <figure class="kf" style="margin:0">
-      <div class="frame bg-test">
-        <div class="deco"><span class="g" style="left:6%;top:9%;font-size:16cqw;transform:rotate(-12deg)">×</span><span class="g y" style="left:70%;top:44%;font-size:13cqw;transform:rotate(10deg)">÷</span><span class="g" style="left:82%;top:9%;font-size:11cqw;transform:rotate(0deg)">+</span><span class="g" style="left:8%;top:52%;font-size:12cqw;transform:rotate(-6deg)">=</span><span class="g y" style="left:60%;top:3%;font-size:14cqw;transform:rotate(8deg)">7</span><span class="g" style="left:85%;top:58%;font-size:15cqw;transform:rotate(-10deg)">8</span><span class="g y" style="left:4%;top:30%;font-size:10cqw;transform:rotate(12deg)">%</span><span class="g" style="left:40%;top:58%;font-size:12cqw;transform:rotate(0deg)">−</span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#7cc4ff"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#0a1b45"/></svg></div>
-        <div class="burst">FREE</div>
-        <div class="title-ban"><span class="pre">FIND OUT WITH THE</span><div class="block" style="background:#0a1b45;border:.8cqw solid rgba(255,255,255,.15)"><div class="t1">CALCULATION</div><div class="t2">EFFICIENCY TEST</div></div></div>
-        <div class="badge"><img class="seal" src="assets/gwr-logo.png" alt="Guinness World Records logo"><div><small>Specially designed by</small><b>DEVESHH SIR</b><small>Guinness World Record Holder in Memory</small></div></div>
-        <div class="safe"><i></i></div>
-      </div>
-      <figcaption>0:12 · FREE burst + test title + credential</figcaption>
-    </figure>
-    <figure class="kf" style="margin:0">
-      <div class="frame bg-test">
-        <div class="deco"><span class="g y" style="left:78%;top:6%;font-size:13cqw;transform:rotate(10deg)">÷</span><span class="g" style="left:4%;top:6%;font-size:12cqw;transform:rotate(-12deg)">×</span><span class="g" style="left:88%;top:36%;font-size:14cqw;transform:rotate(8deg)">9</span><span class="g y" style="left:2%;top:46%;font-size:11cqw;transform:rotate(0deg)">+</span><span class="g" style="left:84%;top:58%;font-size:12cqw;transform:rotate(-6deg)">=</span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#7cc4ff"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#0a1b45"/></svg></div>
-        <div style="position:absolute;left:6%;right:6%;top:14%;text-align:center;font-family:var(--f-display);font-size:7.5cqw;color:#fff">MORE THAN <span style="color:var(--yellow)">JUST A SCORE</span></div>
-        <div class="wwn">
-          <div class="c why"><div class="ic">?</div><div><b>WHY?</b><span>Why does your child keep making mistakes?</span></div></div>
-          <div class="c next"><div class="ic">➜</div><div><b>WHAT NEXT?</b><span>Which skills need improvement first?</span></div></div>
+    <figure class="kf">
+      <div class="frame f-violet">
+        <div class="grain"></div>
+        <div class="stack">
+          <div class="hand c-white" style="font-size:9cqw">That's why…</div>
+          <div><span class="d c-lime rel" style="font-size:44cqw;letter-spacing:-.04em">FREE<svg class="mark c-white" viewBox="0 0 40 40" style="right:-9cqw;top:-2cqw;width:9cqw;height:9cqw"><use href="#sc-spark"/></svg><svg class="mark c-lime" viewBox="0 0 40 40" style="left:-6cqw;bottom:2cqw;width:6cqw;height:6cqw"><use href="#sc-spark"/></svg></span></div>
+          <div class="d c-white" style="font-size:12.5cqw;margin-top:1.5cqw">Calculation</div>
+          <div class="d c-white" style="font-size:12.5cqw">Efficiency Test</div>
         </div>
-        <div class="footline">THE RIGHT IMPROVEMENT STARTS WITH<br><em>KNOWING WHAT NEEDS ATTENTION</em></div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:15 · Why? / What next?</figcaption>
+      <figcaption>0:11.5 · FREE fills the screen</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-violet">
+        <div class="grain"></div>
+        <div class="stack">
+          <div class="hand c-lime" style="font-size:9cqw">designed by</div>
+          <div class="d c-white" style="font-size:25cqw">Deveshh</div>
+          <div class="d c-white" style="font-size:25cqw">Sir</div>
+          <div class="gwr"><img src="assets/gwr-logo.png" alt="Guinness World Records logo"><div><div class="m c-white" style="font-size:6.2cqw;font-weight:700">Guinness World<br>Record Holder</div><div class="hand c-lime" style="font-size:6cqw;margin-top:.8cqw">in Memory</div></div></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:13.5 · who made it</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-violet">
+        <div class="grain"></div>
+        <div class="stack" style="gap:1cqw">
+          <div class="hand c-white" style="font-size:8.5cqw">Find out</div>
+          <div class="d c-lime" style="font-size:33cqw">WHY</div>
+          <div class="m c-white" style="font-size:6.4cqw">mistakes keep happening</div>
+          <div class="d c-white" style="font-size:33cqw;margin-top:3cqw">WHAT</div>
+          <div class="m c-lime" style="font-size:6.4cqw">to fix first</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>0:16 · why / what</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">इसीलिए — फ़्री कैलकुलेशन एफ़िशिएंसी टेस्ट! गिनीज़ वर्ल्ड रिकॉर्ड होल्डर देवेश सर द्वारा डिज़ाइन किया गया। जानिए, गलतियाँ क्यों होती हैं… और पहले क्या सुधारना है।</div><div class="vo-rom">Isiliye — FREE Calculation Efficiency Test! Guinness World Record holder Deveshh Sir dwara design kiya gaya. Jaaniye, galtiyaan kyun hoti hain… aur pehle kya sudhaarna hai.</div><div class="vo-en">"That's why: a FREE Calculation Efficiency Test, designed by Guinness World Record holder Deveshh Sir. Find out why the mistakes happen and what to fix first."</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>FREE</code><code>CALCULATION EFFICIENCY TEST</code><code>Designed by Deveshh Sir · Guinness World Record Holder in Memory</code><code>WHY? / WHAT NEXT?</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut to brand navy. Title block rises up; the red <b>FREE</b> burst stamps on with a wobble on the word "free" (11.6s).</li><li>Credential badge slides in from the left on "Deveshh Sir"; the Guinness emblem spins in and settles.</li><li>15.0s: title shrinks away; WHY? and WHAT NEXT? cards flip in on "kyun" and "kya sudhaarna".</li><li><b>Background:</b> navy graph paper with maths symbols drifting slowly, a yellow spotlight behind the title, and brochure-style yellow and blue waves at the bottom.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Music lifts here (brighter, fuller). "Ding" on FREE.</div></div>
-    <div class="row"><div class="k">Guinness</div><div class="note"><span class="status done">Added</span> Guinness World Records emblem from the file you supplied (source/logo-g.png). It pops in beside the badge as "Deveshh Sir" is spoken. Use depends on your GWR licence and GWR approving the ad.</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>FREE</code><code>Calculation Efficiency Test</code><code>designed by Deveshh Sir</code><code>Guinness World Record Holder in Memory</code><code>Find out WHY mistakes keep happening</code><code>WHAT to fix first</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>11.0s: the red wipes away to violet. "FREE" scales up from small to full width with a little overshoot and two sparkles, on the word "free".</li><li>13.2s: "designed by" is handwritten; "Deveshh Sir" slides up line by line; the Guinness emblem rolls in from the left.</li><li>15.4s: "WHY" lands on "kyun", "WHAT" lands on "kya sudhaarna", each with its small line underneath.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>The music lifts here (fuller, brighter); a bright "ding" on FREE.</div></div>
+    <div class="row"><div class="k">Guinness</div><div class="note"><span class="status done">Added</span> Emblem from your supplied file. GWR requires a licence and its approval of each ad that uses the logo; confirm both before the reel runs as an ad.</div></div>
   </div>
 </section>
 
 <!-- ================= S5 ================= -->
 <section class="scene" id="s5">
-  <div class="scene-head"><span class="sid">S5</span><span class="stime">0:18 – 0:24 · 6 s</span><h2>The bonus</h2><span class="ssrc">From brochure pg 3 (+ pg 4 "limited time")</span></div>
+  <div class="scene-head"><span class="sid">S5</span><span class="stime">0:18 – 0:24 · 6 s</span><h2>The bonus</h2><span class="ssrc">Content: pg 3 (+ "limited period", pg 4)</span></div>
   <div class="frames">
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <img class="bgimg" src="assets/classroom.jpg" alt="" style="filter:brightness(.6)">
-        <div class="shade" style="background:linear-gradient(rgba(13,36,89,.35),rgba(13,36,89,.9) 70%)"></div>
-        <div class="rays"></div>
-        <div class="giftwrap"><svg viewBox="0 0 100 100" role="img" aria-label="Gift box"><use href="#gift" width="100" height="100"/></svg></div>
-        <div class="bonus"><div class="k1">+ BONUS FOR YOUR CHILD</div><div class="k2"><em>₹500</em> CTM™ MASTERCLASS</div><div class="k3">Limited period only</div></div>
+    <figure class="kf">
+      <div class="frame f-lime">
+        <div class="grain"></div>
+        <div class="stack" style="gap:1cqw">
+          <div class="hand c-pen" style="font-size:7.4cqw;white-space:nowrap">+ a bonus for your child</div>
+          <div class="d c-ink" style="font-size:20cqw;margin-top:2cqw">CTM™</div>
+          <div class="d c-ink" style="font-size:17cqw">Masterclass</div>
+          <div style="display:flex;align-items:flex-end;gap:2cqw;margin-top:3cqw"><span class="hand c-ink" style="font-size:8cqw;padding-bottom:4cqw">worth</span><span class="d c-ink rel" style="font-size:34cqw">₹500<svg viewBox="0 0 100 70" style="position:absolute;right:-7cqw;top:-8cqw;width:21cqw;height:15cqw;transform:rotate(14deg)"><use href="#bow"/></svg></span></div>
+          <span class="stampline" style="margin-top:3cqw">Free with the test</span>
+          <div class="m c-ink" style="font-size:6cqw;margin-top:2cqw">for a limited period only</div>
+        </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:19 · gift bursts open</figcaption>
+      <figcaption>0:19 · the gift</figcaption>
     </figure>
-    <figure class="kf" style="margin:0">
-      <div class="frame">
-        <img class="bgimg" src="assets/classroom.jpg" alt="" style="filter:brightness(.45) blur(1px)">
-        <div class="shade" style="background:rgba(13,36,89,.55)"></div>
-        <div class="ctmcard"><svg class="ctm-logo" viewBox="0 0 300 118" role="img" aria-label="CTM"><use href="#ctm" width="300" height="118"/></svg><div class="ctm-tag"><span class="pill">Calculation Thinking Method</span><span class="spa"><span class="s">See.</span> <span class="p">Process.</span> <span class="a">Answer.</span></span></div></div>
-        <div class="noab"><div class="a"><s>NO ABACUS.</s><s>NO VEDIC SUTRAS.</s></div><div class="b">A DIFFERENT WAY TO THINK.</div></div>
-        <div class="chips"><span class="c1"><i>⚡</i>Faster calculations</span><span class="c2"><i>★</i>More confidence</span><span class="c3"><i>💡</i>More interest in Maths</span></div>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div class="grain"></div>
+        <div class="stack" style="gap:1.4cqw">
+          <div><span class="d c-white rel" style="font-size:15cqw">No abacus.<svg class="mark c-pen" viewBox="0 0 200 30" preserveAspectRatio="none" style="left:-2%;top:30%;width:104%;height:6cqw"><use href="#sc-strike"/></svg></span></div>
+          <div><span class="d c-white rel" style="font-size:13.5cqw">No Vedic sutras.<svg class="mark c-pen" viewBox="0 0 200 30" preserveAspectRatio="none" style="left:-2%;top:30%;width:104%;height:6cqw"><use href="#sc-strike"/></svg></span></div>
+          <div class="d c-lime" style="font-size:16.5cqw;margin-top:5cqw">A different</div>
+          <div class="d c-lime" style="font-size:16.5cqw">way to think.</div>
+          <div class="hand c-white" style="font-size:6.4cqw;margin-top:4cqw;white-space:nowrap">See → Process → Answer</div>
+        </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:22 · CTM + "No Abacus"</figcaption>
+      <figcaption>0:22 · what makes CTM different</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">साथ में बोनस — ₹500 की CTM मास्टरक्लास! सिर्फ़ लिमिटेड पीरियड के लिए। न अबेकस, न वैदिक सूत्र।</div><div class="vo-rom">Saath mein bonus — ₹500 ki CTM Masterclass! Sirf limited period ke liye. Na abacus, na Vedic sutra.</div><div class="vo-en">"Plus a bonus: a ₹500 CTM Masterclass! Only for a limited period. No abacus, no Vedic sutras."</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>+ BONUS FOR YOUR CHILD</code><code>₹500 CTM™ MASTERCLASS</code><code>Limited period only</code><code>NO ABACUS. NO VEDIC SUTRAS.</code><code>A DIFFERENT WAY TO THINK.</code><code>Faster · Confident · Interested</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Gift box (drawn in code, lid is a separate layer) shakes twice, the lid pops, light rays spin out, and "₹500 CTM™ Masterclass" rises out of the box.</li><li>21.0s: CTM logo bounces in letter by letter (C, T, M in blue, red, green); "No Abacus" and "No Vedic Sutras" are struck through as they're spoken.</li><li>The three benefit chips tick in on the last beat with no VO.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Ribbon pull + sparkle on the gift; two quick "strike" swipes.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">"Free test + ₹500 bonus" gives a parent something to lose by waiting. "No Abacus, no Vedic" answers "is this the same as what's next door?"</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>+ a bonus for your child</code><code>CTM™ Masterclass</code><code>worth ₹500</code><code>Free with the test</code><code>for a limited period only</code><code>No abacus. No Vedic sutras.</code><code>A different way to think.</code><code>See → Process → Answer</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>18.0s: a highlighter-lime swipe crosses the screen and becomes the background.</li><li>"₹500" counts up quickly from ₹0 to ₹500 and lands; a red bow ties itself onto the corner; the "Free with the test" stamp thumps down.</li><li>21.3s: cut to ink. "No abacus." and "No Vedic sutras." appear and are crossed out in red pen as they're spoken; "A different way to think." rises in lime; "See → Process → Answer" writes itself.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>A fast counter tick-up, a ribbon "zip", a stamp thump; two quick pen scratches on the strike-throughs.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">The count-up makes ₹500 feel like real value. "Free with the test" is the reason to act now. Crossing out abacus and Vedic answers "isn't this the same as the class next door?"</div></div>
   </div>
 </section>
 
 <!-- ================= S6 ================= -->
 <section class="scene" id="s6">
-  <div class="scene-head"><span class="sid">S6</span><span class="stime">0:24 – 0:30 · 6 s</span><h2>One action: WhatsApp</h2><span class="ssrc">From brochure pg 4</span></div>
+  <div class="scene-head"><span class="sid">S6</span><span class="stime">0:24 – 0:30 · 6 s</span><h2>One action: WhatsApp</h2><span class="ssrc">Content: pg 4, "How to register"</span></div>
   <div class="frames">
-    <figure class="kf" style="margin:0">
-      <div class="frame bg-cta">
-        <div class="deco"><span class="rings" style="top:45%"></span><span class="bub" style="left:3%;top:6%"></span><span class="bub r gr" style="left:80%;top:9%"></span><span class="bub gr" style="left:2%;top:62%"></span><span class="bub r" style="left:84%;top:66%"></span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#25d366"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#06132f"/></svg></div>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div class="grain"></div>
+        <div class="hand c-lime" style="position:absolute;left:9%;top:14%;font-size:8.5cqw">Just send this ↓</div>
         <div class="phone">
-          <div class="ph-top"><div class="av"><svg viewBox="0 0 60 60" aria-hidden="true" style="width:80%;height:80%"><use href="#gfg-mark" width="60" height="60"/></svg></div><div>Giane Future Gurukull<small>online</small></div></div>
+          <div class="ph-top"><span class="av"><svg viewBox="0 0 60 60" style="width:80%;height:80%" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg></span><div>Giane Future Gurukull<small>online</small></div></div>
           <div class="ph-body">
-            <div class="bubble">CALCULATION EFFICIENCY TEST<small>10:24 <b>✓✓</b></small></div>
-            <div class="bubble in">Thank you! 😊 Here are the available test dates…<small style="text-align:left;color:#888">10:24</small></div>
+            <div class="bub out">CALCULATION EFFICIENCY TEST<small>10:24 ✓✓</small></div>
+            <div class="bub in">Thank you! Here are the available test dates…<small style="text-align:left">10:24</small></div>
           </div>
-          <div class="ph-input"><span>Message</span><i>➤</i></div>
+          <div class="ph-in"><span>Message</span><i>➤</i></div>
         </div>
         <div class="safe"><i></i></div>
       </div>
       <figcaption>0:25 · message typed &amp; sent</figcaption>
     </figure>
-    <figure class="kf" style="margin:0">
-      <div class="frame bg-cta">
-        <div class="deco"><span class="rings" style="top:26%"></span><span class="bub gr" style="left:4%;top:40%"></span><span class="bub r" style="left:82%;top:42%"></span><span class="bub" style="left:6%;top:7%"></span><span class="bub r gr" style="left:80%;top:6%"></span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#25d366"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#06132f"/></svg></div>
-        <div class="ctaband">
-          <div class="wa"><svg class="wa-ic" viewBox="0 0 48 48" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg>WHATSAPP NOW</div>
-          <div class="num">80623 65298</div>
-          <div class="send">Send <b>"CALCULATION EFFICIENCY TEST"</b><br>to book your child's <b>FREE</b> test</div>
-          <div class="meta"><span>Class 3 onwards</span><span>Ahmedabad</span><span>Vadodara</span></div>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div class="grain"></div>
+        <div class="stack" style="gap:1cqw">
+          <div style="display:flex;align-items:center;gap:2.4cqw"><svg viewBox="0 0 48 48" style="width:10cqw;height:10cqw" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:11cqw">WhatsApp</span></div>
+          <div class="d c-lime" style="font-size:31cqw;margin-top:2cqw;letter-spacing:-.01em">80623</div>
+          <div class="d c-lime" style="font-size:31cqw;letter-spacing:-.01em">65298</div>
+          <div class="hand c-white" style="font-size:6.5cqw;margin-top:3cqw">send</div>
+          <div><span class="d c-white rel" style="font-size:7.4cqw">CALCULATION EFFICIENCY TEST<svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-2.2cqw;width:100%;height:3cqw"><use href="#sc-under"/></svg></span></div>
+          <div class="m c-white" style="font-size:5.4cqw;margin-top:3.4cqw;opacity:.85">→ get your <b>free</b> test date &amp; time</div>
+          <div class="m c-lime" style="font-size:5cqw">Class 3+ · Ahmedabad · Vadodara</div>
+          <div class="gfg c-white" style="margin-top:4cqw"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><b>Giane Future Gurukull</b><span>www.gianefuturegurukull.com</span></div></div>
         </div>
-        <div class="steps"><div class="st"><b>1</b><span>Send the WhatsApp message</span></div><span class="ar">➜</span><div class="st"><b>2</b><span>Get your test date &amp; time</span></div></div>
-        <div class="logo-end"><div class="gfg"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><div class="gfg-name">Giane Future Gurukull</div><div class="gfg-url">www.gianefuturegurukull.com</div></div></div></div>
         <div class="safe"><i></i></div>
       </div>
       <figcaption>0:27–0:30 · end card, held</figcaption>
@@ -512,10 +495,10 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">क्लास 3 और उससे ऊपर के बच्चों के लिए। अभी WhatsApp करें!</div><div class="vo-rom">Class 3 aur usse upar ke bachchon ke liye. Abhi WhatsApp karein!</div><div class="vo-en">"For children in Class 3 and above. WhatsApp now!"</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>WHATSAPP NOW</code><code>80623 65298</code><code>Send "CALCULATION EFFICIENCY TEST" to book your child's FREE test</code><code>Class 3 onwards · Ahmedabad · Vadodara</code><code>1 Send the WhatsApp message ➜ 2 Get your test date &amp; time</code><code>Giane Future Gurukull · website</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Phone slides up; "CALCULATION EFFICIENCY TEST" types out letter by letter, send is tapped, ticks turn blue, a reply bubble appears (24.0–26.5s).</li><li>Phone zooms out; the number fills the screen in red. Steps 1 and 2 slide in below it (from "How to register", pg 4), then the logo.</li><li><b>Background:</b> deep navy with green rings pulsing out from the phone, then from the number, like a message being sent; faint chat bubbles drift; yellow and green waves at the bottom.</li><li><b>27.0–30.0s: end card holds completely still</b> so parents can screenshot it. The VO ends at about 27s; music resolves.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Keyboard taps, a generic "sent" swoosh (not WhatsApp's own sound), a soft chime on the number, music fades out.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">One action only. The call number, 3 addresses and website go in the post caption, not on screen.</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Just send this</code><code>WhatsApp 80623 65298</code><code>send CALCULATION EFFICIENCY TEST</code><code>→ get your free test date &amp; time</code><code>Class 3+ · Ahmedabad · Vadodara</code><code>Giane Future Gurukull · website</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>24.0s: cut to ink. The phone rises; "CALCULATION EFFICIENCY TEST" types out letter by letter, send is tapped, ticks appear, the reply slides in (to 26.5s).</li><li>26.5s: the phone flies off; the number drops in digit by digit in lime; the message to send gets a lime underline.</li><li><b>27.5–30.0s: everything holds still</b> so parents can screenshot it. The VO ends at about 27s; the music resolves.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Soft keyboard taps, a generic "sent" swoosh (not WhatsApp's own sound), a chime as the last digit lands, music out.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">One action only. The number is the biggest thing on screen. The call number, addresses and website go in the post caption.</div></div>
   </div>
 </section>
 
@@ -562,13 +545,13 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
 
   <div class="card">
     <div class="eyebrow">Brochure → reel</div>
-    <h3>What's used where</h3>
+    <h3>What comes from the brochure</h3>
     <ul class="tight">
-      <li><b>Built in code, not cropped:</b> CTM logo, "Calculation Thinking Method · See. Process. Answer.", Giane Future Gurukull logo, gift box, WhatsApp icon. Every letter and colour can be changed and animated separately.</li>
-      <li><b>Guinness emblem:</b> your supplied file, used as-is (S4). A trademark has to stay exactly as issued.</li>
-      <li><b>Photos from the brochure:</b> stressed child, pg 2 (S2); mother and son, pg 1 (S3); classroom, pg 3 (S5). Shown as photo cards or blurred backgrounds, because at full screen they'd be enlarged 3–4× and look soft. The designer's original image files would fix this.</li>
-      <li><b>Also built in code:</b> the notebook, the sign cards, the FREE burst, the Why/What next cards and the WhatsApp chat.</li>
-      <li><b>Left out of the video:</b> full addresses, call number, Deveshh Sir's full bio, "60 minutes", "See. Process. Answer." as VO.</li>
+      <li><b>Content only:</b> the signs, the test, Deveshh Sir's credential, Why / What next, the ₹500 bonus, "No Abacus. No Vedic Sutras.", "See. Process. Answer.", the WhatsApp steps.</li>
+      <li><b>Design:</b> new. No brochure colours, boxes, badges or layouts are reused.</li>
+      <li><b>One photo:</b> the stressed child (pg 2), taped to the notebook in S2 at a size where it stays sharp. The other photos aren't used now; an original high-resolution photo would allow it to be bigger.</li>
+      <li><b>Guinness emblem:</b> your supplied file, used as-is.</li>
+      <li><b>Brand names</b> (CTM™, Giane Future Gurukull) are typed in the reel's own style. If you want the official logos on the end card, send the original files.</li>
     </ul>
   </div>
 
@@ -576,10 +559,10 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
     <div class="eyebrow">Open items</div>
     <h3>Decisions</h3>
     <ul class="tight">
-      <li><span class="status done">Added</span> <b>Guinness emblem</b> in S4, from the file you supplied. GWR requires a licence and its approval of each ad that uses the logo; confirm both before the reel runs as an ad.</li>
       <li><span class="status open">Open</span> <b>Voice:</b> AI Hindi voice for the first cut, then a real voice artist for the final?</li>
-      <li><span class="status open">Open</span> <b>Music:</b> a royalty-free soft track (ukulele/piano, about 95 BPM). I'll suggest 2–3 options.</li>
-      <li><span class="status done">Settled</span> Test is FREE · bonus for a limited period · no deadline (dates shared on WhatsApp) · Hindi VO · English/Hinglish text · no photo of Deveshh Sir.</li>
+      <li><span class="status open">Open</span> <b>Music:</b> a royalty-free soft track (piano/ukulele with a light beat, about 95 BPM). I'll suggest 2–3 options.</li>
+      <li><span class="status open">Open</span> <b>Hindi lines:</b> please check they sound natural.</li>
+      <li><span class="status done">Settled</span> Test is FREE · bonus for a limited period · no deadline · Hindi VO · English/Hinglish text · no photo of Deveshh Sir · Guinness emblem supplied · brochure glimpse dropped.</li>
     </ul>
   </div>
 </section>
@@ -597,8 +580,8 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
   });
   var cb=document.getElementById('copyCap');
   cb.addEventListener('click',function(){
-    var t=document.getElementById('captionText').textContent;
-    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('captionText'));var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Selected. Press Ctrl+C';}
+    var el=document.getElementById('captionText'), t=el.textContent;
+    function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Selected. Press Ctrl+C';}
     try{navigator.clipboard.writeText(t).then(function(){cb.textContent='Copied';setTimeout(function(){cb.textContent='Copy caption'},1800)},sel)}catch(e){sel()}
   });
 })();
