@@ -167,10 +167,7 @@ ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .send b{color:var(--yellow)}
 .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5cqw}
 .meta span{background:rgba(255,255,255,.14);border:.4cqw solid rgba(255,255,255,.35);border-radius:999px;padding:.8cqw 3cqw;font-weight:700;font-size:3.8cqw}
-.fan{position:absolute;left:50%;top:53%;width:60cqw;height:22cqw;transform:translateX(-50%)}
-.fan img{position:absolute;top:0;left:50%;width:15cqw;border-radius:1cqw;box-shadow:0 1cqw 2cqw rgba(0,0,0,.4);transform-origin:50% 120%}
-.fan img:nth-child(1){transform:translateX(-50%) rotate(-24deg)}.fan img:nth-child(2){transform:translateX(-50%) rotate(-8deg)}.fan img:nth-child(3){transform:translateX(-50%) rotate(8deg)}.fan img:nth-child(4){transform:translateX(-50%) rotate(24deg)}
-.logo-end{position:absolute;left:4%;right:4%;top:70%;display:grid;justify-items:center}
+.logo-end{position:absolute;left:4%;right:4%;top:68%;display:grid;justify-items:center}
 
 
 /* caption + misc sections */
@@ -209,6 +206,33 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 .polaroid{position:absolute;background:#fff;padding:2cqw 2cqw 8cqw;border-radius:1cqw;box-shadow:0 2cqw 5cqw rgba(0,0,0,.45)}
 .polaroid img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:.5cqw}
 .polaroid figcaption{position:absolute;left:0;right:0;bottom:1.4cqw;text-align:center;font-family:var(--f-hand);color:#233b8f;font-size:3.8cqw;white-space:nowrap}
+
+
+/* ---------- S4 / S6 designed backgrounds ---------- */
+.bg-test{background:
+  radial-gradient(75cqw 65cqw at 50% 33%,rgba(64,140,255,.45),transparent 70%),
+  linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px) 0 0/7cqw 7cqw,
+  linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px) 0 0/7cqw 7cqw,
+  linear-gradient(165deg,#163f9e 0%,#0c2260 52%,#061331 100%)}
+.bg-cta{background:
+  radial-gradient(80cqw 50cqw at 50% 100%,rgba(37,211,102,.22),transparent 70%),
+  linear-gradient(172deg,#123787 0%,#0b2260 50%,#06132f 100%)}
+.deco{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.deco .g{position:absolute;font-family:var(--f-display);line-height:1;color:rgba(255,255,255,.13)}
+.deco .g.y{color:rgba(255,214,10,.3)}
+.deco .rings{position:absolute;left:50%;width:150cqw;height:150cqw;transform:translate(-50%,-50%);border-radius:50%;
+  background:repeating-radial-gradient(circle,rgba(37,211,102,.45) 0 .6cqw,transparent .6cqw 10cqw);
+  -webkit-mask:radial-gradient(circle,#000 10%,transparent 62%);mask:radial-gradient(circle,#000 10%,transparent 62%)}
+.deco .bub{position:absolute;width:15cqw;height:9cqw;border-radius:3cqw;background:rgba(255,255,255,.07)}
+.deco .bub::after{content:"";position:absolute;bottom:-2cqw;left:2.5cqw;border:1.6cqw solid transparent;border-top-color:rgba(255,255,255,.07);border-left-color:rgba(255,255,255,.07)}
+.deco .bub.r::after{left:auto;right:2.5cqw;border-left-color:transparent;border-right-color:rgba(255,255,255,.07)}
+.deco .bub.gr{background:rgba(37,211,102,.16)}.deco .bub.gr::after{border-top-color:rgba(37,211,102,.16);border-right-color:rgba(37,211,102,.16)}
+.wave{position:absolute;left:0;right:0;bottom:0;width:100%;height:20%}
+.steps{position:absolute;left:6%;right:6%;top:52%;display:grid;grid-template-columns:1fr auto 1fr;gap:2cqw;align-items:center}
+.steps .st{background:#fff;color:var(--navy);border-radius:3cqw;padding:2.5cqw 2cqw;display:grid;grid-template-columns:auto 1fr;gap:2cqw;align-items:center;font-weight:800;font-size:3.7cqw;line-height:1.1}
+.steps .st b{width:7cqw;height:7cqw;border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--f-display);font-weight:400;font-size:4.4cqw}
+.steps .st:first-child b{background:var(--red)}.steps .st:last-child b{background:#1550d6}
+.steps .ar{color:var(--yellow);font-family:var(--f-display);font-size:6cqw}
 
 @media (max-width:820px){
   .scene{grid-template-columns:minmax(0,1fr)}
@@ -383,7 +407,8 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="scene-head"><span class="sid">S4</span><span class="stime">0:11 – 0:18 · 7 s</span><h2>The FREE test</h2><span class="ssrc">From brochure pg 2</span></div>
   <div class="frames">
     <figure class="kf" style="margin:0">
-      <div class="frame" style="background:radial-gradient(circle at 50% 30%,var(--navy-2),var(--navy) 70%)">
+      <div class="frame bg-test">
+        <div class="deco"><span class="g" style="left:6%;top:9%;font-size:16cqw;transform:rotate(-12deg)">×</span><span class="g y" style="left:70%;top:44%;font-size:13cqw;transform:rotate(10deg)">÷</span><span class="g" style="left:82%;top:9%;font-size:11cqw;transform:rotate(0deg)">+</span><span class="g" style="left:8%;top:52%;font-size:12cqw;transform:rotate(-6deg)">=</span><span class="g y" style="left:60%;top:3%;font-size:14cqw;transform:rotate(8deg)">7</span><span class="g" style="left:85%;top:58%;font-size:15cqw;transform:rotate(-10deg)">8</span><span class="g y" style="left:4%;top:30%;font-size:10cqw;transform:rotate(12deg)">%</span><span class="g" style="left:40%;top:58%;font-size:12cqw;transform:rotate(0deg)">−</span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#7cc4ff"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#0a1b45"/></svg></div>
         <div class="burst">FREE</div>
         <div class="title-ban"><span class="pre">FIND OUT WITH THE</span><div class="block" style="background:#0a1b45;border:.8cqw solid rgba(255,255,255,.15)"><div class="t1">CALCULATION</div><div class="t2">EFFICIENCY TEST</div></div></div>
         <div class="badge"><img class="seal" src="assets/gwr-logo.png" alt="Guinness World Records logo"><div><small>Specially designed by</small><b>DEVESHH SIR</b><small>Guinness World Record Holder in Memory</small></div></div>
@@ -392,7 +417,8 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
       <figcaption>0:12 · FREE burst + test title + credential</figcaption>
     </figure>
     <figure class="kf" style="margin:0">
-      <div class="frame" style="background:radial-gradient(circle at 50% 30%,var(--navy-2),var(--navy) 70%)">
+      <div class="frame bg-test">
+        <div class="deco"><span class="g y" style="left:78%;top:6%;font-size:13cqw;transform:rotate(10deg)">÷</span><span class="g" style="left:4%;top:6%;font-size:12cqw;transform:rotate(-12deg)">×</span><span class="g" style="left:88%;top:36%;font-size:14cqw;transform:rotate(8deg)">9</span><span class="g y" style="left:2%;top:46%;font-size:11cqw;transform:rotate(0deg)">+</span><span class="g" style="left:84%;top:58%;font-size:12cqw;transform:rotate(-6deg)">=</span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#7cc4ff"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#0a1b45"/></svg></div>
         <div style="position:absolute;left:6%;right:6%;top:14%;text-align:center;font-family:var(--f-display);font-size:7.5cqw;color:#fff">MORE THAN <span style="color:var(--yellow)">JUST A SCORE</span></div>
         <div class="wwn">
           <div class="c why"><div class="ic">?</div><div><b>WHY?</b><span>Why does your child keep making mistakes?</span></div></div>
@@ -407,7 +433,7 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">इसीलिए — फ़्री कैलकुलेशन एफ़िशिएंसी टेस्ट! गिनीज़ वर्ल्ड रिकॉर्ड होल्डर देवेश सर द्वारा डिज़ाइन किया गया। जानिए, गलतियाँ क्यों होती हैं… और पहले क्या सुधारना है।</div><div class="vo-rom">Isiliye — FREE Calculation Efficiency Test! Guinness World Record holder Deveshh Sir dwara design kiya gaya. Jaaniye, galtiyaan kyun hoti hain… aur pehle kya sudhaarna hai.</div><div class="vo-en">"That's why: a FREE Calculation Efficiency Test, designed by Guinness World Record holder Deveshh Sir. Find out why the mistakes happen and what to fix first."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>FREE</code><code>CALCULATION EFFICIENCY TEST</code><code>Designed by Deveshh Sir · Guinness World Record Holder in Memory</code><code>WHY? / WHAT NEXT?</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut to brand navy. Title block rises up; the red <b>FREE</b> burst stamps on with a wobble on the word "free" (11.6s).</li><li>Credential badge slides in from the left on "Deveshh Sir"; the Guinness emblem spins in and settles.</li><li>15.0s: title shrinks away; WHY? and WHAT NEXT? cards flip in on "kyun" and "kya sudhaarna".</li></ul></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut to brand navy. Title block rises up; the red <b>FREE</b> burst stamps on with a wobble on the word "free" (11.6s).</li><li>Credential badge slides in from the left on "Deveshh Sir"; the Guinness emblem spins in and settles.</li><li>15.0s: title shrinks away; WHY? and WHAT NEXT? cards flip in on "kyun" and "kya sudhaarna".</li><li><b>Background:</b> navy graph paper with maths symbols drifting slowly, a yellow spotlight behind the title, and brochure-style yellow and blue waves at the bottom.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Music lifts here (brighter, fuller). "Ding" on FREE.</div></div>
     <div class="row"><div class="k">Guinness</div><div class="note"><span class="status done">Added</span> Guinness World Records emblem from the file you supplied (source/logo-g.png). It pops in beside the badge as "Deveshh Sir" is spoken. Use depends on your GWR licence and GWR approving the ad.</div></div>
   </div>
@@ -454,7 +480,8 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="scene-head"><span class="sid">S6</span><span class="stime">0:24 – 0:30 · 6 s</span><h2>One action: WhatsApp</h2><span class="ssrc">From brochure pg 4</span></div>
   <div class="frames">
     <figure class="kf" style="margin:0">
-      <div class="frame" style="background:radial-gradient(circle at 50% 20%,#1b4aa8,var(--navy) 70%)">
+      <div class="frame bg-cta">
+        <div class="deco"><span class="rings" style="top:45%"></span><span class="bub" style="left:3%;top:6%"></span><span class="bub r gr" style="left:80%;top:9%"></span><span class="bub gr" style="left:2%;top:62%"></span><span class="bub r" style="left:84%;top:66%"></span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#25d366"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#06132f"/></svg></div>
         <div class="phone">
           <div class="ph-top"><div class="av"><svg viewBox="0 0 60 60" aria-hidden="true" style="width:80%;height:80%"><use href="#gfg-mark" width="60" height="60"/></svg></div><div>Giane Future Gurukull<small>online</small></div></div>
           <div class="ph-body">
@@ -468,14 +495,15 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
       <figcaption>0:25 · message typed &amp; sent</figcaption>
     </figure>
     <figure class="kf" style="margin:0">
-      <div class="frame" style="background:radial-gradient(circle at 50% 20%,#1b4aa8,var(--navy) 70%)">
+      <div class="frame bg-cta">
+        <div class="deco"><span class="rings" style="top:26%"></span><span class="bub gr" style="left:4%;top:40%"></span><span class="bub r" style="left:82%;top:42%"></span><span class="bub" style="left:6%;top:7%"></span><span class="bub r gr" style="left:80%;top:6%"></span><svg class="wave" viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 18 C25 4 55 30 100 12 V40 H0Z" fill="#ffd60a" opacity=".95"/><path d="M0 26 C30 14 60 36 100 22 V40 H0Z" fill="#25d366"/><path d="M0 33 C35 25 65 40 100 31 V40 H0Z" fill="#06132f"/></svg></div>
         <div class="ctaband">
           <div class="wa"><svg class="wa-ic" viewBox="0 0 48 48" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg>WHATSAPP NOW</div>
           <div class="num">80623 65298</div>
           <div class="send">Send <b>"CALCULATION EFFICIENCY TEST"</b><br>to book your child's <b>FREE</b> test</div>
           <div class="meta"><span>Class 3 onwards</span><span>Ahmedabad</span><span>Vadodara</span></div>
         </div>
-        <div class="fan"><img src="assets/pg1-thumb.jpg" alt=""><img src="assets/pg2-thumb.jpg" alt=""><img src="assets/pg3-thumb.jpg" alt=""><img src="assets/pg4-thumb.jpg" alt=""></div>
+        <div class="steps"><div class="st"><b>1</b><span>Send the WhatsApp message</span></div><span class="ar">➜</span><div class="st"><b>2</b><span>Get your test date &amp; time</span></div></div>
         <div class="logo-end"><div class="gfg"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><div class="gfg-name">Giane Future Gurukull</div><div class="gfg-url">www.gianefuturegurukull.com</div></div></div></div>
         <div class="safe"><i></i></div>
       </div>
@@ -484,8 +512,8 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">क्लास 3 और उससे ऊपर के बच्चों के लिए। अभी WhatsApp करें!</div><div class="vo-rom">Class 3 aur usse upar ke bachchon ke liye. Abhi WhatsApp karein!</div><div class="vo-en">"For children in Class 3 and above. WhatsApp now!"</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>WHATSAPP NOW</code><code>80623 65298</code><code>Send "CALCULATION EFFICIENCY TEST" to book your child's FREE test</code><code>Class 3 onwards · Ahmedabad · Vadodara</code><code>Giane Future Gurukull · website</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Phone slides up; "CALCULATION EFFICIENCY TEST" types out letter by letter, send is tapped, ticks turn blue, a reply bubble appears (24.0–26.5s).</li><li>Phone zooms out; the number fills the screen in red. The 4 brochure pages fan out below it ("full details on WhatsApp").</li><li><b>27.0–30.0s: end card holds completely still</b> so parents can screenshot it. The VO ends at about 27s; music resolves.</li></ul></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>WHATSAPP NOW</code><code>80623 65298</code><code>Send "CALCULATION EFFICIENCY TEST" to book your child's FREE test</code><code>Class 3 onwards · Ahmedabad · Vadodara</code><code>1 Send the WhatsApp message ➜ 2 Get your test date &amp; time</code><code>Giane Future Gurukull · website</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Phone slides up; "CALCULATION EFFICIENCY TEST" types out letter by letter, send is tapped, ticks turn blue, a reply bubble appears (24.0–26.5s).</li><li>Phone zooms out; the number fills the screen in red. Steps 1 and 2 slide in below it (from "How to register", pg 4), then the logo.</li><li><b>Background:</b> deep navy with green rings pulsing out from the phone, then from the number, like a message being sent; faint chat bubbles drift; yellow and green waves at the bottom.</li><li><b>27.0–30.0s: end card holds completely still</b> so parents can screenshot it. The VO ends at about 27s; music resolves.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Keyboard taps, a generic "sent" swoosh (not WhatsApp's own sound), a soft chime on the number, music fades out.</div></div>
     <div class="row"><div class="k">Why</div><div class="note">One action only. The call number, 3 addresses and website go in the post caption, not on screen.</div></div>
   </div>
@@ -539,7 +567,6 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
       <li><b>Built in code, not cropped:</b> CTM logo, "Calculation Thinking Method · See. Process. Answer.", Giane Future Gurukull logo, gift box, WhatsApp icon. Every letter and colour can be changed and animated separately.</li>
       <li><b>Guinness emblem:</b> your supplied file, used as-is (S4). A trademark has to stay exactly as issued.</li>
       <li><b>Photos from the brochure:</b> stressed child, pg 2 (S2); mother and son, pg 1 (S3); classroom, pg 3 (S5). Shown as photo cards or blurred backgrounds, because at full screen they'd be enlarged 3–4× and look soft. The designer's original image files would fix this.</li>
-      <li><b>All 4 pages:</b> fanned out in the end card (S6).</li>
       <li><b>Also built in code:</b> the notebook, the sign cards, the FREE burst, the Why/What next cards and the WhatsApp chat.</li>
       <li><b>Left out of the video:</b> full addresses, call number, Deveshh Sir's full bio, "60 minutes", "See. Process. Answer." as VO.</li>
     </ul>
