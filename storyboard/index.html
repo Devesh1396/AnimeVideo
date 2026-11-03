@@ -161,6 +161,39 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 .copybtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .svgdefs{position:absolute;width:0;height:0;overflow:hidden}
 
+
+/* footage (stand-in stills in the storyboard; video clips in the reel) */
+.ftg{position:absolute;inset:0;overflow:hidden;background:#111}
+.ftg img{width:100%;height:100%;object-fit:cover;display:block}
+.ftg.blur img{filter:blur(.7cqw) brightness(.5);transform:scale(1.1)}
+.ftg.duo img{filter:grayscale(1) contrast(1.15) brightness(1.1)}
+.ftg.duo::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply}
+.duo-violet::after{background:var(--violet)}
+.duo-pen::after{background:var(--pen)}
+.scrim-b{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,28,.25) 0%,rgba(12,10,28,0) 28%,rgba(12,10,28,.7) 62%,rgba(12,10,28,.92))}
+.clip{position:absolute;left:3%;top:2.5%;z-index:4;display:inline-flex;align-items:center;gap:1cqw;background:rgba(0,0,0,.6);color:#fff;border:.35cqw dashed rgba(255,255,255,.75);border-radius:1.4cqw;padding:.7cqw 2cqw;font-family:var(--f-body);font-weight:700;font-size:3.4cqw;letter-spacing:.04em}
+/* exam paper (S1) */
+.exam{position:absolute;left:9%;right:9%;top:10.5%;background:#fdfdfb;border-radius:1cqw;padding:3.4cqw 4.5cqw 2.6cqw;box-shadow:0 2.5cqw 6cqw rgba(0,0,0,.55);transform:rotate(-2.5deg);color:var(--ink)}
+.ex-h{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:.4cqw solid var(--ink);padding-bottom:2cqw;margin-bottom:2cqw;gap:2cqw}
+.ex-t{font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:5.2cqw;letter-spacing:.02em}
+.ex-n{font-family:var(--f-body);font-size:3.4cqw;margin-top:.8cqw;white-space:nowrap}
+.ex-n .hand{font-size:4.6cqw}
+.ex-s{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:8cqw;line-height:1;margin:1cqw 2cqw 0 0;white-space:nowrap}
+.ex-q{display:grid;grid-template-columns:5.5cqw 1fr auto;align-items:center;gap:1cqw;min-height:7.4cqw;border-bottom:.25cqw solid #e3e7ef}
+.ex-q .qn{font-family:var(--f-body);font-weight:600;font-size:3.8cqw;color:#666}
+.ex-q .qa{font-family:var(--f-hand);font-weight:700;color:var(--ball);font-size:6.4cqw;white-space:nowrap}
+.ex-q .qa s{text-decoration-color:var(--pen);text-decoration-thickness:.6cqw}
+.ex-q .qa em{font-style:normal;color:var(--pen);font-size:.8em;vertical-align:.3em}
+.ex-q .x{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:8cqw;line-height:1}
+.ex-q .ok{position:static;width:7cqw;height:7cqw;color:var(--pen)}
+
+/* shot list */
+table.shots{width:100%;border-collapse:collapse;font-size:14px}
+table.shots td,table.shots th{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}
+table.shots th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+table.shots td:first-child{font-weight:700;white-space:nowrap}
+table.shots code{font-family:var(--f-body);background:var(--chip);border-radius:4px;padding:1px 6px;font-size:13px;white-space:nowrap}
+
 @media (max-width:860px){
   .scene{grid-template-columns:minmax(0,1fr)}
   .frames{overflow-x:auto;padding-bottom:6px}
@@ -198,13 +231,13 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 </header>
 
 <section class="vl" aria-labelledby="vl-h">
-  <div class="eyebrow" id="vl-h">Visual language · "Notebook to clarity"</div>
+  <div class="eyebrow" id="vl-h">Visual language · "Red marks to clarity"</div>
   <div class="vl-grid">
     <div style="display:grid;gap:12px">
       <div class="swatches">
-        <div class="sw"><i style="background:#f7f5ef;background-image:linear-gradient(transparent 85%,#d5dcea 0);background-size:100% 10px"></i><b>Notebook</b><span>S1–S2 · the problem</span></div>
-        <div class="sw"><i style="background:#ef4136"></i><b>Red pen</b><span>S3 · the twist, plus every mistake mark</span></div>
-        <div class="sw"><i style="background:#3a1fd0"></i><b>Electric violet</b><span>S4 · the free test</span></div>
+        <div class="sw"><i style="background:#3b3a4e;background-image:linear-gradient(180deg,rgba(255,255,255,.12),rgba(0,0,0,.35))"></i><b>Real footage</b><span>S1–S2 · classroom, exam paper, home</span></div>
+        <div class="sw"><i style="background:#ef4136"></i><b>Red pen</b><span>S3 · the twist; footage in red duotone; every mistake mark</span></div>
+        <div class="sw"><i style="background:#3a1fd0"></i><b>Electric violet</b><span>S4 · the free test; footage in violet duotone</span></div>
         <div class="sw"><i style="background:#c8f23a"></i><b>Highlighter</b><span>S5 · the bonus, plus key-word swipes</span></div>
         <div class="sw"><i style="background:#16142b"></i><b>Ink</b><span>S6 · WhatsApp call to action</span></div>
         <div class="sw"><i style="background:#2a3a94"></i><b>Ballpoint blue</b><span>The child's handwriting</span></div>
@@ -212,11 +245,11 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
     </div>
     <div style="display:grid;gap:14px">
       <div class="typespec"><div class="a">Big words. Few of them.</div><small>Display: condensed grotesque, extra bold. Key word 2–3× the size of the rest.</small></div>
-      <div class="typespec"><div class="b">red-pen notes, ticks &amp; circles</div><small>Handwriting for the child's sums and the "teacher's" marks.</small></div>
+      <div class="typespec"><div class="b">red-pen notes, ticks &amp; circles</div><small>Handwriting for the child's answers and the teacher's marks.</small></div>
       <ul class="tight">
         <li>Hand-drawn marks (circles, ticks, strike-throughs, arrows) <b>draw on in time with the voice</b>.</li>
-        <li>A full-screen colour change marks each new act, so the story is easy to follow with sound off.</li>
-        <li>No boxes or cards; type sits straight on the colour. The only frame is the phone.</li>
+        <li>Real footage of children, parents and classrooms. In S3 and S4 it is duotoned in the act's colour, so each act still reads as one colour.</li><li>A colour change marks each new act, so the story is easy to follow with sound off.</li>
+        <li>No boxes or cards; type sits straight on the picture or colour. The only frames are the exam paper and the phone.</li>
       </ul>
     </div>
   </div>
@@ -224,8 +257,8 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 
 <section class="timeline" aria-label="Timeline">
   <div class="tl-bar">
-    <a href="#s1" style="flex:3;background:#f7f5ef;color:#16142b">S1 Hook</a>
-    <a href="#s2" style="flex:5;background:#e9e6dc;color:#16142b">S2 Signs</a>
+    <a href="#s1" style="flex:3;background:#3b3a4e;color:#fff">S1 Hook</a>
+    <a href="#s2" style="flex:5;background:#55536b;color:#fff">S2 Signs</a>
     <a href="#s3" style="flex:3;background:#ef4136;color:#fff">S3 Twist</a>
     <a href="#s4" style="flex:7;background:#3a1fd0;color:#fff">S4 Free test</a>
     <a href="#s5" style="flex:6;background:#c8f23a;color:#16142b">S5 Bonus</a>
@@ -241,40 +274,50 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 
 <!-- ================= S1 ================= -->
 <section class="scene" id="s1">
-  <div class="scene-head"><span class="sid">S1</span><span class="stime">0:00 – 0:03 · 3 s</span><h2>The hook</h2><span class="ssrc">Content: pg 1 headline</span></div>
+  <div class="scene-head"><span class="sid">S1</span><span class="stime">0:00 – 0:03 · 3 s</span><h2>The hook: classroom, then the exam paper</h2><span class="ssrc">Content: pg 1 headline</span></div>
   <div class="frames">
     <figure class="kf">
-      <div class="frame f-paper">
-        <div class="sums">
-          <div class="ln">6 × 7 = 42 <svg class="mark tick" viewBox="0 0 40 40" style="position:static"><use href="#sc-tick"/></svg></div>
-          <div class="ln">9 × 4 = 36 <svg class="mark tick" viewBox="0 0 40 40" style="position:static"><use href="#sc-tick"/></svg></div>
-          <div class="ln">7 × 8 = <span class="rel">54<svg class="mark c-pen" viewBox="0 0 200 100" style="left:-22%;top:-26%;width:150%;height:150%"><use href="#sc-circle"/></svg></span></div>
+      <div class="frame">
+        <div class="ftg"><img src="assets/classroom.jpg" alt="Children in a classroom facing the board" style="object-position:50% 30%"></div>
+        <div class="scrim-b"></div>
+        <span class="clip">▶ C1 · stand-in</span>
+        <div class="stack" style="justify-content:flex-end">
+          <div class="d c-white" style="font-size:15cqw">Concepts?</div>
+          <div><span class="d c-lime rel" style="font-size:32cqw">Clear.<svg class="mark c-lime" viewBox="0 0 40 40" style="right:-11cqw;top:1cqw;width:10cqw;height:10cqw"><use href="#sc-tick"/></svg></span></div>
         </div>
-        <div class="hand c-pen" style="position:absolute;left:52%;top:47%;font-size:10cqw;transform:rotate(-7deg)">again?!</div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:00 · two right, one wrong</figcaption>
+      <figcaption>0:00 · classroom clip</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame f-paper">
-        <div class="sums" style="opacity:.07"><div class="ln">6 × 7 = 42</div><div class="ln">9 × 4 = 36</div><div class="ln">7 × 8 = 54</div></div>
-        <div class="stack">
-          <div class="m" style="font-size:8.5cqw">Concepts? <span class="hl">Clear.</span></div>
-          <div class="d" style="font-size:15cqw;margin-top:4cqw">Still making</div>
-          <div><span class="d c-pen rel" style="font-size:31cqw">silly<svg class="mark c-pen" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-3cqw;width:100%;height:5cqw"><use href="#sc-under"/></svg></span></div>
-          <div class="d" style="font-size:21cqw">mistakes?</div>
+      <div class="frame">
+        <div class="ftg blur"><img src="assets/classroom.jpg" alt="" style="object-position:50% 80%"></div>
+        <span class="clip">▶ C2 · stand-in</span>
+        <div class="exam">
+          <div class="ex-h"><div><div class="ex-t">MATHS · UNIT TEST</div><div class="ex-n">Name: <span class="hand c-ball">Aarav</span> &nbsp; Class: <span class="hand c-ball">4-B</span></div></div><div class="ex-s rel">12<span style="font-size:.6em">/20</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-30%;top:-25%;width:160%;height:150%"><use href="#sc-circle"/></svg></div></div>
+          <div class="ex-q"><span class="qn">1.</span><span class="qa">48 + 37 = 85</span><svg class="mark ok" viewBox="0 0 40 40"><use href="#sc-tick"/></svg></div>
+          <div class="ex-q"><span class="qn">2.</span><span class="qa">7 × 8 = <s>54</s> <em>56</em></span><span class="x">✗</span></div>
+          <div class="ex-q"><span class="qn">3.</span><span class="qa">125 − 68 = <s>67</s> <em>57</em></span><span class="x">✗</span></div>
+          <div class="ex-q"><span class="qn">4.</span><span class="qa">36 ÷ 4 = <s>8</s> <em>9</em></span><span class="x">✗</span></div>
+          <div class="hand c-pen" style="font-size:6.4cqw;transform:rotate(-4deg);margin-top:1.6cqw">Careless mistakes!</div>
+        </div>
+        <div style="position:absolute;left:9%;right:12%;top:58%;display:grid;gap:.6cqw">
+          <div class="m c-white" style="font-size:7.5cqw">Still making</div>
+          <div class="d c-pen" style="font-size:21cqw">silly</div>
+          <div class="d c-white" style="font-size:15cqw">mistakes?</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:02 · type slams over the page</figcaption>
+      <figcaption>0:01.5 · the test paper comes back</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">कॉन्सेप्ट्स क्लियर हैं… फिर भी सिली मिस्टेक्स?</div><div class="vo-rom">Concepts clear hain… phir bhi silly mistakes?</div><div class="vo-en">"The concepts are clear… and still silly mistakes?"</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>Concepts? Clear.</code><code>Still making silly mistakes?</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Opens mid-action on a notebook page. Two sums write themselves and get red ticks (0.0–0.9s).</li><li>"7 × 8 = 54" is written; the red pen circles 54; "again?!" and an arrow scribble in (0.9–1.8s).</li><li>2.0s: the sums fade back; the words drop in one at a time, "silly" last and biggest, with its red underline drawn under it.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Ballpoint scratch, two soft "ticks", a pen squeak on the circle, then the music starts.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">Two right answers, then a wrong one, is exactly what "silly mistake" means to a parent. Understood in a second, with sound off.</div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Concepts? Clear. ✓</code><code>Exam paper: 12/20, three red crosses, "Careless mistakes!"</code><code>Still making silly mistakes?</code></div></div>
+    <div class="row"><div class="k">Footage</div><div><b>C1</b> classroom of Indian schoolchildren in uniform, teacher at the board, slow push-in (0.0–1.4s). <b>C2</b> a child's desk as a test paper is handed back, blurred behind the paper (1.4–3.0s).</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Opens on the classroom clip. "Concepts?" then "Clear." pop up from the bottom on the VO, and a lime tick draws itself.</li><li>1.4s, on "phir bhi": the clip blurs and the exam paper slides up into frame, slightly tilted. The red pen marks it in quick strokes: ✓, ✗, ✗, ✗, the score circled, "Careless mistakes!"</li><li>2.2s: "Still making silly mistakes?" stacks in under the paper; "silly" lands last, in red.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Classroom murmur under the first second, a paper swish, three quick red-pen scratches, then the music starts.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">The real classroom says "this is about your child's school". The marked paper with wrong answers to easy sums is what "silly mistake" looks like to every parent.</div></div>
   </div>
 </section>
 
@@ -283,37 +326,42 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="scene-head"><span class="sid">S2</span><span class="stime">0:03 – 0:08 · 5 s</span><h2>The parent's checklist</h2><span class="ssrc">Content: pg 1, the four signs</span></div>
   <div class="frames">
     <figure class="kf">
-      <div class="frame f-paper">
+      <div class="frame">
+        <div class="ftg blur"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 50%"></div>
+        <span class="clip">▶ C3 · stand-in</span>
         <div class="stack" style="gap:4.2cqw">
-          <div class="hand c-ball" style="font-size:9cqw">Does your child…</div>
-          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--pen);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d" style="font-size:10.5cqw">rush through sums?</span></div>
-          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--pen);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d" style="font-size:10.5cqw">lose focus?</span></div>
-          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--pen);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d" style="font-size:10.5cqw">forget formulas?</span></div>
-          <div class="check" style="opacity:.45"><span class="box"><svg viewBox="0 0 40 40" style="stroke:var(--ink)"><use href="#sc-box"/></svg></span><span class="d" style="font-size:10.5cqw">slip while solving?</span></div>
+          <div class="hand c-white" style="font-size:9cqw">Does your child…</div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:10.5cqw">rush through sums?</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:10.5cqw">lose focus?</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:10.5cqw">forget formulas?</span></div>
+          <div class="check" style="opacity:.5"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg></span><span class="d c-white" style="font-size:10.5cqw">slip while solving?</span></div>
         </div>
         <div class="safe"><i></i></div>
       </div>
       <figcaption>0:05 · boxes tick on each word</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame f-paper">
-        <div class="taped" style="left:15%;right:24%;top:13%;transform:rotate(-3deg)"><img src="assets/kid-stressed.jpg" alt="Child holding his head over homework"><span class="tape" style="left:50%;top:-3cqw;transform:translateX(-50%) rotate(2deg)"></span></div>
-        <div style="position:absolute;left:9%;right:12%;top:54%;display:grid;gap:1.4cqw">
-          <div class="m" style="font-size:8cqw">These are just</div>
-          <div class="d" style="font-size:24cqw">the <span class="hl">signs.</span></div>
-          <div class="hand c-pen" style="font-size:7.6cqw;margin-top:1.6cqw">not the real reason ↓</div>
+      <div class="frame">
+        <div class="ftg"><img src="assets/kid-stressed.jpg" alt="Child holding his head over homework" style="object-position:45% 40%"></div>
+        <div class="scrim-b"></div>
+        <span class="clip">▶ C4 · stand-in</span>
+        <div class="stack" style="justify-content:flex-end;gap:1.4cqw">
+          <div class="m c-white" style="font-size:8cqw">These are just</div>
+          <div class="d c-white" style="font-size:24cqw">the <span class="hl c-ink">signs.</span></div>
+          <div class="hand c-lime" style="font-size:7.6cqw;margin-top:1.6cqw">not the real reason ↓</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:07 · photo taped onto the page</figcaption>
+      <figcaption>0:07 · close-up, the frustration</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">जल्दबाज़ी… ध्यान भटकना… फ़ॉर्मूले भूल जाना… ये तो सिर्फ़ साइन्स हैं।</div><div class="vo-rom">Jaldbaazi… dhyaan bhatakna… formule bhool jaana… ye toh sirf signs hain.</div><div class="vo-en">"Rushing… losing focus… forgetting formulas… these are only the signs."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>Does your child…</code><code>rush through sums?</code><code>lose focus?</code><code>forget formulas?</code><code>slip while solving?</code><code>These are just the signs.</code><code>not the real reason</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>A checklist writes itself. Each red tick is drawn exactly on its spoken word, about 0.6s apart; the 4th tick lands on a music beat with no VO.</li><li>6.6s: the page slides up; the photo drops in and gets taped down; "the signs." gets a highlighter swipe from left to right.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>A quick pen "tick" per box; tape rip on the photo.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">A checklist makes the parent tick along in their head. Four yeses and they're hooked.</div></div>
+    <div class="row"><div class="k">Footage</div><div><b>C3</b> a child at a desk at home with maths homework, rushing, then looking away (blurred and darkened behind the list). <b>C4</b> close-up: the same child, head in hands.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>The checklist writes itself over the homework clip. Each lime tick is drawn exactly on its spoken word, about 0.6s apart; the 4th lands on a music beat with no VO.</li><li>6.6s: the list clears and the clip sharpens into the close-up; "the signs." gets a highlighter swipe from left to right.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>A quick pen "tick" per box; a soft sigh from the child at the close-up.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">The parent ticks along in their head while watching a child who could be theirs. Four yeses and they're hooked.</div></div>
   </div>
 </section>
 
@@ -337,24 +385,27 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
       <figcaption>0:08 · "more practice" piles up</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame f-pen">
-        <div class="grain"></div>
-        <div class="stack">
-          <div class="hand c-white" style="font-size:13cqw;transform:rotate(-4deg);transform-origin:left">Parents,</div>
-          <div class="d c-ink" style="font-size:36cqw">don't</div>
-          <div><span class="d c-white rel" style="font-size:27cqw">assume.<svg class="mark c-ink" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-3.5cqw;width:100%;height:5cqw"><use href="#sc-under"/></svg></span></div>
+      <div class="frame">
+        <div class="ftg duo duo-pen"><img src="assets/mother-son.jpg" alt="Mother watching her son do homework" style="object-position:25% 30%"></div>
+        <div class="scrim-b" style="background:linear-gradient(180deg,rgba(120,20,15,0) 30%,rgba(120,20,15,.75) 62%,rgba(90,12,10,.9))"></div>
+        <span class="clip">▶ C5 · stand-in</span>
+        <div class="stack" style="justify-content:flex-end">
+          <div class="hand c-white" style="font-size:12cqw;transform:rotate(-4deg);transform-origin:left">Parents,</div>
+          <div class="d c-white" style="font-size:33cqw">don't</div>
+          <div><span class="d c-white rel" style="font-size:25cqw">assume.<svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-3.5cqw;width:100%;height:5cqw"><use href="#sc-under"/></svg></span></div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:10 · the turn</figcaption>
+      <figcaption>0:10 · the parent, in red</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">सिर्फ़ प्रैक्टिस बढ़ाने से ये गलतियाँ नहीं रुकेंगी।</div><div class="vo-rom">Sirf practice badhaane se ye galtiyaan nahi rukengi.</div><div class="vo-en">"Just increasing practice won't stop these mistakes."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>more practice ≠ fewer mistakes</code><code>Parents, don't assume.</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut: the whole screen turns red-pen red.</li><li>"more practice" stacks four times, each copy fainter, like a pile of worksheets; "≠ fewer mistakes" slams in below in ink.</li><li>9.8s: the stack drops away; "Parents," is handwritten, then "don't" and "assume." punch in, and the underline is drawn.</li></ul></div>
+    <div class="row"><div class="k">Footage</div><div><b>C5</b> a mother sitting beside her child at homework time, watching, concerned. Shown in a red duotone so the act colour holds.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Hard cut: the whole screen turns red-pen red. "more practice" stacks four times, each copy fainter, like a pile of worksheets; "≠ fewer mistakes" slams in below in ink.</li><li>9.8s: the type drops away to reveal the mother clip in red; "Parents," is handwritten, then "don't" and "assume." punch in, and the underline is drawn.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Four quick paper flicks, then a bass "thud" on "don't". The music drops out for one beat.</div></div>
-    <div class="row"><div class="k">Why</div><div class="note">The first colour flip tells the viewer something changed. It challenges what most parents already do: more tuition, more worksheets.</div></div>
+    <div class="row"><div class="k">Why</div><div class="note">The parent sees themselves at the exact moment the reel says "don't assume". That's the turn from problem to solution.</div></div>
   </div>
 </section>
 
@@ -363,8 +414,10 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
   <div class="scene-head"><span class="sid">S4</span><span class="stime">0:11 – 0:18 · 7 s</span><h2>The FREE test</h2><span class="ssrc">Content: pg 2</span></div>
   <div class="frames">
     <figure class="kf">
-      <div class="frame f-violet">
-        <div class="grain"></div>
+      <div class="frame">
+        <div class="ftg duo duo-violet"><img src="assets/classroom.jpg" alt="Bright classroom" style="object-position:50% 20%"></div>
+        <div class="scrim-b" style="background:linear-gradient(180deg,rgba(40,18,166,.2),rgba(40,18,166,.55) 45%,rgba(30,12,130,.85))"></div>
+        <span class="clip">▶ C6 · stand-in</span>
         <div class="stack">
           <div class="hand c-white" style="font-size:9cqw">That's why…</div>
           <div><span class="d c-lime rel" style="font-size:44cqw;letter-spacing:-.04em">FREE<svg class="mark c-white" viewBox="0 0 40 40" style="right:-9cqw;top:-2cqw;width:9cqw;height:9cqw"><use href="#sc-spark"/></svg><svg class="mark c-lime" viewBox="0 0 40 40" style="left:-6cqw;bottom:2cqw;width:6cqw;height:6cqw"><use href="#sc-spark"/></svg></span></div>
@@ -373,11 +426,13 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:11.5 · FREE fills the screen</figcaption>
+      <figcaption>0:11.5 · FREE over the classroom</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame f-violet">
-        <div class="grain"></div>
+      <div class="frame">
+        <div class="ftg duo duo-violet"><img src="assets/classroom.jpg" alt="Classroom whiteboard" style="object-position:80% 0%"></div>
+        <div class="scrim-b" style="background:linear-gradient(180deg,rgba(40,18,166,.25),rgba(40,18,166,.6) 45%,rgba(30,12,130,.88))"></div>
+        <span class="clip">▶ C6 · stand-in</span>
         <div class="stack">
           <div class="hand c-lime" style="font-size:9cqw">designed by</div>
           <div class="d c-white" style="font-size:25cqw">Deveshh</div>
@@ -386,11 +441,13 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:13.5 · who made it</figcaption>
+      <figcaption>0:13.5 · teacher at the board</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame f-violet">
-        <div class="grain"></div>
+      <div class="frame">
+        <div class="ftg duo duo-violet"><img src="assets/kid-stressed.jpg" alt="Child thinking" style="object-position:40% 30%"></div>
+        <div class="scrim-b" style="background:linear-gradient(180deg,rgba(40,18,166,.35),rgba(40,18,166,.7) 40%,rgba(30,12,130,.9))"></div>
+        <span class="clip">▶ C7 · stand-in</span>
         <div class="stack" style="gap:1cqw">
           <div class="hand c-white" style="font-size:8.5cqw">Find out</div>
           <div class="d c-lime" style="font-size:33cqw">WHY</div>
@@ -400,13 +457,14 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>0:16 · why / what</figcaption>
+      <figcaption>0:16 · child thinking</figcaption>
     </figure>
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-hi">इसीलिए — फ़्री कैलकुलेशन एफ़िशिएंसी टेस्ट! गिनीज़ वर्ल्ड रिकॉर्ड होल्डर देवेश सर द्वारा डिज़ाइन किया गया। जानिए, गलतियाँ क्यों होती हैं… और पहले क्या सुधारना है।</div><div class="vo-rom">Isiliye — FREE Calculation Efficiency Test! Guinness World Record holder Deveshh Sir dwara design kiya gaya. Jaaniye, galtiyaan kyun hoti hain… aur pehle kya sudhaarna hai.</div><div class="vo-en">"That's why: a FREE Calculation Efficiency Test, designed by Guinness World Record holder Deveshh Sir. Find out why the mistakes happen and what to fix first."</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>FREE</code><code>Calculation Efficiency Test</code><code>designed by Deveshh Sir</code><code>Guinness World Record Holder in Memory</code><code>Find out WHY mistakes keep happening</code><code>WHAT to fix first</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>11.0s: the red wipes away to violet. "FREE" scales up from small to full width with a little overshoot and two sparkles, on the word "free".</li><li>13.2s: "designed by" is handwritten; "Deveshh Sir" slides up line by line; the Guinness emblem rolls in from the left.</li><li>15.4s: "WHY" lands on "kyun", "WHAT" lands on "kya sudhaarna", each with its small line underneath.</li></ul></div>
+    <div class="row"><div class="k">Footage</div><div><b>C6</b> a bright classroom: a teacher explaining at the whiteboard, a child raising a hand. <b>C7</b> a child thinking, pencil at chin, then a small smile. Both in a violet duotone so the act colour holds.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>11.0s: the red wipes away to the violet classroom. "FREE" scales up from small to full width with a little overshoot and two sparkles, on the word "free".</li><li>13.2s: the clip moves to the teacher at the board; "designed by" is handwritten, "Deveshh Sir" slides up line by line, and the Guinness emblem rolls in.</li><li>15.4s: cut to the child thinking; "WHY" lands on "kyun", "WHAT" on "kya sudhaarna". The child's small smile lands at the end.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>The music lifts here (fuller, brighter); a bright "ding" on FREE.</div></div>
     <div class="row"><div class="k">Guinness</div><div class="note"><span class="status done">Added</span> Emblem from your supplied file. GWR requires a licence and its approval of each ad that uses the logo; confirm both before the reel runs as an ad.</div></div>
   </div>
@@ -504,6 +562,25 @@ table.vo td.t{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:6
 
 <!-- ================= Extras ================= -->
 <section class="grid2">
+
+<section class="card" id="shots" style="grid-column:1/-1">
+  <div class="eyebrow">Footage · 7 clips, 2–4 s each, vertical (9:16), 1080p or better</div>
+  <h3>Shot list</h3>
+  <p class="vo-en" style="margin:0">The frames above use your brochure photos as stand-ins (marked "▶ stand-in"). They are too low-resolution for the final video, so each needs a real clip. Best option: film these on a phone at your own centres, which looks more authentic and local. Otherwise, free-licence stock video from Pexels or Pixabay works.</p>
+  <div class="tblwrap"><table class="shots">
+    <thead><tr><th>Clip</th><th>Scene</th><th>What we need</th><th>Stock search terms</th></tr></thead>
+    <tbody>
+      <tr><td>C1</td><td>S1 · 0:00</td><td>Classroom of Indian schoolchildren (8–11) in uniform at desks; teacher at the board. Slow push-in.</td><td><code>indian classroom students</code> <code>school children india</code></td></tr>
+      <tr><td>C2</td><td>S1 · 0:01.5</td><td>A child's desk as a test paper is handed back or turned over. Will be blurred behind the exam paper.</td><td><code>student exam paper desk</code> <code>child writing test</code></td></tr>
+      <tr><td>C3</td><td>S2 · 0:03</td><td>A child at a desk at home with maths homework: rushing, fidgeting, looking away. Blurred behind the checklist.</td><td><code>child homework distracted</code> <code>kid studying at home india</code></td></tr>
+      <tr><td>C4</td><td>S2 · 0:06.6</td><td>Close-up of the same child, head in hands, frustrated.</td><td><code>frustrated child homework</code></td></tr>
+      <tr><td>C5</td><td>S3 · 0:09.8</td><td>A mother beside her child at homework time, watching, concerned. Shown in red duotone.</td><td><code>indian mother child homework</code> <code>mother helping son study</code></td></tr>
+      <tr><td>C6</td><td>S4 · 0:11</td><td>Bright classroom: a teacher explaining at the whiteboard, a child raising a hand. Shown in violet duotone.</td><td><code>teacher whiteboard maths</code> <code>child raising hand classroom</code></td></tr>
+      <tr><td>C7</td><td>S4 · 0:15.4</td><td>A child thinking, pencil at chin, ending on a small smile. Violet duotone.</td><td><code>child thinking maths</code> <code>kid solving problem smile</code></td></tr>
+    </tbody>
+  </table></div>
+</section>
+
   <div class="card">
     <div class="eyebrow">Full Hindi voiceover · about 70 words · about 27 s</div>
     <h3>Script for the voice artist or AI voice</h3>
@@ -549,7 +626,7 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
     <ul class="tight">
       <li><b>Content only:</b> the signs, the test, Deveshh Sir's credential, Why / What next, the ₹500 bonus, "No Abacus. No Vedic Sutras.", "See. Process. Answer.", the WhatsApp steps.</li>
       <li><b>Design:</b> new. No brochure colours, boxes, badges or layouts are reused.</li>
-      <li><b>One photo:</b> the stressed child (pg 2), taped to the notebook in S2 at a size where it stays sharp. The other photos aren't used now; an original high-resolution photo would allow it to be bigger.</li>
+      <li><b>Photos as stand-ins only:</b> the classroom, stressed-child and mother-and-son photos mark where real video clips go (see the shot list). They are too low-resolution for the final reel.</li>
       <li><b>Guinness emblem:</b> your supplied file, used as-is.</li>
       <li><b>Brand names</b> (CTM™, Giane Future Gurukull) are typed in the reel's own style. If you want the official logos on the end card, send the original files.</li>
     </ul>
@@ -561,7 +638,7 @@ Parents, don't assume. Find out the REAL reason with the FREE Calculation Effici
     <ul class="tight">
       <li><span class="status open">Open</span> <b>Voice:</b> AI Hindi voice for the first cut, then a real voice artist for the final?</li>
       <li><span class="status open">Open</span> <b>Music:</b> a royalty-free soft track (piano/ukulele with a light beat, about 95 BPM). I'll suggest 2–3 options.</li>
-      <li><span class="status open">Open</span> <b>Hindi lines:</b> please check they sound natural.</li>
+      <li><span class="status open">Open</span> <b>Hindi lines:</b> please check they sound natural.</li><li><span class="status open">Open</span> <b>Footage:</b> film the 7 clips at your centres, or pick stock clips. Stock sites are blocked from this session; allow pexels.com and pixabay.com in the environment's network settings, or upload clips to <code>source/footage/</code>.</li>
       <li><span class="status done">Settled</span> Test is FREE · bonus for a limited period · no deadline · Hindi VO · English/Hinglish text · no photo of Deveshh Sir · Guinness emblem supplied · brochure glimpse dropped.</li>
     </ul>
   </div>
