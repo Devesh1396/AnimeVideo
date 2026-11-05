@@ -1,0 +1,76 @@
+{
+ "s1": [
+  {
+   "w": "Maths",
+   "start": 0.0,
+   "end": 0.46,
+   "heard": "मात्स"
+  },
+  {
+   "w": "के",
+   "start": 0.46,
+   "end": 0.6,
+   "heard": "के"
+  },
+  {
+   "w": "concepts",
+   "start": 0.6,
+   "end": 0.96,
+   "heard": "concepts"
+  },
+  {
+   "w": "clear",
+   "start": 0.96,
+   "end": 1.4,
+   "heard": "clear"
+  },
+  {
+   "w": "हैं…",
+   "start": 1.4,
+   "end": 2.14,
+   "heard": "हैं…"
+  },
+  {
+   "w": "फिर",
+   "start": 2.14,
+   "end": 2.4,
+   "heard": "फिर"
+  },
+  {
+   "w": "भी",
+   "start": 2.4,
+   "end": 2.66,
+   "heard": "भी"
+  },
+  {
+   "w": "silly",
+   "start": 2.66,
+   "end": 2.94,
+   "heard": "silly"
+  },
+  {
+   "w": "mistakes",
+   "start": 2.94,
+   "end": 3.32,
+   "heard": "mistakes"
+  },
+  {
+   "w": "हो",
+   "start": 3.32,
+   "end": 3.66,
+   "heard": "हो"
+  },
+  {
+   "w": "जाती",
+   "start": 3.66,
+   "end": 3.98,
+   "heard": "जाती"
+  },
+  {
+   "w": "हैं?",
+   "start": 3.98,
+   "end": 4.14,
+   "heard": "हैं?"
+  }
+ ]
+}
