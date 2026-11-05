@@ -52,6 +52,7 @@ registration:                             # Pg4
   whatsapp_number: "8062365298"           # display as 80623 65298
   whatsapp_message: CALCULATION EFFICIENCY TEST
   step_2: Get your test schedule
+  whatsapp_reply: a registration form to book the test   # client confirmation in chat (2026-11-05); the form itself is the client's
   call_for_info: "7203005142"             # caption only, not in the video
   centres:                                # caption only; cities may appear on screen
     - city: Ahmedabad

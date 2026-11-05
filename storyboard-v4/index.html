@@ -105,7 +105,7 @@ ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .ex-q .x{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:7.6cqw;line-height:1}
 .ex-q .ok{position:static;width:6.6cqw;height:6.6cqw;color:var(--pen)}
 /* phone */
-.phone{position:absolute;left:16%;right:18%;top:36%;bottom:29.7%;border:1.1cqw solid rgba(255,255,255,.9);border-radius:6cqw;background:#0b141a;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
+.phone{position:absolute;left:15%;right:17%;top:35%;bottom:27%;border:1.1cqw solid rgba(255,255,255,.9);border-radius:6cqw;background:#0b141a;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
 .ph-top{display:flex;align-items:center;gap:2cqw;padding:2.2cqw 3cqw;background:#1f2c34;color:#e9edef;font-family:var(--f-body);font-weight:700;font-size:3.6cqw;line-height:1.1}
 .ph-top small{display:block;font-weight:500;font-size:2.7cqw;color:#8696a0}
 .ph-top .av{width:7.5cqw;height:7.5cqw;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--violet)}
@@ -141,6 +141,20 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
 .status{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px}
 .status.open{background:#ffe9a8;color:#5a4200}.status.done{background:#c9f0d3;color:#0f5a27}
 .svgdefs{position:absolute;width:0;height:0;overflow:hidden}
+/* centred layouts (slides 4, 6, 7b) */
+.cstack{position:absolute;left:12%;right:12%;top:17.2%;bottom:29.7%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1.2cqw}
+.freepill{display:inline-block;background:var(--lime);color:var(--ink);font-family:var(--f-type);font-weight:800;font-stretch:75%;font-size:30cqw;line-height:.82;letter-spacing:-.03em;padding:2.4cqw 6cqw 1.6cqw;border-radius:4cqw;transform:rotate(-3deg)}
+.rule{width:18cqw;height:.6cqw;border-radius:1cqw;background:var(--lime);opacity:.8}
+.duo-ink::after{background:#2b2856}
+.formcard{justify-self:start;width:88%;background:#1f2c34;border-radius:0 2.4cqw 2.4cqw 2.4cqw;overflow:hidden;font-family:var(--f-body);color:#e9edef}
+.formcard .fc-t{padding:1.4cqw 2.2cqw;font-size:3.2cqw;line-height:1.15}
+.formcard .fc-doc{display:flex;gap:2cqw;align-items:center;margin:0 2cqw;padding:1.4cqw;background:#2a3942;border-radius:1.6cqw}
+.formcard .fc-doc i{flex:none;width:7cqw;height:8.6cqw;border-radius:.8cqw;background:#fff;position:relative}
+.formcard .fc-doc i::before{content:"";position:absolute;left:1.4cqw;right:1.4cqw;top:2cqw;height:.6cqw;background:#8696a0;box-shadow:0 1.6cqw 0 #8696a0,0 3.2cqw 0 #8696a0}
+.formcard .fc-doc b{display:block;font-size:3.5cqw}
+.formcard .fc-doc small{display:block;font-size:2.8cqw;color:#8696a0}
+.formcard .fc-btn{margin-top:1.2cqw;border-top:.3cqw solid #2a3942;padding:1.6cqw;text-align:center;color:#53bdeb;font-weight:700;font-size:3.6cqw}
+.logo-img{width:74cqw;height:auto;display:block}
 @media (max-width:860px){
   .scene{grid-template-columns:minmax(0,1fr)}
   .frames{overflow-x:auto;padding-bottom:6px}
@@ -168,7 +182,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   <h1>Free Calculation Efficiency Test: reel v2 storyboard</h1>
   <p class="lede">Built on the client's updated 7-slide script. One rule from the v2 brief: <b>footage for feelings, motion for facts.</b> Slides 1–3 (the problem) run on real footage under animated text; slides 4–7 (the offer) are motion graphics. Pacing is calmer than v1: one idea per shot, holds of 3–5 s, and only nine sound effects in the whole reel. Pictures marked "▶ stand-in" are brochure photos showing where a footage clip goes.</p>
   <div class="specs">
-    <span><b>1080×1920</b> · 30 fps</span><span><b>≈ 61 s</b> at a natural pace (see "Length")</span><span>VO: Hindi/Hinglish, Sarvam Bulbul (next session)</span><span>Text: English</span><span>Remotion · same engine as v1</span>
+    <span><b>1080×1920</b> · 30 fps</span><span><b>≈ 61 s</b> · version A (B ≈ 40 s next)</span><span>VO: Hindi/Hinglish, Sarvam Bulbul (next session)</span><span>Text: English</span><span>Remotion · same engine as v1</span>
   </div>
 </header>
 
@@ -328,27 +342,27 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   <div class="frames">
     <figure class="kf">
       <div class="frame f-vio">
-        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <g transform="translate(168 172) rotate(-8)"><rect x="-80" y="-56" width="160" height="112" rx="8" fill="#efeaff"/><rect x="-60" y="-32" width="64" height="8" rx="4" fill="#a797ff"/><rect x="-60" y="-10" width="104" height="8" rx="4" fill="#c9bfff"/><rect x="-60" y="12" width="90" height="8" rx="4" fill="#c9bfff"/><rect x="-60" y="34" width="112" height="8" rx="4" fill="#c9bfff"/></g>
-          <circle cx="226" cy="176" r="50" fill="#c8f23a" fill-opacity=".16" stroke="#c8f23a" stroke-width="10"/><path d="M262 214 298 250" stroke="#c8f23a" stroke-width="17" stroke-linecap="round"/>
-        </svg>
-        <div class="stack end" style="gap:1cqw">
-          <div class="gfg c-white"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><b>Giane Future Gurukull</b><span>brings you the</span></div></div>
-          <div class="d c-white" style="font-size:17cqw;margin-top:2cqw">Calculation</div>
-          <div class="d c-lime" style="font-size:17cqw">Efficiency Test</div>
-          <span class="stampline c-lime" style="margin-top:2.4cqw">Free</span>
+        <div class="cstack" style="gap:1cqw">
+          <div class="rel" style="margin-bottom:5cqw"><span class="freepill">FREE</span><svg class="mark c-white" viewBox="0 0 40 40" style="right:-8cqw;top:-5cqw;width:9cqw;height:9cqw"><use href="#sc-spark"/></svg><svg class="mark c-lime" viewBox="0 0 40 40" style="left:-7cqw;bottom:-2cqw;width:6cqw;height:6cqw"><use href="#sc-spark"/></svg></div>
+          <div class="d c-white" style="font-size:16cqw">Calculation</div>
+          <div class="d c-white" style="font-size:16cqw">Efficiency</div>
+          <div class="d c-white" style="font-size:16cqw">Test</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>4a · 23.6–29.6 · the name</figcaption>
+      <figcaption>4a · 23.6–29.6 · FREE + the test name</figcaption>
     </figure>
     <figure class="kf">
       <div class="frame f-vio">
-        <div class="stack" style="gap:1.2cqw">
-          <div class="m c-white" style="font-size:8cqw">to understand your child's</div>
-          <div class="d c-lime" style="font-size:18cqw">calculation</div>
-          <div class="d c-lime" style="font-size:18cqw">skills better</div>
-          <div class="gwr"><img src="assets/gwr-logo.png" alt="Guinness World Records logo"><div><div class="m c-white" style="font-size:5cqw">Specially designed by</div><div class="d c-white" style="font-size:9cqw;margin-top:.6cqw">Deveshh Sir</div><div class="hand c-lime" style="font-size:4.6cqw;margin-top:.8cqw">Guinness World Record Holder in Memory</div></div></div>
+        <div class="cstack" style="gap:0">
+          <div class="m c-white" style="font-size:6.6cqw">Understand your child's</div>
+          <div class="d c-lime" style="font-size:15cqw;margin-top:2cqw">calculation</div>
+          <div class="d c-lime" style="font-size:15cqw">skills better</div>
+          <div class="rule" style="margin:5cqw 0 5cqw"></div>
+          <img src="assets/gwr-logo.png" alt="Guinness World Records logo" style="width:17cqw;height:17cqw;border-radius:50%;background:#fff;padding:.5cqw">
+          <div class="m c-white" style="font-size:5cqw;margin-top:3cqw;opacity:.85">Specially designed by</div>
+          <div class="d c-white" style="font-size:12cqw;margin-top:1.2cqw">Deveshh Sir</div>
+          <div class="hand c-lime" style="font-size:5cqw;margin-top:1.6cqw">Guinness World Record Holder in Memory</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
@@ -357,9 +371,9 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Isiliye Giane Future Gurukull lekar aaya hai Calculation Efficiency Test. Taaki bachche ki calculation skills ko behtar samjha ja sake."</div><div class="vo-hi">इसीलिए Giane Future Gurukull लेकर आया है Calculation Efficiency Test। ताकि बच्चे की calculation skills को बेहतर समझा जा सके।</div><div class="vo-en">24.0–33.7 s</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>Giane Future Gurukull brings you the</code><code>CALCULATION EFFICIENCY TEST</code><code>FREE</code><code>to understand your child's calculation skills better</code><code>Specially designed by Deveshh Sir · Guinness World Record Holder in Memory</code></div></div>
-    <div class="row"><div class="k">Picture</div><div>Violet motion graphics. A magnifying glass drifts over a test sheet: "looking closer". No characters in the motion half, so cartoon children never sit next to real ones.</div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>23.6 s: a soft circular wipe from the red slide into violet (the S3→S4 transition the brief asks for).</li><li>"Calculation" and "Efficiency Test" spring in on their words (27.1 s, 27.9 s); the FREE stamp settles 0.4 s later.</li><li>29.6 s: the lines change on "taaki"; the credential row slides in at 31 s and holds.</li></ul></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>FREE</code><code>CALCULATION EFFICIENCY TEST</code><code>Understand your child's calculation skills better</code><code>Specially designed by Deveshh Sir · Guinness World Record Holder in Memory</code></div></div>
+    <div class="row"><div class="k">Picture</div><div>Violet motion graphics, type only and centred. 4a: the FREE badge and the test name fill the screen. 4b: two groups, the benefit on top and the credential below a short divider. No logo here (it closes the reel in 7b).</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>23.6 s: a soft circular wipe from the red slide into violet (the S3→S4 transition the brief asks for).</li><li>"Calculation", "Efficiency", "Test" spring in on their words (27.1, 27.9, 28.6 s); the FREE badge drops in with a small tilt 0.3 s later.</li><li>29.6 s, on "taaki": the benefit lines rise in; the divider draws, then the emblem and "Deveshh Sir" settle at 31 s and hold.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Whoosh on the wipe; one soft chime as the test name lands. The music lifts here.</div></div>
     <div class="row"><div class="k">Flag</div><div class="flag">The new voiceover no longer says "free" or mentions Deveshh Sir. Both stay on screen (FREE is client-confirmed; the credential is on brochure page 2). Consider "…lekar aaya hai <b>FREE</b> Calculation Efficiency Test" in the voice: "free" is the strongest word in the offer.</div></div>
   </div>
@@ -416,31 +430,33 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
     <figure class="kf">
       <div class="frame f-lime">
         <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <g transform="translate(180 150) scale(.9)">
+          <g transform="translate(180 128) scale(.78)">
             <path d="M0-70V-96M-50-56-66-74M50-56 66-74M-74-24h-24M74-24h24" stroke="#16142b" stroke-width="5" stroke-linecap="round"/>
             <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
             <g transform="translate(-20 -40) rotate(-22)"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
           </g>
         </svg>
-        <div class="stack end" style="gap:1cqw">
-          <div class="hand c-pen" style="font-size:7.4cqw">special bonus</div>
-          <div class="d c-ink" style="font-size:13cqw">CTM™ 60-minute</div>
-          <div class="d c-ink" style="font-size:13cqw">Masterclass</div>
-          <div style="display:flex;align-items:flex-end;gap:2cqw;margin-top:1cqw"><span class="hand c-ink" style="font-size:7cqw;padding-bottom:2.4cqw">worth</span><span class="d c-ink" style="font-size:22cqw">₹500</span></div>
-          <span class="stampline c-pen" style="margin-top:1.6cqw;font-size:4.4cqw;white-space:nowrap">with the test · limited period</span>
+        <div class="cstack" style="top:31%;gap:0">
+          <div class="hand c-pen" style="font-size:7cqw">special bonus</div>
+          <div class="d c-ink" style="font-size:12cqw;margin-top:2.4cqw">CTM™ 60-minute</div>
+          <div class="d c-ink" style="font-size:12cqw;margin-top:.6cqw">Masterclass</div>
+          <div style="display:flex;align-items:flex-end;justify-content:center;gap:2cqw;margin-top:5cqw"><span class="hand c-ink" style="font-size:7cqw;padding-bottom:2.2cqw">worth</span><span class="d c-ink" style="font-size:22cqw">₹500</span></div>
+          <span class="stampline c-pen" style="margin-top:4.5cqw;font-size:4.4cqw;white-space:nowrap;align-self:center">with the test · limited period</span>
         </div>
         <div class="safe"><i></i></div>
       </div>
       <figcaption>6a · 42.6–49.8 · the gift</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame f-ink">
-        <div class="stack" style="gap:1.2cqw">
+      <div class="frame">
+        <div class="ftg duo duo-ink"><img src="assets/classroom.jpg" alt="" style="object-position:60% 40%"></div>
+        <div class="scrim" style="background:rgba(22,20,43,.62)"></div>
+        <span class="clip">▶ C8 · optional</span>
+        <div class="cstack" style="gap:0">
           <div class="m c-white" style="font-size:8cqw">Experience</div>
-          <div class="d c-lime" style="font-size:34cqw">CTM™</div>
-          <div class="d c-white" style="font-size:7.8cqw">Calculation Thinking Method</div>
-          <div class="hand c-white" style="font-size:6.6cqw;margin-top:3cqw">See → Process → Answer</div>
-          <div class="m c-white" style="font-size:6cqw;margin-top:2cqw;opacity:.85">a different approach to calculation</div>
+          <div class="d c-lime" style="font-size:34cqw;margin-top:1cqw">CTM™</div>
+          <div class="d c-white" style="font-size:8cqw;margin-top:2cqw">Calculation Thinking Method</div>
+          <div class="hand c-white" style="font-size:5.8cqw;margin-top:6cqw;white-space:nowrap">See → Process → Answer</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
@@ -449,9 +465,9 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Aur special bonus mein paaiye CTM ki sixty-minute masterclass, worth five hundred rupees. Experience kijiye calculation ka ek different approach."</div><div class="vo-hi">और special bonus में पाइए CTM की sixty-minute masterclass, worth five hundred rupees। Experience कीजिए calculation का एक different approach।</div><div class="vo-en">43.0–53.4 s</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>special bonus</code><code>CTM™ 60-minute Masterclass</code><code>worth ₹500</code><code>with the test · limited period</code><code>EXPERIENCE CTM™ — CALCULATION THINKING METHOD</code><code>See → Process → Answer</code><code>a different approach to calculation</code></div></div>
-    <div class="row"><div class="k">Picture</div><div>6a: highlighter-lime with the gift box (drawn). 6b: ink, type only.</div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>42.6 s: a lime swipe in (the S5→S6 transition the brief asks for).</li><li>Gift lid lifts on "bonus" (43.9 s), gently, no confetti burst. "₹500" counts up on "five hundred rupees" (47.6 s), then the stamp settles.</li><li>49.8 s, on "Experience": a cut to ink; "CTM™" springs in, "See → Process → Answer" writes itself on "different approach".</li></ul></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>special bonus</code><code>CTM™ 60-minute Masterclass</code><code>worth ₹500</code><code>with the test · limited period</code><code>EXPERIENCE CTM™ — CALCULATION THINKING METHOD</code><code>See → Process → Answer</code></div></div>
+    <div class="row"><div class="k">Picture</div><div>6a: highlighter-lime, the gift box (drawn) on top, the offer centred below with more space between the three groups. 6b: optional stock clip <b>C8</b> (children in a bright class, quick and confident) in a dark ink tint behind the type; without it, plain ink.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>42.6 s: a lime swipe in (the S5→S6 transition the brief asks for).</li><li>Gift lid lifts on "bonus" (43.9 s), gently, no confetti burst. "₹500" counts up on "five hundred rupees" (47.6 s), then the stamp settles.</li><li>49.8 s, on "Experience": a cut to ink; "CTM™" springs in, "See → Process → Answer" writes itself on "different approach".</li><li>6b uses footage although it is a "facts" slide: the clip only sets the mood (a class in action), the dark tint keeps the type in charge.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Whoosh on the swipe; one soft pop as the lid opens.</div></div>
     <div class="row"><div class="k">Facts</div><div class="note">60-minute, worth ₹500, CTM™ = Calculation Thinking Method, "See. Process. Answer." are brochure page 3; "limited time period only" is page 4; "with the test" is client-confirmed.</div></div>
   </div>
@@ -470,25 +486,29 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
         <div class="phone">
           <div class="ph-top"><span class="av"><svg viewBox="0 0 60 60" style="width:80%;height:80%" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg></span><div>Giane Future Gurukull<small>online</small></div></div>
           <div class="ph-body">
-            <div class="bub out">CALCULATION EFFICIENCY TEST<small>✓✓</small></div>
-            <div class="bub in">Thank you! We'll share the available dates and timings.</div>
+            <div class="bub out" style="font-size:3.4cqw">CALCULATION EFFICIENCY TEST<small>✓✓</small></div>
+            <div class="formcard">
+              <div class="fc-t">Thank you! Please fill in this form to book the test.</div>
+              <div class="fc-doc"><i></i><div><b>Registration form</b><small>Calculation Efficiency Test</small></div></div>
+              <div class="fc-btn">Open form</div>
+            </div>
           </div>
           <div class="ph-in"><span>Message</span><i>➤</i></div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>7a · 54.0–57.6 · type &amp; send</figcaption>
+      <figcaption>7a · 54.0–57.6 · send, get the form</figcaption>
     </figure>
     <figure class="kf">
       <div class="frame f-ink">
-        <div class="stack" style="gap:1cqw">
-          <div style="display:flex;align-items:center;gap:2.4cqw"><svg viewBox="0 0 48 48" style="width:9cqw;height:9cqw" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:10cqw">WhatsApp</span></div>
-          <div class="d c-lime" style="font-size:28cqw;margin-top:1.6cqw">80623</div>
-          <div class="d c-lime" style="font-size:28cqw">65298</div>
-          <div class="hand c-white" style="font-size:6cqw;margin-top:2.4cqw">send</div>
-          <div><span class="d c-white rel" style="font-size:7cqw">CALCULATION EFFICIENCY TEST<svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-2cqw;width:100%;height:3cqw"><use href="#sc-under"/></svg></span></div>
-          <div class="m c-lime" style="font-size:5cqw;margin-top:3cqw">Class 3 onwards · Ahmedabad · Vadodara</div>
-          <div class="gfg c-white" style="margin-top:3cqw"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><b>Giane Future Gurukull</b><span>www.gianefuturegurukull.com</span></div></div>
+        <div class="cstack" style="gap:0">
+          <div style="display:flex;align-items:center;justify-content:center;gap:2.4cqw"><svg viewBox="0 0 48 48" style="width:9cqw;height:9cqw" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:10cqw">WhatsApp</span></div>
+          <div class="d c-lime" style="font-size:25cqw;margin-top:2.4cqw">80623</div>
+          <div class="d c-lime" style="font-size:25cqw">65298</div>
+          <div class="m c-white" style="font-size:4.6cqw;margin-top:3.4cqw;white-space:nowrap">send <b>CALCULATION EFFICIENCY TEST</b></div>
+          <div class="m c-lime" style="font-size:4.5cqw;margin-top:1.6cqw;white-space:nowrap">Class 3 onwards · Ahmedabad · Vadodara</div>
+          <img class="logo-img" src="assets/gfg-logo.png" alt="Giane Future Gurukull" style="margin-top:6cqw">
+          <div class="m c-white" style="font-size:5.6cqw;margin-top:2.4cqw">www.gianefuturegurukull.com</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
@@ -496,9 +516,9 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
     </figure>
   </div>
   <div class="sheet">
-    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Toh aaj hi WhatsApp par Calculation Efficiency Test likhkar bhejiye."</div><div class="vo-hi">तो आज ही WhatsApp पर Calculation Efficiency Test लिखकर भेजिए।</div><div class="vo-en">54.2–58.4 s · optional: the number read aloud, "WhatsApp number: 80623 65298" (+5 s)</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>BOOK YOUR CALCULATION EFFICIENCY TEST</code><code>WhatsApp 80623 65298</code><code>send CALCULATION EFFICIENCY TEST</code><code>Class 3 onwards · Ahmedabad · Vadodara</code><code>Giane Future Gurukull · website</code></div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>The message types itself while the voice says "Calculation Efficiency Test likhkar"; send lands on "bhejiye". The reply uses brochure page 4 wording (dates and timings shared).</li><li>57.6 s: the number drops in digit by digit, then everything holds still for 3.5 s for screenshots.</li></ul></div>
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Toh aaj hi WhatsApp par Calculation Efficiency Test likhkar bhejiye."</div><div class="vo-hi">तो आज ही WhatsApp पर Calculation Efficiency Test लिखकर भेजिए।</div><div class="vo-en">54.2–58.4 s · the number is not read aloud (version A)</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>BOOK YOUR CALCULATION EFFICIENCY TEST</code><code>WhatsApp 80623 65298</code><code>send CALCULATION EFFICIENCY TEST</code><code>Class 3 onwards · Ahmedabad · Vadodara</code><code>Giane Future Gurukull logo · www.gianefuturegurukull.com</code><code>Reply: registration form</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>The message types itself while the voice says "Calculation Efficiency Test likhkar"; send lands on "bhejiye". The reply arrives as a registration form card (client: the WhatsApp reply is a registration form).</li><li>57.6 s: the end card is centred; the number drops in digit by digit, the client's logo and website settle last, then everything holds still for 3.5 s for screenshots.</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Soft key taps, one "sent" swoosh, one chime as the number completes. Music resolves.</div></div>
   </div>
 </section>
@@ -506,9 +526,9 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
 <!-- ============ EXTRAS ============ -->
 <section class="grid2">
   <div class="card wide">
-    <div class="eyebrow">Decision needed · length</div>
+    <div class="eyebrow">Decided · version A first, then B</div>
     <h3>The new script runs about a minute</h3>
-    <p>Read at a natural pace, the seven lines take about 52 s of speech, so the reel comes to about 61 s with the pauses and the end hold (66 s if the number is also read aloud). The Sarvam voice may be a little quicker. Pick one:</p>
+    <p>Read at a natural pace, the seven lines take about 52 s of speech, so the reel comes to about 61 s with the pauses and the end hold (66 s if the number is also read aloud). The Sarvam voice may be a little quicker. <b>Decision: build A first (number not read aloud), then the tightened B from the same storyboard and footage.</b></p>
     <div class="tblwrap"><table class="t">
       <thead><tr><th>Option</th><th>Length</th><th>What changes</th></tr></thead>
       <tbody>
@@ -520,7 +540,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   </div>
 
   <div class="card">
-    <div class="eyebrow">Footage plan · 4 required, 2 optional</div>
+    <div class="eyebrow">Footage plan · 4 required, 3 optional</div>
     <h3>Clips used in v2</h3>
     <div class="tblwrap"><table class="t">
       <thead><tr><th>Clip</th><th>Where</th><th>On screen</th><th>Grade</th></tr></thead>
@@ -531,6 +551,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
         <tr><td><b>C4</b></td><td>Slide 3a</td><td class="n">3.6 s</td><td>natural, bottom scrim</td></tr>
         <tr><td><b>C5</b></td><td>Slide 3b</td><td class="n">5.2 s</td><td>red duotone</td></tr>
         <tr><td>C7 <i>(opt.)</i></td><td>Slide 5</td><td class="n">8.4 s</td><td>violet duotone</td></tr>
+        <tr><td>C8 <i>(opt.)</i></td><td>Slide 6b</td><td class="n">4.2 s</td><td>dark ink tint</td></tr>
       </tbody>
     </table></div>
     <p class="vo-en">C6 (teacher at the board) is no longer needed. Clips longer than 8 s (C3, C7) use a slowed take or two takes joined with a dissolve.</p>
@@ -559,10 +580,10 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
     <div class="eyebrow">Open items</div>
     <h3>Decisions</h3>
     <ul class="tight">
-      <li><span class="status open">Open</span> <b>Length:</b> A, B or C (above).</li>
+      <li><span class="status done">Decided</span> <b>Length:</b> version A first, then B.</li>
       <li><span class="status open">Open</span> <b>"Free" in the voice</b> (slide 4)? Recommended.</li>
-      <li><span class="status open">Open</span> <b>Read the number aloud</b> in slide 7? (+5 s)</li>
-      <li><span class="status open">Open</span> <b>Footage:</b> generate C1, C3, C4, C5 (and optionally C2, C7) with the updated Veo prompts, then upload to <code>source/footage/</code>.</li>
+      <li><span class="status done">Decided</span> <b>Number not read aloud</b> (on screen only).</li>
+      <li><span class="status open">Open</span> <b>Footage:</b> generate C1, C3, C4, C5 (and optionally C2, C7, C8) with the updated Veo prompts, then upload to <code>source/footage/</code>.</li>
       <li><span class="status done">Settled</span> Hybrid rule · slides 4–7 motion only, no cartoon people · calmer pacing · fewer effects · facts from <code>video/facts.yaml</code>.</li>
     </ul>
   </div>

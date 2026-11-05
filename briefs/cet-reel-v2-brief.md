@@ -4,7 +4,7 @@ CONTEXT
 - Repo: the Hindi/Hinglish reel for Giane Future Gurukull's free Calculation Efficiency Test. Work on branch claude/reel-illustrated.
 - v1 (Remotion, 32 s, old script) is in video/; render at video/renders/cet-reel-illustrated-v1.mp4. Keep its engine (timeline.json-driven scenes, word-timed animation).
 - The approved plan for v2 is storyboard-v4/index.html (published: https://claude.ai/artifact/Ed9hBCvhuQv55ASEeDKrGg). Read it first: 7 slides, 13 shots, timings, on-screen text, sound cues.
-- Footage prompts: storyboard-v4/veo-prompts-v2.md. Older references: storyboard/index.html (v3) and storyboard/veo-prompts.md.
+- Footage prompts: storyboard-v4/veo-prompts-v2.md (C1, C3, C4, C5 required; C2, C7, C8 optional). Older references: storyboard/index.html (v3) and storyboard/veo-prompts.md.
 - Brochure pages (the only source of facts besides client confirmations): source/Pg1.png–Pg4.png. The facts list is already built: video/facts.yaml.
 - Footage clips go in source/footage/ (C1a.mp4, C3a.mp4, …). List what's actually there before planning.
 - Asset log: video/assets-used.md (started; keep it current).
@@ -18,7 +18,7 @@ THE SCRIPT (client's, final wording; on-screen text in caps)
 6 CTM bonus. On screen: EXPERIENCE CTM™ — CALCULATION THINKING METHOD  VO: "और special bonus में पाइए CTM की sixty-minute masterclass, worth five hundred rupees। Experience कीजिए calculation का एक different approach।"
 7 CTA. On screen: BOOK YOUR CALCULATION EFFICIENCY TEST, WhatsApp 8062365298  VO: "तो आज ही WhatsApp पर Calculation Efficiency Test लिखकर भेजिए।"
 Write English words in Latin script and Hindi in Devanagari (Sarvam handles code-mixed text best that way).
-Open decisions from the storyboard (ask me if I haven't answered them): length option A (as written, ≈61 s), B (tightened lines, ≈40 s) or C (both); add "FREE" to the slide 4 voice line; read the number aloud in slide 7 (+5 s).
+Decided: build VERSION A first (the script as written, ≈61 s) with the number NOT read aloud. After A is final, build the tightened VERSION B (≈40 s, lines in the storyboard's "Length" card) from the same storyboard and footage. Still open (ask me): add "FREE" to the slide 4 voice line.
 
 GOAL FOR v2
 Rule: FOOTAGE FOR FEELINGS, MOTION FOR FACTS. Mapping (from storyboard-v4; times are from a draft read and move with the Sarvam voice):
@@ -29,10 +29,13 @@ Rule: FOOTAGE FOR FEELINGS, MOTION FOR FACTS. Mapping (from storyboard-v4; times
 | 2 | 0:06.0–0:14.8 | C3 blurred + darkened behind the 4-line checklist (ticks on the spoken words) |
 | 3a | 0:14.8–0:18.4 | C4 head in hands, natural colour, bottom scrim; "These may be just the visible signs…" |
 | 3b | 0:18.4–0:23.6 | C5 mother watching, red duotone; "…not the real reasons behind those silly mistakes." |
-| 4a–4b | 0:23.6–0:34.2 | motion graphics (violet): Giane Future Gurukull brings you the CALCULATION EFFICIENCY TEST, FREE stamp; Deveshh Sir credential + Guinness emblem |
+| 4a | 0:23.6–0:29.6 | motion graphics (violet), centred, no logo: a big FREE badge and CALCULATION / EFFICIENCY / TEST filling the screen |
+| 4b | 0:29.6–0:34.2 | motion graphics, centred: "Understand your child's calculation skills better", divider, Guinness emblem, "Specially designed by Deveshh Sir", "Guinness World Record Holder in Memory" |
 | 5 | 0:34.2–0:42.6 | motion graphics; optional C7 violet duotone behind; MORE THAN JUST A SCORE! → WHERE / WHY / WHAT NEXT |
-| 6a–6b | 0:42.6–0:54.0 | motion graphics: lime gift, CTM™ 60-minute Masterclass worth ₹500; ink: EXPERIENCE CTM™ — Calculation Thinking Method, See → Process → Answer |
-| 7a–7b | 0:54.0–1:01.5 | motion graphics: WhatsApp message typed and sent, number end card held ≥3 s |
+| 6a | 0:42.6–0:49.8 | motion graphics (lime), centred with clear spacing: gift, "special bonus", CTM™ 60-minute Masterclass, worth ₹500, "with the test · limited period" |
+| 6b | 0:49.8–0:54.0 | optional C8 (children in an energetic class) in a dark ink tint behind: EXPERIENCE CTM™ — Calculation Thinking Method, See → Process → Answer (no "different approach" line on screen) |
+| 7a | 0:54.0–0:57.6 | motion graphics: "Book your Calculation Efficiency Test", WhatsApp message typed and sent; the reply is a registration form card ("Open form") |
+| 7b | 0:57.6–1:01.5 | centred end card: WhatsApp 80623 65298, send CALCULATION EFFICIENCY TEST, Class 3 onwards · Ahmedabad · Vadodara, then the client's logo (source/Giane future gurukull logog F(2).png) large with www.gianefuturegurukull.com; hold ≥3 s |
 No cartoon people in v2 (real children in slides 1–3 must not sit next to cartoon children). Missing or weak clip = that shot falls back to the storyboard's motion/illustrated version.
 For each clip: pick the usable seconds noted in veo-prompts-v2.md, crop to 9:16, grade as noted (blur, darken, duotone), reject any take with AI artefacts (hands, warped pencils, fake text). Use OffthreadVideo in Remotion.
 Pacing: calmer than v1. One idea per shot, holds of 3–5 s, soft transitions; nothing faster than the voice.

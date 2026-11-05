@@ -2,7 +2,7 @@
 
 For the hybrid storyboard (`storyboard-v4/index.html`), built on the client's 7-slide script.
 Only slides 1–3 use footage ("footage for feelings"); slides 4–7 are motion graphics. So this list is shorter
-than the v3 one (`storyboard/veo-prompts.md`): **4 required clips, 2 optional**. C6 (teacher at the board) is dropped.
+than the v3 one (`storyboard/veo-prompts.md`): **4 required clips, 3 optional**. C6 (teacher at the board) is dropped.
 
 Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2–3 takes per clip if you can).
 
@@ -110,6 +110,22 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
 
 - **Needed:** up to 8.4 s (slowed slightly). The smile should land around 5 s into the clip, on "improvement".
 - **Grade:** violet duotone behind the WHERE / WHY / WHAT NEXT text. If it's weak, slide 5 stays plain violet.
+
+## C8 · Slide 6b (0:49.8–0:54.0) · "Experience kijiye calculation ka ek different approach" · OPTIONAL
+
+> Vertical 9:16 video. A bright, modern Indian classroom during an energetic maths session. Indian children aged 8
+> to 11 in plain light-blue school shirts sit at desks, quickly working out answers in their notebooks, looking up
+> eagerly and raising hands; in the middle, [Boy] answers quickly with a confident smile. A young Indian woman teacher
+> stands at the side, encouraging them, slightly out of focus. Lively but calm, focused energy. Camera at child eye
+> level, slow lateral glide across the desks. Bright, even daylight. Realistic, natural, 35mm lens, shallow depth of
+> field.
+>
+> Avoid: readable writing on boards, books or screens, abacus, rods or counting beads, logos, posters with text,
+> watermarks, distorted hands, exaggerated cheering.
+
+- **Needed:** 4.2 s of the glide. **Grade:** dark ink tint (desaturated, darkened to about 40%) behind the CTM™ type;
+  the type must stay the hero. No abacus in frame: the brochure's point is "No abacus. No Vedic sutras."
+- **If it's weak or missing:** slide 6b stays plain ink.
 
 ---
 

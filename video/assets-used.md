@@ -7,7 +7,8 @@ Every clip, sound, font and logo in the reel. Add a row whenever an asset goes i
 | Asset | File | Source | Licence / status |
 |---|---|---|---|
 | Guinness World Records emblem | `public/gwr-logo.png` (from `source/logo-g.png`) | Supplied by the client | **Needs Guinness World Records' licence and approval of this ad before it runs.** Do not alter the emblem. |
-| Giane Future Gurukull name + mark | drawn in code (`src/defs.ts`, `gfg-mark`) | Redrawn from the brochure | Client's own brand. Swap for the official logo file if the client sends one. |
+| Giane Future Gurukull logo (official, ®) | `source/Giane future gurukull logog F(2).png` (4021×665, transparent); web copy `storyboard-v4/assets/gfg-logo.png` | Supplied by the client | Client's own brand. Used on the end card (7b). Don't recolour or stretch it. |
+| Giane Future Gurukull mark (small) | drawn in code (`gfg-mark`) | Redrawn from the logo | Only as the tiny WhatsApp chat avatar in 7a. |
 | CTM™ | typed in the reel's fonts | Brochure page 3 | Client's own trademark; keep the ™. |
 | WhatsApp icon | drawn in code (`wa` symbol) | Generic chat-bubble + phone glyph | Used only to say "message us on WhatsApp"; check Meta's brand guidelines if the ad is boosted. |
 
