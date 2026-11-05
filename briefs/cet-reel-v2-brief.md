@@ -28,7 +28,7 @@ Rule: FOOTAGE FOR FEELINGS, MOTION FOR FACTS. Mapping (from storyboard-v4; times
 | 1b | 0:02.9–0:06.0 | illustrated exam paper (keep from v1) over C2 blurred/darkened (or C1 blurred); "Still making silly mistakes?!" |
 | 2 | 0:06.0–0:14.8 | C3 blurred + darkened behind the 4-line checklist (ticks on the spoken words) |
 | 3a | 0:14.8–0:18.4 | C4 head in hands, natural colour, bottom scrim; "These may be just the visible signs…" |
-| 3b | 0:18.4–0:23.6 | C5 mother watching, red duotone; "…not the real reasons behind those silly mistakes." |
+| 3b | 0:18.4–0:23.6 | C5 mother reading her son's marked test paper, then looking toward him (boy from behind, out of focus), red duotone; "…not the real reasons behind those silly mistakes." |
 | 4a | 0:23.6–0:29.6 | motion graphics (violet), centred, no logo: a big FREE badge and CALCULATION / EFFICIENCY / TEST filling the screen |
 | 4b | 0:29.6–0:34.2 | motion graphics, centred: "Understand your child's calculation skills better", divider, Guinness emblem, "Specially designed by Deveshh Sir", "Guinness World Record Holder in Memory" |
 | 5 | 0:34.2–0:42.6 | motion graphics; optional C7 violet duotone behind; MORE THAN JUST A SCORE! → WHERE / WHY / WHAT NEXT |
