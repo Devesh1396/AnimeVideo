@@ -19,6 +19,8 @@ test:
     why: Why does your child keep making calculation mistakes?
     what_next: Which calculation skills need improvement first?
     closing_line: The right improvement starts with knowing what needs attention.
+    where: Where mistakes are happening                                   # source: client script (2026-11-05), slide 5 VO
+    understand: Understand your child's calculation skills better         # source: client script (2026-11-05), slide 4 VO
   eligibility: Students, Class 3 onwards  # Pg4
   scheduling: Our team shares the available dates and timings after you WhatsApp   # Pg4 step 2; client: no fixed deadline
 

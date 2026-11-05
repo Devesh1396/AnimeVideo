@@ -42,13 +42,22 @@ Only the sounds actually used in the final mix need to stay; list them here by f
 | Voice | Source | Licence |
 |---|---|---|
 | v1 draft (`public/audio/vo/s1–s6.wav`) | Microsoft Edge TTS, hi-IN-SwaraNeural | **Draft only, not licensed for ads.** Replaced in v2. |
-| v2 | Sarvam Bulbul API (account of the client) | Per Sarvam's API terms; record the model ID and voice here when generated. |
+| v2 | Sarvam Bulbul API (account of the client), model `bulbul:v4-flash`, speaker `ishita_hi_edtech` | Per Sarvam's API terms. |
 
-## Footage (`source/footage/`)
+## Footage (`source/Footages/`)
 
-| Clip | Source | Licence / notes |
-|---|---|---|
-| (none yet) | AI video (Veo / other) per `storyboard-v4/veo-prompts-v2.md`, or filmed at the centres | Record the tool and plan used for each take. AI video: check Meta's AI-content ad policy. Filmed: written parental consent for every identifiable child. |
+All clips: AI video, Google Flow Pro (Veo), 1080x1920, 24 fps. **Visible Veo watermark cropped; SynthID remains; Google Flow Pro.**
+Crop (same on every clip): keep x 65-1015, y 0-1690, scaled to 1080x1920 (OffthreadVideo `scale(1.1368)`, `transform-origin: 50% 0%`).
+AI video: check Meta's AI-content ad policy ("AI info" label) before the ad runs.
+
+| Clip | Shot | Source in → out | Notes |
+|---|---|---|---|
+| `C1.mp4` | 1a | 3.10 → 6.00 | Visible Veo watermark cropped; SynthID remains; Google Flow Pro. Natural colour. |
+| `C1.mp4` | 1b | 6.00 → 9.10 | Same clip, blurred + darkened behind the exam paper (C2 not delivered). |
+| `C3.mp4` | 2 | 0.00 → 7.92 at 0.9x | Visible Veo watermark cropped; SynthID remains; Google Flow Pro. Blurred + darkened. |
+| `c4-part2.mp4` | 3a | 2.40 → 7.70 | Visible Veo watermark cropped; SynthID remains; Google Flow Pro. First 2.4 s trimmed (client note). |
+| `c5.mp4` | 3b | 0.00 → 3.50 | Visible Veo watermark cropped; SynthID remains; Google Flow Pro. Red duotone. Cut before 3.5 s: her lips move after that. |
+| `c8.mp4` | 6b | 0.00 → 4.20 | Visible Veo watermark cropped; SynthID remains; Google Flow Pro. Dark ink tint. |
 
 ## Storyboard stand-ins (not in the reel)
 
