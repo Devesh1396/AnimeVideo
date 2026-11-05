@@ -88,16 +88,22 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 > Vertical 9:16 video. Evening in a modest, tidy Indian apartment in Ahmedabad. [Boy], [Home outfit], sits at a small study table
 > against a plain wall, a maths exercise book open in front of him, under a warm table lamp. In one continuous take:
 > he writes very fast, rushing; stops and rubs out an answer with an eraser, frowning; glances away out of the frame,
-> distracted, tapping the pencil; then flips back a page as if trying to remember something, unsure. Camera at table
+> distracted, tapping the pencil; then stops with the pencil held still above the page, taps the end of the pencil
+> lightly against his temple and looks up, trying to remember something, then gives a small unsure shake of the
+> head. The book stays open on the same page the whole time; he never turns a page. Camera at table
 > height, slightly to the side, very slow gentle drift. Warm lamp light mixed with cool window light. Realistic,
 > natural, documentary style, 35mm lens.
 >
-> Avoid: readable writing in the book, logos, branded stationery, posters with text, watermarks, pencil merging into
-> fingers, extra fingers.
+> Avoid: turning or flipping pages, readable writing in the book, logos, branded stationery, posters with text,
+> watermarks, pencil merging into fingers, extra fingers.
 
 - **Needed:** 8.8 s, the whole take (played at about 0.9× speed, or two takes joined with a slow dissolve).
-- **Grade:** blurred and darkened behind the checklist. The four actions (rushing, erasing, looking away, flipping
-  back) line up with the four ticks, so keep the order.
+- **Grade:** blurred and darkened behind the checklist. The four actions (rushing, erasing, looking away, pencil to the
+  temple trying to remember) line up with the four ticks, so keep the order.
+- **Why no page flip:** video models rarely get a page turn right (it half-turns and falls back). Trying to remember
+  shows "keeps forgetting formulas" with the face and a hand, which they handle well.
+- **If the take runs out before the fourth action:** generate it as two clips, C3a (rushing + erasing) and C3b (looking
+  away + trying to remember), from the same reference image; the edit joins them with a slow dissolve.
 
 ## C4 · Slide 3a (0:14.8–0:18.4) · "Lekin ye toh sirf dikhne wale signs hain" · REQUIRED
 
