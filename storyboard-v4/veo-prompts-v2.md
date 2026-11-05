@@ -14,12 +14,15 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
 - **Audio:** off, or ignored. The reel has its own voice, music and sound.
 - **Negative prompt:** paste each clip's "Avoid" line into the negative-prompt field if the tool has one; otherwise
   leave it at the end of the prompt.
-- **Same boy throughout, two outfits:** C1, C3, C4, C5, C7 and C8 all show the same boy, so the parent follows one
-  child. At school (C1, C8) he wears the uniform; at home (C3, C4, C5, C7) he wears the same plain home T-shirt in
-  every clip. Generate **C3 first** and pick the best take. Use a still of him from it as the **reference image** for:
+- **Same boy in the problem story, a new boy for the masterclass:** C1, C3, C4, C5 and C7 show the same boy, so the
+  parent follows one child. At school (C1) he wears the uniform; at home (C3, C4, C5, C7) the same plain home T-shirt
+  in every clip. C8 deliberately shows a **different boy** ([Boy 2]), so the CTM masterclass reads as "other children
+  like yours", not the same story. Generate **C3 first** and pick the best take. Use a still of him from it as the
+  **reference image** for:
   - C4, C5 and C7: face *and* clothes (same evening, same T-shirt);
-  - C1 and C8: face only. Add "the same boy as in the reference image, now wearing his school uniform" so the tool
-    keeps the face but changes the clothes.
+  - C1: face only. Add "the same boy as in the reference image, now wearing his school uniform" so the tool keeps the
+    face but changes the clothes.
+  - C8: **no** reference image from C3 (that would bring the first boy back).
   ("Ingredients" or "Frames to video" in Flow; "reference image" in other tools.)
 - **If a prompt is refused** because it shows a child: keep the scene but frame it from behind, over the shoulder or
   on the hands. That works for C1, C2 and C3, which the edit blurs or shows small.
@@ -28,7 +31,10 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
 
 - **[Boy]** a 9-year-old Indian boy with short neat black hair and a medium-brown complexion. (Add one of the two
   outfits below right after it.)
-- **[School outfit]** wearing a plain light-blue short-sleeved school shirt with no badge or logo. Use in C1, C8.
+- **[School outfit]** wearing a plain light-blue short-sleeved school shirt with no badge or logo. Use in C1.
+- **[Boy 2]** (C8 only) a 10-year-old Indian boy with slightly wavy black hair, a wheatish complexion and thin
+  round black-framed glasses, wearing a plain teal-green polo T-shirt with no logo. Clearly a different child from
+  [Boy]: different hair, glasses, different colour top.
 - **[Home outfit]** wearing a plain mustard-yellow cotton round-neck T-shirt with no print or logo, and dark shorts.
   Use in C3, C4, C5, C7, always the same.
 - **[Mother]** an Indian woman in her mid-thirties, hair tied back in a low bun, wearing a simple cotton kurta in a
@@ -144,9 +150,10 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 ## C8 · Slide 6b (0:49.8–0:54.0) · "Experience kijiye calculation ka ek different approach" · OPTIONAL
 
-> Vertical 9:16 video. A bright, modern Indian classroom during an energetic maths session. Indian children aged 8
-> to 11 in plain light-blue school shirts sit at desks, quickly working out answers in their notebooks, looking up
-> eagerly and raising hands; in the middle, [Boy], [School outfit], answers quickly with a confident smile. A young Indian woman teacher
+> Vertical 9:16 video. A bright, modern learning-centre classroom in India during an energetic maths masterclass.
+> Indian children aged 8 to 11 in everyday casual clothes in plain colours sit at desks, quickly working out answers
+> in their notebooks, looking up eagerly and raising hands; in the middle, [Boy 2] answers quickly with a confident
+> smile, pushing his glasses up. A young Indian woman teacher
 > stands at the side, encouraging them, slightly out of focus. Lively but calm, focused energy. Camera at child eye
 > level, slow lateral glide across the desks. Bright, even daylight. Realistic, natural, 35mm lens, shallow depth of
 > field.
@@ -157,6 +164,8 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 - **Needed:** 4.2 s of the glide. **Grade:** dark ink tint (desaturated, darkened to about 40%) behind the CTM™ type;
   the type must stay the hero. No abacus in frame: the brochure's point is "No abacus. No Vedic sutras."
 - **If it's weak or missing:** slide 6b stays plain ink.
+- **Why casual clothes here:** the CTM masterclass happens at Giane Future Gurukull's centres, not at school, so the
+  children are in their own clothes. Ask for plain colours so nothing with print or logos appears.
 
 ---
 
