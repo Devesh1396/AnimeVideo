@@ -6,7 +6,14 @@ CONTEXT
 - The approved plan for v2 is storyboard-v4/index.html (published: https://claude.ai/artifact/Ed9hBCvhuQv55ASEeDKrGg). Read it first: 7 slides, 13 shots, timings, on-screen text, sound cues.
 - Footage prompts: storyboard-v4/veo-prompts-v2.md (C1, C3, C4, C5 required; C2, C7, C8 optional). Older references: storyboard/index.html (v3) and storyboard/veo-prompts.md.
 - Brochure pages (the only source of facts besides client confirmations): source/Pg1.png–Pg4.png. The facts list is already built: video/facts.yaml.
-- Footage clips go in source/footage/ (C1a.mp4, C3a.mp4, …). List what's actually there before planning.
+- Footage is in source/Footages/ (note the folder name and the mixed-case file names). Delivered, all 1080x1920 at 24 fps:
+  - C1.mp4 (9.96 s): boy confident in class, for 1a.
+  - C3.mp4 (7.93 s): the four signs at home, for slide 2. The shot needs 8.8 s, so play it at about 0.9x speed.
+  - c4-part2.mp4 (7.93 s): head in hands, for 3a. CLIENT NOTE: trim off the first few seconds and use only the SECOND PART of this clip. Watch a small contact sheet to pick the cut, and show me the in/out you chose at gate 1.
+  - c5.mp4 (7.93 s): the new standalone scene, mother reading the test paper, for 3b (red duotone).
+  - c8.mp4 (7.93 s): masterclass with a different boy ([Boy 2]), for 6b (dark ink tint).
+  - Not delivered: C2 (so 1b uses C1 blurred and darkened behind the exam paper) and C7 (so slide 5 stays plain violet motion graphics).
+  - The reel renders at 30 fps; OffthreadVideo plays the 24 fps clips fine. Check every take for AI artefacts (hands, pencils, fake text) before using it.
 - Asset log: video/assets-used.md (started; keep it current).
 
 THE SCRIPT (client's, final wording; on-screen text in caps)
@@ -25,13 +32,13 @@ Rule: FOOTAGE FOR FEELINGS, MOTION FOR FACTS. Mapping (from storyboard-v4; times
 | Shot | Draft time | Picture |
 |---|---|---|
 | 1a | 0:00–0:02.9 | C1 boy confident in class, push-in, natural colour; "Maths concepts are clear…" |
-| 1b | 0:02.9–0:06.0 | illustrated exam paper (keep from v1) over C2 blurred/darkened (or C1 blurred); "Still making silly mistakes?!" |
+| 1b | 0:02.9–0:06.0 | illustrated exam paper (keep from v1) over C1 blurred/darkened (C2 was not delivered); "Still making silly mistakes?!" |
 | 2 | 0:06.0–0:14.8 | C3 blurred + darkened behind the 4-line checklist (ticks on the spoken words) |
 | 3a | 0:14.8–0:18.4 | C4 head in hands, natural colour, bottom scrim; "These may be just the visible signs…" |
 | 3b | 0:18.4–0:23.6 | C5 mother reading her son's marked test paper, then looking toward him (boy from behind, out of focus), red duotone; "…not the real reasons behind those silly mistakes." |
 | 4a | 0:23.6–0:29.6 | motion graphics (violet), centred, no logo: a big FREE badge and CALCULATION / EFFICIENCY / TEST filling the screen |
 | 4b | 0:29.6–0:34.2 | motion graphics, centred: "Understand your child's calculation skills better", divider, Guinness emblem, "Specially designed by Deveshh Sir", "Guinness World Record Holder in Memory" |
-| 5 | 0:34.2–0:42.6 | motion graphics; optional C7 violet duotone behind; MORE THAN JUST A SCORE! → WHERE / WHY / WHAT NEXT |
+| 5 | 0:34.2–0:42.6 | motion graphics on plain violet (C7 not delivered); MORE THAN JUST A SCORE! → WHERE / WHY / WHAT NEXT |
 | 6a | 0:42.6–0:49.8 | motion graphics (lime), centred with clear spacing: gift, "special bonus", CTM™ 60-minute Masterclass, worth ₹500, "with the test · limited period" |
 | 6b | 0:49.8–0:54.0 | optional C8 (children in an energetic class) in a dark ink tint behind: EXPERIENCE CTM™ — Calculation Thinking Method, See → Process → Answer (no "different approach" line on screen) |
 | 7a | 0:54.0–0:57.6 | motion graphics: "Book your Calculation Efficiency Test", WhatsApp message typed and sent; the reply is a registration form card ("Open form") |
@@ -54,7 +61,7 @@ SETUP (a new session is a fresh container; only committed files survive)
 
 VOICE (replace the draft Edge TTS, which isn't licensed for an ad)
 - Sarvam Bulbul via the API with the SARVAM_API_KEY environment variable. Check docs.sarvam.ai for the current model ID (V4 Flash if available, else bulbul:v3). Use the 7 lines above (or the tightened set if I pick option B).
-- First generate ONLY the slide 1 line in 3 voices and give me the files to pick from. Then all lines in the chosen voice. Total TTS budget: ₹100.
+- I have not picked a voice. First generate ONLY the slide 1 line in 3 voices (warm, mature female voices that handle Hindi with English words well; check the current speaker list in docs.sarvam.ai) and give me the files to pick from. Then all lines in the chosen voice. Total TTS budget: ₹100.
 - If Sarvam returns no word timings, get them with faster-whisper (language hi) and write vo-timings.json so every animation still lands on its word.
 - If SARVAM_API_KEY is missing or the API is blocked, tell me and stop. Don't fall back to Edge TTS.
 
