@@ -31,20 +31,38 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
 
 ## C1 · Slide 1a (0:00–0:02.9) · "Maths ke concepts clear hain…" · REQUIRED
 
-> Vertical 9:16 video. A bright Indian primary-school classroom in Gujarat, morning. Indian children aged 8 to 10 in
-> plain light-blue school shirts sit at wooden twin desks. In the middle row, [Boy] listens to the teacher at the front,
-> nods with quiet confidence and raises his hand to answer, a small sure smile on his face. The teacher and the green
-> chalkboard are soft and out of focus in the background. Camera at child eye level from the side aisle, slow smooth
-> push-in toward the boy. Soft daylight from tall windows, ceiling fans turning slowly. Natural documentary look,
-> realistic skin tones, shallow depth of field, 35mm lens.
+**Revised.** The first version asked for the teacher and chalkboard "in the background" while the camera faced the boy.
+In a real classroom the children face the board, so a camera looking at the boy's face has the board *behind the
+camera*, not behind him. That's why the result looked wrong. Now the camera stands where the teacher stands.
+
+> Vertical 9:16 video. A bright Indian primary-school classroom in Gujarat, morning. The camera is at the front of the
+> classroom, where the teacher stands, looking toward the students. [Boy] sits in the second row at a wooden twin
+> desk, facing the camera. He listens, nods with quiet confidence and raises his hand to answer, with a small sure
+> smile. Behind him are more rows of Indian children aged 8 to 10 in plain light-blue school shirts, softly out of
+> focus, and the back wall of the classroom with tall windows and soft daylight. Camera at a seated child's eye
+> level, slow smooth push-in toward the boy. Ceiling fans turning slowly. Natural documentary look, realistic skin
+> tones, shallow depth of field, 35mm lens.
 >
-> Avoid: readable writing on the board or in books, letters, numbers, logos, school name boards, watermarks,
-> cartoon or CGI look, extra fingers, warped desks.
+> Avoid: blackboard, chalkboard, whiteboard, teacher or any adult in the frame, readable writing, letters, numbers,
+> logos, posters with text, watermarks, cartoon or CGI look, extra fingers, warped desks.
 
 - **Needed:** 2.9 s, the push-in ending on the raised hand.
 - **Grade:** natural colour, dark gradient at the bottom for the text.
-- **Why this version:** v3's C1 was a general class from behind. Now the boy is confident in class, so the next shot
-  (his marked test paper) lands as a surprise: concepts clear, still mistakes.
+- **If you still get a board or a teacher:** add "seen from the teacher's point of view" to the first sentence, and
+  keep "blackboard, teacher" in the negative prompt.
+
+**Fallback, C1-alt (if faces keep coming out wrong):** shoot from behind instead, where the board belongs in front.
+
+> Vertical 9:16 video. A bright Indian primary-school classroom in Gujarat, morning. Over-the-shoulder shot from
+> just behind [Boy], who sits at a wooden desk in the middle row, facing a green chalkboard at the front where a
+> young Indian woman teacher is explaining. He confidently raises his hand to answer. The boy's shoulder and raised
+> hand are in the foreground; the teacher and the board are ahead of him, soft and out of focus. Other children in
+> plain light-blue shirts at desks on both sides. Soft daylight, slow push-in past his shoulder. Natural documentary
+> look, 35mm lens, shallow depth of field.
+>
+> Avoid: readable writing on the board, letters, numbers, logos, watermarks, cartoon or CGI look, extra fingers.
+
+The alt shows the boy from behind, so his face first appears in C3. Use it only if the main C1 keeps failing.
 
 ## C2 · Slide 1b (0:02.9–0:06.0) · test paper on the desk · OPTIONAL
 
