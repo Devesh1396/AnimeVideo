@@ -1,0 +1,595 @@
+<title>CET Reel v2 Storyboard</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Kalam:wght@400;700&family=Hind:wght@400;500;600;700&family=Cinzel:wght@700&display=swap">
+<style>
+/* Layout: production storyboard, one row per slide: 9:16 key frames left, shot sheet right.
+   v2 rule: footage for feelings (slides 1-3), motion graphics for facts (slides 4-7). */
+:root{
+  --bg:#f4f3f8; --paper-ui:#ffffff; --ink-ui:#17152b; --muted:#5d5a75; --line:#dedbea; --chip:#ecebf4; --accent:#3a1fd0;
+  --ball:#2a3a94; --ink:#16142b; --pen:#ef4136; --lime:#c8f23a; --violet:#3a1fd0; --violet-hi:#5b3cf5; --wa:#25d366;
+  --f-type:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
+  --f-hand:"Kalam","Comic Sans MS",cursive;
+  --f-body:"Hind","Segoe UI",system-ui,sans-serif;
+  --f-brand:"Cinzel","Trajan Pro",Georgia,serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0e0d18;--paper-ui:#17152a;--ink-ui:#ebe9f7;--muted:#a19dbb;--line:#2a2742;--chip:#211e38;--accent:#a99bff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e0d18;--paper-ui:#17152a;--ink-ui:#ebe9f7;--muted:#a19dbb;--line:#2a2742;--chip:#211e38;--accent:#a99bff;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink-ui);font-family:var(--f-body);font-size:15px;line-height:1.55}
+.wrap{max-width:1200px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:26px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:clamp(32px,5vw,50px);letter-spacing:-.02em;line-height:1}
+h2{font-family:var(--f-type);font-weight:800;font-stretch:85%;font-size:23px;letter-spacing:-.01em}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.lede{color:var(--muted);max-width:74ch;margin:6px 0 0}
+.specs{display:flex;flex-wrap:wrap;gap:8px}
+.specs span{background:var(--chip);border-radius:6px;padding:4px 10px;font-size:13px;font-weight:500}
+.vtag{display:inline-block;background:var(--lime);color:#16142b;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 10px}
+.timeline{background:var(--paper-ui);border:1px solid var(--line);border-radius:12px;padding:16px;display:grid;gap:10px}
+.tl-bar{display:flex;height:40px;border-radius:6px;overflow:hidden;font-size:12px;font-weight:700}
+.tl-bar a{display:flex;align-items:center;justify-content:center;text-decoration:none;min-width:0;white-space:nowrap;overflow:hidden;border-right:2px solid var(--paper-ui)}
+.tl-bar a:last-child{border-right:0}
+.tl-bar a:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.tl-scale{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums}
+.tl-legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--muted)}
+.tl-legend b{color:var(--ink-ui)}
+.controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:13px}
+.toggle{display:inline-flex;align-items:center;gap:8px;background:var(--paper-ui);border:1px solid var(--line);border-radius:999px;padding:6px 12px;cursor:pointer;color:var(--ink-ui);font:inherit}
+.toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.toggle[aria-pressed="true"]{background:var(--accent);color:var(--paper-ui);border-color:var(--accent)}
+.scene{background:var(--paper-ui);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;grid-template-columns:auto minmax(0,1fr);gap:24px;scroll-margin-top:16px}
+.scene-head{grid-column:1/-1;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
+.sid{font-family:var(--f-type);font-weight:800;font-size:22px;line-height:1;color:var(--paper-ui);background:var(--accent);border-radius:8px;padding:6px 10px;white-space:nowrap}
+.stime{font-variant-numeric:tabular-nums;font-weight:700;font-size:15px}
+.kind{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:2px 10px}
+.kind.ftg-k{background:#3b3a4e;color:#fff}.kind.mg-k{background:#c8f23a;color:#16142b}
+.frames{display:flex;gap:14px;align-items:flex-start}
+.kf{display:grid;gap:6px;justify-items:start;margin:0}
+.kf figcaption{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.06em;text-transform:uppercase;max-width:210px}
+.sheet{display:grid;gap:13px;min-width:0;align-content:start}
+.row{display:grid;grid-template-columns:104px minmax(0,1fr);gap:12px;align-items:start}
+.row > .k{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.vo-rom{font-weight:600;font-size:16px;line-height:1.45}
+.vo-hi{color:var(--muted);font-size:15px}
+.vo-en{font-size:13px;color:var(--muted)}
+.ost{display:flex;flex-wrap:wrap;gap:6px}
+.ost code{font-family:var(--f-body);font-weight:600;background:var(--chip);border-radius:5px;padding:2px 8px;font-size:14px}
+ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
+.note{font-size:13px;background:var(--chip);border-radius:8px;padding:8px 12px}
+.flag{font-size:13px;border-left:3px solid #e0a100;background:color-mix(in srgb,#ffd24a 16%,var(--paper-ui));border-radius:6px;padding:8px 12px}
+
+/* ===== 9:16 frame (1cqw = 1% of frame width) ===== */
+.frame{width:210px;max-width:100%;aspect-ratio:9/16;position:relative;overflow:hidden;border-radius:14px;container-type:inline-size;box-shadow:0 1px 0 var(--line),0 8px 24px rgba(20,16,60,.16);font-family:var(--f-type);color:var(--ink);background:#222}
+.frame *{box-sizing:border-box}
+.ill{position:absolute;inset:0;width:100%;height:100%;display:block}
+.f-ink{background:radial-gradient(110cqw 90cqw at 50% 25%,#26234d,var(--ink) 70%)}
+.f-vio{background:radial-gradient(120cqw 100cqw at 85% 0%,#5b3cf5,#3a1fd0 55%,#2812a6)}
+.f-lime{background:radial-gradient(120cqw 100cqw at 15% 0%,#dcff63,#c8f23a 55%,#b2dc22)}
+.stack{position:absolute;left:9%;right:12%;top:17.2%;bottom:29.7%;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+.stack.end{justify-content:flex-end}
+.d{font-family:var(--f-type);font-weight:800;font-stretch:75%;line-height:.86;letter-spacing:-.025em;white-space:nowrap}
+.m{font-family:var(--f-type);font-weight:600;font-stretch:90%;line-height:1.05;letter-spacing:-.01em}
+.hand{font-family:var(--f-hand);font-weight:700;line-height:1}
+.c-ink{color:var(--ink)}.c-pen{color:var(--pen)}.c-lime{color:var(--lime)}.c-white{color:#fff}
+.hl{background:linear-gradient(98deg,transparent 0 1%,rgba(200,242,58,.95) 1% 99%,transparent 99%) 0 78%/100% 46% no-repeat;padding:0 .8cqw}
+.rel{position:relative;display:inline-block}
+.mark{position:absolute;pointer-events:none;overflow:visible;fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}
+.check{display:grid;grid-template-columns:auto 1fr;gap:2.6cqw;align-items:center}
+.box{position:relative;width:8cqw;height:8cqw}
+.box svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.stampline{display:inline-block;border:.7cqw solid currentColor;border-radius:1.6cqw;padding:.8cqw 2.4cqw;font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:5.6cqw;letter-spacing:.02em;text-transform:uppercase;transform:rotate(-4deg);align-self:flex-start}
+.gwr{display:flex;align-items:center;gap:2.6cqw;margin-top:3cqw}
+.gwr img{width:16cqw;height:16cqw;border-radius:50%;background:#fff;padding:.5cqw;flex:none}
+/* footage */
+.ftg{position:absolute;inset:0;overflow:hidden;background:#111}
+.ftg img{width:100%;height:100%;object-fit:cover;display:block}
+.ftg.blur img{filter:blur(.7cqw) brightness(.48);transform:scale(1.1)}
+.ftg.duo img{filter:grayscale(1) contrast(1.15) brightness(1.1)}
+.ftg.duo::after{content:"";position:absolute;inset:0;mix-blend-mode:multiply}
+.duo-pen::after{background:var(--pen)}.duo-vio::after{background:var(--violet)}
+.scrim{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,10,28,.2) 0%,rgba(12,10,28,0) 26%,rgba(12,10,28,.72) 58%,rgba(12,10,28,.92))}
+.clip{position:absolute;left:3%;top:2.5%;z-index:4;display:inline-flex;gap:1cqw;background:rgba(0,0,0,.6);color:#fff;border:.35cqw dashed rgba(255,255,255,.75);border-radius:1.4cqw;padding:.7cqw 2cqw;font-family:var(--f-body);font-weight:700;font-size:3.4cqw;letter-spacing:.04em}
+/* exam paper */
+.exam{position:absolute;left:9%;right:9%;top:13%;background:#fdfdfb;border-radius:1cqw;padding:3.2cqw 4.5cqw 2.4cqw;box-shadow:0 2.5cqw 6cqw rgba(0,0,0,.55);transform:rotate(-2.5deg);color:var(--ink)}
+.ex-h{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:.4cqw solid var(--ink);padding-bottom:1.8cqw;margin-bottom:1.6cqw;gap:2cqw}
+.ex-t{font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:5cqw;letter-spacing:.02em}
+.ex-n{font-family:var(--f-body);font-size:3.3cqw;margin-top:.6cqw;white-space:nowrap}
+.ex-s{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:7.6cqw;line-height:1;margin:1cqw 2cqw 0 0;white-space:nowrap}
+.ex-q{display:grid;grid-template-columns:5.5cqw 1fr auto;align-items:center;gap:1cqw;min-height:7cqw;border-bottom:.25cqw solid #e3e7ef}
+.ex-q .qn{font-family:var(--f-body);font-weight:600;font-size:3.6cqw;color:#666}
+.ex-q .qa{font-family:var(--f-hand);font-weight:700;color:var(--ball);font-size:6.2cqw;white-space:nowrap}
+.ex-q .qa s{text-decoration-color:var(--pen);text-decoration-thickness:.6cqw}
+.ex-q .qa em{font-style:normal;color:var(--pen);font-size:.8em;vertical-align:.3em}
+.ex-q .x{font-family:var(--f-hand);font-weight:700;color:var(--pen);font-size:7.6cqw;line-height:1}
+.ex-q .ok{position:static;width:6.6cqw;height:6.6cqw;color:var(--pen)}
+/* phone */
+.phone{position:absolute;left:16%;right:18%;top:36%;bottom:29.7%;border:1.1cqw solid rgba(255,255,255,.9);border-radius:6cqw;background:#0b141a;overflow:hidden;display:grid;grid-template-rows:auto 1fr auto}
+.ph-top{display:flex;align-items:center;gap:2cqw;padding:2.2cqw 3cqw;background:#1f2c34;color:#e9edef;font-family:var(--f-body);font-weight:700;font-size:3.6cqw;line-height:1.1}
+.ph-top small{display:block;font-weight:500;font-size:2.7cqw;color:#8696a0}
+.ph-top .av{width:7.5cqw;height:7.5cqw;border-radius:50%;background:#fff;display:grid;place-items:center;color:var(--violet)}
+.ph-body{padding:3cqw;display:grid;align-content:end;gap:2cqw}
+.bub{max-width:92%;border-radius:2.4cqw;padding:1.8cqw 2.4cqw;font-family:var(--f-body);font-size:3.8cqw;line-height:1.15}
+.bub small{display:block;text-align:right;font-size:2.6cqw;opacity:.7}
+.bub.out{justify-self:end;background:#005c4b;color:#e9edef;font-weight:700;border-top-right-radius:0}
+.bub.in{justify-self:start;background:#1f2c34;color:#e9edef;border-top-left-radius:0}
+.ph-in{display:flex;gap:2cqw;padding:2cqw;align-items:center}
+.ph-in span{flex:1;background:#2a3942;border-radius:999px;padding:1.6cqw 3cqw;color:#8696a0;font-family:var(--f-body);font-size:3.3cqw}
+.ph-in i{width:8cqw;height:8cqw;border-radius:50%;background:var(--wa);display:grid;place-items:center;color:#0b141a;font-style:normal;font-size:3.8cqw}
+.gfg{display:flex;align-items:center;gap:2cqw}
+.gfg svg{width:7.5cqw;height:7.5cqw;flex:none}
+.gfg b{font-family:var(--f-brand);font-weight:700;font-size:4.4cqw;color:#fff;letter-spacing:.01em}
+.gfg span{display:block;font-family:var(--f-body);font-size:2.9cqw;color:rgba(255,255,255,.65);margin-top:.4cqw}
+/* safe zone: brief says text stays within y 330-1350 of 1920 (17.2%-70.3%) and clear of the right 12% */
+.safe{position:absolute;inset:0;pointer-events:none;display:none;z-index:5}
+.show-safe .safe{display:block}
+.safe::before{content:"";position:absolute;left:0;right:0;top:0;height:17.2%;background:repeating-linear-gradient(45deg,rgba(255,0,110,.3) 0 6px,rgba(255,0,110,.12) 6px 12px);border-bottom:1px dashed #ff006e}
+.safe::after{content:"";position:absolute;left:0;right:0;bottom:0;height:29.7%;background:repeating-linear-gradient(45deg,rgba(255,0,110,.3) 0 6px,rgba(255,0,110,.12) 6px 12px);border-top:1px dashed #ff006e}
+.safe i{position:absolute;right:0;top:17.2%;bottom:29.7%;width:12%;background:rgba(255,0,110,.14);border-left:1px dashed #ff006e}
+/* extras */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--paper-ui);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start;min-width:0}
+.card.wide{grid-column:1/-1}
+.card h3{font-size:16px;font-weight:700}
+.card p{margin:0}
+.tblwrap{overflow-x:auto}
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t td,table.t th{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left;vertical-align:top}
+table.t th{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.status{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:1px 9px}
+.status.open{background:#ffe9a8;color:#5a4200}.status.done{background:#c9f0d3;color:#0f5a27}
+.svgdefs{position:absolute;width:0;height:0;overflow:hidden}
+@media (max-width:860px){
+  .scene{grid-template-columns:minmax(0,1fr)}
+  .frames{overflow-x:auto;padding-bottom:6px}
+  .frame{width:180px}
+  .row{grid-template-columns:minmax(0,1fr);gap:2px}
+  .grid2{grid-template-columns:minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<svg class="svgdefs" aria-hidden="true" focusable="false"><defs>
+  <symbol id="sc-circle" viewBox="0 0 200 100"><path d="M150 14C92-2 20 14 11 47c-7 32 60 48 112 42 52-6 74-30 66-53-6-17-36-27-78-24" stroke-width="5"/></symbol>
+  <symbol id="sc-under" viewBox="0 0 200 20"><path d="M4 12C40 3 72 18 110 9s62-3 86 3" stroke-width="5"/></symbol>
+  <symbol id="sc-tick" viewBox="0 0 40 40"><path d="M5 22 15 33 36 5" stroke-width="5"/></symbol>
+  <symbol id="sc-box" viewBox="0 0 40 40"><path d="M5 6c10-2 22-1 30 0 1 9 0 21-1 29-10 1-21 0-29-1-1-10 0-20 0-28z" stroke-width="3.2"/></symbol>
+  <symbol id="sc-spark" viewBox="0 0 40 40"><path d="M20 3v10M20 27v10M3 20h10M27 20h10M8 8l6 6M26 26l6 6M32 8l-6 6M14 26l-6 6" stroke-width="3.4"/></symbol>
+  <symbol id="wa" viewBox="0 0 48 48"><path d="M24 3a21 21 0 0 0-18.2 31.5L3 45l10.8-2.8A21 21 0 1 0 24 3z" fill="#25d366"/><path transform="translate(12 12)" fill="#fff" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></symbol>
+  <symbol id="gfg-mark" viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"><path d="M22 17a11 11 0 0 1 16 0"/><path d="M16.5 11.5a19 19 0 0 1 27 0"/><path d="M11 6a27 27 0 0 1 38 0"/><path d="M7 32q11-4 22 2v20q-11-6-22-2z"/><path d="M53 32q-11-4-22 2v20q11-6 22-2z"/></g><circle cx="30" cy="23" r="2.6" fill="currentColor"/></symbol>
+</defs></svg>
+
+<div class="wrap" id="board">
+
+<header style="display:grid;gap:12px">
+  <div class="eyebrow">Giane Future Gurukull · Reel v2 · <span class="vtag">Hybrid: footage + motion</span></div>
+  <h1>Free Calculation Efficiency Test: reel v2 storyboard</h1>
+  <p class="lede">Built on the client's updated 7-slide script. One rule from the v2 brief: <b>footage for feelings, motion for facts.</b> Slides 1–3 (the problem) run on real footage under animated text; slides 4–7 (the offer) are motion graphics. Pacing is calmer than v1: one idea per shot, holds of 3–5 s, and only nine sound effects in the whole reel. Pictures marked "▶ stand-in" are brochure photos showing where a footage clip goes.</p>
+  <div class="specs">
+    <span><b>1080×1920</b> · 30 fps</span><span><b>≈ 61 s</b> at a natural pace (see "Length")</span><span>VO: Hindi/Hinglish, Sarvam Bulbul (next session)</span><span>Text: English</span><span>Remotion · same engine as v1</span>
+  </div>
+</header>
+
+<section class="timeline" aria-label="Timeline">
+  <div class="tl-bar">
+    <a href="#s1" style="flex:6;background:#3b3a4e;color:#fff">1 Hook</a>
+    <a href="#s2" style="flex:8.8;background:#4a4862;color:#fff">2 Signs</a>
+    <a href="#s3" style="flex:8.8;background:#b3271e;color:#fff">3 Beyond the signs</a>
+    <a href="#s4" style="flex:10.6;background:#3a1fd0;color:#fff">4 The test</a>
+    <a href="#s5" style="flex:8.4;background:#5b3cf5;color:#fff">5 Why / what next</a>
+    <a href="#s6" style="flex:11.4;background:#c8f23a;color:#16142b">6 CTM bonus</a>
+    <a href="#s7" style="flex:7.5;background:#16142b;color:#c8f23a">7 Book now</a>
+  </div>
+  <div class="tl-scale"><span>0s</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>61.5s</span></div>
+  <div class="tl-legend"><span><b>Footage</b> slides 1–3 (0–23.6 s)</span><span><b>Motion graphics</b> slides 4–7 (23.6–61.5 s)</span><span>Timings measured from a draft read at natural speed; they shift slightly with the Sarvam voice.</span></div>
+</section>
+
+<div class="controls">
+  <button class="toggle" id="safeBtn" aria-pressed="false" type="button">Show safe zone</button>
+  <span style="color:var(--muted)">The brief's safe zone: all text between y 330 and 1350 (of 1920) and clear of the right-side buttons.</span>
+</div>
+
+<!-- ============ SLIDE 1 ============ -->
+<section class="scene" id="s1">
+  <div class="scene-head"><span class="sid">Slide 1</span><span class="stime">0:00 – 0:06.0</span><h2>The hook</h2><span class="kind ftg-k">Footage</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg"><img src="assets/classroom.jpg" alt="Classroom of children facing the board" style="object-position:50% 30%"></div>
+        <div class="scrim"></div><span class="clip">▶ C1 · stand-in</span>
+        <div class="stack end">
+          <div class="m c-white" style="font-size:9cqw">Maths concepts</div>
+          <div><span class="d c-lime rel" style="font-size:24cqw">are clear…<svg class="mark c-lime" viewBox="0 0 40 40" style="right:-8cqw;top:0;width:8cqw;height:8cqw"><use href="#sc-tick"/></svg></span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>1a · 0:00–2.9 · C1 classroom</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg blur"><img src="assets/classroom.jpg" alt="" style="object-position:50% 80%"></div>
+        <span class="clip">▶ C2 · optional</span>
+        <div class="exam">
+          <div class="ex-h"><div><div class="ex-t">MATHS · UNIT TEST</div><div class="ex-n">Name: <span class="hand" style="color:var(--ball)">Aarav</span> &nbsp; Class: <span class="hand" style="color:var(--ball)">4-B</span></div></div><div class="ex-s rel">12<span style="font-size:.6em">/20</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-30%;top:-25%;width:160%;height:150%"><use href="#sc-circle"/></svg></div></div>
+          <div class="ex-q"><span class="qn">1.</span><span class="qa">48 + 37 = 85</span><svg class="mark ok" viewBox="0 0 40 40"><use href="#sc-tick"/></svg></div>
+          <div class="ex-q"><span class="qn">2.</span><span class="qa">7 × 8 = <s>54</s> <em>56</em></span><span class="x">✗</span></div>
+          <div class="ex-q"><span class="qn">3.</span><span class="qa">125 − 68 = <s>67</s> <em>57</em></span><span class="x">✗</span></div>
+        </div>
+        <div style="position:absolute;left:9%;right:12%;top:46%;display:grid;gap:.6cqw">
+          <div class="m c-white" style="font-size:7.5cqw">Still making</div>
+          <div class="d c-pen" style="font-size:21cqw">silly</div>
+          <div class="d c-white" style="font-size:15cqw">mistakes?!</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>1b · 2.9–6.0 · exam paper</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Maths ke concepts clear hain… phir bhi silly mistakes ho jaati hain?"</div><div class="vo-hi">Maths के concepts clear हैं… फिर भी silly mistakes हो जाती हैं?</div><div class="vo-en">0.3–5.1 s · then no voice to the end of the slide (0.9 s beat on the paper)</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>MATHS CONCEPTS ARE CLEAR…</code><code>STILL MAKING SILLY MISTAKES?!</code></div></div>
+    <div class="row"><div class="k">Picture</div><div><b>1a:</b> C1 classroom push-in, natural colour. <b>1b:</b> the illustrated exam paper (kept from v1, it reads well) over C2 blurred and darkened; if C2 is weak, the C1 shot blurred instead.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>1a: text rises in on "concepts clear" (0.6 s); lime tick draws on "hain".</li><li>2.9 s, on "phir bhi": soft cut, the paper slides up (0.5 s, spring). Red-pen marks land one by one, slower than v1: ✓, ✗, ✗, then the score circle.</li><li>"silly" lands on "silly", "mistakes?!" on "mistakes". Hold still through the silent beat.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Music fades in under C1. One paper slide on the cut. No pen scratches, no classroom murmur.</div></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 2 ============ -->
+<section class="scene" id="s2">
+  <div class="scene-head"><span class="sid">Slide 2</span><span class="stime">0:06.0 – 0:14.8</span><h2>Visible warning signs</h2><span class="kind ftg-k">Footage</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg blur"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 50%"></div>
+        <span class="clip">▶ C3 · stand-in</span>
+        <div class="stack" style="gap:3cqw;justify-content:flex-start">
+          <div class="m c-white" style="font-size:8cqw">Have you noticed</div>
+          <div class="d c-white" style="font-size:13.5cqw">signs like these?</div>
+          <div class="check" style="margin-top:3cqw"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:7.4cqw">Rushes through questions</span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>2 · 6.4 s · first sign</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg blur"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 50%"></div>
+        <span class="clip">▶ C3 · stand-in</span>
+        <div class="stack" style="gap:2.6cqw;justify-content:flex-start">
+          <div class="m c-white" style="font-size:8cqw">Have you noticed</div>
+          <div class="d c-white" style="font-size:13.5cqw">signs like these?</div>
+          <div class="check" style="margin-top:3cqw"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:7.4cqw">Rushes through questions</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:7.4cqw">Makes calculation mistakes</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:7.4cqw">Has trouble focusing</span></div>
+          <div class="check"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%"><use href="#sc-tick"/></svg></span><span class="d c-white" style="font-size:7.4cqw">Keeps forgetting formulas</span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>2 · 13.5 s · all four, held</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Jaldi-jaldi questions solve karna, calculation mistakes, focus ki problem, ya formulas baar-baar bhool jaana…"</div><div class="vo-hi">जल्दी-जल्दी questions solve करना, calculation mistakes, focus की problem, या formulas बार-बार भूल जाना…</div><div class="vo-en">6.3–14.3 s</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>HAVE YOU NOTICED SIGNS LIKE THESE?</code><code>Rushes through questions</code><code>Makes calculation mistakes</code><code>Has trouble focusing</code><code>Keeps forgetting formulas</code></div></div>
+    <div class="row"><div class="k">Picture</div><div>C3 boy rushing his homework, blurred and darkened behind the list (one continuous 8.8 s shot, slow drift).</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Header in at 6.0 s, before the voice. Each line rises in and ticks on its spoken words: 6.3 "jaldi", 8.9 "calculation", 10.6 "focus", 12.4 "formulas".</li><li>The full list holds still for the last 2 s.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>One soft tick per line (4), quiet, under the voice.</div></div>
+    <div class="row"><div class="k">Facts</div><div class="note">Wording follows brochure page 1; "Makes calculation mistakes" matches the voice ("calculation mistakes") and the brochure's "Makes mistakes while solving".</div></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 3 ============ -->
+<section class="scene" id="s3">
+  <div class="scene-head"><span class="sid">Slide 3</span><span class="stime">0:14.8 – 0:23.6</span><h2>Look beyond the signs</h2><span class="kind ftg-k">Footage</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg"><img src="assets/kid-stressed.jpg" alt="Boy with his head in his hands" style="object-position:45% 40%"></div>
+        <div class="scrim"></div><span class="clip">▶ C4 · stand-in</span>
+        <div class="stack end" style="gap:1.4cqw">
+          <div class="m c-white" style="font-size:8cqw">These may be just</div>
+          <div class="d c-white" style="font-size:19cqw">the visible</div>
+          <div class="d c-white" style="font-size:19cqw"><span class="hl c-ink">signs…</span></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>3a · 14.8–18.4 · C4 head in hands</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg duo duo-pen"><img src="assets/mother-son.jpg" alt="Mother watching her son study, in red" style="object-position:22% 30%"></div>
+        <div class="scrim" style="background:linear-gradient(180deg,rgba(110,15,10,0) 30%,rgba(110,15,10,.75) 58%,rgba(80,10,8,.92))"></div>
+        <span class="clip">▶ C5 · stand-in</span>
+        <div class="stack end" style="gap:1.2cqw">
+          <div class="m c-white" style="font-size:8cqw">…not the</div>
+          <div class="d c-white" style="font-size:18cqw">real reasons</div>
+          <div class="m c-white" style="font-size:7cqw">behind those silly mistakes.</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>3b · 18.4–23.6 · C5 mother, red</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Lekin ye toh sirf dikhne wale signs hain. Silly mistakes ke peeche ki asli wajah kuch aur bhi ho sakti hai."</div><div class="vo-hi">लेकिन ये तो सिर्फ़ दिखने वाले signs हैं। Silly mistakes के पीछे की असली वजह कुछ और भी हो सकती है।</div><div class="vo-en">15.0–23.0 s</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>THESE MAY BE JUST THE VISIBLE SIGNS…</code><code>…not the real reasons behind those silly mistakes.</code></div></div>
+    <div class="row"><div class="k">Picture</div><div><b>3a:</b> C4 boy, head in hands, natural colour, dark scrim at the bottom. <b>3b:</b> C5 mother watching him, red duotone. The red marks the turn from problem to answer.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>3a: lines rise in on "dikhne wale signs"; the highlighter swipes across "signs…" (0.5 s).</li><li>18.4 s, on "Silly mistakes ke peeche": a slow 0.6 s cross-dissolve while the red tint fades in; "real reasons" lands on "asli wajah".</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>No effects. The music thins out to piano only for this slide.</div></div>
+    <div class="row"><div class="k">Facts</div><div class="note">On-screen text is brochure page 1 word for word: "These may be just the visible signs… not the real reasons behind those silly mistakes."</div></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 4 ============ -->
+<section class="scene" id="s4">
+  <div class="scene-head"><span class="sid">Slide 4</span><span class="stime">0:23.6 – 0:34.2</span><h2>Introducing the test</h2><span class="kind mg-k">Motion graphics</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame f-vio">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g transform="translate(168 172) rotate(-8)"><rect x="-80" y="-56" width="160" height="112" rx="8" fill="#efeaff"/><rect x="-60" y="-32" width="64" height="8" rx="4" fill="#a797ff"/><rect x="-60" y="-10" width="104" height="8" rx="4" fill="#c9bfff"/><rect x="-60" y="12" width="90" height="8" rx="4" fill="#c9bfff"/><rect x="-60" y="34" width="112" height="8" rx="4" fill="#c9bfff"/></g>
+          <circle cx="226" cy="176" r="50" fill="#c8f23a" fill-opacity=".16" stroke="#c8f23a" stroke-width="10"/><path d="M262 214 298 250" stroke="#c8f23a" stroke-width="17" stroke-linecap="round"/>
+        </svg>
+        <div class="stack end" style="gap:1cqw">
+          <div class="gfg c-white"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><b>Giane Future Gurukull</b><span>brings you the</span></div></div>
+          <div class="d c-white" style="font-size:17cqw;margin-top:2cqw">Calculation</div>
+          <div class="d c-lime" style="font-size:17cqw">Efficiency Test</div>
+          <span class="stampline c-lime" style="margin-top:2.4cqw">Free</span>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>4a · 23.6–29.6 · the name</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-vio">
+        <div class="stack" style="gap:1.2cqw">
+          <div class="m c-white" style="font-size:8cqw">to understand your child's</div>
+          <div class="d c-lime" style="font-size:18cqw">calculation</div>
+          <div class="d c-lime" style="font-size:18cqw">skills better</div>
+          <div class="gwr"><img src="assets/gwr-logo.png" alt="Guinness World Records logo"><div><div class="m c-white" style="font-size:5cqw">Specially designed by</div><div class="d c-white" style="font-size:9cqw;margin-top:.6cqw">Deveshh Sir</div><div class="hand c-lime" style="font-size:4.6cqw;margin-top:.8cqw">Guinness World Record Holder in Memory</div></div></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>4b · 29.6–34.2 · why it exists</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Isiliye Giane Future Gurukull lekar aaya hai Calculation Efficiency Test. Taaki bachche ki calculation skills ko behtar samjha ja sake."</div><div class="vo-hi">इसीलिए Giane Future Gurukull लेकर आया है Calculation Efficiency Test। ताकि बच्चे की calculation skills को बेहतर समझा जा सके।</div><div class="vo-en">24.0–33.7 s</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>Giane Future Gurukull brings you the</code><code>CALCULATION EFFICIENCY TEST</code><code>FREE</code><code>to understand your child's calculation skills better</code><code>Specially designed by Deveshh Sir · Guinness World Record Holder in Memory</code></div></div>
+    <div class="row"><div class="k">Picture</div><div>Violet motion graphics. A magnifying glass drifts over a test sheet: "looking closer". No characters in the motion half, so cartoon children never sit next to real ones.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>23.6 s: a soft circular wipe from the red slide into violet (the S3→S4 transition the brief asks for).</li><li>"Calculation" and "Efficiency Test" spring in on their words (27.1 s, 27.9 s); the FREE stamp settles 0.4 s later.</li><li>29.6 s: the lines change on "taaki"; the credential row slides in at 31 s and holds.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Whoosh on the wipe; one soft chime as the test name lands. The music lifts here.</div></div>
+    <div class="row"><div class="k">Flag</div><div class="flag">The new voiceover no longer says "free" or mentions Deveshh Sir. Both stay on screen (FREE is client-confirmed; the credential is on brochure page 2). Consider "…lekar aaya hai <b>FREE</b> Calculation Efficiency Test" in the voice: "free" is the strongest word in the offer.</div></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 5 ============ -->
+<section class="scene" id="s5">
+  <div class="scene-head"><span class="sid">Slide 5</span><span class="stime">0:34.2 – 0:42.6</span><h2>Why? What next?</h2><span class="kind mg-k">Motion graphics</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg duo duo-vio"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 30%"></div>
+        <div class="scrim" style="background:linear-gradient(180deg,rgba(40,18,166,.35),rgba(40,18,166,.75) 45%,rgba(30,12,130,.92))"></div>
+        <span class="clip">▶ C7 · optional</span>
+        <div class="stack" style="gap:1cqw">
+          <div class="m c-white" style="font-size:9cqw">More than</div>
+          <div class="d c-lime" style="font-size:22cqw">just a</div>
+          <div class="d c-lime" style="font-size:22cqw">score!</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>5 · 34.4 s · headline</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg duo duo-vio"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 30%"></div>
+        <div class="scrim" style="background:rgba(30,12,130,.72)"></div>
+        <span class="clip">▶ C7 · optional</span>
+        <div class="stack" style="gap:1.6cqw">
+          <div class="m c-white" style="font-size:6.5cqw">More than just a score!</div>
+          <div class="d c-lime" style="font-size:15cqw;margin-top:2cqw">WHERE</div><div class="m c-white" style="font-size:5.6cqw">mistakes are happening</div>
+          <div class="d c-white" style="font-size:15cqw;margin-top:1.4cqw">WHY</div><div class="m c-white" style="font-size:5.6cqw">the possible reasons</div>
+          <div class="d c-lime" style="font-size:15cqw;margin-top:1.4cqw">WHAT NEXT</div><div class="m c-white" style="font-size:5.6cqw">where improvement should start</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>5 · 41 s · all three, held</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Jaaniye mistakes kahaan ho rahi hain, unke possible reasons kya hain, aur improvement ki shuruaat kahaan se karni chahiye."</div><div class="vo-hi">जानिए mistakes कहाँ हो रही हैं, उनके possible reasons क्या हैं, और improvement की शुरुआत कहाँ से करनी चाहिए।</div><div class="vo-en">34.6–42.0 s</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>MORE THAN JUST A SCORE!</code><code>WHERE · mistakes are happening</code><code>WHY · the possible reasons</code><code>WHAT NEXT · where improvement should start</code></div></div>
+    <div class="row"><div class="k">Picture</div><div>Motion graphics on violet. Optional: C7 (the same boy thinking, then a small smile) in violet duotone behind; the smile lands on "improvement".</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Headline holds alone for 1 s, then shrinks to the top line.</li><li>WHERE springs in on "kahaan" (35.3 s), WHY on "reasons" (37.5 s), WHAT NEXT on "improvement" (39.6 s). Hold 2 s.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>No effects; the music carries it.</div></div>
+    <div class="row"><div class="k">Facts</div><div class="note">"More than just a score!", WHY and WHAT NEXT are brochure page 2. "WHERE" comes from the client's new voiceover.</div></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 6 ============ -->
+<section class="scene" id="s6">
+  <div class="scene-head"><span class="sid">Slide 6</span><span class="stime">0:42.6 – 0:54.0</span><h2>Special CTM™ bonus</h2><span class="kind mg-k">Motion graphics</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame f-lime">
+        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <g transform="translate(180 150) scale(.9)">
+            <path d="M0-70V-96M-50-56-66-74M50-56 66-74M-74-24h-24M74-24h24" stroke="#16142b" stroke-width="5" stroke-linecap="round"/>
+            <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
+            <g transform="translate(-20 -40) rotate(-22)"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
+          </g>
+        </svg>
+        <div class="stack end" style="gap:1cqw">
+          <div class="hand c-pen" style="font-size:7.4cqw">special bonus</div>
+          <div class="d c-ink" style="font-size:13cqw">CTM™ 60-minute</div>
+          <div class="d c-ink" style="font-size:13cqw">Masterclass</div>
+          <div style="display:flex;align-items:flex-end;gap:2cqw;margin-top:1cqw"><span class="hand c-ink" style="font-size:7cqw;padding-bottom:2.4cqw">worth</span><span class="d c-ink" style="font-size:22cqw">₹500</span></div>
+          <span class="stampline c-pen" style="margin-top:1.6cqw;font-size:4.4cqw;white-space:nowrap">with the test · limited period</span>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>6a · 42.6–49.8 · the gift</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div class="stack" style="gap:1.2cqw">
+          <div class="m c-white" style="font-size:8cqw">Experience</div>
+          <div class="d c-lime" style="font-size:34cqw">CTM™</div>
+          <div class="d c-white" style="font-size:7.8cqw">Calculation Thinking Method</div>
+          <div class="hand c-white" style="font-size:6.6cqw;margin-top:3cqw">See → Process → Answer</div>
+          <div class="m c-white" style="font-size:6cqw;margin-top:2cqw;opacity:.85">a different approach to calculation</div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>6b · 49.8–54.0 · the method</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Aur special bonus mein paaiye CTM ki sixty-minute masterclass, worth five hundred rupees. Experience kijiye calculation ka ek different approach."</div><div class="vo-hi">और special bonus में पाइए CTM की sixty-minute masterclass, worth five hundred rupees। Experience कीजिए calculation का एक different approach।</div><div class="vo-en">43.0–53.4 s</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>special bonus</code><code>CTM™ 60-minute Masterclass</code><code>worth ₹500</code><code>with the test · limited period</code><code>EXPERIENCE CTM™ — CALCULATION THINKING METHOD</code><code>See → Process → Answer</code><code>a different approach to calculation</code></div></div>
+    <div class="row"><div class="k">Picture</div><div>6a: highlighter-lime with the gift box (drawn). 6b: ink, type only.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>42.6 s: a lime swipe in (the S5→S6 transition the brief asks for).</li><li>Gift lid lifts on "bonus" (43.9 s), gently, no confetti burst. "₹500" counts up on "five hundred rupees" (47.6 s), then the stamp settles.</li><li>49.8 s, on "Experience": a cut to ink; "CTM™" springs in, "See → Process → Answer" writes itself on "different approach".</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Whoosh on the swipe; one soft pop as the lid opens.</div></div>
+    <div class="row"><div class="k">Facts</div><div class="note">60-minute, worth ₹500, CTM™ = Calculation Thinking Method, "See. Process. Answer." are brochure page 3; "limited time period only" is page 4; "with the test" is client-confirmed.</div></div>
+  </div>
+</section>
+
+<!-- ============ SLIDE 7 ============ -->
+<section class="scene" id="s7">
+  <div class="scene-head"><span class="sid">Slide 7</span><span class="stime">0:54.0 – 1:01.5</span><h2>Call to action</h2><span class="kind mg-k">Motion graphics</span></div>
+  <div class="frames">
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div style="position:absolute;left:9%;right:12%;top:17.5%;display:grid;gap:.8cqw">
+          <div class="m c-white" style="font-size:7.4cqw">Book your</div>
+          <div class="d c-lime" style="font-size:11.5cqw">Calculation</div><div class="d c-lime" style="font-size:11.5cqw">Efficiency Test</div>
+        </div>
+        <div class="phone">
+          <div class="ph-top"><span class="av"><svg viewBox="0 0 60 60" style="width:80%;height:80%" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg></span><div>Giane Future Gurukull<small>online</small></div></div>
+          <div class="ph-body">
+            <div class="bub out">CALCULATION EFFICIENCY TEST<small>✓✓</small></div>
+            <div class="bub in">Thank you! We'll share the available dates and timings.</div>
+          </div>
+          <div class="ph-in"><span>Message</span><i>➤</i></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>7a · 54.0–57.6 · type &amp; send</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-ink">
+        <div class="stack" style="gap:1cqw">
+          <div style="display:flex;align-items:center;gap:2.4cqw"><svg viewBox="0 0 48 48" style="width:9cqw;height:9cqw" aria-hidden="true"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:10cqw">WhatsApp</span></div>
+          <div class="d c-lime" style="font-size:28cqw;margin-top:1.6cqw">80623</div>
+          <div class="d c-lime" style="font-size:28cqw">65298</div>
+          <div class="hand c-white" style="font-size:6cqw;margin-top:2.4cqw">send</div>
+          <div><span class="d c-white rel" style="font-size:7cqw">CALCULATION EFFICIENCY TEST<svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-2cqw;width:100%;height:3cqw"><use href="#sc-under"/></svg></span></div>
+          <div class="m c-lime" style="font-size:5cqw;margin-top:3cqw">Class 3 onwards · Ahmedabad · Vadodara</div>
+          <div class="gfg c-white" style="margin-top:3cqw"><svg viewBox="0 0 60 60" aria-hidden="true"><use href="#gfg-mark" width="60" height="60"/></svg><div><b>Giane Future Gurukull</b><span>www.gianefuturegurukull.com</span></div></div>
+        </div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>7b · 57.6–61.5 · end card, held</figcaption>
+    </figure>
+  </div>
+  <div class="sheet">
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Toh aaj hi WhatsApp par Calculation Efficiency Test likhkar bhejiye."</div><div class="vo-hi">तो आज ही WhatsApp पर Calculation Efficiency Test लिखकर भेजिए।</div><div class="vo-en">54.2–58.4 s · optional: the number read aloud, "WhatsApp number: 80623 65298" (+5 s)</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>BOOK YOUR CALCULATION EFFICIENCY TEST</code><code>WhatsApp 80623 65298</code><code>send CALCULATION EFFICIENCY TEST</code><code>Class 3 onwards · Ahmedabad · Vadodara</code><code>Giane Future Gurukull · website</code></div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>The message types itself while the voice says "Calculation Efficiency Test likhkar"; send lands on "bhejiye". The reply uses brochure page 4 wording (dates and timings shared).</li><li>57.6 s: the number drops in digit by digit, then everything holds still for 3.5 s for screenshots.</li></ul></div>
+    <div class="row"><div class="k">Sound</div><div>Soft key taps, one "sent" swoosh, one chime as the number completes. Music resolves.</div></div>
+  </div>
+</section>
+
+<!-- ============ EXTRAS ============ -->
+<section class="grid2">
+  <div class="card wide">
+    <div class="eyebrow">Decision needed · length</div>
+    <h3>The new script runs about a minute</h3>
+    <p>Read at a natural pace, the seven lines take about 52 s of speech, so the reel comes to about 61 s with the pauses and the end hold (66 s if the number is also read aloud). The Sarvam voice may be a little quicker. Pick one:</p>
+    <div class="tblwrap"><table class="t">
+      <thead><tr><th>Option</th><th>Length</th><th>What changes</th></tr></thead>
+      <tbody>
+        <tr><td><b>A. Script as written</b></td><td class="n">≈ 61 s</td><td>Nothing. Calm, clear, every point made. Fine for Reels; fewer people watch to the end of longer reels.</td></tr>
+        <tr><td><b>B. Tightened</b></td><td class="n">≈ 40 s</td><td>Same 7 slides and on-screen text; shorter lines:<br>1 "Maths के concepts clear हैं, फिर भी silly mistakes?" · 2 "जल्दबाज़ी, calculation mistakes, focus की problem, formulas भूल जाना…" · 3 "ये तो सिर्फ़ दिखने वाले signs हैं। असली वजह कुछ और हो सकती है।" · 4 "इसीलिए Giane Future Gurukull लाया है FREE Calculation Efficiency Test।" · 5 "जानिए mistakes कहाँ हो रही हैं, क्यों, और शुरुआत कहाँ से करें।" · 6 "Special bonus: CTM की sixty-minute masterclass, worth five hundred rupees!" · 7 "आज ही WhatsApp पर Calculation Efficiency Test लिखकर भेजिए।"</td></tr>
+        <tr><td><b>C. Both</b></td><td class="n">61 s + 40 s</td><td>Same storyboard and footage, two voice tracks: the long one for feed posts, the short one for paid ads.</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Footage plan · 4 required, 2 optional</div>
+    <h3>Clips used in v2</h3>
+    <div class="tblwrap"><table class="t">
+      <thead><tr><th>Clip</th><th>Where</th><th>On screen</th><th>Grade</th></tr></thead>
+      <tbody>
+        <tr><td><b>C1</b></td><td>Slide 1a</td><td class="n">2.9 s</td><td>natural colour</td></tr>
+        <tr><td>C2 <i>(opt.)</i></td><td>Slide 1b</td><td class="n">3.1 s</td><td>blur + darken</td></tr>
+        <tr><td><b>C3</b></td><td>Slide 2</td><td class="n">8.8 s</td><td>blur + darken</td></tr>
+        <tr><td><b>C4</b></td><td>Slide 3a</td><td class="n">3.6 s</td><td>natural, bottom scrim</td></tr>
+        <tr><td><b>C5</b></td><td>Slide 3b</td><td class="n">5.2 s</td><td>red duotone</td></tr>
+        <tr><td>C7 <i>(opt.)</i></td><td>Slide 5</td><td class="n">8.4 s</td><td>violet duotone</td></tr>
+      </tbody>
+    </table></div>
+    <p class="vo-en">C6 (teacher at the board) is no longer needed. Clips longer than 8 s (C3, C7) use a slowed take or two takes joined with a dissolve.</p>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Sound · calmer than v1</div>
+    <h3>Nine effects in the whole reel</h3>
+    <div class="tblwrap"><table class="t">
+      <thead><tr><th>Time</th><th>Effect</th></tr></thead>
+      <tbody>
+        <tr><td class="n">2.9</td><td>paper slide (exam paper)</td></tr>
+        <tr><td class="n">6.3–12.4</td><td>4 soft ticks (checklist)</td></tr>
+        <tr><td class="n">23.6</td><td>whoosh (red → violet)</td></tr>
+        <tr><td class="n">27.9</td><td>soft chime (test name)</td></tr>
+        <tr><td class="n">42.6</td><td>whoosh (lime swipe)</td></tr>
+        <tr><td class="n">43.9</td><td>soft pop (gift lid)</td></tr>
+        <tr><td class="n">55–57</td><td>key taps + "sent" swoosh</td></tr>
+        <tr><td class="n">58.6</td><td>chime (number complete)</td></tr>
+      </tbody>
+    </table></div>
+    <p class="vo-en">Real CC0 sounds (Kenney) and Mixkit free sounds are now in <code>video/public/audio/sfx/</code>. Music: piano-led, no drums in slides 1–3, lifts at slide 4, ducked under the voice, mixed to −14 LUFS.</p>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Open items</div>
+    <h3>Decisions</h3>
+    <ul class="tight">
+      <li><span class="status open">Open</span> <b>Length:</b> A, B or C (above).</li>
+      <li><span class="status open">Open</span> <b>"Free" in the voice</b> (slide 4)? Recommended.</li>
+      <li><span class="status open">Open</span> <b>Read the number aloud</b> in slide 7? (+5 s)</li>
+      <li><span class="status open">Open</span> <b>Footage:</b> generate C1, C3, C4, C5 (and optionally C2, C7) with the updated Veo prompts, then upload to <code>source/footage/</code>.</li>
+      <li><span class="status done">Settled</span> Hybrid rule · slides 4–7 motion only, no cartoon people · calmer pacing · fewer effects · facts from <code>video/facts.yaml</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="eyebrow">Compared with v1</div>
+    <h3>What changed</h3>
+    <ul class="tight">
+      <li>New 7-slide script (client's), Hinglish voice.</li>
+      <li>Slides 1–3 on real footage; slides 4–7 motion graphics.</li>
+      <li>13 shots in ≈ 61 s (v1: 13 in 32 s), so each shot holds 3–5 s.</li>
+      <li>"More practice" and "Parents, don't assume" are gone (not in the new script).</li>
+      <li>9 effects instead of about 45; no classroom murmur or pen scratches.</li>
+    </ul>
+  </div>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var board=document.getElementById('board'), btn=document.getElementById('safeBtn');
+  btn.addEventListener('click',function(){
+    var on=btn.getAttribute('aria-pressed')!=='true';
+    btn.setAttribute('aria-pressed',String(on));
+    board.classList.toggle('show-safe',on);
+    btn.textContent=on?'Hide safe zone':'Show safe zone';
+  });
+})();
+</script>

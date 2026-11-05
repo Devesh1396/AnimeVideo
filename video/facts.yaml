@@ -1,0 +1,71 @@
+# Every claim the reel may make, on screen or in the voiceover, with its source.
+# Sources: source/Pg1.png .. source/Pg4.png (the brochure) and the client's own confirmations in chat.
+# Rule: if a line in the script or storyboard is not covered here, it does not go in the reel.
+
+brand:
+  name: Giane Future Gurukull            # Pg4 footer (spelling: "Gurukull", double l)
+  website: www.gianefuturegurukull.com    # Pg4
+
+test:
+  name: Calculation Efficiency Test       # Pg2
+  price: free                             # client confirmation in chat (2026-11-03); not printed in the brochure
+  designed_by: Deveshh Sir                # Pg2 (spelling: "Deveshh", double h)
+  designer_credentials:                   # Pg2
+    - Guinness World Record Holder in Memory
+    - Director, World Memory Sports Association
+    - Educationist & Author of 10+ Mind-Challenging Books
+  purpose:                                # Pg2 "More than just a score! It's designed to help parents understand:"
+    tagline: More than just a score!
+    why: Why does your child keep making calculation mistakes?
+    what_next: Which calculation skills need improvement first?
+    closing_line: The right improvement starts with knowing what needs attention.
+  eligibility: Students, Class 3 onwards  # Pg4
+  scheduling: Our team shares the available dates and timings after you WhatsApp   # Pg4 step 2; client: no fixed deadline
+
+problem_framing:                          # Pg1
+  headline: "Maths concepts are clear... still making silly mistakes?!"
+  question: Do you also notice signs like these in your child?
+  signs:
+    - Rushes through Maths questions
+    - Makes mistakes while solving
+    - Has trouble focusing
+    - Keeps forgetting formulas
+  turn: "But these may be just the visible signs... not the real reasons behind those silly mistakes."
+  parents_line: "Parents, don't assume!"
+  practice_line: Without understanding the real reasons, simply increasing practice may not stop those mistakes from happening again and again!
+  stop_guessing: "Parents, stop guessing! What's really behind your child's silly mistakes?"   # Pg2
+
+bonus:
+  name: CTM™ Masterclass                  # Pg3/Pg4 (keep the ™)
+  ctm_expansion: Calculation Thinking Method   # Pg3
+  ctm_tagline: See. Process. Answer.      # Pg3
+  length: 60 minutes                      # Pg3 "Just one 60-minute masterclass can show the difference!"
+  value: ₹500                             # Pg3 "worth ₹500", Pg4
+  availability: limited time period only  # Pg4 "available for limited time period only!"
+  how_given: special bonus for your child, with the test   # Pg3 headline; client confirmed it comes with test registration
+  what_child_experiences: how speed and accuracy can improve together with the right calculation approach   # Pg3
+  benefits: [Faster calculations, More confidence, More interest in Maths]   # Pg3
+  difference: "No abacus. No Vedic sutras. A different way to think."        # Pg3
+
+registration:                             # Pg4
+  step_1: WhatsApp us
+  whatsapp_number: "8062365298"           # display as 80623 65298
+  whatsapp_message: CALCULATION EFFICIENCY TEST
+  step_2: Get your test schedule
+  call_for_info: "7203005142"             # caption only, not in the video
+  centres:                                # caption only; cities may appear on screen
+    - city: Ahmedabad
+      area: Chandkheda
+      address: 216–217, 2nd Floor, Chanakya Plaza, New CG Road, Near Swagat Bungalow, Ahmedabad
+    - city: Vadodara
+      area: Harni-Warasiya
+      address: Office No. 01, First Floor, Dajidarshan Apartment, Near Premdas Jalaram Hospital, Vadodara
+    - city: Vadodara
+      area: Jetalpur Road
+      address: F-1/107, First Floor, Tower No. 4-A, Kashivishweshwar Apartment, Chikuwadi, Jetalpur Road, Vadodara
+
+not_claimed:                              # never say these
+  - any deadline date (client: none)
+  - a seat limit ("seats limited" is not in the brochure)
+  - results guarantees, percentages or improvement numbers
+  - that the masterclass is free to everyone (it is a bonus with the test)

@@ -1,0 +1,7 @@
+# Python tools for the reel (install into video/.venv):
+#   python -m venv .venv && .venv/bin/pip install -r requirements.txt     (Windows: .venv\Scripts\pip)
+faster-whisper>=1.2      # word timings / transcript check of the Hindi voice
+sarvamai>=0.1            # Sarvam Bulbul text-to-speech (needs SARVAM_API_KEY)
+numpy>=1.26
+pyloudnorm>=0.1          # loudness checks
+edge-tts>=7              # v1 draft voice only; not for the final ad
