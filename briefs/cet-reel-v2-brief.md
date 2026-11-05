@@ -53,7 +53,7 @@ HARD RULES
 3. Licensed assets only. Log every clip, sound, font and logo in video/assets-used.md with source and licence. The Guinness emblem needs GWR approval before the ad runs (already noted in the log).
 4. timeline.json stays the single source of timing. The new script needs new timings: rebuild them from the Sarvam word timings, keeping the storyboard's shot order and holds.
 
-SETUP (a new session is a fresh container; only committed files survive)
+SETUP (a new session is a fresh container; only committed files survive. If the environment's setup script already installed earshot and the Python tools, check them with `earshot doctor` and `pip show faster-whisper sarvamai` and skip those steps)
 - cd video && npm install   (package.json now includes @remotion/transitions, @remotion/motion-blur, @remotion/paths, @remotion/media-utils, all 4.0.536)
 - Remotion agent skills are committed in video/.agents/skills (Claude Code sees them through video/.claude/skills). Use remotion-best-practices for springs, transitions, OffthreadVideo and audio.
 - python3 -m venv video/.venv && video/.venv/bin/pip install -r video/requirements.txt   (faster-whisper, sarvamai, pyloudnorm)
@@ -61,7 +61,7 @@ SETUP (a new session is a fresh container; only committed files survive)
 
 VOICE (replace the draft Edge TTS, which isn't licensed for an ad)
 - Sarvam Bulbul via the API with the SARVAM_API_KEY environment variable. Check docs.sarvam.ai for the current model ID (V4 Flash if available, else bulbul:v3). Use the 7 lines above (or the tightened set if I pick option B).
-- I have not picked a voice. First generate ONLY the slide 1 line in 3 voices (warm, mature female voices that handle Hindi with English words well; check the current speaker list in docs.sarvam.ai) and give me the files to pick from. Then all lines in the chosen voice. Total TTS budget: ₹100.
+- VOICE: I will name the Sarvam voice (speaker) when I start the session. Use that speaker: generate ONLY the slide 1 line in it first and give me the file to approve, then all lines. If I haven't named one, generate the slide 1 line in 3 warm female voices that handle Hindi with English words well (check the current speaker list in docs.sarvam.ai) and let me pick. Then all lines in the chosen voice. Total TTS budget: ₹100.
 - If Sarvam returns no word timings, get them with faster-whisper (language hi) and write vo-timings.json so every animation still lands on its word.
 - If SARVAM_API_KEY is missing or the API is blocked, tell me and stop. Don't fall back to Edge TTS.
 
