@@ -14,16 +14,23 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
 - **Audio:** off, or ignored. The reel has its own voice, music and sound.
 - **Negative prompt:** paste each clip's "Avoid" line into the negative-prompt field if the tool has one; otherwise
   leave it at the end of the prompt.
-- **Same boy throughout:** C1, C3, C4, C5 and C7 all show the same boy, so the parent follows one child.
-  Generate **C3 first**, pick the best take, then use a still of the boy from it as the **reference image / first frame**
-  for C1, C4, C5 and C7 ("Ingredients" or "Frames to video" in Flow; "reference image" in other tools).
+- **Same boy throughout, two outfits:** C1, C3, C4, C5, C7 and C8 all show the same boy, so the parent follows one
+  child. At school (C1, C8) he wears the uniform; at home (C3, C4, C5, C7) he wears the same plain home T-shirt in
+  every clip. Generate **C3 first** and pick the best take. Use a still of him from it as the **reference image** for:
+  - C4, C5 and C7: face *and* clothes (same evening, same T-shirt);
+  - C1 and C8: face only. Add "the same boy as in the reference image, now wearing his school uniform" so the tool
+    keeps the face but changes the clothes.
+  ("Ingredients" or "Frames to video" in Flow; "reference image" in other tools.)
 - **If a prompt is refused** because it shows a child: keep the scene but frame it from behind, over the shoulder or
   on the hands. That works for C1, C2 and C3, which the edit blurs or shows small.
 
 ## The cast (paste these exactly where a prompt says [Boy] or [Mother])
 
-- **[Boy]** a 9-year-old Indian boy with short neat black hair and a medium-brown complexion, wearing a plain
-  light-blue short-sleeved school shirt with no badge or logo.
+- **[Boy]** a 9-year-old Indian boy with short neat black hair and a medium-brown complexion. (Add one of the two
+  outfits below right after it.)
+- **[School outfit]** wearing a plain light-blue short-sleeved school shirt with no badge or logo. Use in C1, C8.
+- **[Home outfit]** wearing a plain mustard-yellow cotton round-neck T-shirt with no print or logo, and dark shorts.
+  Use in C3, C4, C5, C7, always the same.
 - **[Mother]** an Indian woman in her mid-thirties, hair tied back in a low bun, wearing a simple cotton kurta in a
   soft muted colour, a small bindi, thin glass bangles, no other jewellery.
 
@@ -36,7 +43,7 @@ In a real classroom the children face the board, so a camera looking at the boy'
 camera*, not behind him. That's why the result looked wrong. Now the camera stands where the teacher stands.
 
 > Vertical 9:16 video. A bright Indian primary-school classroom in Gujarat, morning. The camera is at the front of the
-> classroom, where the teacher stands, looking toward the students. [Boy] sits in the second row at a wooden twin
+> classroom, where the teacher stands, looking toward the students. [Boy], [School outfit], sits in the second row at a wooden twin
 > desk, facing the camera. He listens, nods with quiet confidence and raises his hand to answer, with a small sure
 > smile. Behind him are more rows of Indian children aged 8 to 10 in plain light-blue school shirts, softly out of
 > focus, and the back wall of the classroom with tall windows and soft daylight. Camera at a seated child's eye
@@ -54,7 +61,7 @@ camera*, not behind him. That's why the result looked wrong. Now the camera stan
 **Fallback, C1-alt (if faces keep coming out wrong):** shoot from behind instead, where the board belongs in front.
 
 > Vertical 9:16 video. A bright Indian primary-school classroom in Gujarat, morning. Over-the-shoulder shot from
-> just behind [Boy], who sits at a wooden desk in the middle row, facing a green chalkboard at the front where a
+> just behind [Boy], [School outfit], who sits at a wooden desk in the middle row, facing a green chalkboard at the front where a
 > young Indian woman teacher is explaining. He confidently raises his hand to answer. The boy's shoulder and raised
 > hand are in the foreground; the teacher and the board are ahead of him, soft and out of focus. Other children in
 > plain light-blue shirts at desks on both sides. Soft daylight, slow push-in past his shoulder. Natural documentary
@@ -78,7 +85,7 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 ## C3 · Slide 2 (0:06.0–0:14.8) · the four signs at home · REQUIRED (generate first)
 
-> Vertical 9:16 video. Evening in a modest, tidy Indian apartment in Ahmedabad. [Boy] sits at a small study table
+> Vertical 9:16 video. Evening in a modest, tidy Indian apartment in Ahmedabad. [Boy], [Home outfit], sits at a small study table
 > against a plain wall, a maths exercise book open in front of him, under a warm table lamp. In one continuous take:
 > he writes very fast, rushing; stops and rubs out an answer with an eraser, frowning; glances away out of the frame,
 > distracted, tapping the pencil; then flips back a page as if trying to remember something, unsure. Camera at table
@@ -94,7 +101,7 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 ## C4 · Slide 3a (0:14.8–0:18.4) · "Lekin ye toh sirf dikhne wale signs hain" · REQUIRED
 
-> Vertical 9:16 video, close-up. [Boy], the same boy at the same lamp-lit study table, puts his pencil down, slowly
+> Vertical 9:16 video, close-up. [Boy], [Home outfit], the same boy at the same lamp-lit study table, puts his pencil down, slowly
 > rests his head in both hands over his maths exercise book and exhales, frustrated and tired, not crying. Face
 > clearly visible in three-quarter view. Warm lamp light, soft shadows, shallow depth of field, very slow push-in.
 > Realistic, natural, 50mm lens.
@@ -106,7 +113,7 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 ## C5 · Slide 3b (0:18.4–0:23.6) · "…asli wajah kuch aur bhi ho sakti hai" · REQUIRED
 
-> Vertical 9:16 video. The same lamp-lit study table in an Indian apartment. [Mother] sits on a chair beside [Boy],
+> Vertical 9:16 video. The same lamp-lit study table in an Indian apartment. [Mother] sits on a chair beside [Boy], [Home outfit],
 > who is bent over his maths exercise book. She watches him quietly, chin resting on her hand, thoughtful and
 > concerned, not angry. She looks at his book, then back at him, as if wondering what is really going wrong. Camera
 > at her eye level, framing both, her face sharp and the boy slightly softer. Warm gentle light. Realistic, natural,
@@ -119,7 +126,7 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 ## C7 · Slide 5 (0:34.2–0:42.6) · thinking, then a small smile · OPTIONAL
 
-> Vertical 9:16 video, medium close-up. [Boy] sits at a bright desk by a window with a maths problem in front of him,
+> Vertical 9:16 video, medium close-up. [Boy], [Home outfit], sits at his study table at home by a window in the daytime, with a maths problem in front of him,
 > the tip of his pencil resting on his chin, eyes up and to the side, thinking. After a moment his face relaxes into a
 > small, confident smile, and he looks down to write. Soft bright daylight, clean uncluttered background. Static
 > camera, shallow depth of field. Realistic, natural, 50mm lens.
@@ -133,7 +140,7 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 > Vertical 9:16 video. A bright, modern Indian classroom during an energetic maths session. Indian children aged 8
 > to 11 in plain light-blue school shirts sit at desks, quickly working out answers in their notebooks, looking up
-> eagerly and raising hands; in the middle, [Boy] answers quickly with a confident smile. A young Indian woman teacher
+> eagerly and raising hands; in the middle, [Boy], [School outfit], answers quickly with a confident smile. A young Indian woman teacher
 > stands at the side, encouraging them, slightly out of focus. Lively but calm, focused energy. Camera at child eye
 > level, slow lateral glide across the desks. Bright, even daylight. Realistic, natural, 35mm lens, shallow depth of
 > field.
