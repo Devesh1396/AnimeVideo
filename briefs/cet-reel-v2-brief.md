@@ -13,12 +13,12 @@ THE SCRIPT (client's, final wording; on-screen text in caps)
 1 Hook. On screen: MATHS CONCEPTS ARE CLEAR... STILL MAKING SILLY MISTAKES?!  VO: "Maths के concepts clear हैं… फिर भी silly mistakes हो जाती हैं?" No more voice to the end of the slide.
 2 Signs. On screen: HAVE YOU NOTICED SIGNS LIKE THESE?  VO: "जल्दी-जल्दी questions solve करना, calculation mistakes, focus की problem, या formulas बार-बार भूल जाना…"
 3 Beyond the signs. On screen: THESE MAY BE JUST THE VISIBLE SIGNS...  VO: "लेकिन ये तो सिर्फ़ दिखने वाले signs हैं। Silly mistakes के पीछे की असली वजह कुछ और भी हो सकती है।"
-4 The test. On screen: CALCULATION EFFICIENCY TEST  VO: "इसीलिए Giane Future Gurukull लेकर आया है Calculation Efficiency Test। ताकि बच्चे की calculation skills को बेहतर समझा जा सके।"
+4 The test. On screen: CALCULATION EFFICIENCY TEST  VO: "इसीलिए Giane Future Gurukull लेकर आया है FREE Calculation Efficiency Test। ताकि बच्चे की calculation skills को बेहतर समझा जा सके।"
 5 Why / what next. On screen: MORE THAN JUST A SCORE!  VO: "जानिए mistakes कहाँ हो रही हैं, उनके possible reasons क्या हैं, और improvement की शुरुआत कहाँ से करनी चाहिए।"
 6 CTM bonus. On screen: EXPERIENCE CTM™ — CALCULATION THINKING METHOD  VO: "और special bonus में पाइए CTM की sixty-minute masterclass, worth five hundred rupees। Experience कीजिए calculation का एक different approach।"
 7 CTA. On screen: BOOK YOUR CALCULATION EFFICIENCY TEST, WhatsApp 8062365298  VO: "तो आज ही WhatsApp पर Calculation Efficiency Test लिखकर भेजिए।"
 Write English words in Latin script and Hindi in Devanagari (Sarvam handles code-mixed text best that way).
-Decided: build VERSION A first (the script as written, ≈61 s) with the number NOT read aloud. After A is final, build the tightened VERSION B (≈40 s, lines in the storyboard's "Length" card) from the same storyboard and footage. Still open (ask me): add "FREE" to the slide 4 voice line.
+Decided: build VERSION A first (the script as written, ≈61 s) with the number NOT read aloud. After A is final, build the tightened VERSION B (≈40 s, lines in the storyboard's "Length" card) from the same storyboard and footage. Decided: the slide 4 voice line includes "FREE" (shown above); make the FREE badge land on that word.
 
 GOAL FOR v2
 Rule: FOOTAGE FOR FEELINGS, MOTION FOR FACTS. Mapping (from storyboard-v4; times are from a draft read and move with the Sarvam voice):
