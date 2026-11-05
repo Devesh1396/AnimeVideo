@@ -14,15 +14,15 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
 - **Audio:** off, or ignored. The reel has its own voice, music and sound.
 - **Negative prompt:** paste each clip's "Avoid" line into the negative-prompt field if the tool has one; otherwise
   leave it at the end of the prompt.
-- **Same boy in the problem story, a new boy for the masterclass:** C1, C3, C4, C5 and C7 show the same boy, so the
-  parent follows one child. At school (C1) he wears the uniform; at home (C3, C4, C5, C7) the same plain home T-shirt
-  in every clip. C8 deliberately shows a **different boy** ([Boy 2]), so the CTM masterclass reads as "other children
+- **Same boy in the problem story, a new boy for the masterclass:** C1, C3, C4 and C7 show the same boy, so the
+  parent follows one child. At school (C1) he wears the uniform; at home (C3, C4, C7) the same plain home T-shirt in
+  every clip. C5 shows him only from behind and out of focus, so it needs no match. C8 deliberately shows a **different boy** ([Boy 2]), so the CTM masterclass reads as "other children
   like yours", not the same story. Generate **C3 first** and pick the best take. Use a still of him from it as the
   **reference image** for:
-  - C4, C5 and C7: face *and* clothes (same evening, same T-shirt);
+  - C4 and C7: face *and* clothes (same T-shirt);
   - C1: face only. Add "the same boy as in the reference image, now wearing his school uniform" so the tool keeps the
     face but changes the clothes.
-  - C8: **no** reference image from C3 (that would bring the first boy back).
+  - C5 and C8: **no** reference image (C5 is a standalone scene; in C8 it would bring the first boy back).
   ("Ingredients" or "Frames to video" in Flow; "reference image" in other tools.)
 - **If a prompt is refused** because it shows a child: keep the scene but frame it from behind, over the shoulder or
   on the hands. That works for C1, C2 and C3, which the edit blurs or shows small.
@@ -36,7 +36,7 @@ Upload each take to `source/footage/` as `C1a.mp4`, `C1b.mp4`, `C3a.mp4`, … (2
   round black-framed glasses, wearing a plain teal-green polo T-shirt with no logo. Clearly a different child from
   [Boy]: different hair, glasses, different colour top.
 - **[Home outfit]** wearing a plain mustard-yellow cotton round-neck T-shirt with no print or logo, and dark shorts.
-  Use in C3, C4, C5, C7, always the same.
+  Use in C3, C4, C7, always the same.
 - **[Mother]** an Indian woman in her mid-thirties, hair tied back in a low bun, wearing a simple cotton kurta in a
   soft muted colour, a small bindi, thin glass bangles, no other jewellery.
 
@@ -125,16 +125,26 @@ The alt shows the boy from behind, so his face first appears in C3. Use it only 
 
 ## C5 · Slide 3b (0:18.4–0:23.6) · "…asli wajah kuch aur bhi ho sakti hai" · REQUIRED
 
-> Vertical 9:16 video. The same lamp-lit study table in an Indian apartment. [Mother] sits on a chair beside [Boy], [Home outfit],
-> who is bent over his maths exercise book. She watches him quietly, chin resting on her hand, thoughtful and
-> concerned, not angry. She looks at his book, then back at him, as if wondering what is really going wrong. Camera
-> at her eye level, framing both, her face sharp and the boy slightly softer. Warm gentle light. Realistic, natural,
-> 50mm lens, very slow push-in.
->
-> Avoid: shouting, scolding or angry expressions, readable text, logos, watermarks, distorted hands.
+**New scene, made to stand on its own.** It no longer continues from C4, so it doesn't need a reference image and works
+with models that can't extend a clip (such as Omni Flash). The mother and the marked test paper carry the moment; the
+boy is only seen from behind and out of focus, so it doesn't matter that he's a different child.
 
-- **Needed:** 5.2 s, her watching, glancing at the book, then back at him.
-- **Grade:** red duotone. Contrast and lighting matter more than colour; a clear face with a dark background works best.
+> Vertical 9:16 video, medium close-up. Evening in a modest Indian home. [Mother] sits at the dining table under warm
+> lamp light, holding her son's maths test paper in both hands. She reads it quietly, her expression thoughtful and
+> concerned, not angry: she isn't asking "how many mistakes", she's wondering why. She lowers the paper slightly and
+> looks across the room toward her son, a boy of about 9 in a plain T-shirt, seen from behind and softly out of focus,
+> bent over his books at a study table in the background. Her face stays sharp; the paper and the boy stay soft.
+> Static camera at her eye level, very slow push-in. Warm, gentle light with soft shadows. Realistic, natural,
+> 50mm lens, shallow depth of field.
+>
+> Avoid: readable text, letters or numbers on the paper, the boy's face, shouting, scolding or angry expressions,
+> tearing or crumpling the paper, logos, watermarks, distorted hands or fingers.
+
+- **Needed:** 5.2 s, from her reading the paper to the look toward her son.
+- **Grade:** red duotone. A clear, well-lit face against a darker background works best.
+- **Why this scene:** the test paper links back to the marked exam paper in slide 1, so the story reads without the
+  same boy: the parent who "looks beyond the signs".
+- **If the paper looks fake:** keep it lower in the frame and softer, or ask for "the paper held low, out of focus".
 
 ## C7 · Slide 5 (0:34.2–0:42.6) · thinking, then a small smile · OPTIONAL
 
