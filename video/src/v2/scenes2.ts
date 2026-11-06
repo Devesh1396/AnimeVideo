@@ -20,22 +20,26 @@ export function s1a(t: number) {
 export function s1b(t: number) {
   const a = S('s1b')[0];
   const up = sp(t, a, 90, 17);
-  const m1 = a + 0.35, m2 = a + 0.7, m3 = a + 1.05, m4 = a + 1.4;
+  const m1 = a + 0.3, m2 = W('s1', 7), m3 = W('s1', 8), m4 = W('s1', 8) + 0.45;
+  const bounce = (at: number, from = 0.2) => {
+    const p = sp(t, at, 230, 8);
+    return `display:inline-block;opacity:${n(clamp(p * 3))};transform:scale(${n(from + (1 - from) * p)})`;
+  };
   const ans = (at: number, wrong: string, right: string) =>
-    t >= at ? `<s>${wrong}</s> <em style="display:inline-block;${pop(t, at, 0.5)}">${right}</em>` : wrong;
-  const x = (at: number) => `<span class="x" style="display:inline-block;${pop(t, at, 0.3)}">✗</span>`;
+    t >= at ? `<s>${wrong}</s> <em style="${bounce(at + 0.08, 0.3)}">${right}</em>` : wrong;
+  const x = (at: number) => `<span class="x" style="${bounce(at)}">✗</span>`;
   return `
-  <div class="exam" style="top:15%;transform:translateY(${n((1 - up) * 110, 2)}cqw) rotate(-2.5deg)">
+  <div class="exam" style="top:12.5%;transform-origin:50% 0;transform:translateY(${n((1 - up) * 110, 2)}cqw) rotate(-2.5deg) scale(.86)">
     <div class="ex-h"><div><div class="ex-t">MATHS · UNIT TEST</div><div class="ex-n">Name: <span class="hand c-ball">Aarav</span> &nbsp; Class: <span class="hand c-ball">4-B</span></div></div>
-      <div class="ex-s rel" style="${fade(t, m4, 0.2)}">12<span style="font-size:.6em">/20</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-30%;top:-25%;width:160%;height:150%;${draw(t, m4, 0.4)}"><use href="#sc-circle"/></svg></div></div>
+      <div class="ex-s rel" style="${bounce(m4, 0.5)}">12<span style="font-size:.6em">/20</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-30%;top:-25%;width:160%;height:150%;${draw(t, m4, 0.4)}"><use href="#sc-circle"/></svg></div></div>
     <div class="ex-q"><span class="qn">1.</span><span class="qa">48 + 37 = 85</span>${tick(`position:static;width:7cqw;height:7cqw;stroke:var(--pen);${draw(t, m1, 0.25)}`)}</div>
     <div class="ex-q"><span class="qn">2.</span><span class="qa">7 × 8 = ${ans(m2, '54', '56')}</span>${t >= m2 ? x(m2) : ''}</div>
     <div class="ex-q"><span class="qn">3.</span><span class="qa">125 − 68 = ${ans(m3, '67', '57')}</span>${t >= m3 ? x(m3) : ''}</div>
   </div>
-  <div class="safe-stack end" style="gap:1.6cqw">
-    <div class="m c-white sh" style="font-size:8cqw;${rise(t, W('s1', 5))}">Still making</div>
-    <div class="d c-pen sh" style="font-size:19cqw;transform-origin:left bottom;${pop(t, W('s1', 7), 0.6)}">silly</div>
-    <div class="d c-white sh" style="font-size:15cqw;${rise(t, W('s1', 8))}">mistakes?</div>
+  <div class="safe-stack end" style="gap:1.4cqw">
+    <div class="m c-white" style="font-size:7cqw;${rise(t, W('s1', 5))}">Still making</div>
+    <div class="d c-pen" style="font-size:17cqw;transform-origin:left bottom;${pop(t, W('s1', 7) - 0.05, 0.7)}">silly</div>
+    <div class="d" style="font-size:13cqw;transform-origin:left bottom;${pop(t, W('s1', 8) - 0.05, 0.7)}"><span class="hl c-ink" style="background-position:0 60%;background-size:100% 84%;padding:0 2cqw">mistakes?</span></div>
   </div>`;
 }
 
@@ -114,19 +118,36 @@ export function s4a(t: number) {
 /* ---------- 4b · why it exists + Deveshh Sir ---------- */
 export function s4b(t: number) {
   const a = S('s4b')[0];
-  const credit = Math.max(a + 1.1, W('s4', 15) + 0.35);
+  const L0 = W('s4', 17), L1 = L0 + 1.0;
+  const lensX = lerp(10, 350, easeInOut(prog(t, L0, L1 - L0)));
+  const lensOp = clamp(prog(t, L0 - 0.15, 0.15)) * (1 - prog(t, L1 + 0.1, 0.3));
+  const syms: [string, number][] = [['7', 46], ['×', 92], ['3', 136], ['+', 180], ['8', 224], ['÷', 268], ['9', 314]];
+  const tiles = syms.map(([c, x], i) => {
+    const sharp = easeOut(clamp((lensX - x + 10) / 26));
+    const dy = Math.sin(t * 1.3 + i * 1.7) * 18 * (1 - sharp);
+    const dx = Math.cos(t * 0.9 + i) * 8 * (1 - sharp);
+    const y = 300 + dy + (i % 2 ? -26 : 22) * (1 - sharp);
+    return `<g transform="translate(${n(x + dx, 1)} ${n(y, 1)})" style="filter:blur(${n(2.6 * (1 - sharp), 2)}px)" opacity="${n(lerp(0.4, 1, sharp))}">
+      <circle r="${n(lerp(14, 19, sharp), 2)}" fill="#fff" opacity="${n(sharp)}"/>
+      <text y="9" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="${n(lerp(30, 24, sharp), 1)}" fill="${sharp > 0.5 ? '#2812a6' : '#ffffff'}">${c}</text></g>`;
+  }).join('');
+  const credit = Math.max(L1 + 0.1, a + 2.4);
   return `
-  <div class="cstack" style="gap:.8cqw">
-    <div class="hand c-white" style="font-size:9cqw;${write(t, a + 0.05, 0.45)}">Understand your child's</div>
-    <div class="d c-lime" style="font-size:19cqw;${rise(t, Math.max(a + 0.25, W('s4', 14)))}">calculation</div>
-    <div class="rel"><span class="d c-white" style="display:inline-block;font-size:19cqw;${rise(t, Math.max(a + 0.4, W('s4', 15)))}">skills better</span><svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-2.4cqw;width:100%;height:4cqw;${draw(t, Math.max(a + 0.6, W('s4', 15) + 0.2), 0.45)}"><use href="#sc-under"/></svg></div>
-    <div class="credit" style="margin-top:8cqw;${rise(t, credit, 4)}">
-      <img src="${staticFile('gwr-logo.png')}" style="transform:rotate(${n(lerp(-120, 0, easeOut(prog(t, credit, 0.6))), 1)}deg)">
-      <div style="text-align:left">
-        <div class="m c-white" style="font-size:5.4cqw;opacity:.85">Specially designed by</div>
-        <div class="d c-white" style="font-size:12.5cqw">Deveshh Sir</div>
-        <div class="m c-lime" style="font-size:5cqw;font-weight:700;line-height:1.15">Guinness World Record<br>Holder in Memory</div>
-      </div>
+  <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" style="opacity:${n(clamp(prog(t, a + 0.3, 0.4)))}">
+    ${tiles}
+    <g transform="translate(${n(lensX, 1)} 300)" opacity="${n(lensOp)}"><circle r="44" fill="rgba(200,242,58,.14)" stroke="#c8f23a" stroke-width="6"/><path d="M31 31l24 24" stroke="#c8f23a" stroke-width="11" stroke-linecap="round"/></g>
+  </svg>
+  <div class="cstack" style="justify-content:flex-start;gap:1.2cqw">
+    <div class="hand c-white" style="font-size:8.6cqw;${write(t, a + 0.05, 0.45)}">Understand your child's</div>
+    <div class="d c-lime" style="font-size:14cqw;${rise(t, Math.max(a + 0.25, W('s4', 14)))}">calculation skills</div>
+    <div class="d" style="font-size:14cqw;${pop(t, Math.max(a + 0.45, W('s4', 17)), 0.6)}"><span class="hl c-ink" style="background-position:0 60%;background-size:${n(easeOut(prog(t, W('s4', 17) + 0.1, 0.4)) * 100, 1)}% 84%;padding:0 2cqw">better</span></div>
+  </div>
+  <div class="credit" style="position:absolute;left:12%;right:12%;top:56.5%;${rise(t, credit, 4)}">
+    <img src="${staticFile('gwr-logo.png')}" style="width:18cqw;height:18cqw;transform:rotate(${n(lerp(-200, 0, easeOut(prog(t, credit, 0.7))), 1)}deg)">
+    <div style="text-align:left">
+      <div class="m c-white" style="font-size:4.8cqw;opacity:.85">Specially designed by</div>
+      <div class="d c-white" style="font-size:10.5cqw">Deveshh Sir</div>
+      <div class="m c-lime" style="font-size:4.4cqw;font-weight:700;line-height:1.15">Guinness World Record<br>Holder in Memory</div>
     </div>
   </div>`;
 }
@@ -164,7 +185,16 @@ export function s5(t: number) {
   const bOp = (1 - toNext);
   const lines = badgeY.map((y, i) => {
     const sx = wsX + (i === 2 ? 30 : 24) * wsS, sy = wsY + (i === 0 ? -17 : i === 1 ? 20 : 59) * wsS;
-    return `<path pathLength="1" d="M${n(sx, 1)} ${n(sy, 1)}C${n(sx + 60, 1)} ${n(sy, 1)} 200 ${y} 248 ${y}" fill="none" stroke="#3a1fd0" stroke-width="3.5" stroke-dasharray="0.02 0.035" stroke-linecap="round" style="stroke-dashoffset:${n(1 - easeOut(prog(t, tY + 0.3 + i * 0.15, 0.45)))};opacity:${n(clamp(prog(t, tY + 0.3, 0.1)) * bOp)}"/>`;
+    const st = tY + 0.3 + i * 0.15;
+    const op = clamp(prog(t, st, 0.1)) * bOp;
+    const P = [[sx, sy], [sx + 60, sy], [200, y], [248, y]];
+    const bez = (u: number) => [0, 1].map((k) => (1 - u) ** 3 * P[0][k] + 3 * (1 - u) ** 2 * u * P[1][k] + 3 * (1 - u) * u * u * P[2][k] + u ** 3 * P[3][k]);
+    const dots = t > st + 0.45 ? [0, 1, 2].map((k) => {
+      const u = (((t - st - 0.45) * 0.7 + k / 3) % 1);
+      const [x, yy] = bez(u);
+      return `<circle cx="${n(x, 1)}" cy="${n(yy, 1)}" r="5" fill="#5b3cf5" style="filter:drop-shadow(0 0 4px rgba(91,60,245,.9))" opacity="${n(op * Math.sin(u * Math.PI))}"/>`;
+    }).join('') : '';
+    return `<path pathLength="1" d="M${n(sx, 1)} ${n(sy, 1)}C${n(sx + 60, 1)} ${n(sy, 1)} 200 ${y} 248 ${y}" fill="none" stroke="#3a1fd0" stroke-width="3" stroke-opacity=".45" stroke-linecap="round" style="${draw(t, st, 0.45)};opacity:${n(op)}"/>${dots}`;
   }).join('');
   const bp = (i: number) => sp(t, tY + 0.6 + i * 0.18, 170, 12);
   const sw = (t - tY) * 260;
@@ -224,7 +254,7 @@ export function s6a(t: number) {
   <div class="layer" style="background:radial-gradient(40cqw 40cqw at 50% 62%,rgba(200,242,58,${n(0.35 * flash, 3)}),transparent 70%)"></div>
   <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice">
     ${sparks}
-    <g transform="translate(180 ${n(410 - hop * 14, 1)}) scale(1.15)">
+    <g transform="translate(180 ${n(410 - hop * 14, 1)}) scale(${n(1.15 * sp(t, a + 0.25, 200, 9))})">
       <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
       <g transform="translate(${n(lerp(0, -62, lidP), 1)} ${n(lerp(-6, -44, lidP), 1)}) rotate(${n(lerp(0, -32, lidP), 1)})"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
     </g>
@@ -238,37 +268,46 @@ export function s6a(t: number) {
       <div class="stamp" style="opacity:${n(clamp(prog(t, W('s6', 10), 0.15)))};transform:rotate(-12deg) scale(${n(t < stampAt ? 0.9 : lerp(1.7, 1, st))})"><span style="font-size:4.6cqw">worth</span><span style="font-size:10cqw;font-variant-numeric:tabular-nums">₹${count}</span></div>
     </div>
   </div>
-  <div style="position:absolute;left:0;right:0;top:57%;text-align:center;${rise(t, stampAt + 0.3, 3)}"><span class="pill-lime">with the test · limited period</span></div>
+  <div style="position:absolute;left:0;right:0;top:57%;text-align:center;${rise(t, stampAt + 0.3, 3)}"><span class="pill-lime">FREE with the test · limited period</span></div>
   <div class="layer" style="background:linear-gradient(90deg,transparent calc(${n(sw * 100, 1)}% - 9%),#c8f23a calc(${n(sw * 100, 1)}% - 9%),#c8f23a ${n(sw * 100, 1)}%,transparent ${n(sw * 100, 1)}%);opacity:${sw < 1 ? 1 : 0}"></div>`;
 }
 
 /* ---------- 6b · C8 visible: EXPERIENCE CTM™, then See → Process → Answer in motion (rev 2) ---------- */
 export function s6b(t: number) {
   const a = S('s6b')[0];
-  const lift = easeInOut(prog(t, a + 1.65, 0.5));
-  const tS = a + 1.85, tP = tS + 0.85, tA = tP + 0.9;
-  const eye = easeOut(prog(t, tS, 0.25));
-  const scan = prog(t, tS + 0.25, 0.55);
-  const arc = prog(t, tP, 0.9);
-  const lift2 = Math.sin(clamp(arc) * Math.PI) * 2.2;
-  const chip = (label: string, at: number) => `<span class="${t >= at ? 'on' : ''}" style="${t >= at ? pop(t, at, 0.7) : 'opacity:.55'}">${label}</span>`;
+  const tS = W('s6', 14), tP = W('s6', 16), tA = W('s6', 19);
+  const Z = WE('s6', 20) + 0.2;
+  const zoom = easeInOut(prog(t, Z, 0.7));
+  const pulse = 1 + 0.07 * Math.sin((t - tS) * 9) * (t >= tS && t < tP ? 1 : 0);
+  // magnifier: on the sum during SEE, slides down to the working during PROCESS, then away
+  const mv = easeInOut(prog(t, tP, 0.4));
+  const magX = lerp(292, 200, mv), magY = lerp(212, 336, mv);
+  const magOp = clamp(prog(t, tS, 0.15)) * (1 - prog(t, tA, 0.25));
+  const scan = prog(t, tS + 0.15, 0.6);
+  const work = (i: number) => draw(t, tP + 0.15 + i * 0.22, 0.3);
+  const chip = (label: string, at: number) => `<span class="${t >= at ? 'on' : ''}" style="${t >= at ? pop(t, at, 0.6) : 'opacity:.5'}">${label}</span>`;
+  const burst = t >= tA ? Array.from({ length: 8 }, (_, i) => {
+    const p = easeOut(prog(t, tA + 0.05, 0.5)), ang = (i / 8) * Math.PI * 2;
+    return `<path d="M${n(268 + Math.cos(ang) * 30 * p, 1)} ${n(284 + Math.sin(ang) * 30 * p, 1)}l${n(Math.cos(ang) * 10, 1)} ${n(Math.sin(ang) * 10, 1)}" stroke="#c8f23a" stroke-width="4" stroke-linecap="round" opacity="${n(1 - prog(t, tA + 0.3, 0.3))}"/>`;
+  }).join('') : '';
   return `
-  <div style="position:absolute;left:0;right:0;top:${n(lerp(30, 17.5, lift), 2)}%;text-align:center;transform:scale(${n(lerp(1, 0.5, lift))});transform-origin:50% 0">
-    <div class="m c-white sh" style="font-size:8.5cqw;letter-spacing:.08em;${rise(t, W('s6', 14))}">EXPERIENCE</div>
-    <div class="d c-lime sh" style="font-size:36cqw;${pop(t, W('s6', 14) + 0.25, 0.5)}">CTM™</div>
-    <div class="hand c-white sh" style="font-size:9cqw;line-height:1.1;opacity:${n(1 - lift)};${write(t, a + 0.7, 0.6)}">Calculation Thinking Method</div>
+  <div class="layer" style="transform:scale(${n(lerp(1, 0.55, zoom))}) translateY(${n(-zoom * 16, 2)}cqw);opacity:${n(1 - zoom)};transform-origin:50% 45%">
+    <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice">
+      <rect x="${n(lerp(50, 300, scan), 1)}" y="258" width="5" height="56" rx="2" fill="#c8f23a" opacity="${n(scan > 0 && scan < 1 ? 0.9 : 0)}"/>
+      <g fill="none" stroke="#c8f23a" stroke-width="4" stroke-linecap="round" opacity="${n(clamp(prog(t, tP, 0.2)))}">
+        <path pathLength="1" d="M92 338h60" style="${work(0)}"/><path pathLength="1" d="M92 360h96" style="${work(1)}"/><path pathLength="1" d="M92 382h42" style="${work(2)}"/>
+        <path pathLength="1" d="M118 254C140 214 220 214 238 254" stroke-dasharray="0.04 0.05" style="stroke-dashoffset:${n(-(t - tP) * 0.8)}"/>
+      </g>
+      ${burst}
+      <g transform="translate(${n(magX, 1)} ${n(magY, 1)}) scale(${n(pulse)})" opacity="${n(magOp)}"><circle r="26" fill="rgba(200,242,58,.2)" stroke="#c8f23a" stroke-width="6"/><path d="M19 19l22 22" stroke="#c8f23a" stroke-width="10" stroke-linecap="round"/></g>
+    </svg>
+    <div class="sumline" style="top:39%;${fade(t, a + 0.1, 0.3)}">48 + 37${t >= tA ? ` <span class="c-lime" style="display:inline-block;${pop(t, tA, 0.4)}">= 85</span>` : ''}</div>
   </div>
-  ${t >= tS - 0.2 ? `
-  <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice">
-    <g transform="translate(180 250) scale(1 ${n(Math.max(0.05, eye))})" opacity="${n(clamp(prog(t, tS - 0.1, 0.15)))}"><path d="M-44 0s18-26 44-26 44 26 44 26-18 26-44 26-44-26-44-26z" fill="#fff"/><circle cx="${n(lerp(-14, 14, scan), 1)}" r="13" fill="#16142b"/><circle cx="${n(lerp(-10, 18, scan), 1)}" cy="-4" r="4" fill="#fff"/></g>
-    <rect x="${n(lerp(60, 300, scan), 1)}" y="292" width="5" height="54" rx="2" fill="#c8f23a" opacity="${n(scan > 0 && scan < 1 ? 1 : 0)}"/>
-    <g opacity="${n(clamp(prog(t, tP, 0.15)) * (1 - prog(t, tA + 0.3, 0.3)))}" fill="none" stroke="#c8f23a" stroke-width="4" stroke-linecap="round">
-      <path pathLength="1" d="M110 300C130 250 230 250 250 300" stroke-dasharray="0.04 0.05" style="stroke-dashoffset:${n(-arc * 2)}"/>
-      <circle cx="${n(180 + Math.cos(arc * Math.PI * 4) * 70, 1)}" cy="${n(282 + Math.sin(arc * Math.PI * 4) * 14, 1)}" r="5" fill="#c8f23a"/>
-    </g>
-  </svg>
-  <div class="sumline" style="${fade(t, tS - 0.15, 0.25)}"><span style="display:inline-block;transform:translateY(${n(-lift2, 2)}cqw)">48</span> + <span style="display:inline-block;transform:translateY(${n(-lift2, 2)}cqw)">37</span>${t >= tA ? ` <span class="c-lime" style="display:inline-block;${pop(t, tA, 0.4)}">= 85</span><svg class="mark" viewBox="0 0 40 40" style="position:relative;display:inline-block;vertical-align:middle;width:11cqw;height:11cqw;stroke:var(--lime);margin-left:1cqw;${draw(t, tA + 0.15, 0.3)}"><use href="#sc-tick"/></svg>` : ''}</div>
-  <div style="position:absolute;left:0;right:0;top:61%"><div class="seq">${chip('SEE', tS)}<i>→</i>${chip('PROCESS', tP)}<i>→</i>${chip('ANSWER', tA)}</div></div>` : ''}`;
+  <div class="cstack" style="justify-content:flex-start;padding-top:8cqw;opacity:${n(zoom)};transform:scale(${n(lerp(1.5, 1, zoom))})">
+    <div class="d c-lime" style="font-size:36cqw">CTM™</div>
+    <div class="hand c-white" style="font-size:8.6cqw">Calculation Thinking Method</div>
+  </div>
+  <div style="position:absolute;left:0;right:0;top:61%"><div class="seq">${chip('SEE', tS)}<i>→</i>${chip('PROCESS', tP)}<i>→</i>${chip('ANSWER', tA)}</div></div>`;
 }
 
 /* ---------- 7a · WhatsApp: type, send, get the form ---------- */
@@ -287,9 +326,9 @@ export function s7a(t: number) {
     : '';
   const up = sp(t, a, 90, 18);
   return `
-  <div style="position:absolute;left:9%;right:12%;top:17.5%;text-align:center;${rise(t, a + 0.05)}">
+  <div style="position:absolute;left:12%;right:12%;top:17.5%;text-align:center;${rise(t, a + 0.05)}">
     <div class="m c-white" style="font-size:7cqw">Book your</div>
-    <div class="d c-lime" style="font-size:10.4cqw">Calculation Efficiency Test</div>
+    <div class="d c-lime" style="font-size:9cqw;white-space:nowrap">Calculation Efficiency Test</div>
   </div>
   <div class="phone" style="top:30%;bottom:29.7%;left:16%;right:16%;transform:translateY(${n((1 - up) * 60, 2)}cqw)">
     <div class="ph-top"><span class="av"><svg viewBox="0 0 60 60" style="width:80%;height:80%"><use href="#gfg-mark" width="60" height="60"/></svg></span><div>Giane Future Gurukull<small>online</small></div></div>
@@ -302,16 +341,16 @@ export function s7a(t: number) {
 export function s7b(t: number) {
   const a = S('s7b')[0];
   const digits = (s: string, start: number) =>
-    s.split('').map((ch, i) => `<span class="ib" style="${drop(t, start + i * 0.06, 0)}">${ch}</span>`).join('');
+    s.split('').map((ch, i) => `<span class="ib" style="${drop(t, start + i * 0.05, 0)}">${ch === ' ' ? '&nbsp;' : ch}</span>`).join('');
+  const glow = t > a + 1.2 ? 0.5 + 0.5 * Math.sin((t - a - 1.2) * 3.2) : 0;
   return `
-  <div class="cstack" style="gap:1cqw">
+  <div class="cstack" style="gap:1.4cqw">
     <div style="display:flex;align-items:center;gap:2.4cqw;${rise(t, a + 0.05)}"><svg viewBox="0 0 48 48" style="width:10cqw;height:10cqw"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:10cqw">WhatsApp</span></div>
-    <div class="d c-lime" style="font-size:20cqw;letter-spacing:-.01em;margin-top:1cqw">${digits('80623', a + 0.15)}</div>
-    <div class="d c-lime" style="font-size:20cqw;letter-spacing:-.01em">${digits('65298', a + 0.45)}</div>
-    <div class="m c-white" style="font-size:5.4cqw;margin-top:2.4cqw;${rise(t, a + 0.95, 3)}">send</div>
-    <div class="d c-white" style="font-size:7.6cqw;${rise(t, a + 1.0, 3)}">CALCULATION EFFICIENCY TEST</div>
-    <div class="m c-lime" style="font-size:5.2cqw;margin-top:1.6cqw;font-weight:700;line-height:1.25;${rise(t, a + 1.15, 3)}">Class 3 onwards<br>Ahmedabad · Vadodara</div>
-    <div class="logo-card" style="margin-top:3cqw;${pop(t, a + 1.35, 0.85)}"><img src="${staticFile('gfg-logo.png')}" alt="Giane Future Gurukull"><div>www.gianefuturegurukull.com</div></div>
+    <div class="numblock" style="box-shadow:0 0 ${n(3 + 5 * glow, 2)}cqw rgba(200,242,58,${n(0.15 + 0.3 * glow)});transform:scale(${n(1 + 0.02 * glow)})"><span class="d c-lime" style="font-size:16.5cqw;white-space:nowrap">${digits('80623 65298', a + 0.15)}</span></div>
+    <div class="m c-white" style="font-size:5.6cqw;margin-top:2cqw;${rise(t, a + 0.85, 3)}">Send</div>
+    <div class="d c-white" style="font-size:7.6cqw;${rise(t, a + 0.95, 3)}">CALCULATION EFFICIENCY TEST</div>
+    <div class="m c-lime" style="font-size:5.4cqw;margin-top:1.4cqw;font-weight:700;line-height:1.25;${rise(t, a + 1.1, 3)}">Class 3 onwards<br>Ahmedabad &amp; Vadodara</div>
+    <div class="logo-card" style="margin-top:3cqw;${pop(t, a + 1.3, 0.85)}"><img src="${staticFile('gfg-logo.png')}" alt="Giane Future Gurukull"><div>www.gianefuturegurukull.com</div></div>
   </div>`;
 }
 

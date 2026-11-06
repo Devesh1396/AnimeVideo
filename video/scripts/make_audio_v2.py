@@ -62,10 +62,11 @@ def voice():
     src = load(ROOT / 'public' / TL['vo']['file'])
     out = np.zeros(N)
     fade = int(0.03 * SR)
-    for k in ('s1', 's2', 's3', 's4', 's5', 's6', 's7'):
-        v = TL['vo'][k]
+    for k, v in TL['vo'].items():
+        if k == 'file':
+            continue
         a, b = v['src']
-        # widen to the middle of the surrounding pauses (edges are snapped to pauses by align_full.py)
+        # widen a little into the surrounding pauses (edges sit inside pauses: align_full.py / timeline.json)
         seg = src[int(max(0, a - 0.06) * SR):int(min(len(src) / SR, b + 0.12) * SR)].copy()
         seg[:fade] *= np.linspace(0, 1, fade)
         seg[-fade:] *= np.linspace(1, 0, fade)

@@ -10,15 +10,27 @@ export type Shot = keyof typeof timeline.shots;
 type Words = { w: string; start: number; end: number }[];
 const LINES = (vo as unknown as { lines: Record<Line, { words: Words }> }).lines;
 
+type Seg = { at: number; src: [number, number]; line?: string };
+const SEGS = Object.entries(timeline.vo)
+  .filter(([k]) => k !== 'file')
+  .map(([k, v]) => ({ key: k, ...(v as Seg) }));
+/** A voice line can be split into segments at its natural pauses (e.g. s6 + s6x); find the one holding time `src`. */
+const seg = (line: Line, src: number) => {
+  const s = SEGS.find((g) => (g.line ?? g.key) === line && src >= g.src[0] - 0.02 && src <= g.src[1] + 0.02);
+  if (!s) throw new Error(`no voice segment for ${line} @ ${src}`);
+  return s;
+};
 /** Reel time (s) where word i of a voice line starts. */
 export const W = (line: Line, i: number) => {
-  const v = timeline.vo[line];
-  return v.at + (LINES[line].words[i].start - v.src[0]);
+  const w = LINES[line].words[i];
+  const g = seg(line, w.start);
+  return g.at + (w.start - g.src[0]);
 };
 /** Reel time (s) where word i ends. */
 export const WE = (line: Line, i: number) => {
-  const v = timeline.vo[line];
-  return v.at + (LINES[line].words[i].end - v.src[0]);
+  const w = LINES[line].words[i];
+  const g = seg(line, w.start);
+  return g.at + (w.end - g.src[0]);
 };
 export const S = (shot: Shot) => timeline.shots[shot] as [number, number];
 

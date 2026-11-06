@@ -40,7 +40,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
   const [a, b] = S(shot);
   const clip = (TL.clips as Record<string, { file: string; in: number; rate: number; grade: string }>)[shot];
   if (!clip) {
-    const cls = shot.startsWith('s4') ? 'f-vio' : shot === 's5' ? 'f-paper' : shot === 's6a' ? 'f-night' : 'f-ink';
+    const cls = shot.startsWith('s4') ? 'f-vio' : shot === 's5' ? 'f-paper' : shot === 's6a' ? 'f-night' : shot === 's6b' ? 'f-deep' : 'f-ink';
     return <div className={`layer ${cls}`} />;
   }
   const lead = LEAD[shot] ?? 0;
