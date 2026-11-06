@@ -27,7 +27,7 @@ export function s1a(t: number) {
   </div>`;
 }
 
-/* ---------- 1b · the same worksheet goes wrong: SILLY MISTAKES?! ---------- */
+/* ---------- 1b · the same worksheet goes wrong: SILLY MISTAKES? ---------- */
 export function s1b(t: number) {
   const a = S('s1b')[0];
   const up = sp(t, a, 110, 16);
@@ -46,7 +46,7 @@ export function s1b(t: number) {
   <div class="safe-stack end" style="gap:2.2cqw">
     ${mask(t, W('s1', 5), 'Still making', 'sub c-white', 'font-size:7.4cqw')}
     <div class="rel" style="align-self:flex-start">${mask(t, W('s1', 7) - 0.04, 'SILLY', 'wide c-pen', 'font-size:32cqw')}<svg class="mark c-pen" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-1cqw;width:100%;height:4cqw;${draw(t, W('s1', 7) + 0.15, 0.3)}"><use href="#sc-under"/></svg></div>
-    ${mask(t, W('s1', 8) - 0.04, 'MISTAKES?!', 'wide c-white', 'font-size:16.5cqw;margin-top:1cqw')}
+    ${mask(t, W('s1', 8) - 0.04, 'MISTAKES?', 'wide c-white', 'font-size:16.5cqw;margin-top:1cqw')}
   </div>`;
 }
 
