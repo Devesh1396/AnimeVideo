@@ -69,8 +69,8 @@ ul.tight{margin:0;padding-left:18px;display:grid;gap:3px}
 .f-lime{background:radial-gradient(120cqw 100cqw at 15% 0%,#dcff63,#c8f23a 55%,#b2dc22)}
 .stack{position:absolute;left:9%;right:12%;top:17.2%;bottom:29.7%;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
 .stack.end{justify-content:flex-end}
-.d{font-family:var(--f-type);font-weight:800;font-stretch:75%;line-height:.86;letter-spacing:-.025em;white-space:nowrap}
-.m{font-family:var(--f-type);font-weight:600;font-stretch:90%;line-height:1.05;letter-spacing:-.01em}
+.d{font-family:var(--f-type);font-weight:800;font-stretch:75%;line-height:.98;letter-spacing:0;white-space:nowrap}
+.m{font-family:var(--f-type);font-weight:600;font-stretch:90%;line-height:1.14;letter-spacing:.005em}
 .hand{font-family:var(--f-hand);font-weight:700;line-height:1}
 .c-ink{color:var(--ink)}.c-pen{color:var(--pen)}.c-lime{color:var(--lime)}.c-white{color:#fff}
 .hl{background:linear-gradient(98deg,transparent 0 1%,rgba(200,242,58,.95) 1% 99%,transparent 99%) 0 78%/100% 46% no-repeat;padding:0 .8cqw}
@@ -155,6 +155,21 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
 .formcard .fc-doc small{display:block;font-size:2.8cqw;color:#8696a0}
 .formcard .fc-btn{margin-top:1.2cqw;border-top:.3cqw solid #2a3942;padding:1.6cqw;text-align:center;color:#53bdeb;font-weight:700;font-size:3.6cqw}
 .logo-img{width:74cqw;height:auto;display:block}
+/* rev 2: slide 5 worksheet story, slide 6 gift and CTM sequence */
+.chip{display:inline-block;background:var(--lime);color:var(--ink);font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:9cqw;line-height:1;letter-spacing:.02em;border-radius:2cqw;padding:1.6cqw 3.4cqw 1.2cqw}
+.ws{background:#fdfdfb;border-radius:1.6cqw;padding:3cqw 4cqw;box-shadow:0 2cqw 5cqw rgba(0,0,0,.4);color:var(--ink);display:grid;gap:.8cqw}
+.ws .r{display:flex;justify-content:space-between;align-items:center;font-family:var(--f-hand);font-weight:700;color:var(--ball);font-size:6cqw;line-height:1.25;border-bottom:.25cqw solid #e3e7ef;position:relative}
+.ws .r b{color:var(--pen)}
+.f-night{background:radial-gradient(120cqw 90cqw at 50% 38%,#3b2a9e,#1c1550 60%,#100c2e)}
+.rays{position:absolute;inset:0;background:repeating-conic-gradient(from 0deg at 50% 36%,rgba(200,242,58,.16) 0 7deg,transparent 7deg 18deg)}
+.ticket{position:relative;background:var(--lime);color:var(--ink);border-radius:2cqw;padding:3cqw 5cqw;text-align:center;box-shadow:0 2cqw 0 rgba(0,0,0,.25)}
+.ticket::before,.ticket::after{content:"";position:absolute;top:50%;width:5cqw;height:5cqw;margin-top:-2.5cqw;border-radius:50%;background:#1c1550}
+.ticket::before{left:-2.5cqw}.ticket::after{right:-2.5cqw}
+.stamp{position:absolute;right:-9cqw;bottom:-11cqw;width:30cqw;height:30cqw;border-radius:50%;border:1cqw solid var(--pen);color:var(--pen);background:rgba(255,255,255,.92);display:grid;place-content:center;text-align:center;transform:rotate(-12deg);font-family:var(--f-type);font-weight:800;font-stretch:80%;line-height:1}
+.seq{display:flex;align-items:center;justify-content:center;gap:1.6cqw}
+.seq span{font-family:var(--f-type);font-weight:800;font-stretch:85%;font-size:4.6cqw;letter-spacing:.04em;border-radius:999px;padding:1cqw 2.6cqw;background:rgba(255,255,255,.14);color:#fff}
+.seq span.on{background:var(--lime);color:var(--ink)}
+.seq i{font-style:normal;color:var(--lime);font-size:4.6cqw}
 @media (max-width:860px){
   .scene{grid-template-columns:minmax(0,1fr)}
   .frames{overflow-x:auto;padding-bottom:6px}
@@ -182,7 +197,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   <h1>Free Calculation Efficiency Test: reel v2 storyboard</h1>
   <p class="lede">Built on the client's updated 7-slide script. One rule from the v2 brief: <b>footage for feelings, motion for facts.</b> Slides 1–3 (the problem) run on real footage under animated text; slides 4–7 (the offer) are motion graphics. Pacing is calmer than v1: one idea per shot, holds of 3–5 s, and only nine sound effects in the whole reel. Pictures marked "▶ stand-in" are brochure photos showing where a footage clip goes.</p>
   <div class="specs">
-    <span><b>1080×1920</b> · 30 fps</span><span><b>≈ 61 s</b> · version A (B ≈ 40 s next)</span><span>VO: Hindi/Hinglish, Sarvam Bulbul (next session)</span><span>Text: English</span><span>Remotion · same engine as v1</span>
+    <span><b>1080×1920</b> · 30 fps</span><span><b>≈ 58 s</b> · version A (B ≈ 40 s next)</span><span>VO: Hindi/Hinglish, ElevenLabs · Kanika (one continuous take)</span><span>Text: English</span><span>Remotion · same engine as v1</span>
   </div>
 </header>
 
@@ -197,7 +212,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
     <a href="#s7" style="flex:7.5;background:#16142b;color:#c8f23a">7 Book now</a>
   </div>
   <div class="tl-scale"><span>0s</span><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span><span>61.5s</span></div>
-  <div class="tl-legend"><span><b>Footage</b> slides 1–3 (0–23.6 s)</span><span><b>Motion graphics</b> slides 4–7 (23.6–61.5 s)</span><span>Timings measured from a draft read at natural speed; they shift slightly with the Sarvam voice.</span></div>
+  <div class="tl-legend"><span><b>Footage</b> slides 1–3 (0–23.6 s)</span><span><b>Motion graphics</b> slides 4–7 (23.6–61.5 s)</span><span>Times on this page are from the first draft read. The live times, from the ElevenLabs voice, are in <code>video/src/timeline.json</code>.</span></div>
 </section>
 
 <div class="controls">
@@ -214,12 +229,13 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
         <div class="ftg"><img src="assets/classroom.jpg" alt="Classroom of children facing the board" style="object-position:50% 30%"></div>
         <div class="scrim"></div><span class="clip">▶ C1 · stand-in</span>
         <div class="stack end">
-          <div class="m c-white" style="font-size:9cqw">Maths concepts</div>
-          <div><span class="d c-lime rel" style="font-size:24cqw">are clear…<svg class="mark c-lime" viewBox="0 0 40 40" style="right:-8cqw;top:0;width:8cqw;height:8cqw"><use href="#sc-tick"/></svg></span></div>
+          <div class="m c-white rel" style="font-size:9cqw">Maths<svg class="mark c-lime" viewBox="0 0 40 40" style="left:31cqw;top:-1cqw;width:11cqw;height:11cqw"><use href="#sc-tick"/></svg></div>
+          <div class="d c-white" style="font-size:17cqw">concepts</div>
+          <div class="d c-lime" style="font-size:17cqw">are clear…</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>1a · 0:00–2.9 · C1 classroom</figcaption>
+      <figcaption>1a · 0:00–2.05 · C1 classroom</figcaption>
     </figure>
     <figure class="kf">
       <div class="frame">
@@ -234,7 +250,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
         <div style="position:absolute;left:9%;right:12%;top:46%;display:grid;gap:.6cqw">
           <div class="m c-white" style="font-size:7.5cqw">Still making</div>
           <div class="d c-pen" style="font-size:21cqw">silly</div>
-          <div class="d c-white" style="font-size:15cqw">mistakes?!</div>
+          <div class="d c-white" style="font-size:15cqw">mistakes?</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
@@ -243,9 +259,9 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
   </div>
   <div class="sheet">
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Maths ke concepts clear hain… phir bhi silly mistakes ho jaati hain?"</div><div class="vo-hi">Maths के concepts clear हैं… फिर भी silly mistakes हो जाती हैं?</div><div class="vo-en">0.3–5.1 s · then no voice to the end of the slide (0.9 s beat on the paper)</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>MATHS CONCEPTS ARE CLEAR…</code><code>STILL MAKING SILLY MISTAKES?!</code></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>MATHS CONCEPTS ARE CLEAR…</code><code>STILL MAKING SILLY MISTAKES?</code></div></div>
     <div class="row"><div class="k">Picture</div><div><b>1a:</b> C1 classroom push-in, natural colour. <b>1b:</b> the illustrated exam paper (kept from v1, it reads well) over C2 blurred and darkened; if C2 is weak, the C1 shot blurred instead.</div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>1a: text rises in on "concepts clear" (0.6 s); lime tick draws on "hain".</li><li>2.9 s, on "phir bhi": soft cut, the paper slides up (0.5 s, spring). Red-pen marks land one by one, slower than v1: ✓, ✗, ✗, then the score circle.</li><li>"silly" lands on "silly", "mistakes?!" on "mistakes". Hold still through the silent beat.</li></ul></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>1a: text rises in on "concepts clear" (0.6 s); lime tick draws on "hain".</li><li>2.9 s, on "phir bhi": soft cut, the paper slides up (0.5 s, spring). Red-pen marks land one by one, slower than v1: ✓, ✗, ✗, then the score circle.</li><li>"silly" lands on "silly", "mistakes?" on "mistakes". Hold still through the silent beat.</li><li><b>Rev 2:</b> the lime tick sits beside "Maths" so it stays inside the frame; the line reads "mistakes?" (no "!", your call on 6 Nov; the client's script had "?!").</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>Music fades in under C1. One paper slide on the cut. No pen scratches, no classroom murmur.</div></div>
   </div>
 </section>
@@ -302,7 +318,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
       <div class="frame">
         <div class="ftg"><img src="assets/kid-stressed.jpg" alt="Boy with his head in his hands" style="object-position:45% 40%"></div>
         <div class="scrim"></div><span class="clip">▶ C4 · stand-in</span>
-        <div class="stack end" style="gap:1.4cqw">
+        <div class="stack end" style="gap:3cqw">
           <div class="m c-white" style="font-size:8cqw">These may be just</div>
           <div class="d c-white" style="font-size:19cqw">the visible</div>
           <div class="d c-white" style="font-size:19cqw"><span class="hl c-ink">signs…</span></div>
@@ -330,7 +346,7 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
     <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Lekin ye toh sirf dikhne wale signs hain. Silly mistakes ke peeche ki asli wajah kuch aur bhi ho sakti hai."</div><div class="vo-hi">लेकिन ये तो सिर्फ़ दिखने वाले signs हैं। Silly mistakes के पीछे की असली वजह कुछ और भी हो सकती है।</div><div class="vo-en">15.0–23.0 s</div></div></div>
     <div class="row"><div class="k">On screen</div><div class="ost"><code>THESE MAY BE JUST THE VISIBLE SIGNS…</code><code>…not the real reasons behind those silly mistakes.</code></div></div>
     <div class="row"><div class="k">Picture</div><div><b>3a:</b> C4 boy, head in hands, natural colour, dark scrim at the bottom. <b>3b:</b> C5 mother at the dining table reading his marked test paper, then looking toward him (he is out of focus, from behind), red duotone. The red marks the turn from problem to answer.</div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>3a: lines rise in on "dikhne wale signs"; the highlighter swipes across "signs…" (0.5 s).</li><li>18.4 s, on "Silly mistakes ke peeche": a slow 0.6 s cross-dissolve while the red tint fades in; "real reasons" lands on "asli wajah".</li></ul></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight"><li>3a: lines rise in on "dikhne wale signs"; the highlighter swipes across "signs…" (0.5 s). <b>Rev 2:</b> more space between the three lines.</li><li>18.4 s, on "Silly mistakes ke peeche": a slow 0.6 s cross-dissolve while the red tint fades in; "real reasons" lands on "asli wajah".</li></ul></div>
     <div class="row"><div class="k">Sound</div><div>No effects. The music thins out to piano only for this slide.</div></div>
     <div class="row"><div class="k">Facts</div><div class="note">On-screen text is brochure page 1 word for word: "These may be just the visible signs… not the real reasons behind those silly mistakes."</div></div>
   </div>
@@ -381,95 +397,144 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
 
 <!-- ============ SLIDE 5 ============ -->
 <section class="scene" id="s5">
-  <div class="scene-head"><span class="sid">Slide 5</span><span class="stime">0:34.2 – 0:42.6</span><h2>Why? What next?</h2><span class="kind mg-k">Motion graphics</span></div>
+  <div class="scene-head"><span class="sid">Slide 5</span><span class="stime">0:30.9 – 0:38.6 (live)</span><h2>Where? Why? What next?</h2><span class="kind mg-k">Motion graphics · rev 2</span></div>
   <div class="frames">
     <figure class="kf">
-      <div class="frame">
-        <div class="ftg duo duo-vio"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 30%"></div>
-        <div class="scrim" style="background:linear-gradient(180deg,rgba(40,18,166,.35),rgba(40,18,166,.75) 45%,rgba(30,12,130,.92))"></div>
-        <span class="clip">▶ C7 · optional</span>
-        <div class="stack" style="gap:1cqw">
-          <div class="m c-white" style="font-size:9cqw">More than</div>
-          <div class="d c-lime" style="font-size:22cqw">just a</div>
-          <div class="d c-lime" style="font-size:22cqw">score!</div>
+      <div class="frame f-vio">
+        <div class="stack" style="justify-content:flex-start;gap:3cqw">
+          <div class="m c-white" style="font-size:6.4cqw">More than just a <span class="hl c-ink">score!</span></div>
+          <div class="ws" style="margin-top:2cqw;transform:rotate(-2deg)">
+            <div class="r">48 + 37 = 85 <span>✓</span></div>
+            <div class="r">7 × 8 = <b class="rel">54<svg class="mark c-pen" viewBox="0 0 200 100" style="left:-60%;top:-30%;width:220%;height:160%"><use href="#sc-circle"/></svg></b></div>
+            <div class="r">36 ÷ 4 = 9 <span>✓</span></div>
+            <div class="r">125 − 68 = <b class="rel">67<svg class="mark c-pen" viewBox="0 0 200 100" style="left:-60%;top:-30%;width:220%;height:160%"><use href="#sc-circle"/></svg></b></div>
+            <svg viewBox="0 0 60 60" style="position:absolute;right:6%;top:40%;width:26cqw;height:26cqw" aria-hidden="true"><circle cx="24" cy="24" r="15" fill="rgba(200,242,58,.25)" stroke="#c8f23a" stroke-width="5"/><path d="M35 35l14 14" stroke="#c8f23a" stroke-width="7" stroke-linecap="round"/></svg>
+          </div>
+          <div style="margin-top:3cqw"><span class="chip">WHERE</span></div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>5 · 34.4 s · headline</figcaption>
+      <figcaption>5 · on "kahaan" · the magnifier finds the mistakes</figcaption>
     </figure>
     <figure class="kf">
-      <div class="frame">
-        <div class="ftg duo duo-vio"><img src="assets/kid-stressed.jpg" alt="" style="object-position:40% 30%"></div>
-        <div class="scrim" style="background:rgba(30,12,130,.72)"></div>
-        <span class="clip">▶ C7 · optional</span>
-        <div class="stack" style="gap:1.6cqw">
-          <div class="m c-white" style="font-size:6.5cqw">More than just a score!</div>
-          <div class="d c-lime" style="font-size:15cqw;margin-top:2cqw">WHERE</div><div class="m c-white" style="font-size:5.6cqw">mistakes are happening</div>
-          <div class="d c-white" style="font-size:15cqw;margin-top:1.4cqw">WHY</div><div class="m c-white" style="font-size:5.6cqw">the possible reasons</div>
-          <div class="d c-lime" style="font-size:15cqw;margin-top:1.4cqw">WHAT NEXT</div><div class="m c-white" style="font-size:5.6cqw">where improvement should start</div>
-        </div>
+      <div class="frame f-vio">
+        <svg class="ill" viewBox="0 0 360 640" aria-hidden="true">
+          <g transform="translate(70 190) rotate(-4)"><rect x="-44" y="-56" width="88" height="112" rx="6" fill="#fdfdfb"/><path d="M-32-34h64M-32-14h64M-32 6h64M-32 26h40" stroke="#c9bfff" stroke-width="4" stroke-linecap="round"/><ellipse cx="16" cy="-14" rx="16" ry="9" fill="none" stroke="#ef4136" stroke-width="3.5"/><ellipse cx="16" cy="26" rx="16" ry="9" fill="none" stroke="#ef4136" stroke-width="3.5"/></g>
+          <g fill="none" stroke="#c8f23a" stroke-width="3" stroke-dasharray="2 7" stroke-linecap="round"><path d="M110 176C170 150 210 140 250 150"/><path d="M110 216C180 220 210 240 250 262"/><path d="M100 250C150 300 200 340 250 370"/></g>
+          <g transform="translate(282 150)"><circle r="30" fill="#fff"/><circle r="20" fill="none" stroke="#16142b" stroke-width="4"/><path d="M0 0V-13M0 0l9 6" stroke="#ef4136" stroke-width="4" stroke-linecap="round"/><rect x="-5" y="-38" width="10" height="7" rx="2" fill="#16142b"/></g>
+          <g transform="translate(282 262)"><circle r="30" fill="#fff"/><path d="M-18 0s7-11 18-11 18 11 18 11-7 11-18 11S-18 0-18 0z" fill="none" stroke="#16142b" stroke-width="4"/><circle cx="7" cy="2" r="5" fill="#16142b"/><path d="M12-20q6-6 12 0" fill="none" stroke="#ef4136" stroke-width="3" stroke-linecap="round"/></g>
+          <g transform="translate(282 374)"><circle r="30" fill="#fff"/><rect x="-15" y="-17" width="30" height="34" rx="3" fill="none" stroke="#16142b" stroke-width="4"/><text x="0" y="8" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="22" fill="#ef4136">?</text></g>
+        </svg>
+        <div class="stack" style="justify-content:flex-start;gap:3cqw"><div class="m c-white" style="font-size:6.4cqw">More than just a <span class="hl c-ink">score!</span></div></div>
+        <div style="position:absolute;left:9%;top:61%"><span class="chip">WHY</span></div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>5 · 41 s · all three, held</figcaption>
+      <figcaption>5 · on "possible reasons" · each mistake points to a reason</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame f-vio">
+        <svg class="ill" viewBox="0 0 360 640" aria-hidden="true">
+          <path d="M50 420h90v-60h90v-60h90v180H50z" fill="#2812a6"/>
+          <path d="M50 420h90v-60h90v-60h90" fill="none" stroke="#fff" stroke-width="4" stroke-linejoin="round"/>
+          <rect x="50" y="410" width="90" height="12" fill="#c8f23a"/>
+          <g transform="translate(96 410)"><path d="M0 0V-62" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M0-62h38l-8 12 8 12H0z" fill="#c8f23a"/></g>
+          <path d="M90 392C150 360 170 330 190 330S250 290 270 270" fill="none" stroke="#c8f23a" stroke-width="5" stroke-dasharray="3 10" stroke-linecap="round"/>
+          <path d="M262 262l18-6-6 18" fill="none" stroke="#c8f23a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="stack" style="justify-content:flex-start;gap:3cqw"><div class="m c-white" style="font-size:6.4cqw">More than just a <span class="hl c-ink">score!</span></div></div>
+        <div class="hand c-lime" style="position:absolute;left:13%;top:52%;font-size:6cqw">start here</div>
+        <div style="position:absolute;left:9%;top:61%"><span class="chip">WHAT NEXT</span></div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>5 · on "improvement ki shuruaat" · step one lights up</figcaption>
     </figure>
   </div>
   <div class="sheet">
-    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Jaaniye mistakes kahaan ho rahi hain, unke possible reasons kya hain, aur improvement ki shuruaat kahaan se karni chahiye."</div><div class="vo-hi">जानिए mistakes कहाँ हो रही हैं, उनके possible reasons क्या हैं, और improvement की शुरुआत कहाँ से करनी चाहिए।</div><div class="vo-en">34.6–42.0 s</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>MORE THAN JUST A SCORE!</code><code>WHERE · mistakes are happening</code><code>WHY · the possible reasons</code><code>WHAT NEXT · where improvement should start</code></div></div>
-    <div class="row"><div class="k">Picture</div><div>Motion graphics on violet. Optional: C7 (the same boy thinking, then a small smile) in violet duotone behind; the smile lands on "improvement".</div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>Headline holds alone for 1 s, then shrinks to the top line.</li><li>WHERE springs in on "kahaan" (35.3 s), WHY on "reasons" (37.5 s), WHAT NEXT on "improvement" (39.6 s). Hold 2 s.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>No effects; the music carries it.</div></div>
-    <div class="row"><div class="k">Facts</div><div class="note">"More than just a score!", WHY and WHAT NEXT are brochure page 2. "WHERE" comes from the client's new voiceover.</div></div>
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Jaaniye mistakes kahaan ho rahi hain, unke possible reasons kya hain, aur improvement ki shuruaat kahaan se karni chahiye."</div><div class="vo-hi">जानिए mistakes कहाँ हो रही हैं, उनके possible reasons क्या हैं, और improvement की शुरुआत कहाँ से करनी चाहिए।</div><div class="vo-en">31.2–37.7 s (live)</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>MORE THAN JUST A SCORE!</code><code>WHERE</code><code>WHY</code><code>WHAT NEXT</code><code>start here</code></div></div>
+    <div class="row"><div class="k">Picture</div><div><b>Rev 2: the pictures tell it, the voice says it.</b> One worksheet carries the whole slide. No sentence on screen repeats the voice; each idea gets one word (WHERE / WHY / WHAT NEXT) in a lime chip and a moving picture.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight">
+      <li>30.9 s: "More than just a <span class="hl" style="color:#16142b">score!</span>" in at the top (highlighter on "score!"); a worksheet drops in under it.</li>
+      <li><b>WHERE</b> (on "kahaan"): a magnifier glides down the worksheet, stops on each wrong answer, and a red pen circle draws round it (two mistakes).</li>
+      <li><b>WHY</b> (on "possible reasons"): the worksheet slides left and shrinks; dotted lines shoot out of the circled mistakes to three reason badges that pop in: a ticking stopwatch (rushing), a drifting eye (focus), a formula card with a "?" (forgetting). They are the signs from slide 2, so nothing new is claimed.</li>
+      <li><b>WHAT NEXT</b> (on "improvement ki shuruaat"): the badges drop away, a staircase draws itself; step one lights lime, a flag plants with "start here", and a dotted lime arrow climbs the steps. Hold 1 s.</li>
+    </ul></div>
+    <div class="row"><div class="k">Sound</div><div>No new effects; the music carries it.</div></div>
+    <div class="row"><div class="k">Facts</div><div class="note">"More than just a score!", WHY and WHAT NEXT are brochure page 2; WHERE is the client's voiceover. The reason badges reuse the brochure page 1 signs. The worksheet sums are illustration only.</div></div>
   </div>
 </section>
 
 <!-- ============ SLIDE 6 ============ -->
 <section class="scene" id="s6">
-  <div class="scene-head"><span class="sid">Slide 6</span><span class="stime">0:42.6 – 0:54.0</span><h2>Special CTM™ bonus</h2><span class="kind mg-k">Motion graphics</span></div>
+  <div class="scene-head"><span class="sid">Slide 6</span><span class="stime">0:38.6 – 0:48.9 (live)</span><h2>Special CTM™ bonus</h2><span class="kind mg-k">Motion graphics · rev 2</span></div>
   <div class="frames">
     <figure class="kf">
-      <div class="frame f-lime">
-        <svg class="ill" viewBox="0 0 360 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-          <g transform="translate(180 128) scale(.78)">
-            <path d="M0-70V-96M-50-56-66-74M50-56 66-74M-74-24h-24M74-24h24" stroke="#16142b" stroke-width="5" stroke-linecap="round"/>
-            <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
-            <g transform="translate(-20 -40) rotate(-22)"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
-          </g>
+      <div class="frame f-night">
+        <div class="rays"></div>
+        <svg class="ill" viewBox="0 0 360 640" aria-hidden="true">
+          <g fill="#c8f23a"><circle cx="64" cy="150" r="4"/><circle cx="300" cy="196" r="5"/><circle cx="96" cy="300" r="3"/></g>
+          <g fill="#ef4136"><rect x="276" y="128" width="7" height="14" rx="2" transform="rotate(30 279 135)"/><rect x="60" y="226" width="7" height="14" rx="2" transform="rotate(-25 63 233)"/></g>
+          <g transform="translate(180 420) scale(1.05)"><rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/><g transform="translate(-70 -24) rotate(-30)"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/></g></g>
         </svg>
-        <div class="cstack" style="top:31%;gap:0">
-          <div class="hand c-pen" style="font-size:7cqw">special bonus</div>
-          <div class="d c-ink" style="font-size:12cqw;margin-top:2.4cqw">CTM™ 60-minute</div>
-          <div class="d c-ink" style="font-size:12cqw;margin-top:.6cqw">Masterclass</div>
-          <div style="display:flex;align-items:flex-end;justify-content:center;gap:2cqw;margin-top:5cqw"><span class="hand c-ink" style="font-size:7cqw;padding-bottom:2.2cqw">worth</span><span class="d c-ink" style="font-size:22cqw">₹500</span></div>
-          <span class="stampline c-pen" style="margin-top:4.5cqw;font-size:4.4cqw;white-space:nowrap;align-self:center">with the test · limited period</span>
+        <div class="cstack" style="justify-content:flex-start;gap:3cqw">
+          <div class="hand c-lime" style="font-size:9cqw">special bonus</div>
+          <div class="ticket" style="transform:rotate(-3deg);margin-top:2cqw">
+            <div class="d" style="font-size:15cqw">CTM™</div>
+            <div class="d" style="font-size:8cqw;margin-top:1cqw">Masterclass</div>
+            <div class="m" style="font-size:5.4cqw;margin-top:1.4cqw;font-weight:700">60 minutes</div>
+            <div class="stamp"><span style="font-size:4.2cqw">worth</span><span style="font-size:9.5cqw">₹500</span></div>
+          </div>
         </div>
+        <div style="position:absolute;left:0;right:0;top:63%;text-align:center"><span class="m" style="display:inline-block;background:#c8f23a;color:#16142b;border-radius:999px;padding:1.2cqw 3.6cqw;font-size:4.6cqw;font-weight:700">with the test · limited period</span></div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>6a · 42.6–49.8 · the gift</figcaption>
+      <figcaption>6a · the gift opens, the ticket comes out</figcaption>
     </figure>
     <figure class="kf">
       <div class="frame">
-        <div class="ftg duo duo-ink"><img src="assets/classroom.jpg" alt="" style="object-position:60% 40%"></div>
-        <div class="scrim" style="background:rgba(22,20,43,.62)"></div>
-        <span class="clip">▶ C8 · optional</span>
-        <div class="cstack" style="gap:0">
-          <div class="m c-white" style="font-size:8cqw">Experience</div>
-          <div class="d c-lime" style="font-size:34cqw;margin-top:1cqw">CTM™</div>
-          <div class="d c-white" style="font-size:8cqw;margin-top:2cqw">Calculation Thinking Method</div>
-          <div class="hand c-white" style="font-size:5.8cqw;margin-top:6cqw;white-space:nowrap">See → Process → Answer</div>
+        <div class="ftg"><img src="assets/classroom.jpg" alt="Children in a bright class" style="object-position:60% 40%"></div>
+        <div class="scrim" style="background:radial-gradient(70% 45% at 50% 42%,rgba(16,12,46,.78),rgba(16,12,46,.25) 100%)"></div>
+        <span class="clip">▶ C8 · visible</span>
+        <div class="cstack" style="gap:1cqw">
+          <div class="m c-white" style="font-size:7.5cqw;letter-spacing:.08em">EXPERIENCE</div>
+          <div class="d c-lime" style="font-size:32cqw">CTM™</div>
+          <div class="hand c-white" style="font-size:7.6cqw">Calculation Thinking Method</div>
         </div>
         <div class="safe"><i></i></div>
       </div>
-      <figcaption>6b · 49.8–54.0 · the method</figcaption>
+      <figcaption>6b · on "Experience" · the class stays visible</figcaption>
+    </figure>
+    <figure class="kf">
+      <div class="frame">
+        <div class="ftg"><img src="assets/classroom.jpg" alt="" style="object-position:60% 40%"></div>
+        <div class="scrim" style="background:radial-gradient(70% 45% at 50% 46%,rgba(16,12,46,.8),rgba(16,12,46,.25) 100%)"></div>
+        <svg class="ill" viewBox="0 0 360 640" aria-hidden="true">
+          <g transform="translate(180 196)"><path d="M-40 0s16-24 40-24 40 24 40 24-16 24-40 24-40-24-40-24z" fill="#fff"/><circle r="12" fill="#16142b"/><circle cx="4" cy="-4" r="4" fill="#fff"/></g>
+          <path d="M70 248L290 248" stroke="#c8f23a" stroke-width="3" opacity=".8"/>
+          <g transform="translate(180 330)" fill="none" stroke="#c8f23a" stroke-width="4" stroke-linecap="round"><path d="M-80 0a80 30 0 0 1 160 0" stroke-dasharray="4 9"/><circle cx="-80" cy="0" r="5" fill="#c8f23a"/><circle cx="80" cy="0" r="5" fill="#c8f23a"/></g>
+        </svg>
+        <div style="position:absolute;left:0;right:0;top:38%;text-align:center" class="d c-white"><span style="font-size:15cqw">48 + 37</span> <span class="c-lime" style="font-size:15cqw">= 85</span></div>
+        <div style="position:absolute;left:0;right:0;top:58%"><div class="seq"><span class="on">SEE</span><i>→</i><span class="on">PROCESS</span><i>→</i><span class="on">ANSWER</span></div></div>
+        <div class="safe"><i></i></div>
+      </div>
+      <figcaption>6b · on "different approach" · see, process, answer in motion</figcaption>
     </figure>
   </div>
   <div class="sheet">
-    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Aur special bonus mein paaiye CTM ki sixty-minute masterclass, worth five hundred rupees. Experience kijiye calculation ka ek different approach."</div><div class="vo-hi">और special bonus में पाइए CTM की sixty-minute masterclass, worth five hundred rupees। Experience कीजिए calculation का एक different approach।</div><div class="vo-en">43.0–53.4 s</div></div></div>
-    <div class="row"><div class="k">On screen</div><div class="ost"><code>special bonus</code><code>CTM™ 60-minute Masterclass</code><code>worth ₹500</code><code>with the test · limited period</code><code>EXPERIENCE CTM™ — CALCULATION THINKING METHOD</code><code>See → Process → Answer</code></div></div>
-    <div class="row"><div class="k">Picture</div><div>6a: highlighter-lime, the gift box (drawn) on top, the offer centred below with more space between the three groups. 6b: optional stock clip <b>C8</b> (children in a bright class, quick and confident) in a dark ink tint behind the type; without it, plain ink.</div></div>
-    <div class="row"><div class="k">Motion</div><ul class="tight"><li>42.6 s: a lime swipe in (the S5→S6 transition the brief asks for).</li><li>Gift lid lifts on "bonus" (43.9 s), gently, no confetti burst. "₹500" counts up on "five hundred rupees" (47.6 s), then the stamp settles.</li><li>49.8 s, on "Experience": a cut to ink; "CTM™" springs in, "See → Process → Answer" writes itself on "different approach".</li><li>6b uses footage although it is a "facts" slide: the clip only sets the mood (a class in action), the dark tint keeps the type in charge.</li></ul></div>
-    <div class="row"><div class="k">Sound</div><div>Whoosh on the swipe; one soft pop as the lid opens.</div></div>
-    <div class="row"><div class="k">Facts</div><div class="note">60-minute, worth ₹500, CTM™ = Calculation Thinking Method, "See. Process. Answer." are brochure page 3; "limited time period only" is page 4; "with the test" is client-confirmed.</div></div>
+    <div class="row"><div class="k">Voiceover</div><div><div class="vo-rom">"Aur special bonus mein paaiye CTM ki sixty-minute masterclass, worth five hundred rupees. Experience kijiye calculation ka ek different approach."</div><div class="vo-hi">और special bonus में पाइए CTM की sixty-minute masterclass, worth five hundred rupees। Experience कीजिए calculation का एक different approach।</div><div class="vo-en">38.9–47.5 s (live)</div></div></div>
+    <div class="row"><div class="k">On screen</div><div class="ost"><code>special bonus</code><code>CTM™ Masterclass · 60 minutes</code><code>worth ₹500</code><code>with the test · limited period</code><code>EXPERIENCE CTM™</code><code>Calculation Thinking Method</code><code>SEE → PROCESS → ANSWER</code></div></div>
+    <div class="row"><div class="k">Picture</div><div><b>Rev 2.</b> 6a is now a reveal on a deep violet night with slowly turning lime light rays (no flat lime fill): the gift opens and a lime CTM™ ticket rises out of it. 6b keeps the C8 class <b>clearly visible</b> in natural colour, darkened only behind the type by a soft radial shade.</div></div>
+    <div class="row"><div class="k">Motion</div><ul class="tight">
+      <li>38.6 s: a lime swipe wipes across and leaves the violet night behind it; the rays start to turn.</li>
+      <li>On "special": the gift hops twice (anticipation). On "bonus": the lid pops off with a flash of light, a few lime/red sparkles drift (small, not a confetti storm).</li>
+      <li>On "CTM": the lime ticket rises out of the box with a spring and settles at a slight tilt; "60 minutes" prints on "sixty-minute".</li>
+      <li>On "five hundred": the ₹ figure counts up fast (0.6 s); on "rupees" the red "worth ₹500" stamp slams onto the ticket corner with a small shake. The "with the test · limited period" pill rises last.</li>
+      <li>6b, on "Experience": cut to C8 (visible); EXPERIENCE, then CTM™ springs in, "Calculation Thinking Method" writes itself.</li>
+      <li>6b, on "different approach": the type steps up and a sum appears, <b>48 + 37</b>. <b>SEE</b>: an eye opens above it and a lime scan line sweeps across the sum. <b>PROCESS</b>: the two numbers lift and a dotted lime arc spins between them, like the thought moving. <b>ANSWER</b>: "= 85" slams in with a lime tick and a small burst. The SEE → PROCESS → ANSWER chips light up one by one in step.</li>
+      <li>6b gets 0.8 s longer for this (the class clip has enough), so the reel comes to about 58 s.</li>
+    </ul></div>
+    <div class="row"><div class="k">Sound</div><div>Whoosh on the swipe; soft pop as the lid opens. Proposed: one soft stamp thud on "worth ₹500" (would make 10 effects instead of 9).</div></div>
+    <div class="row"><div class="k">Facts</div><div class="note">60-minute, worth ₹500, CTM™ = Calculation Thinking Method, "See. Process. Answer." are brochure page 3; "limited time period only" is page 4; "with the test" is client-confirmed. The sum only shows the three stages; it deliberately shows <b>no</b> calculation technique, because the brochure does not say how CTM works.</div></div>
   </div>
 </section>
 
@@ -585,6 +650,19 @@ table.t td.n{font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:60
       <li><span class="status done">Decided</span> <b>Number not read aloud</b> (on screen only).</li>
       <li><span class="status open">Open</span> <b>Footage:</b> generate C1, C3, C4, C5 (and optionally C2, C7, C8) with the updated Veo prompts, then upload to <code>source/footage/</code>.</li>
       <li><span class="status done">Settled</span> Hybrid rule · slides 4–7 motion only, no cartoon people · calmer pacing · fewer effects · facts from <code>video/facts.yaml</code>.</li>
+    </ul>
+  </div>
+
+  <div class="card wide">
+    <div class="eyebrow">Revision 2 · 6 Nov · after the first preview</div>
+    <h3>What this revision changes</h3>
+    <ul class="tight">
+      <li><b>Type spacing, everywhere:</b> display lines get more room (line height 0.98, was 0.86) and no tightened letter spacing (was −2.5%). Body lines 1.14.</li>
+      <li><b>Slide 1:</b> the lime tick stays inside the frame; the line reads "Still making silly mistakes?" (no "!").</li>
+      <li><b>Slide 3a:</b> more space between "These may be just / the visible / signs…".</li>
+      <li><b>Slide 5:</b> pictures explain WHERE / WHY / WHAT NEXT; the screen no longer repeats the voice word for word.</li>
+      <li><b>Slide 6a:</b> a reveal on a violet night with light rays and a CTM™ ticket, instead of a flat lime slide.</li>
+      <li><b>Slide 6b:</b> the class footage stays visible; See → Process → Answer plays out on a sum.</li>
     </ul>
   </div>
 
