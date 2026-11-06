@@ -1,7 +1,7 @@
 {
-  "_note": "Reel v2, version A. Single source of timing. vo.<line>.at = reel time where that line's segment of Audio-gen.mp3 starts; word times come from vo-timings-v2.json (source seconds) shifted by at - src[0]. Shots and clips in reel seconds; clip in/out in source seconds.",
+  "_note": "Reel v2 rev 5. Single source of timing. vo.<seg>.at = reel time where that segment of Audio-gen.mp3 starts (segments are cut inside natural pauses; s6x is the 'Experience…' half of line 6, played before the bonus half). Word times come from vo-timings-v2.json. Shots/clips in reel seconds; clip in = source seconds.",
   "fps": 30,
-  "duration": 65.15,
+  "duration": 56.1,
   "vo": {
     "file": "audio/vo/v2/Audio-gen.mp3",
     "s1": {
@@ -12,50 +12,50 @@
       ]
     },
     "s2": {
-      "at": 5.45,
+      "at": 4.95,
       "src": [
         4.347,
         10.864
       ]
     },
     "s3": {
-      "at": 13.73,
+      "at": 12.15,
       "src": [
         11.39,
         17.575
       ]
     },
     "s4": {
-      "at": 21.05,
+      "at": 19.3,
       "src": [
         18.002,
         26.681
       ]
     },
     "s5": {
-      "at": 31.65,
+      "at": 28.65,
       "src": [
         26.987,
         33.557
       ]
     },
-    "s6": {
-      "at": 41.35,
-      "src": [
-        33.867,
-        39.1
-      ]
-    },
     "s6x": {
       "line": "s6",
-      "at": 49.05,
+      "at": 35.85,
       "src": [
         39.38,
         42.523
       ]
     },
+    "s6": {
+      "at": 39.6,
+      "src": [
+        33.867,
+        39.1
+      ]
+    },
     "s7": {
-      "at": 55.75,
+      "at": 45.75,
       "src": [
         42.794,
         46.78
@@ -69,47 +69,47 @@
     ],
     "s1b": [
       2.05,
-      5.1
+      4.7
     ],
     "s2": [
-      5.1,
-      12.4
+      4.7,
+      11.9
     ],
     "s3a": [
-      12.4,
-      17.7
+      11.9,
+      16.12
     ],
     "s3b": [
-      17.7,
-      20.7
+      16.12,
+      19.0
     ],
     "s4a": [
-      20.7,
-      26.65
+      19.0,
+      25.4
     ],
     "s4b": [
-      26.65,
-      31.4
+      25.4,
+      28.4
     ],
     "s5": [
-      31.4,
-      41.1
-    ],
-    "s6a": [
-      41.1,
-      48.75
+      28.4,
+      35.6
     ],
     "s6b": [
-      48.75,
-      55.55
+      35.6,
+      39.5
+    ],
+    "s6a": [
+      39.5,
+      45.6
     ],
     "s7a": [
-      55.55,
-      60.15
+      45.6,
+      51.2
     ],
     "s7b": [
-      60.15,
-      65.15
+      51.2,
+      56.1
     ]
   },
   "clips": {
@@ -143,12 +143,15 @@
     "origin": "50% 0%"
   },
   "transitions": {
-    "s4a": "circle",
-    "s6a": "lime-swipe",
-    "s3b": "dissolve",
+    "s1b": "cut",
     "s2": "fade",
-    "s1b": "fade",
+    "s3b": "dissolve",
+    "s4a": "circle",
+    "s4b": "fade",
+    "s5": "fade",
     "s6b": "fade",
+    "s6a": "fade",
+    "s7a": "fade",
     "s7b": "fade"
   },
   "music": {
@@ -160,27 +163,35 @@
       ],
       [
         "home",
-        5.1
+        4.7
       ],
       [
         "thin",
-        12.4
+        11.9
+      ],
+      [
+        "turn",
+        16.12
       ],
       [
         "lift",
-        20.7
+        19.0
+      ],
+      [
+        "ctm",
+        35.6
       ],
       [
         "bonus",
-        41.1
+        39.5
       ],
       [
         "cta",
-        55.55
+        45.6
       ],
       [
         "end",
-        60.15
+        51.2
       ]
     ]
   },
@@ -190,49 +201,97 @@
       2.05
     ],
     [
-      "tick",
-      5.57
+      "pen",
+      2.56
     ],
     [
-      "tick",
-      7.5
+      "tap",
+      4.7
     ],
     [
-      "tick",
-      8.88
+      "tap",
+      4.95
     ],
     [
-      "tick",
-      10.38
+      "tap",
+      6.88
+    ],
+    [
+      "tap",
+      8.26
+    ],
+    [
+      "tap",
+      9.76
+    ],
+    [
+      "tap",
+      11.9
+    ],
+    [
+      "swell",
+      16.0
     ],
     [
       "whoosh",
-      20.65
+      18.95
+    ],
+    [
+      "sub",
+      21.86
     ],
     [
       "chime",
-      25.45
+      23.7
     ],
     [
-      "whoosh",
-      41.05
+      "tap",
+      25.4
+    ],
+    [
+      "whoosh2",
+      28.35
+    ],
+    [
+      "tap",
+      29.55
+    ],
+    [
+      "tap",
+      35.6
     ],
     [
       "pop",
-      41.82
+      38.01
+    ],
+    [
+      "sub",
+      40.07
+    ],
+    [
+      "pop",
+      40.07
+    ],
+    [
+      "tap",
+      45.6
     ],
     [
       "keys",
-      57.14,
+      47.14,
       2.08
     ],
     [
       "sent",
-      59.22
+      49.22
     ],
     [
       "final",
-      60.95
+      52.42
+    ],
+    [
+      "sub",
+      52.42
     ]
   ]
 }

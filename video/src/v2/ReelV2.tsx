@@ -7,7 +7,7 @@ import './v2.css';
 import { DEFS } from '../defs';
 import faces from '../../public/fonts/faces.json';
 import { OVERLAYS } from './scenes2';
-import { S, Shot, TL, clamp, easeInOut, easeOut, n, prog } from './time';
+import { S, Shot, TL, clamp, easeInOut, easeOut, lerp, n, prog } from './time';
 
 type Face = { family: string; file: string; weight: string; stretch: string; unicodeRange: string };
 function useFonts() {
@@ -30,7 +30,7 @@ function useFonts() {
 const FPS = TL.fps;
 const SHOTS = Object.keys(TL.shots) as Shot[];
 /** How long a shot stays visible under the next one while that one comes in. */
-const TAIL: Partial<Record<Shot, number>> = { s1b: 0.35, s2: 0.45, s3a: 0.5, s3b: 0.5, s4a: 0.3, s4b: 0.3, s5: 0.45, s6b: 0.3, s7a: 0.4 };
+const TAIL: Partial<Record<Shot, number>> = { s2: 0.4, s3a: 0.5, s3b: 0.5, s4a: 0.3, s4b: 0.3, s5: 0.4, s6b: 0.35, s6a: 0.3, s7a: 0.35 };
 /** Footage that starts before its shot (the 3a->3b cross-dissolve starts early so the cut lands on "asli wajah"). */
 const LEAD: Partial<Record<Shot, number>> = { s3b: 0.25 };
 const C3B_RATE = 0.92; // c5 slightly slowed so its usable first 3.5 s cover the shot + wipe (lips move after ~4 s)
@@ -40,7 +40,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
   const [a, b] = S(shot);
   const clip = (TL.clips as Record<string, { file: string; in: number; rate: number; grade: string }>)[shot];
   if (!clip) {
-    const cls = shot.startsWith('s4') ? 'f-vio' : shot === 's5' ? 'f-paper' : shot === 's6a' ? 'f-night' : shot === 's6b' ? 'f-deep' : 'f-ink';
+    const cls = shot.startsWith('s4') ? 'f-vio' : shot === 's5' || shot === 's6b' ? 'f-deep' : shot === 's6a' ? 'f-night' : 'f-ink';
     return <div className={`layer ${cls}`} />;
   }
   const lead = LEAD[shot] ?? 0;
@@ -85,7 +85,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
 function entrance(shot: Shot, t: number): React.CSSProperties {
   const a = S(shot)[0] - (LEAD[shot] ?? 0);
   const kind = (TL.transitions as Record<string, string>)[shot];
-  if (kind === 'circle') return { clipPath: `circle(${n(easeInOut(prog(t, a, 0.45)) * 120, 2)}% at 50% 45%)` };
+  if (kind === 'circle') return { clipPath: `circle(${n(lerp(13, 120, easeInOut(prog(t, a, 0.5))), 2)}% at 50% 45%)` };
   if (kind === 'lime-swipe') return { clipPath: `inset(0 ${n((1 - easeInOut(prog(t, a, 0.4))) * 100, 2)}% 0 0)` };
   if (kind === 'dissolve') return { opacity: easeInOut(prog(t, a, 0.6)) };
   if (kind === 'fade') return { opacity: easeOut(prog(t, a, 0.35)) };

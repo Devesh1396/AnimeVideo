@@ -55,3 +55,13 @@
 .f-deep{background-color:#141038;background-image:linear-gradient(rgba(200,242,58,.05) 2px,transparent 2px),linear-gradient(90deg,rgba(200,242,58,.05) 2px,transparent 2px);background-size:5cqw 5cqw}
 .v2 .c-white{text-shadow:0 .3cqw 1.8cqw rgba(0,0,0,.35)}
 .numblock{border-radius:3cqw;padding:1.6cqw 4cqw 1cqw;background:rgba(200,242,58,.06);margin-top:1.4cqw}
+/* rev 5: type system. wide = hooks and titles; d (condensed) = labels; sub = Hind, readable support */
+.wide{font-family:var(--f-type);font-weight:800;font-stretch:92%;line-height:.96;letter-spacing:-.005em;white-space:nowrap}
+.sub{font-family:var(--f-body);font-weight:600;line-height:1.2}
+.maskline{overflow:hidden;padding-bottom:.08em;line-height:1}
+.glass{position:absolute;font-family:var(--f-hand);font-weight:700;font-size:8cqw;color:#ff5a4c;background:rgba(255,255,255,.16);border:.3cqw solid rgba(255,255,255,.35);border-radius:3cqw;padding:1.2cqw 3.4cqw;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);box-shadow:0 2cqw 5cqw rgba(0,0,0,.25)}
+.freetag{display:inline-block;background:var(--lime);color:var(--ink);font-family:var(--f-type);font-weight:800;font-stretch:80%;font-size:12cqw;line-height:.9;padding:1.6cqw 4cqw 1cqw;border-radius:2.6cqw}
+.phone.big{position:absolute;left:12%;right:12%;top:29%;bottom:29.7%}
+.phone.big .ph-top{font-size:4.4cqw}.phone.big .ph-top small{font-size:3.2cqw}
+.phone.big .bub{font-size:4.6cqw}.phone.big .ph-in span{font-size:4.2cqw}
+.phone.big .formcard .fc-t{font-size:3.9cqw}.phone.big .formcard .fc-doc b{font-size:4.2cqw}.phone.big .formcard .fc-doc small{font-size:3.4cqw}.phone.big .formcard .fc-btn{font-size:4.4cqw}
