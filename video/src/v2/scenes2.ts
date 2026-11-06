@@ -55,7 +55,7 @@ export function s2(t: number) {
     ${items
       .map(
         ([label, at]) => `
-      <div class="check" style="${rise(t, at - 0.15, 4)}"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%;${draw(t, at + 0.12, 0.3)}"><use href="#sc-tick"/></svg></span><span class="m c-white" style="font-size:7.4cqw;font-weight:700">${label}</span></div>`
+      <div class="check" style="${rise(t, at - 0.15, 4)}"><span class="box"><svg viewBox="0 0 40 40" style="stroke:#fff"><use href="#sc-box"/></svg><svg viewBox="0 0 40 40" style="stroke:var(--lime);inset:-25% -10% 10% 10%;${draw(t, at + 0.12, 0.3)}"><use href="#sc-tick"/></svg></span><span class="m c-white" style="font-size:8.2cqw;font-weight:700;line-height:1.05">${label}</span></div>`
       )
       .join('')}
     </div>
@@ -87,46 +87,90 @@ export function s3b(t: number) {
 /* ---------- 4a · violet: FREE + CALCULATION / EFFICIENCY / TEST ---------- */
 export function s4a(t: number) {
   const out = prog(t, S('s4a')[1] - 0.3, 0.3);
+  const free = W('s4', 7);
+  const burst = sp(t, free + 0.05, 140, 14);
+  const rays = Array.from({ length: 12 }, (_, i) => {
+    const a = (i / 12) * Math.PI * 2 + (t - free) * 0.25;
+    const r0 = 31, r1 = 31 + 8 * burst;
+    return `<path d="M${n(Math.cos(a) * r0, 1)} ${n(Math.sin(a) * r0 * 0.62, 1)}L${n(Math.cos(a) * r1, 1)} ${n(Math.sin(a) * r1 * 0.62, 1)}"/>`;
+  }).join('');
+  const spark = (x: string, y: string, s: number, d: number) =>
+    `<svg class="mark c-white" viewBox="0 0 40 40" style="left:${x};top:${y};width:${s}cqw;height:${s}cqw;transform:rotate(${n((t - free) * 60, 1)}deg) scale(${n(sp(t, free + d, 160, 12))})"><use href="#sc-spark"/></svg>`;
   return `
-  <div class="cstack" style="gap:1cqw;opacity:${n(1 - out)}">
-    <div class="hand c-white" style="font-size:8.5cqw;${write(t, W('s4', 0), 0.45)}">That's why…</div>
-    <div class="brand c-white" style="font-size:5.4cqw;opacity:.9;${rise(t, W('s4', 1), 3)}">Giane Future Gurukull brings you</div>
-    <div style="margin:3.5cqw 0 2.5cqw"><span class="freepill" style="display:inline-block;font-size:34cqw;${drop(t, W('s4', 7))}">FREE</span></div>
-    <div class="d c-white" style="font-size:15cqw;${rise(t, W('s4', 8))}">CALCULATION</div>
-    <div class="d c-white" style="font-size:15cqw;${rise(t, W('s4', 9))}">EFFICIENCY</div>
-    <div class="d c-lime" style="font-size:15cqw;${pop(t, W('s4', 10), 0.6)}">TEST</div>
+  <div class="cstack" style="gap:.6cqw;opacity:${n(1 - out)}">
+    <div class="hand c-white" style="font-size:9.5cqw;${write(t, W('s4', 0), 0.45)}">That's why…</div>
+    <div class="brand c-white" style="font-size:5.4cqw;opacity:.92;${rise(t, W('s4', 1), 3)}">Giane Future Gurukull brings you</div>
+    <div class="rel" style="margin:3cqw 0 2.6cqw">
+      <svg viewBox="-50 -32 100 64" style="position:absolute;left:-22%;top:-30%;width:144%;height:160%;overflow:visible;opacity:${n(clamp(burst))}"><g stroke="#c8f23a" stroke-width="2.4" stroke-linecap="round" fill="none">${rays}</g></svg>
+      <span class="freepill" style="display:inline-block;position:relative;font-size:32cqw;box-shadow:0 2cqw 0 #16142b;${drop(t, free)}">FREE</span>
+      ${spark('-12cqw', '-6cqw', 9, 0.2)}${spark('calc(100% + 2cqw)', '60%', 7, 0.3)}
+    </div>
+    <div class="d c-white" style="font-size:16cqw;${rise(t, W('s4', 8))}">CALCULATION</div>
+    <div class="d c-white" style="font-size:16cqw;${rise(t, W('s4', 9))}">EFFICIENCY</div>
+    <div class="rel"><span class="d c-lime" style="display:inline-block;font-size:21cqw;${pop(t, W('s4', 10), 0.6)}">TEST</span><svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:-6%;bottom:-2.6cqw;width:112%;height:4cqw;${draw(t, W('s4', 10) + 0.2, 0.4)}"><use href="#sc-under"/></svg></div>
   </div>`;
 }
 
 /* ---------- 4b · why it exists + Deveshh Sir ---------- */
 export function s4b(t: number) {
   const a = S('s4b')[0];
-  const credit = W('s4', 15) + 0.35;
+  const credit = Math.max(a + 1.1, W('s4', 15) + 0.35);
   return `
-  <div class="cstack" style="gap:1.2cqw">
-    <div class="m c-white" style="font-size:7.4cqw;${rise(t, a + 0.05)}">Understand your child's</div>
-    <div class="d c-lime" style="font-size:16cqw;${rise(t, W('s4', 14))}">calculation</div>
-    <div class="d c-white" style="font-size:16cqw;${rise(t, W('s4', 15))}">skills better</div>
-    <div class="rule" style="margin:5cqw 0 4cqw;transform:scaleX(${n(easeOut(prog(t, credit - 0.2, 0.4)))})"></div>
-    <img src="${staticFile('gwr-logo.png')}" style="width:20cqw;height:20cqw;border-radius:50%;background:#fff;padding:.6cqw;${pop(t, credit, 0.5)}">
-    <div class="m c-white" style="font-size:5.6cqw;margin-top:2.4cqw;opacity:.85;${rise(t, credit + 0.2, 3)}">Specially designed by</div>
-    <div class="d c-white" style="font-size:13cqw;${rise(t, credit + 0.3)}">Deveshh Sir</div>
-    <div class="m c-lime" style="font-size:5.4cqw;font-weight:700;${rise(t, credit + 0.45, 3)}">Guinness World Record Holder in Memory</div>
+  <div class="cstack" style="gap:.8cqw">
+    <div class="hand c-white" style="font-size:9cqw;${write(t, a + 0.05, 0.45)}">Understand your child's</div>
+    <div class="d c-lime" style="font-size:19cqw;${rise(t, Math.max(a + 0.25, W('s4', 14)))}">calculation</div>
+    <div class="rel"><span class="d c-white" style="display:inline-block;font-size:19cqw;${rise(t, Math.max(a + 0.4, W('s4', 15)))}">skills better</span><svg class="mark c-lime" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-2.4cqw;width:100%;height:4cqw;${draw(t, Math.max(a + 0.6, W('s4', 15) + 0.2), 0.45)}"><use href="#sc-under"/></svg></div>
+    <div class="credit" style="margin-top:8cqw;${rise(t, credit, 4)}">
+      <img src="${staticFile('gwr-logo.png')}" style="transform:rotate(${n(lerp(-120, 0, easeOut(prog(t, credit, 0.6))), 1)}deg)">
+      <div style="text-align:left">
+        <div class="m c-white" style="font-size:5.4cqw;opacity:.85">Specially designed by</div>
+        <div class="d c-white" style="font-size:12.5cqw">Deveshh Sir</div>
+        <div class="m c-lime" style="font-size:5cqw;font-weight:700;line-height:1.15">Guinness World Record<br>Holder in Memory</div>
+      </div>
+    </div>
   </div>`;
 }
 
-/* ---------- 5 · plain violet: MORE THAN JUST A SCORE! → WHERE / WHY / WHAT NEXT ---------- */
+/* ---------- 5 · violet: MORE THAN JUST A SCORE! → WHERE / WHY / WHAT NEXT (with icons) ---------- */
+const ICON_WHERE = (t: number, at: number) => `
+  <svg viewBox="0 0 60 60"><rect x="8" y="6" width="36" height="46" rx="3" fill="#fff"/>
+    <path d="M14 16h24M14 24h24M14 32h24M14 40h16" stroke="#c9bfff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M30 29l6 6M36 29l-6 6" stroke="#ef4136" stroke-width="3.4" stroke-linecap="round"/>
+    <g transform="translate(${n(lerp(12, 0, easeOut(prog(t, at + 0.1, 0.6))), 1)} 0)"><circle cx="34" cy="32" r="11" fill="rgba(200,242,58,.18)" stroke="#c8f23a" stroke-width="4.5"/><path d="M42 40l10 10" stroke="#c8f23a" stroke-width="6" stroke-linecap="round"/></g></svg>`;
+const ICON_WHY = () => `
+  <svg viewBox="0 0 60 60"><circle cx="30" cy="30" r="25" fill="#ef4136"/><circle cx="30" cy="30" r="25" fill="none" stroke="#fff" stroke-width="3"/>
+    <text x="30" y="42" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="36" fill="#fff">?</text></svg>`;
+const ICON_NEXT = (t: number, at: number) => {
+  const p = easeOut(prog(t, at + 0.15, 0.35));
+  return `
+  <svg viewBox="0 0 60 60"><circle cx="28" cy="32" r="22" fill="#fff"/><circle cx="28" cy="32" r="15" fill="#ef4136"/><circle cx="28" cy="32" r="8" fill="#fff"/><circle cx="28" cy="32" r="3.5" fill="#ef4136"/>
+    <g transform="translate(${n(lerp(26, 0, p), 1)} ${n(lerp(-26, 0, p), 1)})" opacity="${n(clamp(p * 3))}"><path d="M29 31 52 8" stroke="#c8f23a" stroke-width="4" stroke-linecap="round"/><path d="M52 8l-1 9M52 8l-9 1" stroke="#c8f23a" stroke-width="4" stroke-linecap="round"/></g></svg>`;
+};
 export function s5(t: number) {
   const a = S('s5')[0];
-  const shrink = easeInOut(prog(t, W('s5', 2) - 0.6, 0.5));
-  const row = (label: string, sub: string, at: number) => `
-    <div style="${rise(t, at)}"><div class="d c-lime" style="font-size:14cqw">${label}</div><div class="m c-white" style="font-size:6.4cqw;margin-top:.6cqw">${sub}</div></div>`;
+  const mag = easeInOut(prog(t, a + 0.35, 1.1));
+  const row = (icon: string, label: string, sub: string, at: number) => `
+    <div class="qrow" style="${rise(t, at, 4)}"><div class="qicon" style="${pop(t, at, 0.3, -12)}">${icon}</div>
+      <div><div class="d c-lime" style="font-size:12.5cqw">${label}</div><div class="m c-white" style="font-size:6cqw;margin-top:.4cqw">${sub}</div></div></div>`;
   return `
-  <div class="safe-stack" style="gap:${n(lerp(0, 4.5, shrink), 2)}cqw">
-    <div class="d c-white" style="font-size:${n(lerp(22, 9, shrink), 2)}cqw;line-height:.9;${pop(t, a, 0.7)}">${shrink < 0.5 ? 'More than<br>just a<br>score!' : 'More than just a score!'}</div>
-    ${t >= W('s5', 2) - 0.2 ? row('WHERE', 'mistakes are happening', W('s5', 2)) : ''}
-    ${t >= W('s5', 8) - 0.2 ? row('WHY', 'the possible reasons', W('s5', 8)) : ''}
-    ${t >= W('s5', 12) - 0.2 ? row('WHAT NEXT', 'where improvement should start', W('s5', 12)) : ''}
+  <div class="safe-stack" style="gap:3.4cqw;justify-content:flex-start;padding-top:1cqw">
+    <div class="scorehead">
+      <div class="scorecard" style="${drop(t, a, -5)}">
+        <div class="sc-t">MATHS TEST</div>
+        <div class="rel" style="display:inline-block"><span class="hand c-pen" style="font-size:12cqw">12</span><span class="hand c-pen" style="font-size:6cqw">/20</span>
+          <svg class="mark c-pen" viewBox="0 0 200 100" style="left:-25%;top:-15%;width:150%;height:130%;${draw(t, a + 0.25, 0.4)}"><use href="#sc-circle"/></svg></div>
+        <div class="sc-l"></div><div class="sc-l" style="width:70%"></div>
+        <svg viewBox="0 0 60 60" style="position:absolute;width:20cqw;height:20cqw;left:${n(lerp(70, -10, mag), 1)}%;top:${n(18 + Math.sin(mag * Math.PI) * 10, 1)}%;opacity:${n(clamp(prog(t, a + 0.3, 0.2)) * (1 - prog(t, a + 1.5, 0.3)))}"><circle cx="24" cy="24" r="15" fill="rgba(200,242,58,.22)" stroke="#c8f23a" stroke-width="5"/><path d="M35 35l14 14" stroke="#c8f23a" stroke-width="7" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <div class="d c-white" style="font-size:10.5cqw;${rise(t, a + 0.1)}">More than</div>
+        <div class="d c-white" style="font-size:10.5cqw;${rise(t, a + 0.25)}">just a</div>
+        <div class="d c-ink" style="font-size:15cqw;${pop(t, a + 0.45, 0.5, -6)}"><span class="hl" style="background-position:0 60%;background-size:100% 80%;padding:0 1.6cqw">score!</span></div>
+      </div>
+    </div>
+    ${t >= W('s5', 2) - 0.2 ? row(ICON_WHERE(t, W('s5', 2)), 'WHERE', 'mistakes are happening', W('s5', 2)) : ''}
+    ${t >= W('s5', 8) - 0.2 ? row(ICON_WHY(), 'WHY', 'the possible reasons', W('s5', 8)) : ''}
+    ${t >= W('s5', 12) - 0.2 ? row(ICON_NEXT(t, W('s5', 12)), 'WHAT NEXT', 'where improvement should start', W('s5', 12)) : ''}
   </div>`;
 }
 
@@ -135,31 +179,44 @@ export function s6a(t: number) {
   const open = W('s6', 2);
   const lidP = sp(t, open, 90, 14);
   const lid = `translate(${n(lerp(0, -26, lidP), 1)} ${n(lerp(-6, -70, lidP), 1)}) rotate(${n(lerp(0, -24, lidP), 1)})`;
-  const count = Math.round((easeOut(prog(t, W('s6', 11), WE('s6', 13) - W('s6', 11))) * 500) / 10) * 10;
+  const count = Math.round((easeOut(prog(t, W('s6', 11), 0.6)) * 500) / 10) * 10;
+  const stamp = W('s6', 11) + 0.6;
   return `
-  <div class="cstack" style="gap:1cqw">
-    <svg viewBox="-80 -110 160 180" style="width:52cqw;height:58cqw;flex:none;${pop(t, S('s6a')[0] + 0.3, 0.5)}">
-      <g transform="scale(${n(easeOut(prog(t, open, 0.3)))})" opacity="${n(prog(t, open, 0.3))}"><path d="M0-80V-100M-46-64-58-78M46-64 58-78" stroke="#16142b" stroke-width="5" stroke-linecap="round"/></g>
-      <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
-      <g transform="${lid}"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
-    </svg>
-    <div class="hand c-pen" style="font-size:9cqw;margin-top:2cqw;${write(t, open, 0.45)}">special bonus</div>
-    <div class="d c-ink" style="font-size:16cqw;margin-top:3cqw;${rise(t, W('s6', 5))}">CTM™</div>
+  <div class="cstack" style="gap:.6cqw">
+    <div style="display:flex;align-items:center;gap:3cqw">
+      <svg viewBox="-70 -105 140 175" style="width:30cqw;height:37.5cqw;flex:none;${pop(t, S('s6a')[0] + 0.3, 0.5)}">
+        <g transform="scale(${n(easeOut(prog(t, open, 0.3)))})" opacity="${n(prog(t, open, 0.3))}"><path d="M0-80V-100M-46-64-58-78M46-64 58-78" stroke="#16142b" stroke-width="5" stroke-linecap="round"/></g>
+        <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
+        <g transform="${lid}"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
+      </svg>
+      <div class="hand c-pen" style="font-size:11cqw;line-height:.95;text-align:left;${write(t, open, 0.5)}">special<br>bonus</div>
+    </div>
+    <div class="d c-ink" style="font-size:24cqw;margin-top:2cqw;${pop(t, W('s6', 5), 0.6)}">CTM™</div>
     <div class="d c-ink" style="font-size:10cqw;${rise(t, W('s6', 7))}">60-minute Masterclass</div>
-    <div style="display:flex;align-items:baseline;gap:2.4cqw;margin-top:3cqw;${rise(t, W('s6', 10))}"><span class="hand c-ink" style="font-size:8cqw">worth</span><span class="d c-ink" style="font-size:20cqw;font-variant-numeric:tabular-nums">₹${count}</span></div>
-    <div class="m c-ink" style="font-size:5.6cqw;margin-top:2cqw;font-weight:700;${rise(t, WE('s6', 13) + 0.2, 3)}">with the test · limited period</div>
+    <div style="display:flex;align-items:baseline;gap:2.4cqw;margin-top:2.4cqw;${rise(t, W('s6', 10))}"><span class="hand c-ink" style="font-size:9cqw">worth</span>
+      <span class="rel"><span class="d c-ink" style="font-size:22cqw;font-variant-numeric:tabular-nums">₹${count}</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-6%;top:-4%;width:112%;height:112%;${draw(t, stamp, 0.35)}"><use href="#sc-circle"/></svg></span></div>
+    <div class="pill-ink" style="margin-top:3cqw;${rise(t, stamp + 0.25, 3)}">with the test · limited period</div>
   </div>`;
 }
 
 /* ---------- 6b · C8 (ink tint): EXPERIENCE CTM™ ---------- */
+const STEP_ICONS = [
+  '<svg viewBox="0 0 40 40"><path d="M4 20s6-10 16-10 16 10 16 10-6 10-16 10S4 20 4 20z" fill="none" stroke="#16142b" stroke-width="3.4"/><circle cx="20" cy="20" r="5" fill="#16142b"/></svg>',
+  '<svg viewBox="0 0 40 40"><g fill="none" stroke="#16142b" stroke-width="3.4" stroke-linecap="round"><circle cx="20" cy="20" r="6"/><path d="M20 5v5M20 30v5M5 20h5M30 20h5M9.5 9.5l3.5 3.5M27 27l3.5 3.5M30.5 9.5 27 13M13 27l-3.5 3.5"/></g></svg>',
+  '<svg viewBox="0 0 40 40"><path d="M8 21l8 8L33 11" fill="none" stroke="#16142b" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+];
 export function s6b(t: number) {
   const a = S('s6b')[0];
+  const st = W('s6', 19) - 0.5;
+  const step = (i: number, label: string) => `
+    <div class="step" style="${pop(t, st + i * 0.28, 0.4)}"><div class="step-i">${STEP_ICONS[i]}</div><div class="m c-white" style="font-size:6cqw;font-weight:700">${label}</div></div>`;
+  const arrow = (i: number) => `<div class="hand c-lime" style="font-size:9cqw;margin-top:2cqw;${fade(t, st + i * 0.28 + 0.14, 0.2)}">→</div>`;
   return `
-  <div class="cstack" style="gap:1.2cqw">
-    <div class="m c-white" style="font-size:8cqw;letter-spacing:.06em;${rise(t, W('s6', 14))}">EXPERIENCE</div>
-    <div class="d c-lime" style="font-size:34cqw;${pop(t, W('s6', 14) + 0.25, 0.5)}">CTM™</div>
-    <div class="m c-white" style="font-size:7cqw;font-weight:700;${rise(t, a + 0.75)}">Calculation Thinking Method</div>
-    <div class="hand c-lime" style="font-size:8.4cqw;margin-top:4cqw;white-space:nowrap;${write(t, W('s6', 19) - 0.3, 0.8)}">See → Process → Answer</div>
+  <div class="cstack" style="gap:1cqw">
+    <div class="m c-white" style="font-size:8.5cqw;letter-spacing:.08em;${rise(t, W('s6', 14))}">EXPERIENCE</div>
+    <div class="d c-lime" style="font-size:38cqw;${pop(t, W('s6', 14) + 0.25, 0.5)}">CTM™</div>
+    <div class="hand c-white" style="font-size:8.6cqw;${write(t, a + 0.75, 0.6)}">Calculation Thinking Method</div>
+    <div style="display:flex;align-items:flex-start;gap:2cqw;margin-top:6cqw">${step(0, 'See')}${arrow(0)}${step(1, 'Process')}${arrow(1)}${step(2, 'Answer')}</div>
   </div>`;
 }
 
