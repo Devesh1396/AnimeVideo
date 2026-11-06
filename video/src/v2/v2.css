@@ -1,0 +1,22 @@
+/* Reel v2 additions. Safe zone: y 330-1350 of 1920 (17.2%-70.3%), right 12% kept clear. */
+.f-vio{background:radial-gradient(120cqw 100cqw at 85% 0%,#5b3cf5,#3a1fd0 55%,#2812a6)}
+.f-lime{background:radial-gradient(120cqw 100cqw at 15% 0%,#dcff63,#c8f23a 55%,#b2dc22)}
+.safe-stack{position:absolute;left:9%;right:12%;top:17.2%;bottom:29.7%;display:flex;flex-direction:column;justify-content:center;gap:1.2cqw}
+.safe-stack.end{justify-content:flex-end}
+.cstack{position:absolute;left:12%;right:12%;top:17.2%;bottom:29.7%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.sh{text-shadow:0 .4cqw 2.4cqw rgba(0,0,0,.55)}
+.brand{font-family:var(--f-brand);font-weight:700;letter-spacing:.02em}
+.scrim{background:linear-gradient(180deg,rgba(12,10,28,.18) 0%,rgba(12,10,28,0) 24%,rgba(12,10,28,0) 40%,rgba(12,10,28,.7) 62%,rgba(12,10,28,.92) 100%)}
+.freepill{background:var(--lime);color:var(--ink);font-family:var(--f-type);font-weight:800;font-stretch:75%;font-size:30cqw;line-height:.82;letter-spacing:-.03em;padding:2.4cqw 6cqw 1.6cqw;border-radius:4cqw}
+.rule{width:18cqw;height:.6cqw;border-radius:1cqw;background:var(--lime);opacity:.85}
+.formcard{justify-self:start;width:88%;background:#1f2c34;border-radius:0 2.4cqw 2.4cqw 2.4cqw;overflow:hidden;font-family:var(--f-body);color:#e9edef}
+.formcard .fc-t{padding:1.6cqw 2.4cqw;font-size:3.4cqw;line-height:1.2}
+.formcard .fc-doc{display:flex;gap:2cqw;align-items:center;margin:0 2cqw;padding:1.4cqw;background:#2a3942;border-radius:1.6cqw}
+.formcard .fc-doc i{flex:none;width:7cqw;height:8.6cqw;border-radius:.8cqw;background:#fff;position:relative}
+.formcard .fc-doc i::before{content:"";position:absolute;left:1.4cqw;right:1.4cqw;top:2cqw;height:.6cqw;background:#8696a0;box-shadow:0 1.6cqw 0 #8696a0,0 3.2cqw 0 #8696a0}
+.formcard .fc-doc b{display:block;font-size:3.6cqw}
+.formcard .fc-doc small{display:block;font-size:2.9cqw;color:#8696a0}
+.formcard .fc-btn{margin-top:1.2cqw;border-top:.3cqw solid #2a3942;padding:1.6cqw;text-align:center;color:#53bdeb;font-weight:700;font-size:3.8cqw}
+.logo-card{background:#fff;border-radius:3cqw;padding:3cqw 4cqw 2.2cqw;display:grid;justify-items:center;gap:1.4cqw}
+.logo-card img{width:66cqw;height:auto;display:block}
+.logo-card div{font-family:var(--f-body);font-weight:600;font-size:4cqw;color:#1b4fa0}

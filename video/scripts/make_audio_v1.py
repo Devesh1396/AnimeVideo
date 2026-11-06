@@ -11,7 +11,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 SR = 48000
-TL = json.loads((ROOT / 'src/timeline.json').read_text())
+TL = json.loads((ROOT / 'src/timeline-v1.json').read_text())
 DUR = TL['duration']
 N = int(SR * DUR)
 rng = np.random.default_rng(7)

@@ -1,6 +1,6 @@
 // Small animation helpers. Every scene is a pure function of time t (seconds since the reel started).
 import timings from './vo-timings.json';
-import timeline from './timeline.json';
+import timeline from './timeline-v1.json';
 
 type Timings = Record<string, { duration: number; words: { w: string; t: number }[] }>;
 const VO = timings as unknown as Timings;

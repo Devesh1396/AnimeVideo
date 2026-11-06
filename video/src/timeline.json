@@ -1,40 +1,54 @@
 {
+  "_note": "Reel v2, version A. Single source of timing. vo.<line>.at = reel time where that line's segment of Audio-gen.mp3 starts; word times come from vo-timings-v2.json (source seconds) shifted by at - src[0]. Shots and clips in reel seconds; clip in/out in source seconds.",
   "fps": 30,
-  "duration": 32.0,
-  "vo": { "s1": 0.15, "s2": 2.7, "s3": 7.95, "s4": 11.7, "s5": 20.9, "s6": 26.55 },
-  "scenes": {
-    "s1a": [0.0, 1.25],
-    "s1b": [1.25, 2.6],
-    "s2a": [2.6, 6.5],
-    "s2b": [6.5, 7.9],
-    "s3a": [7.9, 10.6],
-    "s3b": [10.6, 11.6],
-    "s4a": [11.6, 14.9],
-    "s4b": [14.9, 17.8],
-    "s4c": [17.8, 20.85],
-    "s5a": [20.85, 26.25],
-    "s5b": [26.25, 27.65],
-    "s6a": [27.65, 29.6],
-    "s6b": [29.6, 32.0]
+  "duration": 57.1,
+  "vo": {
+    "file": "audio/vo/v2/Audio-gen.mp3",
+    "s1": { "at": 0.3, "src": [0.0, 3.876] },
+    "s2": { "at": 5.45, "src": [4.347, 10.864] },
+    "s3": { "at": 13.73, "src": [11.39, 17.575] },
+    "s4": { "at": 21.55, "src": [18.002, 26.681] },
+    "s5": { "at": 31.15, "src": [26.987, 33.557] },
+    "s6": { "at": 38.85, "src": [33.867, 42.523] },
+    "s7": { "at": 48.2, "src": [42.794, 46.78] }
   },
+  "shots": {
+    "s1a": [0.0, 2.05],
+    "s1b": [2.05, 5.1],
+    "s2": [5.1, 12.4],
+    "s3a": [12.4, 17.7],
+    "s3b": [17.7, 21.2],
+    "s4a": [21.2, 26.45],
+    "s4b": [26.45, 30.9],
+    "s5": [30.9, 38.6],
+    "s6a": [38.6, 44.25],
+    "s6b": [44.25, 48.0],
+    "s7a": [48.0, 52.6],
+    "s7b": [52.6, 57.1]
+  },
+  "clips": {
+    "s1a": { "file": "footage/c1.mp4", "in": 3.95, "rate": 1.0, "grade": "natural" },
+    "s1b": { "file": "footage/c1.mp4", "in": 6.0, "rate": 1.0, "grade": "blur" },
+    "s2": { "file": "footage/c3.mp4", "in": 0.3, "rate": 1.0, "grade": "blur" },
+    "s3a": { "file": "footage/c4.mp4", "in": 2.4, "rate": 1.0, "grade": "natural" },
+    "s3b": { "file": "footage/c5.mp4", "in": 0.0, "rate": 1.0, "grade": "red" },
+    "s6b": { "file": "footage/c8.mp4", "in": 0.0, "rate": 1.0, "grade": "ink" }
+  },
+  "crop": { "scale": 1.1368, "origin": "50% 0%" },
+  "transitions": { "s4a": "circle", "s6a": "lime-swipe", "s3b": "dissolve", "s2": "fade", "s7b": "fade" },
   "music": {
-    "bpm": 96,
-    "dropout": [10.55, 11.6],
-    "end": 32.0
+    "bpm": 76,
+    "sections": [["intro", 0.0], ["home", 5.1], ["thin", 12.4], ["lift", 21.2], ["bonus", 38.6], ["cta", 48.0], ["end", 52.6]]
   },
   "sfx": [
-    ["chalk", 0.15, 0.45], ["chalk", 0.62, 0.5], ["tick", 1.05],
-    ["whoosh", 1.2], ["paper", 1.27], ["scratch", 1.45], ["scratch", 1.6], ["scratch", 1.75], ["scratch", 1.92],
-    ["clock", 2.6, 1.6], ["tick", 2.95], ["pop", 3.62], ["tick", 3.75], ["tick", 4.85], ["tick", 5.7],
-    ["whoosh", 6.45], ["scribble", 6.7, 0.6], ["swipe", 7.25],
-    ["whoosh", 7.88], ["paper", 8.1], ["paper", 8.45], ["paper", 8.8], ["paper", 9.15], ["thud", 10.07],
-    ["write", 10.65, 0.3], ["thud", 10.95], ["pop", 11.15],
-    ["whoosh", 11.58], ["ding", 12.4], ["pop", 12.68], ["pop", 13.31],
-    ["sparkle", 14.92], ["pop", 15.0], ["zap", 15.38], ["pop", 16.07], ["pop", 16.44],
-    ["whoosh", 17.78], ["click", 18.76], ["pop", 18.76], ["pop", 20.13],
-    ["swipe", 20.83], ["rattle", 20.95, 0.35], ["pop", 21.34], ["sparkle", 21.36], ["counter", 22.07, 0.5], ["pop", 23.06], ["thud", 23.9], ["pop", 24.73],
-    ["whoosh", 26.22], ["scratch", 26.55], ["scratch", 26.75], ["sparkle", 27.0],
-    ["whoosh", 27.63], ["keys", 28.0, 0.7], ["sent", 28.75], ["pop", 29.1],
-    ["whoosh", 29.58], ["tick", 29.68], ["tick", 29.78], ["tick", 29.88], ["tick", 29.98], ["tick", 30.08], ["ding", 30.12], ["write", 30.2, 0.3]
+    ["paper", 2.05],
+    ["tick", 5.57], ["tick", 7.5], ["tick", 8.88], ["tick", 10.38],
+    ["whoosh", 21.15],
+    ["chime", 25.95],
+    ["whoosh", 38.55],
+    ["pop", 39.32],
+    ["keys", 49.6, 1.55],
+    ["sent", 51.67],
+    ["final", 53.35]
   ]
 }
