@@ -69,7 +69,7 @@ export function s3a(t: number) {
   <div class="safe-stack end" style="gap:.6cqw">
     <div class="m c-white sh" style="font-size:8.6cqw;${rise(t, W('s3', 4) - 0.1)}">These may be just</div>
     <div class="d c-white sh" style="font-size:17cqw;${rise(t, W('s3', 5))}">the visible</div>
-    <div class="d c-white" style="font-size:20cqw;${rise(t, W('s3', 6))}"><span class="hl c-ink" style="background-size:${n(hl * 100, 1)}% 46%">signs…</span></div>
+    <div class="d c-white" style="font-size:20cqw;${rise(t, W('s3', 6))}"><span class="hl c-ink" style="background-position:0 62%;background-size:${n(hl * 100, 1)}% 86%;padding:0 2cqw">signs…</span></div>
   </div>`;
 }
 
@@ -91,7 +91,7 @@ export function s4a(t: number) {
   <div class="cstack" style="gap:1cqw;opacity:${n(1 - out)}">
     <div class="hand c-white" style="font-size:8.5cqw;${write(t, W('s4', 0), 0.45)}">That's why…</div>
     <div class="brand c-white" style="font-size:5.4cqw;opacity:.9;${rise(t, W('s4', 1), 3)}">Giane Future Gurukull brings you</div>
-    <div style="margin:3.5cqw 0 2.5cqw"><span class="freepill" style="display:inline-block;${drop(t, W('s4', 7))}">FREE</span></div>
+    <div style="margin:3.5cqw 0 2.5cqw"><span class="freepill" style="display:inline-block;font-size:34cqw;${drop(t, W('s4', 7))}">FREE</span></div>
     <div class="d c-white" style="font-size:15cqw;${rise(t, W('s4', 8))}">CALCULATION</div>
     <div class="d c-white" style="font-size:15cqw;${rise(t, W('s4', 9))}">EFFICIENCY</div>
     <div class="d c-lime" style="font-size:15cqw;${pop(t, W('s4', 10), 0.6)}">TEST</div>
@@ -138,7 +138,7 @@ export function s6a(t: number) {
   const count = Math.round((easeOut(prog(t, W('s6', 11), WE('s6', 13) - W('s6', 11))) * 500) / 10) * 10;
   return `
   <div class="cstack" style="gap:1cqw">
-    <svg viewBox="-80 -110 160 180" style="width:38cqw;height:auto;${pop(t, S('s6a')[0] + 0.3, 0.5)}">
+    <svg viewBox="-80 -110 160 180" style="width:52cqw;height:58cqw;flex:none;${pop(t, S('s6a')[0] + 0.3, 0.5)}">
       <g transform="scale(${n(easeOut(prog(t, open, 0.3)))})" opacity="${n(prog(t, open, 0.3))}"><path d="M0-80V-100M-46-64-58-78M46-64 58-78" stroke="#16142b" stroke-width="5" stroke-linecap="round"/></g>
       <rect x="-52" y="-6" width="104" height="70" rx="6" fill="#fff"/><rect x="12" y="-6" width="40" height="70" fill="#e6ebf3"/><rect x="-8" y="-6" width="16" height="70" fill="#ef4136"/>
       <g transform="${lid}"><rect x="-58" y="-10" width="116" height="20" rx="4" fill="#fff"/><rect x="-9" y="-10" width="18" height="20" fill="#d22f25"/><path d="M0-10c-8-16-30-20-30-6 0 8 16 8 30 6zM0-10c8-16 30-20 30-6 0 8-16 8-30 6z" fill="#ef4136"/></g>
@@ -198,12 +198,12 @@ export function s7b(t: number) {
   return `
   <div class="cstack" style="gap:1cqw">
     <div style="display:flex;align-items:center;gap:2.4cqw;${rise(t, a + 0.05)}"><svg viewBox="0 0 48 48" style="width:10cqw;height:10cqw"><use href="#wa" width="48" height="48"/></svg><span class="d c-white" style="font-size:10cqw">WhatsApp</span></div>
-    <div class="d c-lime" style="font-size:22cqw;letter-spacing:-.01em;margin-top:1cqw">${digits('80623', a + 0.15)}</div>
-    <div class="d c-lime" style="font-size:22cqw;letter-spacing:-.01em">${digits('65298', a + 0.45)}</div>
+    <div class="d c-lime" style="font-size:20cqw;letter-spacing:-.01em;margin-top:1cqw">${digits('80623', a + 0.15)}</div>
+    <div class="d c-lime" style="font-size:20cqw;letter-spacing:-.01em">${digits('65298', a + 0.45)}</div>
     <div class="m c-white" style="font-size:5.4cqw;margin-top:2.4cqw;${rise(t, a + 0.95, 3)}">send</div>
     <div class="d c-white" style="font-size:7.6cqw;${rise(t, a + 1.0, 3)}">CALCULATION EFFICIENCY TEST</div>
-    <div class="m c-lime" style="font-size:5.2cqw;margin-top:1.6cqw;font-weight:700;${rise(t, a + 1.15, 3)}">Class 3 onwards · Ahmedabad · Vadodara</div>
-    <div class="logo-card" style="margin-top:4cqw;${pop(t, a + 1.35, 0.85)}"><img src="${staticFile('gfg-logo.png')}" alt="Giane Future Gurukull"><div>www.gianefuturegurukull.com</div></div>
+    <div class="m c-lime" style="font-size:5.2cqw;margin-top:1.6cqw;font-weight:700;line-height:1.25;${rise(t, a + 1.15, 3)}">Class 3 onwards<br>Ahmedabad · Vadodara</div>
+    <div class="logo-card" style="margin-top:3cqw;${pop(t, a + 1.35, 0.85)}"><img src="${staticFile('gfg-logo.png')}" alt="Giane Future Gurukull"><div>www.gianefuturegurukull.com</div></div>
   </div>`;
 }
 

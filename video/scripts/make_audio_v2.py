@@ -101,12 +101,15 @@ def music():
             notes = [midi(m) for m in ch[1:]]
             if name == 'thin':
                 # piano only, sparse: one low note and one soft upper note per bar
-                add(out, epiano(midi(ch[1]), min(2.6, length + 0.4), 0.10), t)
-                add(out, epiano(midi(ch[3] + 12), 1.6, 0.05), t + beat * 2)
+                add(out, pad(notes, length + 0.4), t, 0.035)
+                add(out, epiano(midi(ch[1]), min(2.6, length + 0.4), 0.11), t)
+                add(out, epiano(midi(ch[3] + 12), 1.6, 0.06), t + beat * 2)
             elif name == 'end':
-                add(out, pad(notes, end - t + 0.2, 0.9), t, 0.10)
-                for i, f in enumerate(notes):
-                    add(out, epiano(f, end - t, 0.10), t + i * 0.09)
+                # resolve on C and keep it ringing under the end card (re-struck once, then a long pad)
+                add(out, pad(notes + [notes[0] * 2], end - t + 0.4, 1.0), t, 0.16)
+                for hit, vel in ((0.0, 0.10), (2.2, 0.07)):
+                    for i, f in enumerate(notes):
+                        add(out, epiano(f, end - t - hit, vel), t + hit + i * 0.09)
                 add(out, bass(midi(ch[0]), end - t, 0.25), t)
                 break
             else:
@@ -132,8 +135,8 @@ def music():
     out[:fi] *= np.linspace(0.0, 1, fi) ** 1.5
     i3 = int(TL['shots']['s3a'][0] * SR)
     out[i3 - int(0.4 * SR):i3] *= np.linspace(1, 0.55, int(0.4 * SR))
-    fo = int(2.2 * SR)
-    out[-fo:] *= np.linspace(1, 0, fo) ** 1.6
+    fo = int(1.4 * SR)
+    out[-fo:] *= np.linspace(1, 0, fo) ** 1.3
     return out
 
 

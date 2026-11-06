@@ -55,7 +55,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
     filter = `blur(${n(18 * k, 1)}px) brightness(${n(1 - 0.55 * k, 3)}) saturate(.9)`;
     extra = 1.06;
   } else if (clip.grade === 'red') filter = 'grayscale(1) contrast(1.15) brightness(1.1)';
-  else if (clip.grade === 'ink') filter = 'grayscale(1) brightness(.62) contrast(1.05)';
+  else if (clip.grade === 'ink') filter = 'grayscale(1) brightness(.85) contrast(1.05)';
   const redIn = clip.grade === 'red' ? easeInOut(prog(t, a - lead, 0.6)) : 0;
   return (
     <div className="layer" style={{ background: '#111' }}>
@@ -73,7 +73,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
       </Sequence>
       {clip.grade === 'red' && <div className="layer" style={{ background: '#ef4136', mixBlendMode: 'multiply', opacity: redIn }} />}
       {clip.grade === 'ink' && <div className="layer" style={{ background: '#2b2856', mixBlendMode: 'multiply' }} />}
-      {clip.grade === 'ink' && <div className="layer" style={{ background: 'rgba(22,20,43,.45)' }} />}
+      {clip.grade === 'ink' && <div className="layer" style={{ background: 'rgba(22,20,43,.28)' }} />}
       {(clip.grade === 'natural' || clip.grade === 'red') && <div className="layer scrim" />}
     </div>
   );
