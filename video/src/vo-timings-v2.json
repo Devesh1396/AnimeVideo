@@ -1,76 +1,768 @@
 {
- "s1": [
-  {
-   "w": "Maths",
+ "source": "public/audio/vo/v2/Audio-gen.mp3",
+ "model": "large-v3-turbo",
+ "lines": {
+  "s1": {
+   "words": [
+    {
+     "w": "Maths",
+     "start": 0.0,
+     "end": 0.38,
+     "heard": "Maths"
+    },
+    {
+     "w": "के",
+     "start": 0.38,
+     "end": 0.5,
+     "heard": "के"
+    },
+    {
+     "w": "concepts",
+     "start": 0.5,
+     "end": 0.82,
+     "heard": "concepts"
+    },
+    {
+     "w": "clear",
+     "start": 0.82,
+     "end": 1.18,
+     "heard": "clear"
+    },
+    {
+     "w": "हैं…",
+     "start": 1.18,
+     "end": 1.58,
+     "heard": "हैं,"
+    },
+    {
+     "w": "फिर",
+     "start": 1.82,
+     "end": 2.02,
+     "heard": "फिर"
+    },
+    {
+     "w": "भी",
+     "start": 2.02,
+     "end": 2.26,
+     "heard": "भी"
+    },
+    {
+     "w": "silly",
+     "start": 2.26,
+     "end": 2.86,
+     "heard": "silly"
+    },
+    {
+     "w": "mistakes",
+     "start": 2.86,
+     "end": 3.16,
+     "heard": "mistakes"
+    },
+    {
+     "w": "हो",
+     "start": 3.16,
+     "end": 3.4,
+     "heard": "हो"
+    },
+    {
+     "w": "जाती",
+     "start": 3.4,
+     "end": 3.68,
+     "heard": "जाती"
+    },
+    {
+     "w": "हैं?",
+     "start": 3.68,
+     "end": 3.876,
+     "heard": "हैं।"
+    }
+   ],
    "start": 0.0,
-   "end": 0.48,
-   "heard": "Maths"
+   "end": 3.876
   },
-  {
-   "w": "के",
-   "start": 0.48,
-   "end": 0.6,
-   "heard": "के"
+  "s2": {
+   "words": [
+    {
+     "w": "जल्दी",
+     "start": 4.347,
+     "end": 4.7,
+     "heard": "जल्दी"
+    },
+    {
+     "w": "जल्दी",
+     "start": 4.7,
+     "end": 4.98,
+     "heard": "-जल्दी"
+    },
+    {
+     "w": "questions",
+     "start": 4.98,
+     "end": 5.24,
+     "heard": "questions"
+    },
+    {
+     "w": "solve",
+     "start": 5.24,
+     "end": 5.62,
+     "heard": "solve"
+    },
+    {
+     "w": "करना,",
+     "start": 5.62,
+     "end": 6.04,
+     "heard": "करना,"
+    },
+    {
+     "w": "calculation",
+     "start": 6.28,
+     "end": 6.62,
+     "heard": "calculation"
+    },
+    {
+     "w": "mistakes,",
+     "start": 6.62,
+     "end": 7.18,
+     "heard": "mistakes,"
+    },
+    {
+     "w": "focus",
+     "start": 7.66,
+     "end": 8.0,
+     "heard": "focus"
+    },
+    {
+     "w": "की",
+     "start": 8.0,
+     "end": 8.24,
+     "heard": "की"
+    },
+    {
+     "w": "problem,",
+     "start": 8.24,
+     "end": 8.52,
+     "heard": "problem"
+    },
+    {
+     "w": "या",
+     "start": 8.52,
+     "end": 9.16,
+     "heard": "या"
+    },
+    {
+     "w": "formulas",
+     "start": 9.16,
+     "end": 9.48,
+     "heard": "formulas"
+    },
+    {
+     "w": "बार",
+     "start": 9.48,
+     "end": 10.02,
+     "heard": "बार"
+    },
+    {
+     "w": "बार",
+     "start": 10.02,
+     "end": 10.26,
+     "heard": "-बार"
+    },
+    {
+     "w": "भूल",
+     "start": 10.26,
+     "end": 10.56,
+     "heard": "भूल"
+    },
+    {
+     "w": "जाना…",
+     "start": 10.56,
+     "end": 10.864,
+     "heard": "जाना।"
+    }
+   ],
+   "start": 4.347,
+   "end": 10.864
   },
-  {
-   "w": "concepts",
-   "start": 0.6,
-   "end": 0.96,
-   "heard": "concepts"
+  "s3": {
+   "words": [
+    {
+     "w": "लेकिन",
+     "start": 11.39,
+     "end": 11.64,
+     "heard": "लेकिन"
+    },
+    {
+     "w": "ये",
+     "start": 11.64,
+     "end": 11.94,
+     "heard": "ये"
+    },
+    {
+     "w": "तो",
+     "start": 11.94,
+     "end": 12.06,
+     "heard": "तो"
+    },
+    {
+     "w": "सिर्फ़",
+     "start": 12.06,
+     "end": 12.34,
+     "heard": "सिर्फ"
+    },
+    {
+     "w": "दिखने",
+     "start": 12.34,
+     "end": 12.84,
+     "heard": "दिखने"
+    },
+    {
+     "w": "वाले",
+     "start": 12.84,
+     "end": 13.1,
+     "heard": "वाले"
+    },
+    {
+     "w": "signs",
+     "start": 13.1,
+     "end": 13.36,
+     "heard": "science"
+    },
+    {
+     "w": "हैं।",
+     "start": 13.36,
+     "end": 13.66,
+     "heard": "हैं,"
+    },
+    {
+     "w": "Silly",
+     "start": 13.92,
+     "end": 14.24,
+     "heard": "silly"
+    },
+    {
+     "w": "mistakes",
+     "start": 14.24,
+     "end": 14.6,
+     "heard": "mistakes"
+    },
+    {
+     "w": "के",
+     "start": 14.6,
+     "end": 14.84,
+     "heard": "के"
+    },
+    {
+     "w": "पीछे",
+     "start": 14.84,
+     "end": 15.16,
+     "heard": "पीछे"
+    },
+    {
+     "w": "की",
+     "start": 15.16,
+     "end": 15.36,
+     "heard": "की"
+    },
+    {
+     "w": "असली",
+     "start": 15.36,
+     "end": 15.8,
+     "heard": "असली"
+    },
+    {
+     "w": "वजह",
+     "start": 15.8,
+     "end": 16.1,
+     "heard": "वजह"
+    },
+    {
+     "w": "कुछ",
+     "start": 16.1,
+     "end": 16.5,
+     "heard": "कुछ"
+    },
+    {
+     "w": "और",
+     "start": 16.5,
+     "end": 16.84,
+     "heard": "और"
+    },
+    {
+     "w": "भी",
+     "start": 16.84,
+     "end": 16.94,
+     "heard": "भी"
+    },
+    {
+     "w": "हो",
+     "start": 16.94,
+     "end": 17.12,
+     "heard": "हो"
+    },
+    {
+     "w": "सकती",
+     "start": 17.12,
+     "end": 17.44,
+     "heard": "सकती"
+    },
+    {
+     "w": "है।",
+     "start": 17.44,
+     "end": 17.575,
+     "heard": "है।"
+    }
+   ],
+   "start": 11.39,
+   "end": 17.575
   },
-  {
-   "w": "clear",
-   "start": 0.96,
-   "end": 1.36,
-   "heard": "clear"
+  "s4": {
+   "words": [
+    {
+     "w": "इसीलिए",
+     "start": 18.002,
+     "end": 18.46,
+     "heard": "इसलिए"
+    },
+    {
+     "w": "Giane",
+     "start": 18.46,
+     "end": 19.08,
+     "heard": "giane"
+    },
+    {
+     "w": "Future",
+     "start": 19.08,
+     "end": 19.36,
+     "heard": "Future"
+    },
+    {
+     "w": "Gurukull",
+     "start": 19.36,
+     "end": 19.82,
+     "heard": "gurukull"
+    },
+    {
+     "w": "लेकर",
+     "start": 19.82,
+     "end": 20.12,
+     "heard": "लेकर"
+    },
+    {
+     "w": "आया",
+     "start": 20.12,
+     "end": 20.36,
+     "heard": "आया"
+    },
+    {
+     "w": "है",
+     "start": 20.36,
+     "end": 20.56,
+     "heard": "है"
+    },
+    {
+     "w": "FREE",
+     "start": 20.56,
+     "end": 20.98,
+     "heard": "FREE"
+    },
+    {
+     "w": "Calculation",
+     "start": 20.98,
+     "end": 21.94,
+     "heard": "Calculation"
+    },
+    {
+     "w": "Efficiency",
+     "start": 21.94,
+     "end": 22.4,
+     "heard": "Efficiency"
+    },
+    {
+     "w": "Test।",
+     "start": 22.4,
+     "end": 22.96,
+     "heard": "Test"
+    },
+    {
+     "w": "ताकि",
+     "start": 22.96,
+     "end": 23.62,
+     "heard": "ताकि"
+    },
+    {
+     "w": "बच्चे",
+     "start": 23.62,
+     "end": 23.96,
+     "heard": "बच्चे"
+    },
+    {
+     "w": "की",
+     "start": 23.96,
+     "end": 24.12,
+     "heard": "की"
+    },
+    {
+     "w": "calculation",
+     "start": 24.12,
+     "end": 24.54,
+     "heard": "calculation"
+    },
+    {
+     "w": "skills",
+     "start": 24.54,
+     "end": 25.02,
+     "heard": "skills"
+    },
+    {
+     "w": "को",
+     "start": 25.02,
+     "end": 25.4,
+     "heard": "को"
+    },
+    {
+     "w": "बेहतर",
+     "start": 25.58,
+     "end": 25.9,
+     "heard": "बेहतर"
+    },
+    {
+     "w": "समझा",
+     "start": 25.9,
+     "end": 26.22,
+     "heard": "समझा"
+    },
+    {
+     "w": "जा",
+     "start": 26.22,
+     "end": 26.38,
+     "heard": "जा"
+    },
+    {
+     "w": "सके।",
+     "start": 26.38,
+     "end": 26.681,
+     "heard": "सके।"
+    }
+   ],
+   "start": 18.002,
+   "end": 26.681
   },
-  {
-   "w": "हैं…",
-   "start": 1.36,
-   "end": 1.94,
-   "heard": "हैं…"
+  "s5": {
+   "words": [
+    {
+     "w": "जानिए",
+     "start": 26.987,
+     "end": 27.4,
+     "heard": "जानिए"
+    },
+    {
+     "w": "mistakes",
+     "start": 27.4,
+     "end": 27.68,
+     "heard": "mistakes"
+    },
+    {
+     "w": "कहाँ",
+     "start": 27.68,
+     "end": 28.24,
+     "heard": "कहां"
+    },
+    {
+     "w": "हो",
+     "start": 28.24,
+     "end": 28.4,
+     "heard": "हो"
+    },
+    {
+     "w": "रही",
+     "start": 28.4,
+     "end": 28.64,
+     "heard": "रही"
+    },
+    {
+     "w": "हैं,",
+     "start": 28.64,
+     "end": 28.86,
+     "heard": "हैं,"
+    },
+    {
+     "w": "उनके",
+     "start": 29.02,
+     "end": 29.32,
+     "heard": "उनके"
+    },
+    {
+     "w": "possible",
+     "start": 29.32,
+     "end": 29.62,
+     "heard": "possible"
+    },
+    {
+     "w": "reasons",
+     "start": 29.62,
+     "end": 30.08,
+     "heard": "reasons"
+    },
+    {
+     "w": "क्या",
+     "start": 30.08,
+     "end": 30.44,
+     "heard": "क्या"
+    },
+    {
+     "w": "हैं,",
+     "start": 30.44,
+     "end": 30.72,
+     "heard": "हैं"
+    },
+    {
+     "w": "और",
+     "start": 30.72,
+     "end": 31.1,
+     "heard": "और"
+    },
+    {
+     "w": "improvement",
+     "start": 31.1,
+     "end": 31.58,
+     "heard": "improvement"
+    },
+    {
+     "w": "की",
+     "start": 31.58,
+     "end": 31.88,
+     "heard": "की"
+    },
+    {
+     "w": "शुरुआत",
+     "start": 31.88,
+     "end": 32.36,
+     "heard": "शुरुआत"
+    },
+    {
+     "w": "कहाँ",
+     "start": 32.36,
+     "end": 32.76,
+     "heard": "कहां"
+    },
+    {
+     "w": "से",
+     "start": 32.76,
+     "end": 32.9,
+     "heard": "से"
+    },
+    {
+     "w": "करनी",
+     "start": 32.9,
+     "end": 33.16,
+     "heard": "करनी"
+    },
+    {
+     "w": "चाहिए।",
+     "start": 33.16,
+     "end": 33.557,
+     "heard": "चाहिए।"
+    }
+   ],
+   "start": 26.987,
+   "end": 33.557
   },
-  {
-   "w": "फिर",
-   "start": 1.94,
-   "end": 2.42,
-   "heard": "फिर"
+  "s6": {
+   "words": [
+    {
+     "w": "और",
+     "start": 33.867,
+     "end": 34.06,
+     "heard": "और"
+    },
+    {
+     "w": "special",
+     "start": 34.06,
+     "end": 34.34,
+     "heard": "special"
+    },
+    {
+     "w": "bonus",
+     "start": 34.34,
+     "end": 34.62,
+     "heard": "bonus"
+    },
+    {
+     "w": "में",
+     "start": 34.62,
+     "end": 34.92,
+     "heard": "में"
+    },
+    {
+     "w": "पाइए",
+     "start": 34.92,
+     "end": 35.3,
+     "heard": "पाइए"
+    },
+    {
+     "w": "CTM",
+     "start": 35.3,
+     "end": 35.9,
+     "heard": "CTM"
+    },
+    {
+     "w": "की",
+     "start": 35.9,
+     "end": 36.12,
+     "heard": "की"
+    },
+    {
+     "w": "sixty",
+     "start": 36.12,
+     "end": 36.44,
+     "heard": "sixty"
+    },
+    {
+     "w": "minute",
+     "start": 36.44,
+     "end": 36.78,
+     "heard": "-minute"
+    },
+    {
+     "w": "masterclass,",
+     "start": 36.78,
+     "end": 37.5,
+     "heard": "masterclass"
+    },
+    {
+     "w": "worth",
+     "start": 37.5,
+     "end": 37.82,
+     "heard": "worth"
+    },
+    {
+     "w": "five",
+     "start": 37.82,
+     "end": 38.08,
+     "heard": "five"
+    },
+    {
+     "w": "hundred",
+     "start": 38.08,
+     "end": 38.34,
+     "heard": "hundred"
+    },
+    {
+     "w": "rupees।",
+     "start": 38.34,
+     "end": 39.36,
+     "heard": "rupees"
+    },
+    {
+     "w": "Experience",
+     "start": 39.36,
+     "end": 39.96,
+     "heard": "experience"
+    },
+    {
+     "w": "कीजिए",
+     "start": 39.96,
+     "end": 40.38,
+     "heard": "कीजिए"
+    },
+    {
+     "w": "calculation",
+     "start": 40.38,
+     "end": 40.72,
+     "heard": "calculation"
+    },
+    {
+     "w": "का",
+     "start": 40.72,
+     "end": 41.3,
+     "heard": "का"
+    },
+    {
+     "w": "एक",
+     "start": 41.3,
+     "end": 41.54,
+     "heard": "एक"
+    },
+    {
+     "w": "different",
+     "start": 41.54,
+     "end": 41.88,
+     "heard": "different"
+    },
+    {
+     "w": "approach।",
+     "start": 41.88,
+     "end": 42.523,
+     "heard": "approach।"
+    }
+   ],
+   "start": 33.867,
+   "end": 42.523
   },
-  {
-   "w": "भी",
-   "start": 2.42,
-   "end": 2.64,
-   "heard": "भी"
-  },
-  {
-   "w": "silly",
-   "start": 2.64,
-   "end": 2.94,
-   "heard": "silly"
-  },
-  {
-   "w": "mistakes",
-   "start": 2.94,
-   "end": 3.28,
-   "heard": "mistakes"
-  },
-  {
-   "w": "हो",
-   "start": 3.28,
-   "end": 3.66,
-   "heard": "हो"
-  },
-  {
-   "w": "जाती",
-   "start": 3.66,
-   "end": 3.98,
-   "heard": "जाती"
-  },
-  {
-   "w": "हैं?",
-   "start": 3.98,
-   "end": 4.14,
-   "heard": "हैं…"
+  "s7": {
+   "words": [
+    {
+     "w": "तो",
+     "start": 42.794,
+     "end": 42.9,
+     "heard": "तो"
+    },
+    {
+     "w": "आज",
+     "start": 42.9,
+     "end": 43.26,
+     "heard": "आज"
+    },
+    {
+     "w": "ही",
+     "start": 43.26,
+     "end": 43.42,
+     "heard": "ही"
+    },
+    {
+     "w": "WhatsApp",
+     "start": 43.42,
+     "end": 43.76,
+     "heard": "WhatsApp"
+    },
+    {
+     "w": "पर",
+     "start": 43.76,
+     "end": 44.18,
+     "heard": "पर"
+    },
+    {
+     "w": "Calculation",
+     "start": 44.18,
+     "end": 44.96,
+     "heard": "Calculation"
+    },
+    {
+     "w": "Efficiency",
+     "start": 44.96,
+     "end": 45.38,
+     "heard": "Efficiency"
+    },
+    {
+     "w": "Test",
+     "start": 45.38,
+     "end": 45.82,
+     "heard": "Test"
+    },
+    {
+     "w": "लिखकर",
+     "start": 45.82,
+     "end": 46.26,
+     "heard": "लिखकर"
+    },
+    {
+     "w": "भेजिए।",
+     "start": 46.26,
+     "end": 46.78,
+     "heard": "भेजिए।"
+    }
+   ],
+   "start": 42.794,
+   "end": 46.78
   }
- ]
+ }
 }
