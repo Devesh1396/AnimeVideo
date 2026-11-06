@@ -3,12 +3,12 @@
   {
    "w": "Maths",
    "start": 0.0,
-   "end": 0.46,
-   "heard": "मात्स"
+   "end": 0.48,
+   "heard": "Maths"
   },
   {
    "w": "के",
-   "start": 0.46,
+   "start": 0.48,
    "end": 0.6,
    "heard": "के"
   },
@@ -21,42 +21,42 @@
   {
    "w": "clear",
    "start": 0.96,
-   "end": 1.4,
+   "end": 1.36,
    "heard": "clear"
   },
   {
    "w": "हैं…",
-   "start": 1.4,
-   "end": 2.14,
+   "start": 1.36,
+   "end": 1.94,
    "heard": "हैं…"
   },
   {
    "w": "फिर",
-   "start": 2.14,
-   "end": 2.4,
+   "start": 1.94,
+   "end": 2.42,
    "heard": "फिर"
   },
   {
    "w": "भी",
-   "start": 2.4,
-   "end": 2.66,
+   "start": 2.42,
+   "end": 2.64,
    "heard": "भी"
   },
   {
    "w": "silly",
-   "start": 2.66,
+   "start": 2.64,
    "end": 2.94,
    "heard": "silly"
   },
   {
    "w": "mistakes",
    "start": 2.94,
-   "end": 3.32,
+   "end": 3.28,
    "heard": "mistakes"
   },
   {
    "w": "हो",
-   "start": 3.32,
+   "start": 3.28,
    "end": 3.66,
    "heard": "हो"
   },
@@ -70,7 +70,7 @@
    "w": "हैं?",
    "start": 3.98,
    "end": 4.14,
-   "heard": "हैं?"
+   "heard": "हैं…"
   }
  ]
 }
