@@ -36,14 +36,14 @@ export function s1b(t: number) {
     t >= at ? `<s>${wrong}</s> <em style="${bounce(t, at + 0.08, 0.3)}">${right}</em>` : wrong;
   const x = (at: number) => `<span class="x" style="${bounce(t, at)}">✗</span>`;
   return `
-  <div class="exam" style="top:13%;transform-origin:50% 0;transform:translateY(${n((1 - up) * 90, 2)}cqw) rotate(-2.5deg) scale(.74)">
+  <div class="exam" style="top:10.5%;transform-origin:50% 0;transform:translateY(${n((1 - up) * 90, 2)}cqw) rotate(-2.5deg) scale(.64)">
     <div class="ex-h"><div><div class="ex-t">MATHS · UNIT TEST</div><div class="ex-n">Name: <span class="hand c-ball">Aarav</span> &nbsp; Class: <span class="hand c-ball">4-B</span></div></div>
       <div class="ex-s rel" style="${bounce(t, m4, 0.5)}">12<span style="font-size:.6em">/20</span><svg class="mark c-pen" viewBox="0 0 200 100" style="left:-30%;top:-25%;width:160%;height:150%;${draw(t, m4, 0.4)}"><use href="#sc-circle"/></svg></div></div>
     <div class="ex-q"><span class="qn">1.</span><span class="qa">48 + 37 = 85</span>${tick(`position:static;width:7cqw;height:7cqw;stroke:var(--pen);${draw(t, m1, 0.25)}`)}</div>
     <div class="ex-q"><span class="qn">2.</span><span class="qa">7 × 8 = ${ans(m2, '54', '56')}</span>${t >= m2 ? x(m2) : ''}</div>
     <div class="ex-q"><span class="qn">3.</span><span class="qa">125 − 68 = ${ans(m3, '67', '57')}</span>${t >= m3 ? x(m3) : ''}</div>
   </div>
-  <div class="safe-stack end" style="gap:.6cqw">
+  <div class="safe-stack end" style="gap:2.2cqw">
     ${mask(t, W('s1', 5), 'Still making', 'sub c-white', 'font-size:7.4cqw')}
     <div class="rel" style="align-self:flex-start">${mask(t, W('s1', 7) - 0.04, 'SILLY', 'wide c-pen', 'font-size:32cqw')}<svg class="mark c-pen" viewBox="0 0 200 20" preserveAspectRatio="none" style="left:0;bottom:-1cqw;width:100%;height:4cqw;${draw(t, W('s1', 7) + 0.15, 0.3)}"><use href="#sc-under"/></svg></div>
     ${mask(t, W('s1', 8) - 0.04, 'MISTAKES?!', 'wide c-white', 'font-size:16.5cqw;margin-top:1cqw')}
@@ -115,7 +115,7 @@ export function s2(t: number) {
 }
 
 /* ---------- 3a · C4: the visible signs float on the surface ---------- */
-const CHIPS = [['✗ 54', 14, 22], ['✗ 67', 56, 27], ['142?', 22, 33.5], ['l × b ?', 60, 39]];
+const CHIPS = [['✗ 54', 12, 19], ['✗ 67', 56, 22.5], ['142?', 20, 28.5], ['l × b ?', 56, 32]];
 export function s3a(t: number) {
   const a = S('s3a')[0], b = S('s3a')[1];
   const lift = easeInOut(prog(t, b - 0.35, 0.6));
@@ -127,7 +127,7 @@ export function s3a(t: number) {
   }).join('');
   return `
   ${chips}
-  <div class="safe-stack end" style="gap:1.2cqw">
+  <div class="safe-stack end" style="gap:2.6cqw">
     ${mask(t, W('s3', 4) - 0.1, 'These may be just the', 'sub c-white', 'font-size:7.2cqw')}
     ${mask(t, W('s3', 5) - 0.05, 'visible', 'wide c-white', 'font-size:17cqw')}
     <div class="wide" style="font-size:17cqw;${rise(t, W('s3', 6))}"><span class="hl c-ink" style="background-position:0 62%;background-size:${n(hl * 100, 1)}% 84%;padding:0 2cqw">signs…</span></div>
