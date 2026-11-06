@@ -1,54 +1,240 @@
 {
   "_note": "Reel v2, version A. Single source of timing. vo.<line>.at = reel time where that line's segment of Audio-gen.mp3 starts; word times come from vo-timings-v2.json (source seconds) shifted by at - src[0]. Shots and clips in reel seconds; clip in/out in source seconds.",
   "fps": 30,
-  "duration": 57.1,
+  "duration": 58.15,
   "vo": {
     "file": "audio/vo/v2/Audio-gen.mp3",
-    "s1": { "at": 0.3, "src": [0.0, 3.876] },
-    "s2": { "at": 5.45, "src": [4.347, 10.864] },
-    "s3": { "at": 13.73, "src": [11.39, 17.575] },
-    "s4": { "at": 21.55, "src": [18.002, 26.681] },
-    "s5": { "at": 31.15, "src": [26.987, 33.557] },
-    "s6": { "at": 38.85, "src": [33.867, 42.523] },
-    "s7": { "at": 48.2, "src": [42.794, 46.78] }
+    "s1": {
+      "at": 0.3,
+      "src": [
+        0.0,
+        3.876
+      ]
+    },
+    "s2": {
+      "at": 5.45,
+      "src": [
+        4.347,
+        10.864
+      ]
+    },
+    "s3": {
+      "at": 13.73,
+      "src": [
+        11.39,
+        17.575
+      ]
+    },
+    "s4": {
+      "at": 21.55,
+      "src": [
+        18.002,
+        26.681
+      ]
+    },
+    "s5": {
+      "at": 31.15,
+      "src": [
+        26.987,
+        33.557
+      ]
+    },
+    "s6": {
+      "at": 38.85,
+      "src": [
+        33.867,
+        42.523
+      ]
+    },
+    "s7": {
+      "at": 49.25,
+      "src": [
+        42.794,
+        46.78
+      ]
+    }
   },
   "shots": {
-    "s1a": [0.0, 2.05],
-    "s1b": [2.05, 5.1],
-    "s2": [5.1, 12.4],
-    "s3a": [12.4, 17.7],
-    "s3b": [17.7, 21.2],
-    "s4a": [21.2, 27.15],
-    "s4b": [27.15, 30.9],
-    "s5": [30.9, 38.6],
-    "s6a": [38.6, 44.25],
-    "s6b": [44.25, 48.0],
-    "s7a": [48.0, 52.6],
-    "s7b": [52.6, 57.1]
+    "s1a": [
+      0.0,
+      2.05
+    ],
+    "s1b": [
+      2.05,
+      5.1
+    ],
+    "s2": [
+      5.1,
+      12.4
+    ],
+    "s3a": [
+      12.4,
+      17.7
+    ],
+    "s3b": [
+      17.7,
+      21.2
+    ],
+    "s4a": [
+      21.2,
+      27.15
+    ],
+    "s4b": [
+      27.15,
+      30.9
+    ],
+    "s5": [
+      30.9,
+      38.6
+    ],
+    "s6a": [
+      38.6,
+      44.25
+    ],
+    "s6b": [
+      44.25,
+      49.05
+    ],
+    "s7a": [
+      49.05,
+      53.65
+    ],
+    "s7b": [
+      53.65,
+      58.15
+    ]
   },
   "clips": {
-    "s1a": { "file": "footage/c1.mp4", "in": 3.95, "rate": 1.0, "grade": "natural" },
-    "s1b": { "file": "footage/c1.mp4", "in": 6.0, "rate": 1.0, "grade": "blur" },
-    "s2": { "file": "footage/c3.mp4", "in": 0.3, "rate": 1.0, "grade": "blur" },
-    "s3a": { "file": "footage/c4.mp4", "in": 2.4, "rate": 1.0, "grade": "natural" },
-    "s3b": { "file": "footage/c5.mp4", "in": 0.0, "rate": 1.0, "grade": "red" },
-    "s6b": { "file": "footage/c8.mp4", "in": 0.0, "rate": 1.0, "grade": "ink" }
+    "s1a": {
+      "file": "footage/c1.mp4",
+      "in": 3.95,
+      "rate": 1.0,
+      "grade": "natural"
+    },
+    "s1b": {
+      "file": "footage/c1.mp4",
+      "in": 6.0,
+      "rate": 1.0,
+      "grade": "blur"
+    },
+    "s2": {
+      "file": "footage/c3.mp4",
+      "in": 0.3,
+      "rate": 1.0,
+      "grade": "blur"
+    },
+    "s3a": {
+      "file": "footage/c4.mp4",
+      "in": 2.4,
+      "rate": 1.0,
+      "grade": "natural"
+    },
+    "s3b": {
+      "file": "footage/c5.mp4",
+      "in": 0.0,
+      "rate": 1.0,
+      "grade": "red"
+    },
+    "s6b": {
+      "file": "footage/c8.mp4",
+      "in": 0.0,
+      "rate": 1.0,
+      "grade": "visible"
+    }
   },
-  "crop": { "scale": 1.1368, "origin": "50% 0%" },
-  "transitions": { "s4a": "circle", "s6a": "lime-swipe", "s3b": "dissolve", "s2": "fade", "s7b": "fade" },
+  "crop": {
+    "scale": 1.1368,
+    "origin": "50% 0%"
+  },
+  "transitions": {
+    "s4a": "circle",
+    "s6a": "lime-swipe",
+    "s3b": "dissolve",
+    "s2": "fade",
+    "s7b": "fade"
+  },
   "music": {
     "bpm": 76,
-    "sections": [["intro", 0.0], ["home", 5.1], ["thin", 12.4], ["lift", 21.2], ["bonus", 38.6], ["cta", 48.0], ["end", 52.6]]
+    "sections": [
+      [
+        "intro",
+        0.0
+      ],
+      [
+        "home",
+        5.1
+      ],
+      [
+        "thin",
+        12.4
+      ],
+      [
+        "lift",
+        21.2
+      ],
+      [
+        "bonus",
+        38.6
+      ],
+      [
+        "cta",
+        49.05
+      ],
+      [
+        "end",
+        53.65
+      ]
+    ]
   },
   "sfx": [
-    ["paper", 2.05],
-    ["tick", 5.57], ["tick", 7.5], ["tick", 8.88], ["tick", 10.38],
-    ["whoosh", 21.15],
-    ["chime", 25.95],
-    ["whoosh", 38.55],
-    ["pop", 39.32],
-    ["keys", 49.6, 1.55],
-    ["sent", 51.67],
-    ["final", 53.35]
+    [
+      "paper",
+      2.05
+    ],
+    [
+      "tick",
+      5.57
+    ],
+    [
+      "tick",
+      7.5
+    ],
+    [
+      "tick",
+      8.88
+    ],
+    [
+      "tick",
+      10.38
+    ],
+    [
+      "whoosh",
+      21.15
+    ],
+    [
+      "chime",
+      25.95
+    ],
+    [
+      "whoosh",
+      38.55
+    ],
+    [
+      "pop",
+      39.32
+    ],
+    [
+      "keys",
+      50.65,
+      1.55
+    ],
+    [
+      "sent",
+      52.72
+    ],
+    [
+      "final",
+      54.4
+    ]
   ]
 }

@@ -40,7 +40,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
   const [a, b] = S(shot);
   const clip = (TL.clips as Record<string, { file: string; in: number; rate: number; grade: string }>)[shot];
   if (!clip) {
-    const cls = shot.startsWith('s4') || shot === 's5' ? 'f-vio' : shot === 's6a' ? 'f-lime' : 'f-ink';
+    const cls = shot.startsWith('s4') ? 'f-vio' : shot === 's5' ? 'f-paper' : shot === 's6a' ? 'f-night' : 'f-ink';
     return <div className={`layer ${cls}`} />;
   }
   const lead = LEAD[shot] ?? 0;
@@ -56,6 +56,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
     extra = 1.06;
   } else if (clip.grade === 'red') filter = 'grayscale(1) contrast(1.15) brightness(1.1)';
   else if (clip.grade === 'ink') filter = 'grayscale(1) brightness(.85) contrast(1.05)';
+  else if (clip.grade === 'visible') filter = 'brightness(.92) saturate(.95)';
   const redIn = clip.grade === 'red' ? easeInOut(prog(t, a - lead, 0.6)) : 0;
   return (
     <div className="layer" style={{ background: '#111' }}>
@@ -74,6 +75,7 @@ const Background: React.FC<{ shot: Shot; t: number }> = ({ shot, t }) => {
       {clip.grade === 'red' && <div className="layer" style={{ background: '#ef4136', mixBlendMode: 'multiply', opacity: redIn }} />}
       {clip.grade === 'ink' && <div className="layer" style={{ background: '#2b2856', mixBlendMode: 'multiply' }} />}
       {clip.grade === 'ink' && <div className="layer" style={{ background: 'rgba(22,20,43,.28)' }} />}
+      {clip.grade === 'visible' && <div className="layer" style={{ background: 'radial-gradient(75% 42% at 50% 42%, rgba(16,12,46,.72), rgba(16,12,46,.18) 100%)' }} />}
       {(clip.grade === 'natural' || clip.grade === 'red') && <div className="layer scrim" />}
     </div>
   );
@@ -101,7 +103,7 @@ export const ReelV2: React.FC = () => {
   });
   return (
     <AbsoluteFill style={{ backgroundColor: '#16142b' }}>
-      <div className="frame">
+      <div className="frame v2">
         <div dangerouslySetInnerHTML={{ __html: DEFS }} />
         {live.map((s) => {
           // overlays of the outgoing shot fade out during its tail
